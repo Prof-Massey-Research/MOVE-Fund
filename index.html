@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MOVE Fund — Coalition Evaluation Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="dashboard_data.js"></script>
+<style>
+  :root {
+    --bg: #f5f7fa;
+    --panel: #ffffff;
+    --ink: #1f2933;
+    --muted: #647387;
+    --line: #e1e7ef;
+    --accent: #2c6e9b;      /* selected coalition */
+    --accent-soft: #9ec4dd; /* other coalitions */
+    --grand: #e8833a;       /* grand-mean reference */
+    --t1: #2c6e9b;
+    --t2: #4caf82;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.45;
+  }
+  header {
+    background: var(--panel); border-bottom: 1px solid var(--line);
+    padding: 20px 28px;
+  }
+  header h1 { margin: 0; font-size: 20px; }
+  header p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 24px 28px 64px; }
+
+  .controls {
+    display: flex; flex-wrap: wrap; gap: 16px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px 18px; margin-bottom: 24px;
+  }
+  .control { display: flex; flex-direction: column; gap: 4px; }
+  .control label { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; }
+  select {
+    font-size: 14px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 7px;
+    background: #fff; color: var(--ink); min-width: 220px;
+  }
+
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px 22px; margin-bottom: 22px;
+  }
+  .card h2 { margin: 0 0 2px; font-size: 16px; }
+  .card .sub { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+  .chart-box { position: relative; height: 340px; }
+  .chart-box.tall { height: 520px; }
+
+  .section-title {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--muted); font-weight: 700; margin: 34px 0 12px;
+  }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  @media (max-width: 820px) { .grid2 { grid-template-columns: 1fr; } }
+
+  table.raw { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.raw th, table.raw td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.raw th { color: var(--muted); font-weight: 600; }
+  .conf-approx { color: var(--grand); font-weight: 600; }
+  .conf-none { color: #b04a4a; }
+  details { margin-top: 8px; }
+  details summary { cursor: pointer; color: var(--accent); font-size: 13px; }
+  .note { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .empty { color: var(--muted); font-style: italic; padding: 40px 0; text-align: center; }
+  .nodata { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>MOVE Fund — Coalition Evaluation Dashboard</h1>
+  <p id="meta-line"></p>
+</header>
+
+<div class="wrap">
+  <div class="controls">
+    <div class="control">
+      <label for="sel-construct">Construct</label>
+      <select id="sel-construct"></select>
+    </div>
+    <div class="control">
+      <label for="sel-coalition">Coalition</label>
+      <select id="sel-coalition"></select>
+    </div>
+    <div class="control">
+      <label for="sel-timepoint">Time point</label>
+      <select id="sel-timepoint"></select>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 id="t-across">Across coalitions</h2>
+    <p class="sub" id="s-across"></p>
+    <div class="chart-box"><canvas id="chart-across"></canvas></div>
+    <p class="note" id="q-across"></p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>Across time (pre / post)</h2>
+      <p class="sub" id="s-time"></p>
+      <div class="chart-box"><canvas id="chart-time"></canvas></div>
+    </div>
+    <div class="card">
+      <h2 id="t-profile">Coalition profile</h2>
+      <p class="sub" id="s-profile"></p>
+      <div class="chart-box tall"><canvas id="chart-profile"></canvas></div>
+    </div>
+  </div>
+
+  <div class="section-title">Program impact</div>
+  <p class="sub" id="program-scope" style="margin:-6px 0 14px;"></p>
+  <div class="grid2">
+    <div class="card"><h2>Youth served</h2><p class="sub">Total across this coalition's respondents</p><div class="chart-box"><canvas id="chart-youth"></canvas></div></div>
+    <div class="card"><h2>Receiving financial aid</h2><p class="sub">Average % across this coalition's respondents</p><div class="chart-box"><canvas id="chart-aid-pct"></canvas></div></div>
+    <div class="card"><h2>Financial aid disbursed</h2><p class="sub">Total dollars across this coalition's respondents</p><div class="chart-box"><canvas id="chart-aid-dollars"></canvas></div></div>
+    <div class="card"><h2>Coaches: worked vs. trained</h2><p class="sub">Totals across this coalition's respondents</p><div class="chart-box"><canvas id="chart-coaches"></canvas></div></div>
+  </div>
+
+  <div class="card">
+    <h2>Program data — raw vs. parsed</h2>
+    <p class="sub">The program fields are free text; values below were extracted automatically. Review approximated rows.</p>
+    <div id="raw-tables"></div>
+  </div>
+</div>
+
+<script>
+const D = DASHBOARD_DATA;
+const charts = {};
+
+// ---- populate controls ----
+const selC = document.getElementById('sel-construct');
+const selCo = document.getElementById('sel-coalition');
+const selT = document.getElementById('sel-timepoint');
+
+D.constructs.forEach(c => selC.add(new Option(c.name, c.key)));
+D.coalitions.forEach(co => selCo.add(new Option(co, co)));
+D.timepoints.forEach(tp => selT.add(new Option(tp, tp)));
+
+document.getElementById('meta-line').textContent =
+  `${D.coalitions.length} coalition(s) · ${D.timepoints.length} time point(s) · ${D.constructs.length} constructs · scale 1–${D.scaleMax}`;
+
+[selC, selCo, selT].forEach(s => s.addEventListener('change', render));
+
+// ---- helpers ----
+const cell = (co, tp) => (D.cells[`${co}||${tp}`] || null);
+const constructByKey = k => D.constructs.find(c => c.key === k);
+const fmt = v => (v === null || v === undefined) ? '—' : (Math.round(v * 100) / 100);
+const COL = getComputedStyle(document.documentElement);
+const c = n => COL.getPropertyValue(n).trim();
+
+function destroy(id) { if (charts[id]) { charts[id].destroy(); delete charts[id]; } }
+
+// Horizontal dashed reference line (grand mean) drawn across a bar chart.
+function refLinePlugin(getValue, label) {
+  return {
+    id: 'refline-' + label,
+    afterDatasetsDraw(chart) {
+      const v = getValue();
+      if (v === null || v === undefined) return;
+      const { ctx, chartArea, scales } = chart;
+      const y = scales.y.getPixelForValue(v);
+      if (y < chartArea.top || y > chartArea.bottom) return;
+      ctx.save();
+      ctx.strokeStyle = c('--grand'); ctx.lineWidth = 2; ctx.setLineDash([6, 5]);
+      ctx.beginPath(); ctx.moveTo(chartArea.left, y); ctx.lineTo(chartArea.right, y); ctx.stroke();
+      ctx.setLineDash([]); ctx.fillStyle = c('--grand');
+      ctx.font = '600 11px sans-serif'; ctx.textAlign = 'right';
+      ctx.fillText(`${label}: ${fmt(v)}`, chartArea.right - 4, y - 5);
+      ctx.restore();
+    }
+  };
+}
+
+const likertScaleOpts = () => ({
+  y: { min: 1, max: D.scaleMax, ticks: { stepSize: 1 }, title: { display: true, text: `Mean (1–${D.scaleMax})` } }
+});
+
+// ===================================================================
+function render() {
+  const ck = selC.value, co = selCo.value, tp = selT.value;
+  const con = constructByKey(ck);
+
+  // ---------- 1. Across coalitions ----------
+  document.getElementById('t-across').textContent = `${con.name} — across coalitions`;
+  document.getElementById('s-across').textContent = `Mean by coalition at ${tp}. Selected coalition highlighted; dashed line = all-coalition mean.`;
+  const item0 = con.items[0];
+  document.getElementById('q-across').textContent = D.questionText[item0] ? `Sample item: “${D.questionText[item0]}”` : '';
+  const acrossVals = D.coalitions.map(x => { const cc = cell(x, tp); return cc && cc[ck] ? cc[ck].mean : null; });
+  destroy('across');
+  charts['across'] = new Chart(document.getElementById('chart-across'), {
+    type: 'bar',
+    data: { labels: D.coalitions, datasets: [{
+      label: con.name, data: acrossVals,
+      backgroundColor: D.coalitions.map(x => x === co ? c('--accent') : c('--accent-soft')),
+      borderRadius: 4,
+    }]},
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } }, scales: likertScaleOpts() },
+    plugins: [ refLinePlugin(() => (D.grandMeans[tp] || {})[ck], 'all-coalition mean') ]
+  });
+
+  // ---------- 2. Across time ----------
+  document.getElementById('s-time').textContent = `${co}: ${con.name} at each time point, vs. all-coalition mean.`;
+  const coVals = D.timepoints.map(t => { const cc = cell(co, t); return cc && cc[ck] ? cc[ck].mean : null; });
+  const grandVals = D.timepoints.map(t => (D.grandMeans[t] || {})[ck] ?? null);
+  destroy('time');
+  charts['time'] = new Chart(document.getElementById('chart-time'), {
+    type: 'bar',
+    data: { labels: D.timepoints, datasets: [
+      { label: co, data: coVals, backgroundColor: c('--accent'), borderRadius: 4 },
+      { label: 'All-coalition mean', data: grandVals, backgroundColor: c('--grand'), borderRadius: 4 },
+    ]},
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' } }, scales: likertScaleOpts() }
+  });
+
+  // ---------- 3. Coalition profile (all constructs) ----------
+  document.getElementById('t-profile').textContent = `${co} profile — ${tp}`;
+  document.getElementById('s-profile').textContent = `Every construct for ${co}, vs. the all-coalition mean.`;
+  const cc = cell(co, tp) || {};
+  const profVals = D.constructs.map(x => cc[x.key] ? cc[x.key].mean : null);
+  const profGrand = D.constructs.map(x => (D.grandMeans[tp] || {})[x.key] ?? null);
+  destroy('profile');
+  charts['profile'] = new Chart(document.getElementById('chart-profile'), {
+    type: 'bar',
+    data: { labels: D.constructs.map(x => x.name), datasets: [
+      { label: co, data: profVals, backgroundColor: c('--accent'), borderRadius: 3 },
+      { label: 'All-coalition mean', data: profGrand, backgroundColor: c('--accent-soft'), borderRadius: 3 },
+    ]},
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' } },
+      scales: { x: { min: 1, max: D.scaleMax, ticks: { stepSize: 1 } } } }
+  });
+
+  renderProgram(co, tp);
+}
+
+// ===================================================================
+// Toggle a "no data" placeholder over a chart box when the selected coalition has no value.
+function setNoData(canvasId, isEmpty) {
+  const box = document.getElementById(canvasId).parentElement;
+  const canvas = document.getElementById(canvasId);
+  let note = box.querySelector('.nodata');
+  if (isEmpty) {
+    canvas.style.display = 'none';
+    if (!note) { note = document.createElement('div'); note.className = 'nodata empty'; box.appendChild(note); }
+    note.textContent = 'Not collected for this coalition.';
+    note.style.display = '';
+  } else {
+    canvas.style.display = '';
+    if (note) note.style.display = 'none';
+  }
+}
+
+// Program-impact charts show ONLY the selected coalition (no cross-coalition comparison).
+function renderProgram(co, tp) {
+  const p = D.program[`${co}||${tp}`] || {};
+  const val = k => (p[k] ? p[k].value : null);
+  document.getElementById('program-scope').textContent = `${co} — ${tp}`;
+
+  const oneBar = (id, fkey, axisLabel, color) => {
+    destroy(id);
+    const v = val(fkey);
+    setNoData('chart-' + id, v === null);
+    charts[id] = new Chart(document.getElementById('chart-' + id), {
+      type: 'bar',
+      data: { labels: [co], datasets: [{ data: [v], backgroundColor: color || c('--accent'), borderRadius: 4, maxBarThickness: 90 }] },
+      options: { responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, title: { display: true, text: axisLabel } } } }
+    });
+  };
+  oneBar('youth', 'youth_served', 'Youth');
+  oneBar('aid-pct', 'pct_aid', '%');
+  oneBar('aid-dollars', 'aid_dollars', 'Dollars ($)');
+
+  // coaches: worked vs. trained for this coalition
+  destroy('coaches');
+  const worked = val('coaches_worked'), trained = val('coaches_trained');
+  setNoData('chart-coaches', worked === null && trained === null);
+  charts['coaches'] = new Chart(document.getElementById('chart-coaches'), {
+    type: 'bar',
+    data: { labels: ['Worked', 'Trained'], datasets: [{
+      data: [worked, trained], backgroundColor: [c('--t1'), c('--t2')], borderRadius: 4, maxBarThickness: 90,
+    }]},
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { y: { beginAtZero: true, title: { display: true, text: 'Coaches' } } } }
+  });
+
+  renderRawTables(co, tp);
+}
+
+function renderRawTables(co, tp) {
+  const p = D.program[`${co}||${tp}`];
+  const host = document.getElementById('raw-tables');
+  if (!p) { host.innerHTML = '<p class="empty">No program data for this selection.</p>'; return; }
+  let html = '';
+  D.programFields.forEach(f => {
+    const entry = p[f.key];
+    if (!entry) return;
+    html += `<details><summary><strong>${f.label}</strong> — ${f.agg === 'sum' ? 'total' : 'avg'}: ${fmt(entry.value)} (n=${entry.n})</summary>`;
+    html += '<table class="raw"><thead><tr><th>Parsed</th><th>Confidence</th><th>Raw response</th></tr></thead><tbody>';
+    (entry.raw || []).forEach(r => {
+      const cls = r.conf === 'approx' ? 'conf-approx' : (r.conf === 'none' ? 'conf-none' : '');
+      html += `<tr><td>${r.value === null ? '—' : r.value}</td><td class="${cls}">${r.conf}</td><td>${escapeHtml(r.raw)}</td></tr>`;
+    });
+    html += '</tbody></table></details>';
+  });
+  host.innerHTML = html || '<p class="empty">No program data.</p>';
+}
+
+function escapeHtml(s) { return String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch])); }
+
+render();
+</script>
+</body>
+</html>
