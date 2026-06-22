@@ -1081,5 +1081,474 @@ const DASHBOARD_DATA = {
         ]
       }
     }
+  },
+  "profileQuestions": [
+    {
+      "key": "sector",
+      "label": "Organization sector",
+      "type": "single",
+      "mode": "present"
+    },
+    {
+      "key": "field",
+      "label": "Focus areas",
+      "type": "multi",
+      "mode": "present"
+    },
+    {
+      "key": "engagement",
+      "label": "Overall engagement in the coalition",
+      "type": "single",
+      "mode": "order"
+    },
+    {
+      "key": "age",
+      "label": "Ages of youth served",
+      "type": "multi",
+      "mode": "order"
+    },
+    {
+      "key": "pops",
+      "label": "Populations intentionally served",
+      "type": "multi",
+      "mode": "universe"
+    }
+  ],
+  "engageFeedbackPrompt": "To what degree would any of the following help you engage more regularly in action team or committee meetings?",
+  "profiles": {
+    "Salem||T1": {
+      "n": 10,
+      "sector": {
+        "answered": 9,
+        "items": [
+          {
+            "label": "Nonprofit or not-for-profit organization",
+            "count": 8,
+            "pct": 80.0
+          },
+          {
+            "label": "Public organization or agency",
+            "count": 1,
+            "pct": 10.0
+          }
+        ]
+      },
+      "field": {
+        "answered": 10,
+        "items": [
+          {
+            "label": "Youth development",
+            "count": 9,
+            "pct": 90.0
+          },
+          {
+            "label": "Sports",
+            "count": 8,
+            "pct": 80.0
+          },
+          {
+            "label": "Community or civic engagement",
+            "count": 3,
+            "pct": 30.0
+          },
+          {
+            "label": "Education",
+            "count": 3,
+            "pct": 30.0
+          },
+          {
+            "label": "Social/human services",
+            "count": 3,
+            "pct": 30.0
+          },
+          {
+            "label": "Other",
+            "count": 2,
+            "pct": 20.0
+          },
+          {
+            "label": "Outdoor recreation",
+            "count": 2,
+            "pct": 20.0
+          },
+          {
+            "label": "Parks, recreation, and leisure services",
+            "count": 2,
+            "pct": 20.0
+          },
+          {
+            "label": "Faith",
+            "count": 1,
+            "pct": 10.0
+          }
+        ]
+      },
+      "engagement": {
+        "answered": 10,
+        "items": [
+          {
+            "label": "None at all",
+            "count": 0,
+            "pct": 0.0
+          },
+          {
+            "label": "A little",
+            "count": 1,
+            "pct": 10.0
+          },
+          {
+            "label": "A moderate amount",
+            "count": 4,
+            "pct": 40.0
+          },
+          {
+            "label": "A lot",
+            "count": 3,
+            "pct": 30.0
+          },
+          {
+            "label": "A great deal",
+            "count": 2,
+            "pct": 20.0
+          }
+        ]
+      },
+      "age": {
+        "answered": 10,
+        "items": [
+          {
+            "label": "0-5",
+            "count": 5,
+            "pct": 50.0
+          },
+          {
+            "label": "6-12",
+            "count": 10,
+            "pct": 100.0
+          },
+          {
+            "label": "13-17",
+            "count": 8,
+            "pct": 80.0
+          },
+          {
+            "label": "18-24",
+            "count": 5,
+            "pct": 50.0
+          }
+        ]
+      },
+      "pops": {
+        "answered": 9,
+        "items": [
+          {
+            "label": "Youth in poverty",
+            "count": 7,
+            "pct": 70.0
+          },
+          {
+            "label": "Girls",
+            "count": 8,
+            "pct": 80.0
+          },
+          {
+            "label": "BIPOC Youth",
+            "count": 4,
+            "pct": 40.0
+          },
+          {
+            "label": "Youth with intellectual disabilities",
+            "count": 5,
+            "pct": 50.0
+          },
+          {
+            "label": "Youth with physical disabilities",
+            "count": 5,
+            "pct": 50.0
+          },
+          {
+            "label": "Immigrant and newcomer youth",
+            "count": 5,
+            "pct": 50.0
+          },
+          {
+            "label": "LGBTQIA+ youth",
+            "count": 4,
+            "pct": 40.0
+          },
+          {
+            "label": "Non-binary, gender non-conforming, and/or trans youth",
+            "count": 4,
+            "pct": 40.0
+          },
+          {
+            "label": "Youth in foster care",
+            "count": 5,
+            "pct": 50.0
+          },
+          {
+            "label": "Youth involved in the criminal justice system",
+            "count": 1,
+            "pct": 10.0
+          }
+        ]
+      },
+      "engageFeedback": {
+        "items": [
+          {
+            "label": "Increased stipend",
+            "mean": 2.78,
+            "n": 9
+          },
+          {
+            "label": "Strong facilittaion",
+            "mean": 3.33,
+            "n": 9
+          },
+          {
+            "label": "More networking and breakouts",
+            "mean": 2.78,
+            "n": 9
+          },
+          {
+            "label": "Clear agenda and goals",
+            "mean": 4.0,
+            "n": 9
+          },
+          {
+            "label": "In person meetings",
+            "mean": 3.44,
+            "n": 9
+          },
+          {
+            "label": "More varied and interesting content",
+            "mean": 2.78,
+            "n": 9
+          }
+        ]
+      }
+    },
+    "DC||T1": {
+      "n": 29,
+      "sector": {
+        "answered": 25,
+        "items": [
+          {
+            "label": "Nonprofit or not-for-profit organization",
+            "count": 24,
+            "pct": 82.8
+          },
+          {
+            "label": "Other",
+            "count": 1,
+            "pct": 3.4
+          }
+        ]
+      },
+      "field": {
+        "answered": 26,
+        "items": [
+          {
+            "label": "Youth development",
+            "count": 21,
+            "pct": 72.4
+          },
+          {
+            "label": "Sports",
+            "count": 19,
+            "pct": 65.5
+          },
+          {
+            "label": "Community or civic engagement",
+            "count": 9,
+            "pct": 31.0
+          },
+          {
+            "label": "Education",
+            "count": 9,
+            "pct": 31.0
+          },
+          {
+            "label": "Outdoor recreation",
+            "count": 9,
+            "pct": 31.0
+          },
+          {
+            "label": "Parks, recreation, and leisure services",
+            "count": 6,
+            "pct": 20.7
+          },
+          {
+            "label": "Criminal justice/safety",
+            "count": 3,
+            "pct": 10.3
+          },
+          {
+            "label": "Public health or healthcare",
+            "count": 3,
+            "pct": 10.3
+          },
+          {
+            "label": "Social/human services",
+            "count": 3,
+            "pct": 10.3
+          },
+          {
+            "label": "Other",
+            "count": 2,
+            "pct": 6.9
+          },
+          {
+            "label": "Research",
+            "count": 1,
+            "pct": 3.4
+          }
+        ]
+      },
+      "engagement": {
+        "answered": 25,
+        "items": [
+          {
+            "label": "None at all",
+            "count": 0,
+            "pct": 0.0
+          },
+          {
+            "label": "A little",
+            "count": 3,
+            "pct": 10.3
+          },
+          {
+            "label": "A moderate amount",
+            "count": 11,
+            "pct": 37.9
+          },
+          {
+            "label": "A lot",
+            "count": 6,
+            "pct": 20.7
+          },
+          {
+            "label": "A great deal",
+            "count": 5,
+            "pct": 17.2
+          }
+        ]
+      },
+      "age": {
+        "answered": 24,
+        "items": [
+          {
+            "label": "0-5",
+            "count": 8,
+            "pct": 27.6
+          },
+          {
+            "label": "6-12",
+            "count": 22,
+            "pct": 75.9
+          },
+          {
+            "label": "13-17",
+            "count": 23,
+            "pct": 79.3
+          },
+          {
+            "label": "18-24",
+            "count": 14,
+            "pct": 48.3
+          }
+        ]
+      },
+      "pops": {
+        "answered": 24,
+        "items": [
+          {
+            "label": "Youth in poverty",
+            "count": 18,
+            "pct": 62.1
+          },
+          {
+            "label": "Girls",
+            "count": 15,
+            "pct": 51.7
+          },
+          {
+            "label": "BIPOC Youth",
+            "count": 12,
+            "pct": 41.4
+          },
+          {
+            "label": "Youth with intellectual disabilities",
+            "count": 6,
+            "pct": 20.7
+          },
+          {
+            "label": "Youth with physical disabilities",
+            "count": 6,
+            "pct": 20.7
+          },
+          {
+            "label": "Immigrant and newcomer youth",
+            "count": 4,
+            "pct": 13.8
+          },
+          {
+            "label": "LGBTQIA+ youth",
+            "count": 4,
+            "pct": 13.8
+          },
+          {
+            "label": "Non-binary, gender non-conforming, and/or trans youth",
+            "count": 4,
+            "pct": 13.8
+          },
+          {
+            "label": "Youth in foster care",
+            "count": 1,
+            "pct": 3.4
+          },
+          {
+            "label": "Youth involved in the criminal justice system",
+            "count": 0,
+            "pct": 0.0
+          }
+        ]
+      },
+      "engageFeedback": {
+        "items": [
+          {
+            "label": "Increased stipend",
+            "mean": 3.86,
+            "n": 22
+          },
+          {
+            "label": "Strong facilittaion",
+            "mean": 3.41,
+            "n": 22
+          },
+          {
+            "label": "More networking and breakouts",
+            "mean": 2.76,
+            "n": 21
+          },
+          {
+            "label": "Clear agenda and goals",
+            "mean": 3.36,
+            "n": 22
+          },
+          {
+            "label": "In person meetings",
+            "mean": 2.71,
+            "n": 21
+          },
+          {
+            "label": "More varied and interesting content",
+            "mean": 2.86,
+            "n": 22
+          }
+        ]
+      }
+    }
   }
 };
