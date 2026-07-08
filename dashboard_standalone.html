@@ -28132,8 +28132,8 @@ const DASHBOARD_DATA = {
       <div class="chart-box"><canvas id="chart-domainsum"></canvas></div>
     </div>
     <div class="grid2">
-      <div class="card"><h2>Top 5 highest-rated scales</h2><p class="sub">This coalition vs. the CSEq Average</p><div class="chart-box" style="height:260px"><canvas id="chart-top5"></canvas></div></div>
-      <div class="card"><h2>5 lowest-rated scales</h2><p class="sub">This coalition vs. the CSEq Average</p><div class="chart-box" style="height:260px"><canvas id="chart-bottom5"></canvas></div></div>
+      <div class="card"><h2>Top 5 highest-rated scales</h2><p class="sub">Bars colored by domain (see Domain scores); <span style="color:#b9c4b9;">grey</span> = CSEq Average</p><div class="chart-box" style="height:260px"><canvas id="chart-top5"></canvas></div></div>
+      <div class="card"><h2>5 lowest-rated scales</h2><p class="sub">Bars colored by domain (see Domain scores); <span style="color:#b9c4b9;">grey</span> = CSEq Average</p><div class="chart-box" style="height:260px"><canvas id="chart-bottom5"></canvas></div></div>
     </div>
     <div class="slot" id="slot-home-extra"></div>
   </section>
@@ -28171,6 +28171,19 @@ const DASHBOARD_DATA = {
 <script>
 const D = DASHBOARD_DATA;
 const charts = {};
+
+// One distinct color per domain; the top/bottom-5 scale bars are colored by their domain
+// so you can see which category a coalition's highest and lowest scores fall into.
+const DOMAIN_COLOR = {
+  processes: '#2fc46a',  // green
+  backbone:  '#3fb0e0',  // blue
+  impact:    '#8a5cf0',  // purple
+  outputs:   '#e0a53a',  // amber
+  outcomes:  '#e0619b',  // pink
+};
+const CSEQ_COLOR = 'rgba(255,255,255,0.28)';  // neutral grey = CSEq Average reference bars
+const DOMAIN_OF = {};
+D.domains.forEach(d => d.constructs.forEach(ck => { DOMAIN_OF[ck] = d.key; }));
 
 // ---- populate controls ----
 const selPage = document.getElementById('sel-page');
@@ -28284,20 +28297,21 @@ function renderHome(co, tp) {
   charts['domainsum'] = new Chart(document.getElementById('chart-domainsum'), {
     type: 'bar',
     data: { labels: D.domains.map(d => d.name),
-            datasets: [{ label: co, data: dvals, backgroundColor: c('--accent'), borderRadius: 4, maxBarThickness: 70 }] },
+            datasets: [{ label: co, data: dvals,
+                         backgroundColor: D.domains.map(d => DOMAIN_COLOR[d.key]), borderRadius: 4, maxBarThickness: 70 }] },
     options: { responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false } }, scales: likertScaleOpts() }
   });
 
   // Rank the coalition's construct means; top 5 and bottom 5, each vs the CSEq Average.
+  // Each scale bar is colored by its domain (matching the Domain scores chart above).
   const scored = D.constructs
-    .map(x => ({ name: x.name, v: cc[x.key] ? cc[x.key].mean : null, cseq: (D.grandMeans.T0 || {})[x.key] ?? null }))
+    .map(x => ({ name: x.name, domain: DOMAIN_OF[x.key],
+                 v: cc[x.key] ? cc[x.key].mean : null, cseq: (D.grandMeans.T0 || {})[x.key] ?? null }))
     .filter(x => x.v !== null)
     .sort((a, b) => b.v - a.v);
-  const top5 = scored.slice(0, 5);
-  const bottom5 = scored.slice(-5).reverse();
-  rankChart('top5', top5, co);
-  rankChart('bottom5', bottom5, co);
+  rankChart('top5', scored.slice(0, 5), co);
+  rankChart('bottom5', scored.slice(-5).reverse(), co);
 }
 
 function rankChart(id, rows, co) {
@@ -28305,11 +28319,11 @@ function rankChart(id, rows, co) {
   charts[id] = new Chart(document.getElementById('chart-' + id), {
     type: 'bar',
     data: { labels: rows.map(r => r.name), datasets: [
-      { label: co, data: rows.map(r => r.v), backgroundColor: c('--accent'), borderRadius: 3 },
-      { label: 'CSEq Average', data: rows.map(r => r.cseq), backgroundColor: c('--grand'), borderRadius: 3 },
+      { label: co, data: rows.map(r => r.v), backgroundColor: rows.map(r => DOMAIN_COLOR[r.domain] || c('--accent')), borderRadius: 3 },
+      { label: 'CSEq Average', data: rows.map(r => r.cseq), backgroundColor: CSEQ_COLOR, borderRadius: 3 },
     ]},
     options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom' } },
+      plugins: { legend: { display: false } },
       scales: { x: { min: 1, max: D.scaleMax, ticks: { stepSize: 1 } } } }
   });
 }
@@ -28324,14 +28338,19 @@ function wrapText(s, width) {
   if (line) lines.push(line);
   return lines;
 }
+function hexFade(hex, a) {
+  const h = hex.replace('#', '');
+  return `rgba(${parseInt(h.slice(0, 2), 16)},${parseInt(h.slice(2, 4), 16)},${parseInt(h.slice(4, 6), 16)},${a})`;
+}
 function renderDomain(dkey, co, tp) {
   const dom = domainByKey(dkey);
+  const col = DOMAIN_COLOR[dkey] || c('--accent');
   document.getElementById('domain-title').textContent = dom.name;
   document.getElementById('domain-scope').textContent = `${co} — ${tp} · item scores (1–${D.scaleMax})`;
+  const swatch = (bg, border) => `<span class="dot" style="background:${bg};${border ? 'outline:2px solid #fff;outline-offset:-1px;' : ''}display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:middle;"></span>`;
   document.getElementById('domain-legend').innerHTML =
-    `<span class="dot" style="background:var(--grand);display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;"></span>`
-    + `significantly different from the CSEq Average (p&lt;0.05) &nbsp;&nbsp;`
-    + `<span class="dot" style="background:var(--accent);display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;"></span>not significant`;
+    swatch(col, true) + `significantly different from the CSEq Average (p&lt;0.05) &nbsp;&nbsp;`
+    + swatch(hexFade(col, 0.4), false) + `not significant`;
 
   const scores = D.itemScores[`${co}||${tp}`] || {};
   const items = D.items.filter(it => it.domain === dkey && scores[it.code]);
@@ -28345,7 +28364,9 @@ function renderDomain(dkey, co, tp) {
       labels: items.map(it => wrapText(it.text, 60)),
       datasets: [{
         data: items.map(it => scores[it.code].mean),
-        backgroundColor: items.map(it => scores[it.code].sig ? c('--grand') : c('--accent')),
+        backgroundColor: items.map(it => scores[it.code].sig ? col : hexFade(col, 0.4)),
+        borderColor: items.map(it => scores[it.code].sig ? '#ffffff' : 'transparent'),
+        borderWidth: items.map(it => scores[it.code].sig ? 2 : 0),
         borderRadius: 3,
       }],
     },
