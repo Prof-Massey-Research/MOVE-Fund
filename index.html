@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MOVE Fund — Coalition Evaluation Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="dashboard_data.js"></script>
+<style>
+  :root {
+    --bg: #0a0c0a;          /* near-black */
+    --panel: #141a14;       /* dark panel */
+    --ink: #e7f2e7;         /* light text */
+    --muted: #8aa28a;       /* muted green-gray */
+    --line: #28342a;        /* dark border */
+    --accent: #2fc46a;      /* green - selected coalition / primary */
+    --accent-soft: #1f6b3c; /* dark green - other coalitions */
+    --grand: #8a5cf0;       /* dark purple - third color / reference line */
+    --t1: #2fc46a;          /* green - coaches worked */
+    --t2: #8a5cf0;          /* dark purple - coaches trained */
+    --grid: rgba(255,255,255,0.07);
+    --axis: rgba(255,255,255,0.18);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.45;
+  }
+  header {
+    background: var(--panel); border-bottom: 1px solid var(--line);
+    padding: 20px 28px;
+  }
+  header h1 { margin: 0; font-size: 20px; }
+  header p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 24px 28px 64px; }
+
+  .controls {
+    display: flex; flex-wrap: wrap; gap: 16px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px 18px; margin-bottom: 24px;
+  }
+  .control { display: flex; flex-direction: column; gap: 4px; }
+  .control label { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; }
+  select {
+    font-size: 14px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 7px;
+    background: #0f140f; color: var(--ink); min-width: 220px;
+  }
+  select:focus { outline: none; border-color: var(--accent); }
+  option { background: #0f140f; color: var(--ink); }
+
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px 22px; margin-bottom: 22px;
+  }
+  .card h2 { margin: 0 0 2px; font-size: 16px; }
+  .card .sub { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+  .chart-box { position: relative; height: 340px; }
+  .chart-box.tall { height: 520px; }
+
+  .section-title {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--muted); font-weight: 700; margin: 34px 0 12px;
+  }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  @media (max-width: 820px) { .grid2 { grid-template-columns: 1fr; } }
+
+  table.raw { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.raw th, table.raw td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.raw th { color: var(--muted); font-weight: 600; }
+  .conf-approx { color: var(--grand); font-weight: 600; }
+  .conf-none { color: #b04a4a; }
+  details { margin-top: 8px; }
+  details summary { cursor: pointer; color: var(--accent); font-size: 13px; }
+  .note { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .empty { color: var(--muted); font-style: italic; padding: 40px 0; text-align: center; }
+  .nodata { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0; }
+
+  /* Social connections network map */
+  #network-box { position: relative; height: 560px; width: 100%; overflow: hidden; border-radius: 8px; }
+  #network-svg { width: 100%; height: 100%; display: block; cursor: grab; }
+  #network-svg .edge { stroke: var(--muted); stroke-opacity: .25; }
+  #network-svg .node { fill: var(--accent); stroke: #0a0c0a; stroke-width: 1.5; cursor: pointer; }
+  #network-svg .node.hub { fill: var(--grand); }
+  #network-svg .node.sel { stroke: #fff; stroke-width: 3; }
+  #network-selected { min-height: 1.1em; }
+  #network-svg .nlabel { fill: var(--ink); font-size: 11px; paint-order: stroke; stroke: #0a0c0a; stroke-width: 3px; pointer-events: none; }
+  #network-svg .nlabel.inside { font-size: 10px; font-weight: 600; }
+  .net-legend { font-size: 12px; color: var(--muted); display: flex; gap: 18px; flex-wrap: wrap; margin-top: 8px; }
+  .net-legend .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+  .net-toggle { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--muted); margin: 0 0 12px; cursor: pointer; }
+  .net-toggle input { accent-color: var(--accent); }
+  .page { display: none; }
+  .page.active { display: block; }
+  #shared-extra { display: contents; }
+</style>
+</head>
+<body>
+<header>
+  <h1>MOVE Fund — Coalition Evaluation Dashboard</h1>
+  <p id="meta-line"></p>
+</header>
+
+<div class="wrap">
+  <div class="controls">
+    <div class="control">
+      <label for="sel-timepoint">Time point</label>
+      <select id="sel-timepoint"></select>
+    </div>
+    <div class="control">
+      <label for="sel-coalition">Coalition</label>
+      <select id="sel-coalition"></select>
+    </div>
+    <div class="control">
+      <label for="sel-page">View</label>
+      <select id="sel-page"></select>
+    </div>
+  </div>
+
+  <!-- Shared blocks relocated into the active page's slots (appear on Home + Member). -->
+  <div id="shared-program" class="grid2">
+    <div class="card" id="card-youth"><h2>Youth served</h2><p class="sub">Total across this coalition's respondents</p><div class="chart-box"><canvas id="chart-youth"></canvas></div></div>
+    <div class="card" id="card-aid-pct"><h2>Receiving financial aid</h2><p class="sub">Average % across this coalition's respondents</p><div class="chart-box"><canvas id="chart-aid-pct"></canvas></div></div>
+    <div class="card" id="card-aid-dollars"><h2>Financial aid disbursed</h2><p class="sub">Total dollars across this coalition's respondents</p><div class="chart-box"><canvas id="chart-aid-dollars"></canvas></div></div>
+    <div class="card" id="card-coaches"><h2>Coaches: worked vs. trained</h2><p class="sub">Totals across this coalition's respondents</p><div class="chart-box"><canvas id="chart-coaches"></canvas></div></div>
+  </div>
+  <div id="shared-extra">
+    <div class="card" id="pcard-zip"><h2>Youth served by zip code</h2><p class="sub">Total youth served annually, by zip code (coalition-specific question)</p><div class="chart-box" style="height:300px"><canvas id="chart-zip"></canvas></div></div>
+    <div class="card" id="pcard-network">
+      <h2>Social connections map</h2>
+      <p class="sub" id="network-sub">Organizations members say they're connected with. Bigger = named by more members; lines link organizations named together. <strong>Click any dot to reveal its name.</strong></p>
+      <label class="net-toggle"><input type="checkbox" id="net-showall"> Include organizations named by only one member</label>
+      <div id="network-box"><svg id="network-svg"></svg></div>
+      <p class="note" id="network-selected">Click a dot to see the organization's name.</p>
+      <div class="net-legend">
+        <span><span class="dot" style="background:var(--grand)"></span>most-named organizations</span>
+        <span><span class="dot" style="background:var(--accent)"></span>other organizations</span>
+        <span id="network-note"></span>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Program data — raw vs. parsed</h2>
+      <p class="sub">The program fields are free text; values below were extracted automatically. Review approximated rows.</p>
+      <div id="raw-tables"></div>
+    </div>
+  </div>
+
+  <!-- ============================ COALITION HOME ============================ -->
+  <section class="page" id="page-home">
+    <div class="section-title">Coalition home</div>
+    <p class="sub" id="home-scope" style="margin:-6px 0 14px;"></p>
+    <div class="slot" id="slot-home-program"></div>
+    <div class="card">
+      <h2>Domain scores</h2>
+      <p class="sub">This coalition's average score (1–5) in each area of coalition functioning.</p>
+      <div class="chart-box"><canvas id="chart-domainsum"></canvas></div>
+    </div>
+    <div class="grid2">
+      <div class="card"><h2>Top 5 highest-rated scales</h2><p class="sub">This coalition vs. the CSEq Average</p><div class="chart-box" style="height:260px"><canvas id="chart-top5"></canvas></div></div>
+      <div class="card"><h2>5 lowest-rated scales</h2><p class="sub">This coalition vs. the CSEq Average</p><div class="chart-box" style="height:260px"><canvas id="chart-bottom5"></canvas></div></div>
+    </div>
+    <div class="slot" id="slot-home-extra"></div>
+  </section>
+
+  <!-- ============================ MEMBER CHARACTERISTICS ============================ -->
+  <section class="page" id="page-member">
+    <div class="section-title">Member characteristics</div>
+    <p class="sub" id="profile-scope" style="margin:-6px 0 14px;"></p>
+    <div class="grid2">
+      <div class="card" id="pcard-sector"><h2>Organization sector</h2><p class="sub">% of respondents</p><div class="chart-box" style="height:190px"><canvas id="chart-sector"></canvas></div></div>
+      <div class="card" id="pcard-duration"><h2>Time as a coalition member</h2><p class="sub">% of respondents</p><div class="chart-box" style="height:190px"><canvas id="chart-duration"></canvas></div></div>
+    </div>
+    <div class="grid2">
+      <div class="card" id="pcard-engagement"><h2>Overall engagement</h2><p class="sub">% of respondents, by degree of engagement</p><div class="chart-box"><canvas id="chart-engagement"></canvas></div></div>
+      <div class="card" id="pcard-age"><h2>Ages of youth served</h2><p class="sub">% of organizations serving each age band</p><div class="chart-box"><canvas id="chart-age"></canvas></div></div>
+    </div>
+    <div class="card" id="pcard-field"><h2>Focus areas</h2><p class="sub">% of organizations engaging in each area</p><div class="chart-box" style="height:380px"><canvas id="chart-field"></canvas></div></div>
+    <div class="card" id="pcard-pops"><h2>Populations intentionally served</h2><p class="sub">% of organizations (all populations shown, including 0%)</p><div class="chart-box" style="height:400px"><canvas id="chart-pops"></canvas></div></div>
+    <div class="card" id="pcard-engageFeedback"><h2>What would help you engage more regularly?</h2><p class="sub">Mean degree per item — &ldquo;To what degree would any of the following help you engage more regularly in action team or committee meetings?&rdquo;</p><div class="chart-box" style="height:320px"><canvas id="chart-engageFeedback"></canvas></div></div>
+    <div class="slot" id="slot-member-program"></div>
+    <div class="slot" id="slot-member-extra"></div>
+  </section>
+
+  <!-- ============================ DOMAIN PAGE (reused per domain) ============================ -->
+  <section class="page" id="page-domain">
+    <div class="section-title" id="domain-title"></div>
+    <p class="sub" id="domain-scope" style="margin:-6px 0 14px;"></p>
+    <div class="card">
+      <p class="sub" id="domain-legend"></p>
+      <div class="chart-box" id="domain-box"><canvas id="chart-domain"></canvas></div>
+    </div>
+  </section>
+</div>
+
+<script>
+const D = DASHBOARD_DATA;
+const charts = {};
+
+// ---- populate controls ----
+const selPage = document.getElementById('sel-page');
+const selCo = document.getElementById('sel-coalition');
+const selT = document.getElementById('sel-timepoint');
+
+// View menu = Coalition home, Member characteristics, then one page per domain.
+const PAGES = [
+  { key: 'home', name: 'Coalition home' },
+  { key: 'member', name: 'Member characteristics' },
+  ...D.domains.map(d => ({ key: d.key, name: d.name })),
+];
+PAGES.forEach(p => selPage.add(new Option(p.name, p.key)));
+const TP_LABEL = { T0: 'CSEq Baseline', T1: 'MOVE Fund Baseline' };
+D.timepoints.forEach(tp => selT.add(new Option(TP_LABEL[tp] || tp, tp)));
+
+// The coalition dropdown lists only coalitions that have data at the selected time point.
+function coalitionsAt(tp) { return D.coalitions.filter(co => D.cells[`${co}||${tp}`]); }
+function populateCoalitions(tp) {
+  const prev = selCo.value;
+  const list = coalitionsAt(tp);
+  selCo.innerHTML = '';
+  list.forEach(co => selCo.add(new Option(co, co)));
+  selCo.value = list.includes(prev) ? prev : (list[0] || '');
+}
+populateCoalitions(selT.value);
+
+document.getElementById('meta-line').textContent =
+  `${D.coalitions.length} coalition(s) · ${D.timepoints.length} time point(s) · ${D.constructs.length} scales · scale 1–${D.scaleMax}`;
+
+selT.addEventListener('change', () => { populateCoalitions(selT.value); render(); });
+[selPage, selCo].forEach(s => s.addEventListener('change', render));
+document.getElementById('net-showall').addEventListener('change',
+  () => renderNetwork(selCo.value, selT.value));
+
+// ---- helpers ----
+const cell = (co, tp) => (D.cells[`${co}||${tp}`] || null);
+const constructByKey = k => D.constructs.find(c => c.key === k);
+const domainByKey = k => D.domains.find(d => d.key === k);
+const fmt = v => (v === null || v === undefined) ? '—' : (Math.round(v * 100) / 100);
+const COL = getComputedStyle(document.documentElement);
+const c = n => COL.getPropertyValue(n).trim();
+
+// Dark-theme defaults for all charts (legible text + grid on the near-black background).
+Chart.defaults.color = c('--ink');
+Chart.defaults.scale.grid.color = c('--grid');
+Chart.defaults.scale.grid.tickColor = c('--axis');
+Chart.defaults.scale.border.color = c('--axis');
+Chart.defaults.scale.ticks.color = c('--muted');
+Chart.defaults.scale.title.color = c('--muted');
+
+function destroy(id) { if (charts[id]) { charts[id].destroy(); delete charts[id]; } }
+
+// Horizontal dashed reference line (grand mean) drawn across a bar chart.
+function refLinePlugin(getValue, label) {
+  return {
+    id: 'refline-' + label,
+    afterDatasetsDraw(chart) {
+      const v = getValue();
+      if (v === null || v === undefined) return;
+      const { ctx, chartArea, scales } = chart;
+      const y = scales.y.getPixelForValue(v);
+      if (y < chartArea.top || y > chartArea.bottom) return;
+      ctx.save();
+      ctx.strokeStyle = c('--grand'); ctx.lineWidth = 2; ctx.setLineDash([6, 5]);
+      ctx.beginPath(); ctx.moveTo(chartArea.left, y); ctx.lineTo(chartArea.right, y); ctx.stroke();
+      ctx.setLineDash([]); ctx.fillStyle = c('--grand');
+      ctx.font = '600 11px sans-serif'; ctx.textAlign = 'right';
+      ctx.fillText(`${label}: ${fmt(v)}`, chartArea.right - 4, y - 5);
+      ctx.restore();
+    }
+  };
+}
+
+const likertScaleOpts = () => ({
+  y: { min: 1, max: D.scaleMax, ticks: { stepSize: 1 }, title: { display: true, text: `Mean (1–${D.scaleMax})` } }
+});
+
+// ===================================================================
+// Page router. Shared cards (program/zip/network/raw) move into the active page's slot.
+function render() {
+  const page = selPage.value, co = selCo.value, tp = selT.value;
+  const isDomain = !!domainByKey(page);
+  document.getElementById('page-home').classList.toggle('active', page === 'home');
+  document.getElementById('page-member').classList.toggle('active', page === 'member');
+  document.getElementById('page-domain').classList.toggle('active', isDomain);
+
+  if (page === 'home' || page === 'member') {
+    const pre = page === 'home' ? 'slot-home' : 'slot-member';
+    document.getElementById(pre + '-program').appendChild(document.getElementById('shared-program'));
+    document.getElementById(pre + '-extra').appendChild(document.getElementById('shared-extra'));
+    renderProgram(co, tp);   // also renders the raw-vs-parsed table
+    renderZip(co, tp);
+    renderNetwork(co, tp);
+    // Youth-served chart is hidden on the home page (kept on Member characteristics).
+    if (page === 'home') document.getElementById('card-youth').style.display = 'none';
+  }
+  if (page === 'home') renderHome(co, tp);
+  else if (page === 'member') renderProfile(co, tp);
+  else if (isDomain) renderDomain(page, co, tp);
+}
+
+// ---------- Coalition home ----------
+function renderHome(co, tp) {
+  document.getElementById('home-scope').textContent = `${co} — ${tp}`;
+  const cc = cell(co, tp) || {};
+
+  // Domain scores — this coalition only.
+  const dvals = D.domains.map(d => (D.domainScores[`${co}||${tp}`] || {})[d.key] ?? null);
+  destroy('domainsum');
+  charts['domainsum'] = new Chart(document.getElementById('chart-domainsum'), {
+    type: 'bar',
+    data: { labels: D.domains.map(d => d.name),
+            datasets: [{ label: co, data: dvals, backgroundColor: c('--accent'), borderRadius: 4, maxBarThickness: 70 }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } }, scales: likertScaleOpts() }
+  });
+
+  // Rank the coalition's construct means; top 5 and bottom 5, each vs the CSEq Average.
+  const scored = D.constructs
+    .map(x => ({ name: x.name, v: cc[x.key] ? cc[x.key].mean : null, cseq: (D.grandMeans.T0 || {})[x.key] ?? null }))
+    .filter(x => x.v !== null)
+    .sort((a, b) => b.v - a.v);
+  const top5 = scored.slice(0, 5);
+  const bottom5 = scored.slice(-5).reverse();
+  rankChart('top5', top5, co);
+  rankChart('bottom5', bottom5, co);
+}
+
+function rankChart(id, rows, co) {
+  destroy(id);
+  charts[id] = new Chart(document.getElementById('chart-' + id), {
+    type: 'bar',
+    data: { labels: rows.map(r => r.name), datasets: [
+      { label: co, data: rows.map(r => r.v), backgroundColor: c('--accent'), borderRadius: 3 },
+      { label: 'CSEq Average', data: rows.map(r => r.cseq), backgroundColor: c('--grand'), borderRadius: 3 },
+    ]},
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' } },
+      scales: { x: { min: 1, max: D.scaleMax, ticks: { stepSize: 1 } } } }
+  });
+}
+
+// ---------- Domain page: item-level scores, sig-vs-CSEq highlighted ----------
+function wrapText(s, width) {
+  const words = String(s).split(' '); const lines = []; let line = '';
+  for (const w of words) {
+    if ((line + ' ' + w).trim().length > width) { if (line) lines.push(line); line = w; }
+    else line = (line + ' ' + w).trim();
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+function renderDomain(dkey, co, tp) {
+  const dom = domainByKey(dkey);
+  document.getElementById('domain-title').textContent = dom.name;
+  document.getElementById('domain-scope').textContent = `${co} — ${tp} · item scores (1–${D.scaleMax})`;
+  document.getElementById('domain-legend').innerHTML =
+    `<span class="dot" style="background:var(--grand);display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;"></span>`
+    + `significantly different from the CSEq Average (p&lt;0.05) &nbsp;&nbsp;`
+    + `<span class="dot" style="background:var(--accent);display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;"></span>not significant`;
+
+  const scores = D.itemScores[`${co}||${tp}`] || {};
+  const items = D.items.filter(it => it.domain === dkey && scores[it.code]);
+  const box = document.getElementById('domain-box');
+  box.style.height = Math.max(220, items.length * 34 + 40) + 'px';
+
+  destroy('domain');
+  charts['domain'] = new Chart(document.getElementById('chart-domain'), {
+    type: 'bar',
+    data: {
+      labels: items.map(it => wrapText(it.text, 60)),
+      datasets: [{
+        data: items.map(it => scores[it.code].mean),
+        backgroundColor: items.map(it => scores[it.code].sig ? c('--grand') : c('--accent')),
+        borderRadius: 3,
+      }],
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: {
+          label: ctx => {
+            const it = items[ctx.dataIndex], s = scores[it.code];
+            const sig = s.sig ? ` · significantly ${s.dir} than CSEq` : '';
+            return ` ${s.mean} (n=${s.n}) · CSEq ${s.cseqMean ?? '—'}${sig}`;
+          },
+        } },
+      },
+      scales: {
+        x: { min: 1, max: D.scaleMax, ticks: { stepSize: 1 }, title: { display: true, text: `Score (1–${D.scaleMax})` } },
+        y: { ticks: { font: { size: 10 }, autoSkip: false } },
+      },
+    },
+  });
+}
+
+// ===================================================================
+// Respondent / organization profile — every chart is for the selected coalition only.
+function showPCard(id, visible) {
+  const card = document.getElementById('pcard-' + id);
+  if (card) card.style.display = visible ? '' : 'none';
+}
+
+// Percentage bar chart (horizontal for long category labels, vertical for short ordinal scales).
+function pctChart(id, items, horizontal) {
+  destroy(id);
+  const has = items && items.length && items.some(it => it.count > 0);
+  showPCard(id, has);
+  if (!has) return;
+  charts[id] = new Chart(document.getElementById('chart-' + id), {
+    type: 'bar',
+    data: { labels: items.map(it => it.label),
+            datasets: [{ data: items.map(it => it.pct), backgroundColor: c('--accent'), borderRadius: 4, maxBarThickness: 32 }] },
+    options: { indexAxis: horizontal ? 'y' : 'x', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed[horizontal ? 'x' : 'y']}%  (n=${items[ctx.dataIndex].count})` } } },
+      scales: horizontal
+        ? { x: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } } }
+        : { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } } } }
+  });
+}
+
+// Mean-degree bar chart (1-5) for the EngageFeedback matrix.
+function meanChart(id, items) {
+  destroy(id);
+  const has = items && items.some(it => it.mean !== null);
+  showPCard(id, has);
+  if (!has) return;
+  charts[id] = new Chart(document.getElementById('chart-' + id), {
+    type: 'bar',
+    data: { labels: items.map(it => it.label),
+            datasets: [{ data: items.map(it => it.mean), backgroundColor: c('--accent'), borderRadius: 4, maxBarThickness: 32 }] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` mean ${ctx.parsed.x}  (n=${items[ctx.dataIndex].n})` } } },
+      scales: { x: { min: 1, max: 5, ticks: { stepSize: 1 },
+        title: { display: true, text: 'Mean degree (1 = None at all … 5 = A great deal)' } } } }
+  });
+}
+
+function renderProfile(co, tp) {
+  const p = D.profiles[`${co}||${tp}`];
+  document.getElementById('profile-scope').textContent = p ? `${co} — ${tp} · N = ${p.n} respondents` : '';
+  if (!p) return;
+  pctChart('sector', p.sector.items, false);
+  pctChart('duration', p.duration ? p.duration.items : [], false);
+  pctChart('engagement', p.engagement.items, false);
+  pctChart('age', p.age.items, false);
+  pctChart('field', p.field.items, true);
+  pctChart('pops', p.pops.items, true);
+  meanChart('engageFeedback', p.engageFeedback.items);
+}
+
+// Coalition-specific: youth served by zip code (Cleveland-style question).
+function renderZip(co, tp) {
+  const z = D.zipYouth && D.zipYouth[`${co}||${tp}`];
+  const card = document.getElementById('pcard-zip');
+  destroy('zip');
+  if (!z || !z.items.length) { card.style.display = 'none'; return; }
+  card.style.display = '';
+  charts['zip'] = new Chart(document.getElementById('chart-zip'), {
+    type: 'bar',
+    data: { labels: z.items.map(it => it.label),
+            datasets: [{ data: z.items.map(it => it.value), backgroundColor: c('--accent'), borderRadius: 4, maxBarThickness: 60 }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y} youth (n=${z.items[ctx.dataIndex].n})` } } },
+      scales: { y: { beginAtZero: true, title: { display: true, text: 'Youth served' } } } }
+  });
+}
+
+// Social connections map — D3 force-directed mention + co-mention network.
+let netSim = null;
+function renderNetwork(co, tp) {
+  const net = D.network && D.network[`${co}||${tp}`];
+  const card = document.getElementById('pcard-network');
+  const svgEl = document.getElementById('network-svg');
+  if (netSim) { netSim.stop(); netSim = null; }
+  d3.select(svgEl).selectAll('*').remove();
+  if (!net || !net.nodes.length) { card.style.display = 'none'; return; }
+  card.style.display = '';
+  document.getElementById('network-selected').textContent = 'Click a dot to see the organization’s name.';
+
+  // "Shared connections only" (default): drop organizations named by a single member, which
+  // removes one-member islands. The checkbox reveals the full long tail.
+  const showAll = document.getElementById('net-showall').checked;
+  let vnodes = showAll ? net.nodes : net.nodes.filter(n => n.mentions >= 2);
+  const sharedNone = !vnodes.length;
+  if (sharedNone) vnodes = net.nodes;             // fallback: nobody named a shared org
+  const vids = new Set(vnodes.map(n => n.id));
+
+  const box = document.getElementById('network-box');
+  const W = box.clientWidth || 800, H = box.clientHeight || 560;
+  const svg = d3.select(svgEl).attr('viewBox', `0 0 ${W} ${H}`);
+  const g = svg.append('g');
+  const zoom = d3.zoom().scaleExtent([0.1, 4]).on('zoom', ev => g.attr('transform', ev.transform));
+  svg.call(zoom);
+
+  const nodes = vnodes.map(n => ({ ...n }));
+  const links = net.edges.filter(e => vids.has(e.source) && vids.has(e.target))
+    .map(e => ({ source: e.source, target: e.target, weight: e.weight }));
+  const maxM = d3.max(nodes, n => n.mentions) || 1;
+  const maxW = d3.max(links, l => l.weight) || 1;
+  const r = d3.scaleSqrt().domain([1, maxM]).range([5, 26]);
+  const HUBS = 5;  // nodes are pre-sorted by mentions desc; top few are "hubs"
+
+  const link = g.append('g').selectAll('line').data(links).join('line')
+    .attr('class', 'edge').attr('stroke-width', d => 0.6 + 2.4 * (d.weight / maxW));
+  const node = g.append('g').selectAll('circle').data(nodes).join('circle')
+    .attr('class', (d, i) => 'node' + (i < HUBS ? ' hub' : '')).attr('r', d => r(d.mentions));
+  node.append('title').text(d => `${d.label} — named by ${d.mentions} member(s)`);
+
+  // Labels: hub (purple) names are always shown, centered INSIDE their node. Any other node
+  // is identified by clicking it — one at a time; clicking it again (or another) clears it.
+  const hubIds = new Set(nodes.slice(0, HUBS).map(n => n.id));
+  const labelG = g.append('g');
+  let selectedId = null;
+  const labelData = () => nodes.filter(d => hubIds.has(d.id) || d.id === selectedId);
+  let label = labelG.selectAll('text');
+  function updateLabels() {
+    label = labelG.selectAll('text').data(labelData(), d => d.id);
+    label.exit().remove();
+    label = label.enter().append('text')
+      .attr('class', 'nlabel').attr('text-anchor', 'middle').attr('dy', '0.32em')
+      .merge(label)
+      .classed('inside', d => hubIds.has(d.id))
+      .text(d => d.label);
+    positionLabels();
+  }
+  function positionLabels() { label.attr('x', d => d.x).attr('y', d => d.y); }
+  const selCaption = document.getElementById('network-selected');
+  const RESET = 'Click a dot to see the organization’s name.';
+  node.on('click', (ev, d) => {
+    ev.stopPropagation();
+    selectedId = (selectedId === d.id) ? null : d.id;
+    selCaption.textContent = selectedId ? `${d.label} — named by ${d.mentions} member(s)` : RESET;
+    node.classed('sel', n => n.id === selectedId);
+    updateLabels();
+  });
+  updateLabels();
+
+  const sim = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d => d.id).distance(55).strength(d => 0.05 + 0.2 * (d.weight / maxW)))
+    .force('charge', d3.forceManyBody().strength(-90))
+    .force('x', d3.forceX(W / 2).strength(0.08))   // gentle centering keeps weakly-tied nodes in view
+    .force('y', d3.forceY(H / 2).strength(0.08))
+    .force('collide', d3.forceCollide().radius(d => r(d.mentions) + 4))
+    .on('tick', () => {
+      link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+          .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+      node.attr('cx', d => d.x).attr('cy', d => d.y);
+      positionLabels();
+    });
+  // Once the layout settles, frame the whole graph via the viewBox (fits any container width).
+  sim.on('end', () => {
+    const pad = 30;
+    const xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+    const minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
+    svg.attr('viewBox', `${minX - pad} ${minY - pad} ${(maxX - minX) + 2 * pad} ${(maxY - minY) + 2 * pad}`);
+  });
+  netSim = sim;
+  node.call(d3.drag()
+    .on('start', (ev, d) => { if (!ev.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+    .on('drag', (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+    .on('end', (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
+
+  const scope = sharedNone ? 'no organization was named by 2+ members — showing all'
+    : (showAll ? `showing top ${nodes.length}` : `showing ${nodes.length} named by 2+ members`);
+  document.getElementById('network-note').textContent =
+    `${net.respondents} members · ${net.totalOrgs} organizations named (${scope}) · drag nodes, scroll to zoom`;
+}
+
+// ===================================================================
+// Show/hide a program card. Hidden cards take no space (display:none) — the grid reflows.
+function showCard(cardId, visible) {
+  document.getElementById(cardId).style.display = visible ? '' : 'none';
+}
+
+// Program-impact charts show ONLY the selected coalition (no cross-coalition comparison).
+// A metric the coalition didn't collect (null) OR that totals 0 is omitted entirely,
+// rather than showing an empty/zero bar.
+function renderProgram(co, tp) {
+  const p = D.program[`${co}||${tp}`] || {};
+  const has = k => p[k] && p[k].value !== null && p[k].value !== 0;
+  const val = k => (p[k] ? p[k].value : null);
+
+  const oneBar = (id, fkey, axisLabel, color) => {
+    destroy(id);
+    showCard('card-' + id, has(fkey));
+    if (!has(fkey)) return;
+    charts[id] = new Chart(document.getElementById('chart-' + id), {
+      type: 'bar',
+      data: { labels: [co], datasets: [{ data: [val(fkey)], backgroundColor: color || c('--accent'), borderRadius: 4, maxBarThickness: 90 }] },
+      options: { responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, title: { display: true, text: axisLabel } } } }
+    });
+  };
+  oneBar('youth', 'youth_served', 'Youth');
+  oneBar('aid-pct', 'pct_aid', '%');
+  oneBar('aid-dollars', 'aid_dollars', 'Dollars ($)');
+
+  // coaches: worked vs. trained — only include a bar for a value that was collected (non-zero).
+  destroy('coaches');
+  const parts = [['Worked', 'coaches_worked', c('--t1')], ['Trained', 'coaches_trained', c('--t2')]]
+    .filter(([, k]) => has(k)).map(([lab, k, col]) => ({ lab, v: val(k), col }));
+  showCard('card-coaches', parts.length > 0);
+  if (parts.length) {
+    charts['coaches'] = new Chart(document.getElementById('chart-coaches'), {
+      type: 'bar',
+      data: { labels: parts.map(p => p.lab), datasets: [{
+        data: parts.map(p => p.v), backgroundColor: parts.map(p => p.col), borderRadius: 4, maxBarThickness: 90,
+      }]},
+      options: { responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, title: { display: true, text: 'Coaches' } } } }
+    });
+  }
+
+  renderRawTables(co, tp);
+}
+
+function renderRawTables(co, tp) {
+  const p = D.program[`${co}||${tp}`];
+  const host = document.getElementById('raw-tables');
+  if (!p) { host.innerHTML = '<p class="empty">No program data for this selection.</p>'; return; }
+  let html = '';
+  D.programFields.forEach(f => {
+    const entry = p[f.key];
+    if (!entry) return;
+    html += `<details><summary><strong>${f.label}</strong> — ${f.agg === 'sum' ? 'total' : 'avg'}: ${fmt(entry.value)} (n=${entry.n})</summary>`;
+    html += '<table class="raw"><thead><tr><th>Parsed</th><th>Confidence</th><th>Raw response</th></tr></thead><tbody>';
+    (entry.raw || []).forEach(r => {
+      const cls = r.conf === 'approx' ? 'conf-approx' : (r.conf === 'none' ? 'conf-none' : '');
+      html += `<tr><td>${r.value === null ? '—' : r.value}</td><td class="${cls}">${r.conf}</td><td>${escapeHtml(r.raw)}</td></tr>`;
+    });
+    html += '</tbody></table></details>';
+  });
+  host.innerHTML = html || '<p class="empty">No program data.</p>';
+}
+
+function escapeHtml(s) { return String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch])); }
+
+render();
+</script>
+</body>
+</html>
