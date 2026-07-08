@@ -28080,16 +28080,16 @@ const DASHBOARD_DATA = {
 <div class="wrap">
   <div class="controls">
     <div class="control">
-      <label for="sel-page">View</label>
-      <select id="sel-page"></select>
+      <label for="sel-timepoint">Time point</label>
+      <select id="sel-timepoint"></select>
     </div>
     <div class="control">
       <label for="sel-coalition">Coalition</label>
       <select id="sel-coalition"></select>
     </div>
     <div class="control">
-      <label for="sel-timepoint">Time point</label>
-      <select id="sel-timepoint"></select>
+      <label for="sel-page">View</label>
+      <select id="sel-page"></select>
     </div>
   </div>
 
@@ -28184,13 +28184,25 @@ const PAGES = [
   ...D.domains.map(d => ({ key: d.key, name: d.name })),
 ];
 PAGES.forEach(p => selPage.add(new Option(p.name, p.key)));
-D.coalitions.forEach(co => selCo.add(new Option(co, co)));
-D.timepoints.forEach(tp => selT.add(new Option(tp, tp)));
+const TP_LABEL = { T0: 'CSEq Baseline', T1: 'MOVE Fund Baseline' };
+D.timepoints.forEach(tp => selT.add(new Option(TP_LABEL[tp] || tp, tp)));
+
+// The coalition dropdown lists only coalitions that have data at the selected time point.
+function coalitionsAt(tp) { return D.coalitions.filter(co => D.cells[`${co}||${tp}`]); }
+function populateCoalitions(tp) {
+  const prev = selCo.value;
+  const list = coalitionsAt(tp);
+  selCo.innerHTML = '';
+  list.forEach(co => selCo.add(new Option(co, co)));
+  selCo.value = list.includes(prev) ? prev : (list[0] || '');
+}
+populateCoalitions(selT.value);
 
 document.getElementById('meta-line').textContent =
   `${D.coalitions.length} coalition(s) · ${D.timepoints.length} time point(s) · ${D.constructs.length} scales · scale 1–${D.scaleMax}`;
 
-[selPage, selCo, selT].forEach(s => s.addEventListener('change', render));
+selT.addEventListener('change', () => { populateCoalitions(selT.value); render(); });
+[selPage, selCo].forEach(s => s.addEventListener('change', render));
 document.getElementById('net-showall').addEventListener('change',
   () => renderNetwork(selCo.value, selT.value));
 
@@ -28540,19 +28552,20 @@ function showCard(cardId, visible) {
 }
 
 // Program-impact charts show ONLY the selected coalition (no cross-coalition comparison).
-// A metric the coalition didn't collect simply has its card hidden, leaving no empty space.
+// A metric the coalition didn't collect (null) OR that totals 0 is omitted entirely,
+// rather than showing an empty/zero bar.
 function renderProgram(co, tp) {
   const p = D.program[`${co}||${tp}`] || {};
+  const has = k => p[k] && p[k].value !== null && p[k].value !== 0;
   const val = k => (p[k] ? p[k].value : null);
 
   const oneBar = (id, fkey, axisLabel, color) => {
     destroy(id);
-    const v = val(fkey);
-    showCard('card-' + id, v !== null);
-    if (v === null) return;
+    showCard('card-' + id, has(fkey));
+    if (!has(fkey)) return;
     charts[id] = new Chart(document.getElementById('chart-' + id), {
       type: 'bar',
-      data: { labels: [co], datasets: [{ data: [v], backgroundColor: color || c('--accent'), borderRadius: 4, maxBarThickness: 90 }] },
+      data: { labels: [co], datasets: [{ data: [val(fkey)], backgroundColor: color || c('--accent'), borderRadius: 4, maxBarThickness: 90 }] },
       options: { responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false } },
         scales: { y: { beginAtZero: true, title: { display: true, text: axisLabel } } } }
@@ -28562,16 +28575,16 @@ function renderProgram(co, tp) {
   oneBar('aid-pct', 'pct_aid', '%');
   oneBar('aid-dollars', 'aid_dollars', 'Dollars ($)');
 
-  // coaches: worked vs. trained for this coalition
+  // coaches: worked vs. trained — only include a bar for a value that was collected (non-zero).
   destroy('coaches');
-  const worked = val('coaches_worked'), trained = val('coaches_trained');
-  const hasCoaches = worked !== null || trained !== null;
-  showCard('card-coaches', hasCoaches);
-  if (hasCoaches) {
+  const parts = [['Worked', 'coaches_worked', c('--t1')], ['Trained', 'coaches_trained', c('--t2')]]
+    .filter(([, k]) => has(k)).map(([lab, k, col]) => ({ lab, v: val(k), col }));
+  showCard('card-coaches', parts.length > 0);
+  if (parts.length) {
     charts['coaches'] = new Chart(document.getElementById('chart-coaches'), {
       type: 'bar',
-      data: { labels: ['Worked', 'Trained'], datasets: [{
-        data: [worked, trained], backgroundColor: [c('--t1'), c('--t2')], borderRadius: 4, maxBarThickness: 90,
+      data: { labels: parts.map(p => p.lab), datasets: [{
+        data: parts.map(p => p.v), backgroundColor: parts.map(p => p.col), borderRadius: 4, maxBarThickness: 90,
       }]},
       options: { responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false } },
