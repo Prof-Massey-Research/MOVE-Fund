@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Coalitions for Sport Equity — About the Data</title>
+<style>
+  :root{
+    --bg:#f6f8f5; --panel:#ffffff; --panel2:#eef3ee; --ink:#17231b; --ink2:#45554a; --muted:#6a7a6a;
+    --line:#e3ebe3; --accent:#1f9d54; --grand:#7248c4;
+    --processes:#1f9d54; --backbone:#2a8fb8; --impact:#7248c4; --outputs:#bd7d14; --outcomes:#c74f83;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+  a{color:var(--accent);}
+
+  /* Hero */
+  .hero{
+    min-height:92vh; display:flex; flex-direction:column; justify-content:center;
+    padding:80px 0 60px; position:relative;
+    background:radial-gradient(1200px 600px at 70% -10%, rgba(47,196,106,.12), transparent 60%),
+               radial-gradient(900px 500px at 10% 20%, rgba(138,92,240,.10), transparent 55%);
+  }
+  .eyebrow{ text-transform:uppercase; letter-spacing:.18em; font-size:12.5px; color:var(--accent); font-weight:700; margin-bottom:18px;}
+  .hero h1{ font-size:clamp(32px,6vw,56px); line-height:1.08; margin:0 0 20px; font-weight:800; letter-spacing:-0.02em;}
+  .hero h1 .hl{ color:var(--accent);}
+  .hero p{ font-size:clamp(17px,2.4vw,21px); color:var(--ink2); max-width:680px; margin:0;}
+  .scrollcue{ margin-top:54px; color:var(--muted); font-size:13px; display:flex; align-items:center; gap:10px; letter-spacing:.02em;}
+  .scrollcue .arrow{ width:26px; height:26px; border:1px solid var(--line); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; animation:bob 1.8s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(5px);}}
+
+  section{padding:56px 0; border-top:1px solid var(--line);}
+  .kicker{ text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:700; color:var(--muted); margin:0 0 12px;}
+  h2{ font-size:clamp(24px,3.4vw,32px); margin:0 0 18px; font-weight:750; letter-spacing:-0.01em;}
+  h2 .accent{color:var(--accent);}
+  p.lead{ font-size:18px; color:var(--ink2);}
+  .muted{color:var(--muted);}
+
+  .two{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:22px;}
+  @media(max-width:760px){ .two{grid-template-columns:1fr;} }
+  .card{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px 22px; box-shadow:0 2px 10px rgba(30,50,35,.05);}
+  .card h3{ margin:0 0 8px; font-size:16.5px;}
+  .card p{ margin:0; font-size:14.5px; color:var(--ink2);}
+
+  /* Framework flow */
+  .flow{ display:flex; flex-direction:column; gap:12px; margin-top:26px;}
+  .stage{
+    display:grid; grid-template-columns:150px 1fr; gap:18px; align-items:center;
+    background:var(--panel); border:1px solid var(--line); border-left-width:5px; border-radius:12px; padding:16px 20px;
+  }
+  @media(max-width:640px){ .stage{grid-template-columns:1fr; gap:6px;} }
+  .stage .lbl{ font-weight:750; font-size:15.5px;}
+  .stage .desc{ font-size:14px; color:var(--ink2);}
+  .stage .desc em{ color:var(--ink); font-style:normal; font-weight:600;}
+  .flow .connector{ text-align:center; color:var(--muted); font-size:18px; line-height:1; margin:-4px 0;}
+  .s-mem{border-left-color:#7f8f7f;} .s-proc{border-left-color:var(--processes);}
+  .s-back{border-left-color:var(--backbone);} .s-imp{border-left-color:var(--impact);}
+  .s-out{border-left-color:var(--outputs);} .s-soc{border-left-color:var(--outcomes);}
+  .chip{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;margin-right:6px;color:#ffffff;}
+  .logic-graphic{ display:block; width:100%; max-width:100%; height:auto; margin-top:26px;
+    border:1px solid var(--line); border-radius:14px; background:#fff; box-shadow:0 2px 10px rgba(30,50,35,.05);}
+
+  ul.clean{ list-style:none; padding:0; margin:16px 0 0;}
+  ul.clean li{ padding:12px 0 12px 30px; border-bottom:1px solid var(--line); position:relative; color:var(--ink2); font-size:15px;}
+  ul.clean li:before{ content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700;}
+  ul.clean li strong{color:var(--ink);}
+
+  .insight{ background:linear-gradient(180deg, rgba(31,157,84,.08), #ffffff); border:1px solid var(--line); border-radius:14px; padding:20px 22px;}
+  .insight h3{margin:0 0 6px; font-size:15.5px; color:var(--accent);}
+  .insight p{margin:0; font-size:14px; color:var(--ink2);}
+
+  .stat{font-size:clamp(30px,5vw,44px); font-weight:800; color:var(--accent); line-height:1;}
+  .statrow{display:flex; flex-wrap:wrap; gap:34px; margin-top:8px;}
+  .statrow .s span{display:block; font-size:13px; color:var(--muted); margin-top:6px; max-width:180px;}
+
+  /* Final CTA */
+  .final{ text-align:center; padding:80px 0 90px; border-top:1px solid var(--line);
+    background:radial-gradient(800px 400px at 50% 120%, rgba(47,196,106,.14), transparent 60%);}
+  .btn{ display:inline-block; background:var(--accent); color:#ffffff; font-weight:750; font-size:16px;
+    padding:15px 30px; border-radius:12px; text-decoration:none; transition:transform .12s ease, box-shadow .12s ease;}
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 10px 30px rgba(47,196,106,.25);}
+
+  /* Scroll-gated floating CTA */
+  .float{ position:fixed; right:22px; bottom:22px; z-index:50;
+    background:var(--panel); border:1px solid var(--line); color:var(--muted);
+    padding:12px 18px; border-radius:30px; font-size:14px; font-weight:650; text-decoration:none;
+    display:flex; align-items:center; gap:9px; box-shadow:0 6px 20px rgba(30,50,35,.12);
+    pointer-events:none; opacity:.75; transition:all .3s ease;}
+  .float .prog{ width:22px; height:22px; border-radius:50%;
+    background:conic-gradient(var(--accent) var(--p,0%), rgba(30,50,35,.14) 0);}
+  .float.ready{ background:var(--accent); color:#ffffff; border-color:var(--accent); pointer-events:auto; opacity:1; cursor:pointer;}
+  .float.ready .prog{ background:#ffffff; color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:13px;}
+  @media(max-width:640px){ .float{right:12px; bottom:12px;} }
+
+  /* Fade-in only when JS is active; without JS everything stays visible. */
+  .js .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .js .reveal.in{ opacity:1; transform:none;}
+
+  footer{ padding:34px 0 60px; color:var(--muted); font-size:13px; border-top:1px solid var(--line);}
+  footer strong{color:var(--ink2);}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Coalitions for Sport Equity</div>
+    <h1>Understanding how coalitions drive <span class="hl">systems change</span> in youth sport &amp; play.</h1>
+    <p>These dashboards turn survey data from youth sport, physical activity, and play-equity coalitions into a shared language for how collaboration forms, matures, and creates impact. Before you dive in, here's the thinking behind the data.</p>
+    <div class="scrollcue"><span class="arrow">↓</span> Scroll to explore</div>
+  </div>
+</header>
+
+<!-- ============ WHY ============ -->
+<section>
+  <div class="wrap reveal">
+    <p class="kicker">The challenge</p>
+    <h2>Local organizing has become a strategy for <span class="accent">systems change</span> — but we know little about what makes it work.</h2>
+    <p class="lead">Over the last decade, coalition-based efforts to reform youth sport have proliferated. Communities are organizing to get more young people into high-quality programming and to make sport, physical activity, and play more equitable. Yet there's been little evidence about which structures, policies, and practices actually help these coalitions succeed.</p>
+  </div>
+</section>
+
+<!-- ============ BACKBONE / COLLECTIVE IMPACT ============ -->
+<section>
+  <div class="wrap reveal">
+    <p class="kicker">Context</p>
+    <h2>Backbones, collective impact, and coalition building</h2>
+    <p class="lead">Complex social problems rarely yield to any single organization. A <strong>backbone organization</strong> coordinates a network of partners — aligning activities, sharing resources, and giving the collective a unified direction.</p>
+    <div class="two">
+      <div class="card"><h3>Collective impact</h3><p>A highly structured way of working together (Kania &amp; Kramer, 2011): a common agenda, shared measurement, and mutually reinforcing activities. It's a destination few coalitions have fully reached — a useful north star, not a starting line.</p></div>
+      <div class="card"><h3>Community coalition action</h3><p>To capture the earlier, formative stages, the framework draws on Community Coalition Action Theory (Butterfoss &amp; Kegler, 2009) — how coalitions develop, function, and build the community capacity that leads to real social outcomes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGIC MODEL ============ -->
+<section>
+  <div class="wrap reveal">
+    <p class="kicker">The logic model</p>
+    <h2>How coalition building unfolds — and what the dashboards measure</h2>
+    <p class="lead">The framework is a roadmap: it breaks coalition building into connected stages, from who is at the table through to community-level change. Each stage is a page in the dashboards, color-coded throughout.</p>
+
+    <!-- Logic-model graphic (removed automatically if the image file is missing). -->
+    <img id="logic-img" class="logic-graphic" src="Picture1.png"
+         alt="Coalition-building logic model: member characteristics through social outcomes"
+         onerror="this.remove();" />
+
+    <p class="kicker" style="margin-top:30px;">Each stage in detail</p>
+    <div class="flow" id="logic-flow">
+      <div class="stage s-mem">
+        <div class="lbl">Member characteristics</div>
+        <div class="desc">Who's at the table — the <em>sectors and fields</em> members represent, existing partnerships, tenure, and awareness of the coalition's work.</div>
+      </div>
+      <div class="connector">↓</div>
+      <div class="stage s-proc">
+        <div class="lbl"><span class="chip" style="background:var(--processes)">1</span>Collaborative processes</div>
+        <div class="desc">The base-level ingredients of effective collaboration — <em>motivation, goal consensus, communication, cohesion, task focus, and decision-making</em>. These can exist with or without a backbone.</div>
+      </div>
+      <div class="connector">↓</div>
+      <div class="stage s-back">
+        <div class="lbl"><span class="chip" style="background:var(--backbone)">2</span>Backbone support</div>
+        <div class="desc">A backbone organization coordinates activity and provides unified direction — seen through <em>leadership, staffing, trust, and equity</em>.</div>
+      </div>
+      <div class="connector">↓</div>
+      <div class="stage s-imp">
+        <div class="lbl"><span class="chip" style="background:var(--impact)">3</span>Collective impact</div>
+        <div class="desc">The most structured form of coalition building: a <em>common agenda, mutually reinforcing activities, and shared measurement</em> that intentionally align members toward shared goals.</div>
+      </div>
+      <div class="connector">↓</div>
+      <div class="stage s-out">
+        <div class="lbl">Collaborative outputs</div>
+        <div class="desc">Signals that the process is working — <em>productivity, external legitimacy, and member engagement</em>.</div>
+      </div>
+      <div class="connector">↓</div>
+      <div class="stage s-soc">
+        <div class="lbl">Social outcomes</div>
+        <div class="desc">The goal: greater <em>organizational capacity and systems change</em> that advances sport, physical activity, and play equity for youth.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW DATA HELPS ============ -->
+<section>
+  <div class="wrap reveal">
+    <p class="kicker">Why it matters for your coalition</p>
+    <h2>Turning data into decisions</h2>
+    <p class="lead">The aim is practical: to put meaningful data directly in the hands of coalitions to strengthen their work.</p>
+    <ul class="clean">
+      <li><strong>Spot strengths and gaps.</strong> See at a glance which domains — and which specific scales — are your highest and lowest, and where you differ significantly from the average.</li>
+      <li><strong>Support operations, funding, leadership, and programming.</strong> Use members' own perceptions to make the case to funders and to focus limited capacity where it matters.</li>
+      <li><strong>Understand your members.</strong> Map who's connected to whom, what motivates members, and how engaged they feel.</li>
+      <li><strong>Track change over time.</strong> Revisit the measures across waves to see whether the coalition is maturing.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ INSIGHTS ============ -->
+<section>
+  <div class="wrap reveal">
+    <p class="kicker">What past research suggests</p>
+    <h2>Patterns worth watching for</h2>
+    <div class="two">
+      <div class="insight"><h3>Trust runs high; involvement runs low</h3><p>Past research found trust in the backbone to be among the highest-rated measures, while involvement in decision-making was the lowest — members tend to trust their backbone even when they aren't deeply involved.</p></div>
+      <div class="insight"><h3>Equity powers productivity</h3><p>In prior research, coalitions members saw as more equitable were also seen as more productive, and equity was tied to greater impact on both organizational capacity and systems change.</p></div>
+      <div class="insight"><h3>Legitimacy takes time</h3><p>Earlier research linked external legitimacy — respect from outside stakeholders — to stronger perceived impact, and found it tended to be higher in coalitions active for more than three years.</p></div>
+      <div class="insight"><h3>Motivation shapes expectations</h3><p>Members join for both practical ("functional") and transformative reasons; past research suggests balancing day-to-day value with long-term change shapes how members judge the coalition's impact.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<div class="final">
+  <div class="wrap">
+    <h2 style="border:0;">Ready to explore your coalition?</h2>
+    <p class="muted" style="max-width:560px;margin:0 auto 28px;">Everything above lives in the interactive dashboards — color-coded and broken down by domain.</p>
+    <a class="btn" href="index.html" id="cta-main">See the dashboards →</a>
+  </div>
+</div>
+
+<!-- Scroll-gated shortcut: unlocks after the visitor scrolls through the page -->
+<a class="float" id="cta-float" href="index.html"><span class="prog" id="cta-prog"></span><span id="cta-text">Keep scrolling…</span></a>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var floatBtn=document.getElementById('cta-float'),
+      prog=document.getElementById('cta-prog'),
+      txt=document.getElementById('cta-text'),
+      ready=false;
+  function onScroll(){
+    var doc=document.documentElement;
+    var max=(doc.scrollHeight-window.innerHeight);
+    var pct=max>0?Math.min(1,(window.scrollY)/max):1;
+    prog.style.setProperty('--p',(pct*100).toFixed(0)+'%');
+    if(!ready && pct>=0.9){
+      ready=true;
+      floatBtn.classList.add('ready');
+      prog.textContent='→';
+      txt.textContent='See the dashboards';
+    }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  onScroll();
+
+  // Fade sections in as they enter view.
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

@@ -28003,6 +28003,27 @@ const DASHBOARD_DATA = {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.45;
   }
+
+  /* Coalition chooser gate */
+  #gate {
+    position: fixed; inset: 0; z-index: 200; overflow-y: auto;
+    background: radial-gradient(1000px 600px at 70% -10%, rgba(47,196,106,.12), transparent 60%), var(--bg);
+    display: flex; align-items: center; justify-content: center; padding: 40px 20px;
+  }
+  #gate.hidden { display: none; }
+  .gate-card { width: 100%; max-width: 760px; }
+  .gate-card h1 { margin: 0 0 8px; font-size: 26px; }
+  .gate-sub { margin: 0 0 26px; color: var(--muted); font-size: 15px; max-width: 560px; }
+  .gate-group { margin-bottom: 24px; }
+  .gate-group h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 12px; font-weight: 700; }
+  .gate-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; }
+  .gate-btn {
+    text-align: left; background: var(--panel); color: var(--ink); border: 1px solid var(--line);
+    border-left: 4px solid var(--accent); border-radius: 10px; padding: 13px 15px; font-size: 14.5px;
+    font-weight: 600; cursor: pointer; transition: transform .1s ease, border-color .1s ease, background .1s ease;
+  }
+  .gate-btn:hover { transform: translateY(-2px); background: #18201a; border-left-color: var(--grand); }
+  .gate-btn .g-n { display: block; font-size: 11.5px; font-weight: 500; color: var(--muted); margin-top: 3px; }
   header {
     background: var(--panel); border-bottom: 1px solid var(--line);
     padding: 20px 28px;
@@ -28072,6 +28093,16 @@ const DASHBOARD_DATA = {
 </style>
 </head>
 <body>
+
+<!-- Coalition chooser gate: shown on entry so each visitor picks a coalition first. -->
+<div id="gate">
+  <div class="gate-card">
+    <h1>Choose a coalition</h1>
+    <p class="gate-sub">Select a coalition to open its dashboard. You can switch to any other coalition once you're inside.</p>
+    <div id="gate-groups"></div>
+  </div>
+</div>
+
 <header>
   <h1>MOVE Fund — Coalition Evaluation Dashboard</h1>
   <p id="meta-line"></p>
@@ -28079,10 +28110,8 @@ const DASHBOARD_DATA = {
 
 <div class="wrap">
   <div class="controls">
-    <div class="control">
-      <label for="sel-timepoint">Time point</label>
-      <select id="sel-timepoint"></select>
-    </div>
+    <!-- Time point kept in the DOM (hidden) and driven by the coalition; all data is one set for now. -->
+    <select id="sel-timepoint" style="display:none;"></select>
     <div class="control">
       <label for="sel-coalition">Coalition</label>
       <select id="sel-coalition"></select>
@@ -28128,12 +28157,12 @@ const DASHBOARD_DATA = {
     <div class="slot" id="slot-home-program"></div>
     <div class="card">
       <h2>Domain scores</h2>
-      <p class="sub">This coalition's average score (1–5) in each area of coalition functioning.</p>
+      <p class="sub">This coalition's average score in each area of coalition functioning. All scores run <strong>1 (lowest) to 5 (highest)</strong> — higher is always more favorable. Most scales: 1 = Strongly disagree, 5 = Strongly agree.</p>
       <div class="chart-box"><canvas id="chart-domainsum"></canvas></div>
     </div>
     <div class="grid2">
-      <div class="card"><h2>Top 5 highest-rated scales</h2><p class="sub">Bars colored by domain (see Domain scores); <span style="color:#b9c4b9;">grey</span> = CSEq Average</p><div class="chart-box" style="height:260px"><canvas id="chart-top5"></canvas></div></div>
-      <div class="card"><h2>5 lowest-rated scales</h2><p class="sub">Bars colored by domain (see Domain scores); <span style="color:#b9c4b9;">grey</span> = CSEq Average</p><div class="chart-box" style="height:260px"><canvas id="chart-bottom5"></canvas></div></div>
+      <div class="card"><h2>Top 5 highest-rated scales</h2><p class="sub">Scores 1–5 (higher = stronger). Bars colored by domain (see Domain scores); <span style="color:#b9c4b9;">grey</span> = CSEq Average</p><div class="chart-box" style="height:260px"><canvas id="chart-top5"></canvas></div></div>
+      <div class="card"><h2>5 lowest-rated scales</h2><p class="sub">Scores 1–5 (higher = stronger). Bars colored by domain (see Domain scores); <span style="color:#b9c4b9;">grey</span> = CSEq Average</p><div class="chart-box" style="height:260px"><canvas id="chart-bottom5"></canvas></div></div>
     </div>
     <div class="slot" id="slot-home-extra"></div>
   </section>
@@ -28162,6 +28191,7 @@ const DASHBOARD_DATA = {
     <div class="section-title" id="domain-title"></div>
     <p class="sub" id="domain-scope" style="margin:-6px 0 14px;"></p>
     <div class="card">
+      <p class="sub" id="domain-scale" style="margin:0 0 10px;"></p>
       <p class="sub" id="domain-legend"></p>
       <div class="chart-box" id="domain-box"><canvas id="chart-domain"></canvas></div>
     </div>
@@ -28185,6 +28215,16 @@ const CSEQ_COLOR = 'rgba(255,255,255,0.28)';  // neutral grey = CSEq Average ref
 const DOMAIN_OF = {};
 D.domains.forEach(d => d.constructs.forEach(ck => { DOMAIN_OF[ck] = d.key; }));
 
+// What the 1–5 numbers mean, per scale type, so viewers can read the scores.
+const SCALE_ANCHOR = {
+  agreement:  '1 = Strongly disagree, 5 = Strongly agree',
+  frequency:  '1 = Not at all, 5 = A great deal',
+  positivity: '1 = Extremely negative, 5 = Extremely positive',
+};
+const SCALE_LABEL = { agreement: 'Agreement', frequency: 'Frequency', positivity: 'Impact' };
+const CONSTRUCT_SCALE = {};
+D.constructs.forEach(c => { CONSTRUCT_SCALE[c.key] = c.scale; });
+
 // ---- populate controls ----
 const selPage = document.getElementById('sel-page');
 const selCo = document.getElementById('sel-coalition');
@@ -28200,22 +28240,32 @@ PAGES.forEach(p => selPage.add(new Option(p.name, p.key)));
 const TP_LABEL = { T0: 'CSEq Baseline', T1: 'MOVE Fund Baseline' };
 D.timepoints.forEach(tp => selT.add(new Option(TP_LABEL[tp] || tp, tp)));
 
-// The coalition dropdown lists only coalitions that have data at the selected time point.
-function coalitionsAt(tp) { return D.coalitions.filter(co => D.cells[`${co}||${tp}`]); }
-function populateCoalitions(tp) {
+// Coalitions hidden from view (data stays in the background so they still feed the CSEq
+// Average and significance comparisons — they just aren't individually browsable).
+const HIDDEN = new Set([
+  'Baltimore Youth Sports Collaborative', 'LA 84 Play Equity Fund', 'OKC Youth Sport Coalition',
+  'Positive Coaching Alliance - Oakland', 'Project Play WNY', 'SE Michigan', 'Sport for Good New York',
+]);
+const VIEWABLE = D.coalitions.filter(co => !HIDDEN.has(co));
+// Each coalition belongs to one time point; the picker/dropdown drive it implicitly.
+const CO_TP = {};
+Object.keys(D.cells).forEach(k => { const [co, tp] = k.split('||'); CO_TP[co] = tp; });
+
+// The coalition dropdown lists every viewable coalition (time point is set from the choice).
+function populateCoalitions() {
   const prev = selCo.value;
-  const list = coalitionsAt(tp);
   selCo.innerHTML = '';
-  list.forEach(co => selCo.add(new Option(co, co)));
-  selCo.value = list.includes(prev) ? prev : (list[0] || '');
+  VIEWABLE.forEach(co => selCo.add(new Option(co, co)));
+  if (VIEWABLE.includes(prev)) selCo.value = prev;
 }
-populateCoalitions(selT.value);
+populateCoalitions();
 
 document.getElementById('meta-line').textContent =
-  `${D.coalitions.length} coalition(s) · ${D.timepoints.length} time point(s) · ${D.constructs.length} scales · scale 1–${D.scaleMax}`;
+  `${VIEWABLE.length} coalitions · ${D.constructs.length} scales · scale 1–${D.scaleMax}`;
 
-selT.addEventListener('change', () => { populateCoalitions(selT.value); render(); });
-[selPage, selCo].forEach(s => s.addEventListener('change', render));
+// Selecting a coalition sets its (hidden) time point, then renders.
+selCo.addEventListener('change', () => { selT.value = CO_TP[selCo.value]; render(); });
+selPage.addEventListener('change', render);
 document.getElementById('net-showall').addEventListener('change',
   () => renderNetwork(selCo.value, selT.value));
 
@@ -28288,7 +28338,7 @@ function render() {
 
 // ---------- Coalition home ----------
 function renderHome(co, tp) {
-  document.getElementById('home-scope').textContent = `${co} — ${tp}`;
+  document.getElementById('home-scope').textContent = `${co}`;
   const cc = cell(co, tp) || {};
 
   // Domain scores — this coalition only.
@@ -28346,7 +28396,11 @@ function renderDomain(dkey, co, tp) {
   const dom = domainByKey(dkey);
   const col = DOMAIN_COLOR[dkey] || c('--accent');
   document.getElementById('domain-title').textContent = dom.name;
-  document.getElementById('domain-scope').textContent = `${co} — ${tp} · item scores (1–${D.scaleMax})`;
+  document.getElementById('domain-scope').textContent = `${co} · item scores (1–${D.scaleMax})`;
+  // Scale key: list the anchors for each scale type used by this domain's constructs.
+  const scalesHere = [...new Set(dom.constructs.map(ck => CONSTRUCT_SCALE[ck]).filter(Boolean))];
+  document.getElementById('domain-scale').innerHTML = 'How to read the scores — '
+    + scalesHere.map(s => `<strong>${SCALE_LABEL[s] || s}:</strong> ${SCALE_ANCHOR[s] || ''}`).join(' &nbsp;·&nbsp; ');
   const swatch = (bg, border) => `<span class="dot" style="background:${bg};${border ? 'outline:2px solid #fff;outline-offset:-1px;' : ''}display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:middle;"></span>`;
   document.getElementById('domain-legend').innerHTML =
     swatch(col, true) + `significantly different from the CSEq Average (p&lt;0.05) &nbsp;&nbsp;`
@@ -28436,7 +28490,7 @@ function meanChart(id, items) {
 
 function renderProfile(co, tp) {
   const p = D.profiles[`${co}||${tp}`];
-  document.getElementById('profile-scope').textContent = p ? `${co} — ${tp} · N = ${p.n} respondents` : '';
+  document.getElementById('profile-scope').textContent = p ? `${co} · N = ${p.n} respondents` : '';
   if (!p) return;
   pctChart('sector', p.sector.items, false);
   pctChart('duration', p.duration ? p.duration.items : [], false);
@@ -28637,7 +28691,35 @@ function renderRawTables(co, tp) {
 
 function escapeHtml(s) { return String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch])); }
 
-render();
+// ---- Coalition chooser gate (shown on entry) ----
+function enterDashboard(co) {
+  selT.value = CO_TP[co];
+  populateCoalitions();
+  selCo.value = co;
+  selPage.value = 'home';
+  document.getElementById('gate').classList.add('hidden');
+  render();
+}
+
+(function buildGate() {
+  const host = document.getElementById('gate-groups');
+  const grid = document.createElement('div'); grid.className = 'gate-grid';
+  VIEWABLE.slice().sort().forEach(co => {
+    const n = (D.profiles[`${co}||${CO_TP[co]}`] || {}).n;
+    const b = document.createElement('button'); b.className = 'gate-btn';
+    b.innerHTML = `${co}<span class="g-n">${n ? ('n = ' + n + ' members') : ''}</span>`;
+    b.addEventListener('click', () => enterDashboard(co));
+    grid.appendChild(b);
+  });
+  host.appendChild(grid);
+})();
+
+// Optional deep link: index.html?coalition=Salem opens straight to that coalition (viewable only).
+(function initEntry() {
+  const wanted = new URLSearchParams(location.search).get('coalition');
+  if (wanted && VIEWABLE.includes(wanted)) { enterDashboard(wanted); }
+  // else: leave the gate visible until the visitor chooses.
+})();
 </script>
 </body>
 </html>
