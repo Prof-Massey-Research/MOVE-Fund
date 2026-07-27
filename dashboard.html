@@ -9,18 +9,18 @@
 <script src="dashboard_data.js"></script>
 <style>
   :root {
-    --bg: #0a0c0a;          /* near-black */
-    --panel: #141a14;       /* dark panel */
-    --ink: #e7f2e7;         /* light text */
-    --muted: #8aa28a;       /* muted green-gray */
-    --line: #28342a;        /* dark border */
-    --accent: #2fc46a;      /* green - selected coalition / primary */
-    --accent-soft: #1f6b3c; /* dark green - other coalitions */
-    --grand: #8a5cf0;       /* dark purple - third color / reference line */
-    --t1: #2fc46a;          /* green - coaches worked */
-    --t2: #8a5cf0;          /* dark purple - coaches trained */
-    --grid: rgba(255,255,255,0.07);
-    --axis: rgba(255,255,255,0.18);
+    --bg: #0b0f0c;          /* near-black */
+    --panel: #17201a;       /* dark panel (lighter for separation) */
+    --ink: #f2f8f2;         /* near-white primary text (high contrast) */
+    --muted: #b9cbb9;       /* lighter secondary text (was too dim) */
+    --line: #33423a;        /* border */
+    --accent: #45d47f;      /* brighter green */
+    --accent-soft: #2f8f54; /* dark green */
+    --grand: #a487f5;       /* lighter purple */
+    --t1: #45d47f;          /* green - coaches worked */
+    --t2: #a487f5;          /* purple - coaches trained */
+    --grid: rgba(255,255,255,0.10);
+    --axis: rgba(255,255,255,0.28);
   }
   * { box-sizing: border-box; }
   body {
@@ -267,6 +267,7 @@ const PAGES = [
 PAGES.forEach(p => selPage.add(new Option(p.name, p.key)));
 const TP_LABEL = { T0: 'CSEq Baseline', T1: 'MOVE Fund Baseline' };
 D.timepoints.forEach(tp => selT.add(new Option(TP_LABEL[tp] || tp, tp)));
+selT.add(new Option('ALL', 'ALL'));   // holder for the "All coalitions combined" aggregate cell
 
 // Coalitions hidden from view (data stays in the background so they still feed the CSEq
 // Average and significance comparisons — they just aren't individually browsable).
@@ -276,22 +277,27 @@ const HIDDEN = new Set([
 ]);
 const VIEWABLE = D.coalitions.filter(co => !HIDDEN.has(co));
 // Each coalition belongs to one time point; the picker/dropdown drive it implicitly.
+// (CO_TP['__ALL__'] = 'ALL' comes for free from the aggregate cell key.)
 const CO_TP = {};
 Object.keys(D.cells).forEach(k => { const [co, tp] = k.split('||'); CO_TP[co] = tp; });
 
-// The coalition dropdown lists every viewable coalition (time point is set from the choice).
-function populateCoalitions() {
-  const prev = selCo.value;
+const ALL_KEY = '__ALL__';
+const ALL_LABEL = 'All coalitions combined';
+const displayName = co => (co === ALL_KEY ? ALL_LABEL : co);
+
+// The coalition dropdown offers only: this coalition, or the all-coalitions aggregate.
+// (No browsing to other individual coalitions.)
+function setCoalitionOptions(co) {
   selCo.innerHTML = '';
-  VIEWABLE.forEach(co => selCo.add(new Option(co, co)));
-  if (VIEWABLE.includes(prev)) selCo.value = prev;
+  selCo.add(new Option(co, co));
+  selCo.add(new Option(ALL_LABEL, ALL_KEY));
+  selCo.value = co;
 }
-populateCoalitions();
 
 document.getElementById('meta-line').textContent =
   `${VIEWABLE.length} coalitions · ${D.constructs.length} scales · scale 1–${D.scaleMax}`;
 
-// Selecting a coalition sets its (hidden) time point, then renders.
+// Selecting toggles between this coalition and the aggregate; both set the (hidden) time point.
 selCo.addEventListener('change', () => { selT.value = CO_TP[selCo.value]; render(); });
 selPage.addEventListener('change', render);
 document.getElementById('net-showall').addEventListener('change',
@@ -366,7 +372,7 @@ function render() {
 
 // ---------- Coalition home ----------
 function renderHome(co, tp) {
-  document.getElementById('home-scope').textContent = `${co}`;
+  document.getElementById('home-scope').textContent = displayName(co);
   const cc = cell(co, tp) || {};
 
   // Domain scores — this coalition only.
@@ -424,7 +430,7 @@ function renderDomain(dkey, co, tp) {
   const dom = domainByKey(dkey);
   const col = DOMAIN_COLOR[dkey] || c('--accent');
   document.getElementById('domain-title').textContent = dom.name;
-  document.getElementById('domain-scope').textContent = `${co} · item scores (1–${D.scaleMax})`;
+  document.getElementById('domain-scope').textContent = `${displayName(co)} · item scores (1–${D.scaleMax})`;
   // Scale key: list the anchors for each scale type used by this domain's constructs.
   const scalesHere = [...new Set(dom.constructs.map(ck => CONSTRUCT_SCALE[ck]).filter(Boolean))];
   document.getElementById('domain-scale').innerHTML = 'How to read the scores — '
@@ -518,7 +524,7 @@ function meanChart(id, items) {
 
 function renderProfile(co, tp) {
   const p = D.profiles[`${co}||${tp}`];
-  document.getElementById('profile-scope').textContent = p ? `${co} · N = ${p.n} respondents` : '';
+  document.getElementById('profile-scope').textContent = p ? `${displayName(co)} · N = ${p.n} respondents` : '';
   if (!p) return;
   pctChart('sector', p.sector.items, false);
   pctChart('duration', p.duration ? p.duration.items : [], false);
@@ -668,7 +674,7 @@ function renderProgram(co, tp) {
     if (!has(fkey)) return;
     charts[id] = new Chart(document.getElementById('chart-' + id), {
       type: 'bar',
-      data: { labels: [co], datasets: [{ data: [val(fkey)], backgroundColor: color || c('--accent'), borderRadius: 4, maxBarThickness: 90 }] },
+      data: { labels: [displayName(co)], datasets: [{ data: [val(fkey)], backgroundColor: color || c('--accent'), borderRadius: 4, maxBarThickness: 90 }] },
       options: { responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false } },
         scales: { y: { beginAtZero: true, title: { display: true, text: axisLabel } } } }
@@ -722,8 +728,7 @@ function escapeHtml(s) { return String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;'
 // ---- Coalition chooser gate (shown on entry) ----
 function enterDashboard(co) {
   selT.value = CO_TP[co];
-  populateCoalitions();
-  selCo.value = co;
+  setCoalitionOptions(co);
   selPage.value = 'home';
   document.getElementById('gate').classList.add('hidden');
   render();

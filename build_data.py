@@ -571,7 +571,7 @@ def cell(raw_row, i):
 def process_cell(coalition, timepoint, header, idx, qtext, rows, coded,
                  cells, program, question_text_map,
                  prof_n, prof_counts, prof_answered, engage, engage_labels, universe,
-                 all_item_cols, alias_map, network, zipyouth, item_stats, cseq_acc):
+                 all_item_cols, alias_map, network, zipyouth, item_stats, cseq_acc, agg):
     # ---- Construct scoring (numeric-aware; reverse-coding applied to both formats) ----
     out = {}
     item_vals_map = {}      # item -> list of reverse-coded values for this cell
@@ -598,13 +598,16 @@ def process_cell(coalition, timepoint, header, idx, qtext, rows, coded,
             "sd": round(stdev(resp_means), 3) if resp_means else None,
             "n": len(resp_means),
         }
+        agg["construct"].setdefault(c["key"], []).extend(resp_means)   # pool for "All coalitions"
     cells[(coalition, timepoint)] = out
 
-    # Per-item stats for this cell, and pool Time 0 values into the CSEq baseline.
+    # Per-item stats for this cell, pool Time 0 into CSEq baseline, and pool all into aggregate.
     istats = {}
     for it, vs in item_vals_map.items():
         istats[it] = {"mean": round(mean(vs), 3), "sd": round(stdev(vs), 3) if len(vs) > 1 else 0.0,
                       "var": variance(vs), "n": len(vs)}
+        ai = agg["item"].setdefault(it, {"n": 0, "sum": 0.0, "sumsq": 0.0})
+        ai["n"] += len(vs); ai["sum"] += sum(vs); ai["sumsq"] += sum(v * v for v in vs)
         if timepoint == "T0":
             acc = cseq_acc.setdefault(it, {"n": 0, "sum": 0.0, "sumsq": 0.0})
             acc["n"] += len(vs)
@@ -628,6 +631,7 @@ def process_cell(coalition, timepoint, header, idx, qtext, rows, coded,
                     parsed.append(val)
         agg_val = (round(sum(parsed), 2) if meta["agg"] == "sum" else round(mean(parsed), 2)) if parsed else None
         prog[fkey] = {"value": agg_val, "n": len(parsed), "raw": raws}
+        agg["program"].setdefault(fkey, []).extend(parsed)
     program[(coalition, timepoint)] = prog
 
     # ---- Respondent count N ----
@@ -638,6 +642,7 @@ def process_cell(coalition, timepoint, header, idx, qtext, rows, coded,
         ri = idx.get("Respondent")
         n_resp = sum(1 for row in rows if not is_blank(cell(row, ri)))
     prof_n[(coalition, timepoint)] = n_resp
+    agg["n"] += n_resp
 
     # ---- Profile distributions (format-aware) ----
     counts = {qk: {} for qk in PROFILE_QUESTIONS}
@@ -704,6 +709,10 @@ def process_cell(coalition, timepoint, header, idx, qtext, rows, coded,
                     add(qk, o)
     prof_counts[(coalition, timepoint)] = counts
     prof_answered[(coalition, timepoint)] = answered
+    for qk in PROFILE_QUESTIONS:
+        agg["answered"][qk] = agg["answered"].get(qk, 0) + answered[qk]
+        for label, cnt in counts[qk].items():
+            agg["profcount"][qk][label] = agg["profcount"][qk].get(label, 0) + cnt
 
     # ---- EngageFeedback matrix: mean degree (1-5) per item ----
     eng = {}
@@ -720,6 +729,8 @@ def process_cell(coalition, timepoint, header, idx, qtext, rows, coded,
         vals = [to_numeric(cell(row, i), "frequency") for row in rows]
         vals = [v for v in vals if v is not None]
         eng[label] = {"sum": sum(vals), "n": len(vals)}
+        ae = agg["eng"].setdefault(label, {"sum": 0.0, "n": 0})
+        ae["sum"] += sum(vals); ae["n"] += len(vals)
     engage[(coalition, timepoint)] = eng
 
     # ---- Social-connections network + coalition-specific extras ----
@@ -755,6 +766,10 @@ def main():
     zipyouth = {}                     # zipyouth[(co, tp)] = {items:[{label,value,n}]}
     item_stats = {}                   # item_stats[(co, tp)][item] = {mean, sd, var, n}
     cseq_acc = {}                     # cseq_acc[item] = {n, sum, sumsq}  (Time 0 pool)
+    # "All coalitions combined" aggregate pooled across EVERY coalition (incl. hidden ones).
+    agg = {"construct": {}, "item": {}, "program": {}, "eng": {}, "n": 0,
+           "profcount": {qk: {} for qk in PROFILE_QUESTIONS},
+           "answered": {qk: 0 for qk in PROFILE_QUESTIONS}}
     alias_map = load_aliases()
     codebook_text = load_codebook_text()
     items_meta = build_items(codebook_text)
@@ -801,10 +816,37 @@ def main():
                          cells, program, question_text_map,
                          prof_n, prof_counts, prof_answered,
                          engage, engage_labels, universe, all_item_cols,
-                         alias_map, network, zipyouth, item_stats, cseq_acc)
+                         alias_map, network, zipyouth, item_stats, cseq_acc, agg)
 
     timepoints = sorted(set(timepoints))      # T0, T1, T2 ...
     coalitions = sorted(set(coalitions))       # alphabetical for the dropdown
+
+    # ---- Synthesize the "All coalitions combined" aggregate cell (key __ALL__||ALL) ----
+    # Inserted into the same maps so it flows through the profile/item/domain builders below.
+    AK = ("__ALL__", "ALL")
+    cells[AK] = {c["key"]: {
+        "mean": round(mean(agg["construct"].get(c["key"], [])), 3) if agg["construct"].get(c["key"]) else None,
+        "sd": round(stdev(agg["construct"].get(c["key"], [])), 3) if agg["construct"].get(c["key"]) else None,
+        "n": len(agg["construct"].get(c["key"], [])),
+    } for c in CONSTRUCTS}
+    aistats = {}
+    for it, a in agg["item"].items():
+        n = a["n"]
+        if n:
+            m = a["sum"] / n
+            var = (a["sumsq"] - a["sum"] ** 2 / n) / (n - 1) if n > 1 else 0.0
+            aistats[it] = {"mean": round(m, 3), "sd": round(var ** 0.5, 3), "var": var, "n": n}
+    item_stats[AK] = aistats
+    prof_n[AK] = agg["n"]
+    prof_counts[AK] = agg["profcount"]
+    prof_answered[AK] = agg["answered"]
+    engage[AK] = agg["eng"]
+    aprog = {}
+    for fkey, meta in PROGRAM_FIELDS.items():
+        parsed = agg["program"].get(fkey, [])
+        aprog[fkey] = {"value": (round(sum(parsed), 2) if meta["agg"] == "sum" else round(mean(parsed), 2)) if parsed else None,
+                       "n": len(parsed), "raw": []}
+    program[AK] = aprog
 
     # ---- Build per-cell profile output (ordered items with percentages) ----
     def pct(count, n):

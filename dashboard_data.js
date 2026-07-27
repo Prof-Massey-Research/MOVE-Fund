@@ -2165,6 +2165,108 @@ const DASHBOARD_DATA = {
         "sd": 0.74,
         "n": 36
       }
+    },
+    "__ALL__||ALL": {
+      "TACT": {
+        "mean": 3.857,
+        "sd": 0.9,
+        "n": 470
+      },
+      "TRAN": {
+        "mean": 4.404,
+        "sd": 0.698,
+        "n": 470
+      },
+      "GC": {
+        "mean": 4.074,
+        "sd": 0.825,
+        "n": 468
+      },
+      "COM": {
+        "mean": 4.176,
+        "sd": 0.773,
+        "n": 467
+      },
+      "COH": {
+        "mean": 4.324,
+        "sd": 0.703,
+        "n": 467
+      },
+      "TF": {
+        "mean": 4.095,
+        "sd": 0.698,
+        "n": 468
+      },
+      "DM": {
+        "mean": 2.645,
+        "sd": 1.224,
+        "n": 465
+      },
+      "LEAD": {
+        "mean": 4.554,
+        "sd": 0.547,
+        "n": 329
+      },
+      "STAFF": {
+        "mean": 4.709,
+        "sd": 0.496,
+        "n": 322
+      },
+      "TRUST": {
+        "mean": 4.649,
+        "sd": 0.604,
+        "n": 465
+      },
+      "MemEng_Sat": {
+        "mean": 3.635,
+        "sd": 1.003,
+        "n": 462
+      },
+      "PROD": {
+        "mean": 3.991,
+        "sd": 0.995,
+        "n": 462
+      },
+      "LEGIT": {
+        "mean": 4.015,
+        "sd": 0.785,
+        "n": 458
+      },
+      "AGENDA": {
+        "mean": 4.252,
+        "sd": 0.697,
+        "n": 322
+      },
+      "MA": {
+        "mean": 4.001,
+        "sd": 0.724,
+        "n": 322
+      },
+      "SM": {
+        "mean": 4.398,
+        "sd": 0.725,
+        "n": 119
+      },
+      "EQUITY": {
+        "mean": 3.812,
+        "sd": 0.871,
+        "n": 460
+      },
+      "OC": {
+        "mean": 3.836,
+        "sd": 0.693,
+        "n": 462
+      },
+      "SC": {
+        "mean": 4.048,
+        "sd": 0.735,
+        "n": 460
+      },
+      "O": {
+        "mean": 4.377,
+        "sd": 0.72,
+        "n": 462
+      }
     }
   },
   "grandMeans": {
@@ -3338,6 +3440,33 @@ const DASHBOARD_DATA = {
       "coaches_trained": {
         "value": null,
         "n": 0,
+        "raw": []
+      }
+    },
+    "__ALL__||ALL": {
+      "youth_served": {
+        "value": 59462.0,
+        "n": 10,
+        "raw": []
+      },
+      "pct_aid": {
+        "value": 29.33,
+        "n": 9,
+        "raw": []
+      },
+      "aid_dollars": {
+        "value": 539265.0,
+        "n": 7,
+        "raw": []
+      },
+      "coaches_worked": {
+        "value": 5729.5,
+        "n": 47,
+        "raw": []
+      },
+      "coaches_trained": {
+        "value": 5868.0,
+        "n": 45,
         "raw": []
       }
     }
@@ -7929,6 +8058,293 @@ const DASHBOARD_DATA = {
             "label": "More varied and interesting content",
             "mean": null,
             "n": 0
+          }
+        ]
+      }
+    },
+    "__ALL__||ALL": {
+      "n": 477,
+      "sector": {
+        "answered": 470,
+        "items": [
+          {
+            "label": "Nonprofit or not-for-profit organization",
+            "count": 402,
+            "pct": 84.3
+          },
+          {
+            "label": "Public organization or agency",
+            "count": 27,
+            "pct": 5.7
+          },
+          {
+            "label": "For-profit organization",
+            "count": 20,
+            "pct": 4.2
+          },
+          {
+            "label": "Other",
+            "count": 18,
+            "pct": 3.8
+          },
+          {
+            "label": "Informal organization or association",
+            "count": 3,
+            "pct": 0.6
+          }
+        ]
+      },
+      "field": {
+        "answered": 475,
+        "items": [
+          {
+            "label": "Youth development",
+            "count": 376,
+            "pct": 78.8
+          },
+          {
+            "label": "Sports",
+            "count": 354,
+            "pct": 74.2
+          },
+          {
+            "label": "Education",
+            "count": 186,
+            "pct": 39.0
+          },
+          {
+            "label": "Outdoor recreation",
+            "count": 164,
+            "pct": 34.4
+          },
+          {
+            "label": "Community-based organization",
+            "count": 143,
+            "pct": 30.0
+          },
+          {
+            "label": "Parks, recreation, and leisure services",
+            "count": 108,
+            "pct": 22.6
+          },
+          {
+            "label": "Social/human services",
+            "count": 82,
+            "pct": 17.2
+          },
+          {
+            "label": "Public health or healthcare",
+            "count": 58,
+            "pct": 12.2
+          },
+          {
+            "label": "Other",
+            "count": 33,
+            "pct": 6.9
+          },
+          {
+            "label": "Criminal justice/safety",
+            "count": 24,
+            "pct": 5.0
+          },
+          {
+            "label": "Community or civic engagement",
+            "count": 18,
+            "pct": 3.8
+          },
+          {
+            "label": "Business",
+            "count": 13,
+            "pct": 2.7
+          },
+          {
+            "label": "Faith",
+            "count": 11,
+            "pct": 2.3
+          },
+          {
+            "label": "Research",
+            "count": 9,
+            "pct": 1.9
+          },
+          {
+            "label": "Politics",
+            "count": 1,
+            "pct": 0.2
+          }
+        ]
+      },
+      "engagement": {
+        "answered": 472,
+        "items": [
+          {
+            "label": "None at all",
+            "count": 2,
+            "pct": 0.4
+          },
+          {
+            "label": "A little",
+            "count": 107,
+            "pct": 22.4
+          },
+          {
+            "label": "A moderate amount",
+            "count": 187,
+            "pct": 39.2
+          },
+          {
+            "label": "A lot",
+            "count": 103,
+            "pct": 21.6
+          },
+          {
+            "label": "A great deal",
+            "count": 73,
+            "pct": 15.3
+          }
+        ]
+      },
+      "duration": {
+        "answered": 423,
+        "items": [
+          {
+            "label": "Less than 1 year",
+            "count": 38,
+            "pct": 8.0
+          },
+          {
+            "label": "1-3 years",
+            "count": 189,
+            "pct": 39.6
+          },
+          {
+            "label": "4-6 years",
+            "count": 123,
+            "pct": 25.8
+          },
+          {
+            "label": "6-8 years",
+            "count": 33,
+            "pct": 6.9
+          },
+          {
+            "label": "More than 9 years",
+            "count": 40,
+            "pct": 8.4
+          }
+        ]
+      },
+      "age": {
+        "answered": 132,
+        "items": [
+          {
+            "label": "0-5",
+            "count": 40,
+            "pct": 8.4
+          },
+          {
+            "label": "6-12",
+            "count": 116,
+            "pct": 24.3
+          },
+          {
+            "label": "13-17",
+            "count": 119,
+            "pct": 24.9
+          },
+          {
+            "label": "18-24",
+            "count": 81,
+            "pct": 17.0
+          }
+        ]
+      },
+      "pops": {
+        "answered": 47,
+        "items": [
+          {
+            "label": "Girls",
+            "count": 34,
+            "pct": 7.1
+          },
+          {
+            "label": "Youth in poverty",
+            "count": 38,
+            "pct": 8.0
+          },
+          {
+            "label": "BIPOC Youth",
+            "count": 22,
+            "pct": 4.6
+          },
+          {
+            "label": "Immigrant and newcomer youth",
+            "count": 13,
+            "pct": 2.7
+          },
+          {
+            "label": "LGBTQIA+ youth",
+            "count": 12,
+            "pct": 2.5
+          },
+          {
+            "label": "Non-binary, gender non-conforming, and/or trans youth",
+            "count": 9,
+            "pct": 1.9
+          },
+          {
+            "label": "Youth involved in the criminal justice system",
+            "count": 2,
+            "pct": 0.4
+          },
+          {
+            "label": "Youth in foster care",
+            "count": 8,
+            "pct": 1.7
+          },
+          {
+            "label": "Youth with physical disabilities",
+            "count": 12,
+            "pct": 2.5
+          },
+          {
+            "label": "Youth with intellectual disabilities",
+            "count": 13,
+            "pct": 2.7
+          }
+        ]
+      },
+      "engageFeedback": {
+        "items": [
+          {
+            "label": "Increased stipend",
+            "mean": 3.45,
+            "n": 44
+          },
+          {
+            "label": "Strong facilittaion",
+            "mean": 3.5,
+            "n": 44
+          },
+          {
+            "label": "More networking and breakouts",
+            "mean": 2.98,
+            "n": 42
+          },
+          {
+            "label": "Clear agenda and goals",
+            "mean": 3.67,
+            "n": 43
+          },
+          {
+            "label": "In person meetings",
+            "mean": 2.98,
+            "n": 42
+          },
+          {
+            "label": "More varied and interesting content",
+            "mean": 2.98,
+            "n": 43
           }
         ]
       }
@@ -27516,6 +27932,449 @@ const DASHBOARD_DATA = {
         "sig": false,
         "dir": "lower"
       }
+    },
+    "__ALL__||ALL": {
+      "TACT_1": {
+        "mean": 3.804,
+        "n": 469,
+        "cseqMean": 3.777,
+        "sig": false,
+        "dir": "higher"
+      },
+      "TACT_2": {
+        "mean": 3.735,
+        "n": 468,
+        "cseqMean": 3.715,
+        "sig": false,
+        "dir": "higher"
+      },
+      "TACT_3": {
+        "mean": 4.026,
+        "n": 468,
+        "cseqMean": 4.031,
+        "sig": false,
+        "dir": "lower"
+      },
+      "TRAN_1": {
+        "mean": 4.548,
+        "n": 469,
+        "cseqMean": 4.571,
+        "sig": false,
+        "dir": "lower"
+      },
+      "TRAN_2": {
+        "mean": 4.415,
+        "n": 470,
+        "cseqMean": 4.442,
+        "sig": false,
+        "dir": "lower"
+      },
+      "TRAN_3": {
+        "mean": 4.244,
+        "n": 468,
+        "cseqMean": 4.27,
+        "sig": false,
+        "dir": "lower"
+      },
+      "GC_1": {
+        "mean": 4.214,
+        "n": 468,
+        "cseqMean": 4.22,
+        "sig": false,
+        "dir": "lower"
+      },
+      "GC_2": {
+        "mean": 4.039,
+        "n": 467,
+        "cseqMean": 4.045,
+        "sig": false,
+        "dir": "lower"
+      },
+      "GC_3": {
+        "mean": 3.968,
+        "n": 467,
+        "cseqMean": 3.986,
+        "sig": false,
+        "dir": "lower"
+      },
+      "COM_1": {
+        "mean": 4.229,
+        "n": 467,
+        "cseqMean": 4.242,
+        "sig": false,
+        "dir": "lower"
+      },
+      "COM_2": {
+        "mean": 4.244,
+        "n": 467,
+        "cseqMean": 4.238,
+        "sig": false,
+        "dir": "higher"
+      },
+      "COM_3": {
+        "mean": 4.056,
+        "n": 467,
+        "cseqMean": 4.043,
+        "sig": false,
+        "dir": "higher"
+      },
+      "COH_1": {
+        "mean": 4.047,
+        "n": 467,
+        "cseqMean": 4.043,
+        "sig": false,
+        "dir": "higher"
+      },
+      "COH_2": {
+        "mean": 4.165,
+        "n": 467,
+        "cseqMean": 4.136,
+        "sig": false,
+        "dir": "higher"
+      },
+      "COH_3": {
+        "mean": 4.76,
+        "n": 467,
+        "cseqMean": 4.74,
+        "sig": false,
+        "dir": "higher"
+      },
+      "TF_1": {
+        "mean": 4.316,
+        "n": 468,
+        "cseqMean": 4.344,
+        "sig": false,
+        "dir": "lower"
+      },
+      "TF_2": {
+        "mean": 3.848,
+        "n": 467,
+        "cseqMean": 3.86,
+        "sig": false,
+        "dir": "lower"
+      },
+      "TF_3": {
+        "mean": 4.12,
+        "n": 467,
+        "cseqMean": 4.126,
+        "sig": false,
+        "dir": "lower"
+      },
+      "DM_1": {
+        "mean": 2.71,
+        "n": 465,
+        "cseqMean": 2.7,
+        "sig": false,
+        "dir": "higher"
+      },
+      "DM_2": {
+        "mean": 2.692,
+        "n": 465,
+        "cseqMean": 2.69,
+        "sig": false,
+        "dir": "higher"
+      },
+      "DM_3": {
+        "mean": 2.528,
+        "n": 464,
+        "cseqMean": 2.511,
+        "sig": false,
+        "dir": "higher"
+      },
+      "LEAD_1": {
+        "mean": 4.462,
+        "n": 329,
+        "cseqMean": 4.476,
+        "sig": false,
+        "dir": "lower"
+      },
+      "LEAD_2": {
+        "mean": 4.644,
+        "n": 326,
+        "cseqMean": 4.687,
+        "sig": false,
+        "dir": "lower"
+      },
+      "LEAD_3": {
+        "mean": 4.567,
+        "n": 328,
+        "cseqMean": 4.597,
+        "sig": false,
+        "dir": "lower"
+      },
+      "STAFF_1": {
+        "mean": 4.798,
+        "n": 322,
+        "cseqMean": 4.815,
+        "sig": false,
+        "dir": "lower"
+      },
+      "STAFF_2": {
+        "mean": 4.823,
+        "n": 322,
+        "cseqMean": 4.832,
+        "sig": false,
+        "dir": "lower"
+      },
+      "STAFF_3": {
+        "mean": 4.503,
+        "n": 320,
+        "cseqMean": 4.531,
+        "sig": false,
+        "dir": "lower"
+      },
+      "TRUST_1": {
+        "mean": 4.68,
+        "n": 465,
+        "cseqMean": 4.673,
+        "sig": false,
+        "dir": "higher"
+      },
+      "TRUST_2": {
+        "mean": 4.68,
+        "n": 465,
+        "cseqMean": 4.68,
+        "sig": false,
+        "dir": "lower"
+      },
+      "TRUST_3": {
+        "mean": 4.589,
+        "n": 465,
+        "cseqMean": 4.578,
+        "sig": false,
+        "dir": "higher"
+      },
+      "MemEng_Sat_1": {
+        "mean": 3.249,
+        "n": 462,
+        "cseqMean": 3.298,
+        "sig": false,
+        "dir": "lower"
+      },
+      "MemEng_Sat_2": {
+        "mean": 3.952,
+        "n": 462,
+        "cseqMean": 3.964,
+        "sig": false,
+        "dir": "lower"
+      },
+      "MemEng_Sat_3": {
+        "mean": 3.703,
+        "n": 462,
+        "cseqMean": 3.695,
+        "sig": false,
+        "dir": "higher"
+      },
+      "PROD_1": {
+        "mean": 3.963,
+        "n": 462,
+        "cseqMean": 3.964,
+        "sig": false,
+        "dir": "lower"
+      },
+      "PROD_2": {
+        "mean": 3.926,
+        "n": 461,
+        "cseqMean": 3.911,
+        "sig": false,
+        "dir": "higher"
+      },
+      "PROD_3": {
+        "mean": 4.08,
+        "n": 461,
+        "cseqMean": 4.06,
+        "sig": false,
+        "dir": "higher"
+      },
+      "LEGIT_1": {
+        "mean": 4.157,
+        "n": 458,
+        "cseqMean": 4.179,
+        "sig": false,
+        "dir": "lower"
+      },
+      "LEGIT_2": {
+        "mean": 4.107,
+        "n": 458,
+        "cseqMean": 4.102,
+        "sig": false,
+        "dir": "higher"
+      },
+      "LEGIT_3": {
+        "mean": 3.779,
+        "n": 458,
+        "cseqMean": 3.801,
+        "sig": false,
+        "dir": "lower"
+      },
+      "AGENDA_1": {
+        "mean": 4.22,
+        "n": 322,
+        "cseqMean": 4.254,
+        "sig": false,
+        "dir": "lower"
+      },
+      "AGENDA_2": {
+        "mean": 4.186,
+        "n": 322,
+        "cseqMean": 4.209,
+        "sig": false,
+        "dir": "lower"
+      },
+      "AGENDA_3": {
+        "mean": 4.348,
+        "n": 322,
+        "cseqMean": 4.366,
+        "sig": false,
+        "dir": "lower"
+      },
+      "MA_1": {
+        "mean": 4.309,
+        "n": 320,
+        "cseqMean": 4.317,
+        "sig": false,
+        "dir": "lower"
+      },
+      "MA_2": {
+        "mean": 4.031,
+        "n": 322,
+        "cseqMean": 4.042,
+        "sig": false,
+        "dir": "lower"
+      },
+      "MA_3": {
+        "mean": 3.645,
+        "n": 318,
+        "cseqMean": 3.648,
+        "sig": false,
+        "dir": "lower"
+      },
+      "SM_1": {
+        "mean": 4.546,
+        "n": 119,
+        "cseqMean": 4.556,
+        "sig": false,
+        "dir": "lower"
+      },
+      "SM_2": {
+        "mean": 4.339,
+        "n": 118,
+        "cseqMean": 4.374,
+        "sig": false,
+        "dir": "lower"
+      },
+      "SM_3": {
+        "mean": 4.303,
+        "n": 119,
+        "cseqMean": 4.324,
+        "sig": false,
+        "dir": "lower"
+      },
+      "EQUITY_1": {
+        "mean": 3.991,
+        "n": 460,
+        "cseqMean": 4.014,
+        "sig": false,
+        "dir": "lower"
+      },
+      "EQUITY_2": {
+        "mean": 3.809,
+        "n": 460,
+        "cseqMean": 3.824,
+        "sig": false,
+        "dir": "lower"
+      },
+      "EQUITY_3": {
+        "mean": 3.635,
+        "n": 460,
+        "cseqMean": 3.645,
+        "sig": false,
+        "dir": "lower"
+      },
+      "OC_I_1": {
+        "mean": 3.479,
+        "n": 461,
+        "cseqMean": 3.476,
+        "sig": false,
+        "dir": "higher"
+      },
+      "OC_G_2": {
+        "mean": 3.991,
+        "n": 461,
+        "cseqMean": 3.998,
+        "sig": false,
+        "dir": "lower"
+      },
+      "OC_O_3": {
+        "mean": 3.868,
+        "n": 461,
+        "cseqMean": 3.868,
+        "sig": false,
+        "dir": "lower"
+      },
+      "OC_C_4": {
+        "mean": 4.013,
+        "n": 460,
+        "cseqMean": 4.017,
+        "sig": false,
+        "dir": "lower"
+      },
+      "SC_1": {
+        "mean": 3.824,
+        "n": 460,
+        "cseqMean": 3.875,
+        "sig": false,
+        "dir": "lower"
+      },
+      "SC_2": {
+        "mean": 4.146,
+        "n": 460,
+        "cseqMean": 4.178,
+        "sig": false,
+        "dir": "lower"
+      },
+      "SC_3": {
+        "mean": 3.878,
+        "n": 460,
+        "cseqMean": 3.913,
+        "sig": false,
+        "dir": "lower"
+      },
+      "SC_4": {
+        "mean": 4.137,
+        "n": 459,
+        "cseqMean": 4.162,
+        "sig": false,
+        "dir": "lower"
+      },
+      "SC_5": {
+        "mean": 3.932,
+        "n": 458,
+        "cseqMean": 3.969,
+        "sig": false,
+        "dir": "lower"
+      },
+      "SC_6": {
+        "mean": 4.37,
+        "n": 459,
+        "cseqMean": 4.377,
+        "sig": false,
+        "dir": "lower"
+      },
+      "O_1": {
+        "mean": 4.325,
+        "n": 462,
+        "cseqMean": 4.356,
+        "sig": false,
+        "dir": "lower"
+      },
+      "O_2": {
+        "mean": 4.429,
+        "n": 462,
+        "cseqMean": 4.442,
+        "sig": false,
+        "dir": "lower"
+      }
     }
   },
   "cseqItems": {
@@ -27961,6 +28820,13 @@ const DASHBOARD_DATA = {
       "impact": 4.222,
       "outputs": 3.735,
       "outcomes": 4.09
+    },
+    "__ALL__||ALL": {
+      "processes": 3.939,
+      "backbone": 4.431,
+      "impact": 4.217,
+      "outputs": 3.88,
+      "outcomes": 4.087
     }
   },
   "cseqDomain": {
