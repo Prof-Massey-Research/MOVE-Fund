@@ -29012,7 +29012,7 @@ const DASHBOARD_DATA = {
         <span id="network-note"></span>
       </div>
     </div>
-    <div class="card">
+    <div class="card" id="raw-card">
       <h2>Program data — raw vs. parsed</h2>
       <p class="sub">The program fields are free text; values below were extracted automatically. Review approximated rows.</p>
       <div id="raw-tables"></div>
@@ -29506,7 +29506,10 @@ function showCard(cardId, visible) {
 // rather than showing an empty/zero bar.
 function renderProgram(co, tp) {
   const p = D.program[`${co}||${tp}`] || {};
-  const has = k => p[k] && p[k].value !== null && p[k].value !== 0;
+  // Program metrics aren't collected uniformly across surveys, so they're omitted from the
+  // "All coalitions combined" aggregate (financial aid, coaches, youth) — including the raw table.
+  const isAgg = (co === ALL_KEY);
+  const has = k => !isAgg && p[k] && p[k].value !== null && p[k].value !== 0;
   const val = k => (p[k] ? p[k].value : null);
 
   const oneBar = (id, fkey, axisLabel, color) => {
@@ -29546,6 +29549,9 @@ function renderProgram(co, tp) {
 }
 
 function renderRawTables(co, tp) {
+  // Hide the raw program-data table entirely on the aggregate (non-uniform across surveys).
+  document.getElementById('raw-card').style.display = (co === ALL_KEY) ? 'none' : '';
+  if (co === ALL_KEY) return;
   const p = D.program[`${co}||${tp}`];
   const host = document.getElementById('raw-tables');
   if (!p) { host.innerHTML = '<p class="empty">No program data for this selection.</p>'; return; }
