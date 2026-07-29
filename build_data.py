@@ -383,14 +383,22 @@ def build_items(codebook_text):
 
 
 def _read_raw_rows(path):
-    """Return the raw grid of cells for a .csv or .xlsx file."""
-    if path.lower().endswith((".xlsx", ".xlsm")):
+    """Return the raw grid of cells for a .csv / .xlsx / legacy .xls file."""
+    low = path.lower()
+    if low.endswith((".xlsx", ".xlsm")):
         if openpyxl is None:
             raise RuntimeError("openpyxl is required to read .xlsx files: pip3 install openpyxl")
         import warnings
         warnings.filterwarnings("ignore")               # "no default style" on non-Excel exports
         wb = openpyxl.load_workbook(path, data_only=True)   # full load: dims are reliable
         return list(wb.active.iter_rows(values_only=True))
+    if low.endswith(".xls"):                              # legacy Excel (OLE2) via xlrd
+        try:
+            import xlrd
+        except ImportError:
+            raise RuntimeError("xlrd is required to read legacy .xls files: pip3 install xlrd")
+        ws = xlrd.open_workbook(path).sheet_by_index(0)
+        return [[ws.cell_value(r, c) for c in range(ws.ncols)] for r in range(ws.nrows)]
     with open(path, newline="", encoding="utf-8-sig") as f:
         return list(csv.reader(f))
 

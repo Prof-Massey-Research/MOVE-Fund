@@ -51,11 +51,15 @@ raw-vs-parsed in the dashboard's "Program data" panel so you can audit them.
 
 ## Two file formats
 
-- **Qualtrics CSV** (one coalition per file): text answers, rows 2-3 are question text /
-  importId. Used by the Time 1 Salem & DC exports.
+- **Qualtrics export** (one coalition per file): text answers; the format is detected by
+  content, so `.csv`, `.xlsx`, or legacy `.xls` all work (an optional importId row is skipped
+  automatically). Used by the Time 1 coalition files.
 - **Pre-coded analysis XLSX** (many coalitions per file): a `Coalition` column labels each
   row, Likert answers are numeric 1-5, multi-selects are exploded binary columns. Used by
-  the Time 0 `CSEq Data` workbook. Reading `.xlsx` needs `openpyxl` (`pip3 install openpyxl`).
+  the Time 0 `CSEq Data` workbook.
+
+Reading Excel needs `openpyxl` (for `.xlsx`) and `xlrd` (for legacy `.xls`):
+`pip3 install openpyxl xlrd`.
 
 ## Notes
 
