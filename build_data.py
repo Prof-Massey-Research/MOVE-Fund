@@ -423,6 +423,53 @@ def read_file(path):
     return header, header, rows[1:], True
 
 
+# --------------------------------------------------------------------------------------
+# Auto-discovery: find survey files in data/Time N/ folders. No manifest editing needed.
+#   - Time point comes from the folder name ("Time 0" -> T0, "Time 1" -> T1, ...).
+#   - A Qualtrics file (one coalition) gets its coalition name from the filename.
+#   - A pre-coded workbook (many coalitions) is split by its Coalition column at read time.
+# Optional data/manifest.csv provides coalition-name overrides: rows of `file,coalition`
+# (path relative to data/). It is NOT required.
+# --------------------------------------------------------------------------------------
+TIME_RE = re.compile(r"time\s*0*(\d+)", re.I)
+COALITION_RE = re.compile(r"MOVE Fund Eval\s*-\s*(.+?)_", re.I)
+DATA_EXTS = (".csv", ".xls", ".xlsx", ".xlsm")
+
+
+def parse_coalition(fname):
+    """Coalition name from a Qualtrics filename, e.g. 'MOVE Fund Eval - Salem_July...' -> 'Salem'."""
+    base = os.path.basename(fname)
+    m = COALITION_RE.search(base)
+    if m:
+        return m.group(1).strip()
+    return os.path.splitext(base)[0].split("_")[0].strip()
+
+
+def discover_files():
+    """Return [{file, coalition, timepoint}] by scanning data/Time N/ subfolders."""
+    overrides = {}
+    if os.path.exists(MANIFEST):
+        with open(MANIFEST, newline="", encoding="utf-8-sig") as f:
+            for r in csv.DictReader(f):
+                fn = (r.get("file") or "").strip()
+                co = (r.get("coalition") or "").strip()
+                if fn and co:
+                    overrides[fn] = co
+    entries = []
+    for name in sorted(os.listdir(DATA_DIR)):
+        sub = os.path.join(DATA_DIR, name)
+        m = TIME_RE.search(name)
+        if not os.path.isdir(sub) or not m:
+            continue
+        tp = "T" + str(int(m.group(1)))
+        for fn in sorted(os.listdir(sub)):
+            if fn.startswith((".", "~$")) or not fn.lower().endswith(DATA_EXTS):
+                continue
+            rel = f"{name}/{fn}"
+            entries.append({"file": rel, "coalition": overrides.get(rel, ""), "timepoint": tp})
+    return entries
+
+
 # EngageFeedback matrix item labels (the xlsx has no question text; csv supplies these).
 ENGAGE_LABELS = [
     "Increased stipend", "Strong facilittaion", "More networking and breakouts",
@@ -754,8 +801,7 @@ def process_cell(coalition, timepoint, header, idx, qtext, rows, coded,
 # Main
 # --------------------------------------------------------------------------------------
 def main():
-    with open(MANIFEST, newline="", encoding="utf-8-sig") as f:
-        manifest = [r for r in csv.DictReader(f) if r.get("file", "").strip()]
+    manifest = discover_files()
 
     coalitions, timepoints = [], []
     # cells[(coalition, timepoint)] = {construct_key: {"mean", "sd", "n"}, ...}
@@ -801,10 +847,9 @@ def main():
         header, qtext, data, coded = read_file(path)
         idx = {h: i for i, h in enumerate(header)}
 
-        # Group rows into one cell per coalition (split a multi-coalition file by its column).
-        if man_coalition:
-            groups = [(man_coalition, data)]
-        else:
+        # Group rows into cells. A pre-coded workbook is split by its Coalition column; a
+        # Qualtrics file is one coalition (name from the manifest override or the filename).
+        if coded:
             ci = idx.get("Coalition")
             buckets = {}
             for row in data:
@@ -812,6 +857,8 @@ def main():
                 if co:
                     buckets.setdefault(co, []).append(row)
             groups = sorted(buckets.items())
+        else:
+            groups = [(man_coalition or parse_coalition(fname), data)]
 
         print(f"\n{fname}  [{timepoint}, {'coded' if coded else 'qualtrics'}]  "
               f"-> {len(groups)} coalition(s)")

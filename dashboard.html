@@ -6,6 +6,7 @@
 <title>MOVE Fund — Coalition Evaluation Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
 <script src="dashboard_data.js"></script>
 <style>
   :root {
@@ -285,7 +286,8 @@
     <div id="rp-list"></div>
     <div class="rp-actions">
       <button id="rp-cancel" type="button" class="rp-secondary">Cancel</button>
-      <button id="rp-go" type="button" class="report-btn">Generate PDF</button>
+      <button id="rp-ppt" type="button" class="rp-secondary">Download PowerPoint</button>
+      <button id="rp-go" type="button" class="report-btn">Download PDF</button>
     </div>
   </div>
 </div>
@@ -865,10 +867,17 @@ const gid = id => document.getElementById(id);
 gid('btn-report').addEventListener('click', () => gid('report-picker').classList.remove('hidden'));
 gid('rp-cancel').addEventListener('click', () => gid('report-picker').classList.add('hidden'));
 gid('rp-all').addEventListener('change', e => document.querySelectorAll('.rp-cb').forEach(cb => { cb.checked = e.target.checked; }));
+const chosenItems = () => {
+  const set = new Set([...document.querySelectorAll('.rp-cb:checked')].map(cb => cb.value));
+  return REPORT_ITEMS.filter(it => set.has(it.id));
+};
 gid('rp-go').addEventListener('click', () => {
-  const chosen = new Set([...document.querySelectorAll('.rp-cb:checked')].map(cb => cb.value));
-  gid('report-picker').classList.add('hidden');
-  if (chosen.size) generateReport(REPORT_ITEMS.filter(it => chosen.has(it.id)));
+  const items = chosenItems(); gid('report-picker').classList.add('hidden');
+  if (items.length) generateReport(items);
+});
+gid('rp-ppt').addEventListener('click', () => {
+  const items = chosenItems(); gid('report-picker').classList.add('hidden');
+  if (items.length) generatePPTX(items);
 });
 
 async function generateReport(items) {
@@ -905,6 +914,90 @@ async function generateReport(items) {
     selPage.value = savedPage; render();
   }
   window.print();
+}
+
+// ---- PowerPoint export: build NATIVE, editable bar charts (movable in PowerPoint). ----
+async function generatePPTX(items) {
+  if (typeof PptxGenJS === 'undefined') { alert('PowerPoint export library did not load (check your connection).'); return; }
+  const co = selCo.value, tp = CO_TP[co], key = `${co}||${tp}`;
+  const strip = h => (h || '#2fc46a').replace('#', '');
+  const pptx = new PptxGenJS();
+  pptx.layout = 'LAYOUT_WIDE';                 // 13.33 x 7.5 in
+  const BAR = pptx.ChartType.bar;
+
+  const title = pptx.addSlide();
+  title.background = { color: '0B0F0C' };
+  title.addText(displayName(co), { x: 0.7, y: 2.7, w: 12, h: 1, fontSize: 40, bold: true, color: 'FFFFFF' });
+  title.addText(`Coalition Evaluation Report · MOVE Fund · ${new Date().toLocaleDateString()}`,
+    { x: 0.7, y: 3.8, w: 12, h: 0.5, fontSize: 16, color: 'A9BDA9' });
+
+  const chartSlide = (heading, data, opts) => {
+    const s = pptx.addSlide();
+    s.addText(heading, { x: 0.5, y: 0.3, w: 12.3, h: 0.6, fontSize: 20, bold: true, color: '14231A' });
+    s.addChart(BAR, data, Object.assign(
+      { x: 0.5, y: 1.1, w: 12.3, h: 5.9, showLegend: false, showValue: false,
+        catAxisLabelFontSize: 9, valAxisLabelFontSize: 9 }, opts));
+  };
+  const scoreOpts = extra => Object.assign({ valAxisMinVal: 1, valAxisMaxVal: 5 }, extra);
+
+  for (const it of items) {
+    if (it.id === 'domainsum') {
+      const labels = D.domains.map(d => d.name);
+      const vals = D.domains.map(d => (D.domainScores[key] || {})[d.key]);
+      chartSlide('Domain scores', [{ name: 'Score', labels, values: vals }],
+        scoreOpts({ barDir: 'col', chartColorsOpacity: 100, chartColors: D.domains.map(d => strip(DOMAIN_COLOR[d.key])) }));
+    } else if (it.id === 'top5' || it.id === 'bottom5') {
+      const cc = D.cells[key] || {};
+      const scored = D.constructs.map(x => ({ name: x.name, v: cc[x.key] ? cc[x.key].mean : null, cseq: (D.grandMeans.T0 || {})[x.key] }))
+        .filter(x => x.v != null).sort((a, b) => b.v - a.v);
+      const rows = it.id === 'top5' ? scored.slice(0, 5) : scored.slice(-5).reverse();
+      if (rows.length) {
+        const labels = rows.map(r => r.name);
+        chartSlide(it.label, [
+          { name: displayName(co), labels, values: rows.map(r => r.v) },
+          { name: 'CSEq Average', labels, values: rows.map(r => r.cseq) },
+        ], scoreOpts({ barDir: 'bar', showLegend: true, legendPos: 'b', chartColors: ['2fc46a', '9aa79a'] }));
+      }
+    } else if (it.id.startsWith('dom-')) {
+      const dkey = it.id.slice(4), scores = D.itemScores[key] || {};
+      const its = D.items.filter(x => x.domain === dkey && scores[x.code]);
+      if (its.length) chartSlide(it.label,
+        [{ name: 'Score', labels: its.map(x => x.text), values: its.map(x => scores[x.code].mean) }],
+        scoreOpts({ barDir: 'bar', chartColors: [strip(DOMAIN_COLOR[dkey])] }));
+    } else if (it.id === 'demographics') {
+      const p = D.profiles[key];
+      if (p) {
+        const pct = (qk, heading) => {
+          const rows = (p[qk] && p[qk].items || []).filter(i => i.count > 0);
+          if (rows.length) chartSlide(heading, [{ name: '%', labels: rows.map(i => i.label), values: rows.map(i => i.pct) }],
+            { barDir: 'bar', valAxisMinVal: 0, valAxisMaxVal: 100, chartColors: ['2fc46a'] });
+        };
+        pct('sector', 'Organization sector'); pct('duration', 'Time as a coalition member');
+        pct('engagement', 'Overall engagement'); pct('age', 'Ages of youth served');
+        pct('field', 'Focus areas'); pct('pops', 'Populations intentionally served');
+        const ef = (p.engageFeedback && p.engageFeedback.items || []).filter(i => i.mean != null);
+        if (ef.length) chartSlide('What would help you engage more regularly?',
+          [{ name: 'Mean', labels: ef.map(i => i.label), values: ef.map(i => i.mean) }],
+          scoreOpts({ barDir: 'bar', chartColors: ['2fc46a'] }));
+      }
+    } else if (it.id === 'program' && co !== ALL_KEY) {
+      const pg = D.program[key] || {};
+      const val = k => (pg[k] && pg[k].value != null && pg[k].value !== 0) ? pg[k].value : null;
+      if (val('pct_aid') != null) chartSlide('Receiving financial aid (%)', [{ name: '%', labels: [displayName(co)], values: [val('pct_aid')] }], { barDir: 'col' });
+      if (val('aid_dollars') != null) chartSlide('Financial aid disbursed ($)', [{ name: '$', labels: [displayName(co)], values: [val('aid_dollars')] }], { barDir: 'col' });
+      const w = val('coaches_worked'), tr = val('coaches_trained');
+      if (w != null || tr != null) {
+        const labs = [], vs = [];
+        if (w != null) { labs.push('Worked'); vs.push(w); }
+        if (tr != null) { labs.push('Trained'); vs.push(tr); }
+        chartSlide('Coaches', [{ name: 'Coaches', labels: labs, values: vs }], { barDir: 'col' });
+      }
+      const zy = D.zipYouth && D.zipYouth[key];
+      if (zy && zy.items.length) chartSlide('Youth served by zip code',
+        [{ name: 'Youth', labels: zy.items.map(i => i.label), values: zy.items.map(i => i.value) }], { barDir: 'col' });
+    }
+  }
+  await pptx.writeFile({ fileName: `${displayName(co)} - MOVE Fund report.pptx` });
 }
 
 // Optional deep link: index.html?coalition=Salem opens straight to that coalition (viewable only).

@@ -33,18 +33,23 @@ together by the same member. Free-text org names are auto-normalized; maintain
 
 ## Adding data (new coalition or the second time point)
 
-1. Drop the export into the right `data/` subfolder (e.g. `data/Time 1/`).
-2. Add one row to `data/manifest.csv` — `file,coalition,timepoint`:
-   ```
-   file,coalition,timepoint
-   "Time 1/Your Export File.csv",CoalitionName,T1
-   ```
-   - **file**: path relative to `data/` (quote it if it contains commas).
-   - **coalition**: the coalition name — OR **leave blank** to split a multi-coalition file
-     by its own `Coalition` column (used for the Time 0 workbook).
-   - **timepoint**: `T0`, `T1`, `T2` …
-3. Run the build: `python3 build_data.py`
-4. Refresh the dashboard. Every view updates automatically — no HTML edits needed.
+Files are **auto-discovered** — no manifest to maintain.
+
+1. Drop the export into the right wave folder: `data/Time 1/` (or `data/Time 0/`, `data/Time 2/`…).
+   The folder name sets the time point.
+2. Run the build: `python3 build_data.py`
+3. Refresh the dashboard. Every view updates automatically — no HTML edits needed.
+
+How names are assigned:
+- A **Qualtrics file** (one coalition) takes its coalition name from the filename — e.g.
+  `MOVE Fund Eval - Salem_July 28, 2026.xlsx` → **Salem**. Re-exports with new dates/extensions
+  just work; nothing to update.
+- A **pre-coded workbook** (many coalitions) is split by its `Coalition` column automatically.
+- Only `Time N` subfolders are scanned, so the codebook and other files in `data/` are ignored.
+
+Optional override: if a filename doesn't parse to the right coalition, add a row to
+`data/manifest.csv` (`file,coalition`, path relative to `data/`) to force the name. It's
+otherwise unused.
 
 The build prints any program-impact values it had to approximate; each is also shown
 raw-vs-parsed in the dashboard's "Program data" panel so you can audit them.
