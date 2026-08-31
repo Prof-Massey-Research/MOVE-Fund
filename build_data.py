@@ -615,6 +615,120 @@ def extract_zip_youth(qtext, rows):
     return {"items": items} if items else None
 
 
+# --------------------------------------------------------------------------------------
+# Coalition-specific NEW questions (e.g. Chicago T1 added a batch beyond the core survey).
+# Columns are resolved by QUESTION TEXT (row 1) since some reuse core variable names.
+#   multi   -> select-all; % of respondents per option
+#   ordinal -> single categorical (banded); % per band in a given order
+#   rank    -> Q##_n columns holding a rank number; mean rank per item (1 = highest)
+#   matrix  -> a Likert grid (question text repeats with ' - <item>'); mean (1-5) per item
+#   likert  -> named single Likert items; mean (1-5) each
+#   verbatim-> open-ended; list the responses
+# --------------------------------------------------------------------------------------
+NEWQ_SPECS = [
+    {"kind": "multi", "title": "Most valuable benefits", "q": "which benefits have been most valuable"},
+    {"kind": "multi", "title": "Sectors most frequently collaborated with", "q": "which sectors do you most frequently collaborate"},
+    {"kind": "multi", "title": "Sectors members want help connecting with", "q": "which sectors would you most like help"},
+    {"kind": "multi", "title": "Priorities for the next three years", "q": "which areas should sport for good chicago prioritize"},
+    {"kind": "multi", "title": "Activities that impacted members", "q": "which activities over the past two years"},
+    {"kind": "multi", "title": "How members hear about the coalition", "q": "how do you typically hear"},
+    {"kind": "multi", "title": "Information members want more of", "q": "what type of information do you want more"},
+    {"kind": "rank", "title": "Greatest opportunity areas (mean rank; 1 = highest priority)", "prefix": "Q91_"},
+    {"kind": "rank", "title": "What makes organizing successful (mean rank; 1 = most important)", "prefix": "Q95_"},
+    {"kind": "matrix", "title": "Roles the coalition should play (mean agreement, 1–5)", "qstart": "what roles should", "scale": "agreement"},
+    {"kind": "likert", "title": "Additional scale items (mean, 1–5)", "cols": [
+        ("Decision-Making_4", "frequency", "The Leadership Council represents my organization"),
+        ("MemberEngage - Sat_4", "agreement", "Staff feel welcome at coalition events"),
+        ("Productivity_9", "agreement", "Satisfied with the resources available"),
+    ]},
+    {"kind": "ordinal", "title": "Organization size (FTE staff)", "q": "how many fte staff", "order": ["0-5", "6-12", "13-17", "18-24", "25+"]},
+    {"kind": "ordinal", "title": "Team members involved in the coalition", "q": "how many team members are involved", "order": ["0-5", "6-12", "13-17", "18-24", "25+"]},
+    {"kind": "ordinal", "title": "Youth served annually", "q": "approximately how many youth does your organization serve", "order": ["less than 50", "51-150", "150-500", "500+"]},
+    {"kind": "verbatim", "title": "Biggest unaddressed challenge (verbatim)", "q": "what challenge facing"},
+    {"kind": "verbatim", "title": "How the organization engages (verbatim)", "q": "how does your organization engage with the coalition"},
+    {"kind": "verbatim", "title": "Who in the organization engages (verbatim)", "q": "who in your organization engages"},
+]
+
+
+def _col_by_qtext(qtext, sub):
+    sub = sub.lower()
+    return next((i for i, qt in enumerate(qtext) if sub in str(qt).lower()), None)
+
+
+def extract_new_questions(header, qtext, rows):
+    """Return a list of visual-ready specs for any NEWQ questions present in this file."""
+    out = []
+    for spec in NEWQ_SPECS:
+        kind = spec["kind"]
+        if kind in ("multi", "ordinal", "verbatim"):
+            i = _col_by_qtext(qtext, spec["q"])
+            if i is None:
+                continue
+            answered = [row for row in rows if not is_blank(cell(row, i))]
+            n = len(answered)
+            if not n:
+                continue
+            if kind == "multi":
+                counts = {}
+                for row in answered:
+                    for o in (p.strip() for p in str(cell(row, i)).split(",") if p.strip()):
+                        counts[o] = counts.get(o, 0) + 1
+                items = sorted(({"label": k, "count": v, "pct": round(100.0 * v / n, 1)} for k, v in counts.items()),
+                               key=lambda x: -x["count"])
+                out.append({"kind": "multi", "title": spec["title"], "n": n, "items": items})
+            elif kind == "ordinal":
+                counts = {}
+                for row in answered:
+                    lab = str(cell(row, i)).strip()
+                    counts[lab] = counts.get(lab, 0) + 1
+                order = spec.get("order", [])
+                labels = [o for o in order if o in counts] + [o for o in counts if o not in order]
+                out.append({"kind": "ordinal", "title": spec["title"], "n": n,
+                            "items": [{"label": o, "count": counts[o], "pct": round(100.0 * counts[o] / n, 1)} for o in labels]})
+            else:  # verbatim
+                out.append({"kind": "verbatim", "title": spec["title"], "n": n,
+                            "responses": [str(cell(row, i)).strip() for row in answered][:250]})
+        elif kind == "rank":
+            items = []
+            for i, h in enumerate(header):
+                if not h.startswith(spec["prefix"]) or h.upper().endswith("_TEXT"):
+                    continue
+                nums = []
+                for row in rows:
+                    try:
+                        nums.append(float(cell(row, i)))
+                    except (ValueError, TypeError):
+                        pass
+                if nums:
+                    items.append({"label": str(qtext[i]).split(" - ")[-1].strip(),
+                                  "mean": round(sum(nums) / len(nums), 2), "n": len(nums)})
+            if items:
+                out.append({"kind": "rank", "title": spec["title"], "items": items})
+        elif kind == "matrix":
+            items = []
+            for i, qt in enumerate(qtext):
+                if str(qt).lower().startswith(spec["qstart"]):
+                    vals = [to_numeric(cell(row, i), spec["scale"]) for row in rows]
+                    vals = [v for v in vals if v is not None]
+                    if vals:
+                        items.append({"label": str(qt).split(" - ")[-1].strip(),
+                                      "mean": round(sum(vals) / len(vals), 2), "n": len(vals)})
+            if items:
+                out.append({"kind": "matrix", "title": spec["title"], "items": items})
+        elif kind == "likert":
+            items = []
+            for name, scale, lab in spec["cols"]:
+                if name in header:
+                    i = header.index(name)
+                    vals = [to_numeric(cell(row, i), scale) for row in rows]
+                    vals = [v for v in vals if v is not None]
+                    if vals:
+                        items.append({"label": lab, "mean": round(sum(vals) / len(vals), 2), "n": len(vals)})
+            if items:
+                out.append({"kind": "likert", "title": spec["title"], "items": items})
+    return out
+
+
 def cell(raw_row, i):
     """Safe indexed access into a csv list-row or xlsx tuple-row."""
     if i is None or i >= len(raw_row):
@@ -626,7 +740,7 @@ def cell(raw_row, i):
 def process_cell(coalition, timepoint, header, idx, qtext, rows, coded,
                  cells, program, question_text_map,
                  prof_n, prof_counts, prof_answered, engage, engage_labels, universe,
-                 all_item_cols, alias_map, network, zipyouth, item_stats, cseq_acc, agg):
+                 all_item_cols, alias_map, network, zipyouth, item_stats, cseq_acc, agg, newq):
     # ---- Construct scoring (numeric-aware; reverse-coding applied to both formats) ----
     out = {}
     item_vals_map = {}      # item -> list of reverse-coded values for this cell
@@ -770,6 +884,8 @@ def process_cell(coalition, timepoint, header, idx, qtext, rows, coded,
             agg["profcount"][qk][label] = agg["profcount"][qk].get(label, 0) + cnt
 
     # ---- EngageFeedback matrix: mean degree (1-5) per item ----
+    # Some surveys (e.g. Chicago T1) REUSE the EngageFeedback_* column names for a different
+    # question (roles). Only treat these as engagement-feedback when the question text matches.
     eng = {}
     for n, item in enumerate(ENGAGE_ITEMS):
         if item not in idx:
@@ -778,7 +894,10 @@ def process_cell(coalition, timepoint, header, idx, qtext, rows, coded,
         if coded:
             label = ENGAGE_LABELS[n] if n < len(ENGAGE_LABELS) else item
         else:
-            label = engage_label(qtext[i] if i < len(qtext) else item)
+            qt = qtext[i] if i < len(qtext) else ""
+            if "engage more regularly" not in qt.lower():
+                continue                       # not the engagement-feedback question here
+            label = engage_label(qt)
         if label not in engage_labels:
             engage_labels.append(label)
         vals = [to_numeric(cell(row, i), "frequency") for row in rows]
@@ -795,6 +914,9 @@ def process_cell(coalition, timepoint, header, idx, qtext, rows, coded,
     zy = extract_zip_youth(qtext, rows)
     if zy:
         zipyouth[(coalition, timepoint)] = zy
+    nq = extract_new_questions(header, qtext, rows)
+    if nq:
+        newq[(coalition, timepoint)] = nq
 
 
 # --------------------------------------------------------------------------------------
@@ -820,6 +942,7 @@ def main():
     zipyouth = {}                     # zipyouth[(co, tp)] = {items:[{label,value,n}]}
     item_stats = {}                   # item_stats[(co, tp)][item] = {mean, sd, var, n}
     cseq_acc = {}                     # cseq_acc[item] = {n, sum, sumsq}  (Time 0 pool)
+    newq = {}                         # newq[(co, tp)] = [ new-question visual specs ]
     # "All coalitions combined" aggregate pooled across EVERY coalition (incl. hidden ones).
     agg = {"construct": {}, "item": {}, "program": {}, "eng": {}, "n": 0,
            "profcount": {qk: {} for qk in PROFILE_QUESTIONS},
@@ -871,7 +994,7 @@ def main():
                          cells, program, question_text_map,
                          prof_n, prof_counts, prof_answered,
                          engage, engage_labels, universe, all_item_cols,
-                         alias_map, network, zipyouth, item_stats, cseq_acc, agg)
+                         alias_map, network, zipyouth, item_stats, cseq_acc, agg, newq)
 
     timepoints = sorted(set(timepoints))      # T0, T1, T2 ...
     coalitions = sorted(set(coalitions))       # alphabetical for the dropdown
@@ -980,6 +1103,43 @@ def main():
                               if grand.get("T0") else None)
                    for d in DOMAINS}
 
+    # ---- Time comparisons: coalitions present at 2+ timepoints (earliest vs latest) ----
+    co_tps = {}
+    for (co, tp) in cells:
+        if co != "__ALL__":
+            co_tps.setdefault(co, set()).add(tp)
+    coalition_timepoints = {co: sorted(tps) for co, tps in co_tps.items()}
+    comparisons = {}
+    for co, tps in coalition_timepoints.items():
+        if len(tps) < 2:
+            continue
+        a, b = tps[0], tps[-1]                       # earliest -> latest
+        def compare(m1, v1, n1, m2, v2, n2):
+            p = welch_p(m1, v1, n1, m2, v2, n2)
+            return {"t0": {"mean": m1, "n": n1}, "t1": {"mean": m2, "n": n2},
+                    "delta": round(m2 - m1, 3), "p": round(p, 4), "sig": p < 0.05,
+                    "dir": "up" if m2 > m1 else ("down" if m2 < m1 else "same")}
+        cmp_con = {}
+        for c in CONSTRUCTS:
+            ca, cb = cells.get((co, a), {}).get(c["key"]), cells.get((co, b), {}).get(c["key"])
+            if ca and cb and ca["mean"] is not None and cb["mean"] is not None:
+                cmp_con[c["key"]] = compare(ca["mean"], (ca["sd"] or 0) ** 2, ca["n"],
+                                            cb["mean"], (cb["sd"] or 0) ** 2, cb["n"])
+        cmp_dom = {}
+        for d in DOMAINS:
+            va, vb = domain_scores.get((co, a), {}).get(d["key"]), domain_scores.get((co, b), {}).get(d["key"])
+            if va is not None and vb is not None:
+                cmp_dom[d["key"]] = {"t0": va, "t1": vb, "delta": round(vb - va, 3)}
+        cmp_items = {}
+        ia, ib = item_stats.get((co, a), {}), item_stats.get((co, b), {})
+        for it in items_meta:
+            sa, sb = ia.get(it["code"]), ib.get(it["code"])
+            if sa and sb:
+                rec = compare(sa["mean"], sa["var"], sa["n"], sb["mean"], sb["var"], sb["n"])
+                rec.update({"text": it["text"], "domain": it["domain"], "construct": it["construct"]})
+                cmp_items[it["code"]] = rec
+        comparisons[co] = {"waves": [a, b], "constructs": cmp_con, "domains": cmp_dom, "items": cmp_items}
+
     # ---- Serialize ----
     out = {
         "generatedFrom": [e["file"] for e in manifest],
@@ -1007,6 +1167,9 @@ def main():
         "cseqItems": cseq_item,
         "domainScores": {f"{co}||{tp}": domain_scores[(co, tp)] for (co, tp) in domain_scores},
         "cseqDomain": cseq_domain,
+        "coalitionTimepoints": coalition_timepoints,
+        "comparisons": comparisons,
+        "newQuestions": {f"{co}||{tp}": newq[(co, tp)] for (co, tp) in newq},
     }
 
     data_js = "// Auto-generated by build_data.py - do not edit by hand.\nconst DASHBOARD_DATA = " \

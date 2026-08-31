@@ -12,6 +12,20 @@ An interactive dashboard for the MOVE Fund coalition evaluation. Pick a **coalit
 
 Every card only appears when that coalition actually collected the question.
 
+### Multi-wave coalitions (e.g. Chicago pilot)
+A coalition surveyed at two time points gets two extra View options (auto-detected):
+- **Change over time** — domain and scale scores at the earlier vs. latest wave, with
+  statistically significant changes flagged (Welch two-sample t-test, p<0.05; ▲ increase /
+  ▼ decrease), plus a significant-changes table down to the item level.
+- **New questions** — visuals for questions a coalition added beyond the core survey
+  (multi-selects as %, rankings as mean rank, Likert matrices/items as mean 1–5, ordinal
+  bins, and verbatim lists for open-ended text). Configured in `NEWQ_SPECS` in `build_data.py`
+  (matched by question text, so it tolerates reused/blank Qualtrics variable names).
+
+To link a coalition's waves, its files must share one coalition name. If a re-export parses
+to a different name (e.g. Chicago's T1 file → "Chicago" but its T0 lives under "Sport for
+Good Chicago"), add a `file,coalition` override row in `data/manifest.csv`.
+
 ### Social connections map
 A force-directed network of the organizations members say they're connected with (the
 "list up to 10 organizations" question). A node is bigger the more members named it (where

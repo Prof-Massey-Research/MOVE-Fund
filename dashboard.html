@@ -119,6 +119,13 @@
   .page.active { display: block; }
   #shared-extra { display: contents; }
 
+  /* Change-over-time + new-question extras */
+  .chg-up { color: #45d47f; font-weight: 700; white-space: nowrap; }
+  .chg-down { color: #e0614f; font-weight: 700; white-space: nowrap; }
+  .verbatim-box { max-height: 280px; overflow-y: auto; border: 1px solid var(--line); border-radius: 8px; padding: 4px 12px; }
+  .verbatim-item { font-size: 13.5px; color: var(--muted); margin: 0; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .verbatim-item:last-child { border-bottom: none; }
+
   /* Report button */
   .report-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
   .report-btn {
@@ -275,6 +282,33 @@
       <div class="chart-box" id="domain-box"><canvas id="chart-domain"></canvas></div>
     </div>
   </section>
+
+  <!-- ============================ CHANGE OVER TIME (2+ waves) ============================ -->
+  <section class="page" id="page-compare">
+    <div class="section-title">Change over time</div>
+    <p class="sub" id="compare-scope" style="margin:-6px 0 4px;"></p>
+    <p class="sub" id="compare-legend" style="margin:0 0 14px;"></p>
+    <div class="card">
+      <h2>Domain scores — earlier vs. latest wave</h2>
+      <div class="chart-box"><canvas id="chart-cmp-domains"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Scale scores — earlier vs. latest wave</h2>
+      <p class="sub">▲ / ▼ marks a statistically significant change (p&lt;0.05).</p>
+      <div class="chart-box tall"><canvas id="chart-cmp-constructs"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Statistically significant changes</h2>
+      <div id="compare-sig"></div>
+    </div>
+  </section>
+
+  <!-- ============================ NEW QUESTIONS (coalition-specific) ==================== -->
+  <section class="page" id="page-newq">
+    <div class="section-title">New questions</div>
+    <p class="sub" id="newq-scope" style="margin:-6px 0 14px;"></p>
+    <div id="newq-body"></div>
+  </section>
 </div>
 
 <!-- Report builder: pick which sections to include, then Save as PDF. -->
@@ -333,7 +367,6 @@ const PAGES = [
   { key: 'member', name: 'Member characteristics' },
   ...D.domains.map(d => ({ key: d.key, name: d.name })),
 ];
-PAGES.forEach(p => selPage.add(new Option(p.name, p.key)));
 const TP_LABEL = { T0: 'CSEq Baseline', T1: 'MOVE Fund Baseline' };
 D.timepoints.forEach(tp => selT.add(new Option(TP_LABEL[tp] || tp, tp)));
 selT.add(new Option('ALL', 'ALL'));   // holder for the "All coalitions combined" aggregate cell
@@ -345,14 +378,26 @@ const HIDDEN = new Set([
   'Positive Coaching Alliance - Oakland', 'Project Play WNY', 'SE Michigan', 'Sport for Good New York',
 ]);
 const VIEWABLE = D.coalitions.filter(co => !HIDDEN.has(co));
-// Each coalition belongs to one time point; the picker/dropdown drive it implicitly.
-// (CO_TP['__ALL__'] = 'ALL' comes for free from the aggregate cell key.)
+// Normal views show a coalition's LATEST wave; multi-wave coalitions also get a comparison view.
+const CO_TPS = D.coalitionTimepoints || {};
 const CO_TP = {};
-Object.keys(D.cells).forEach(k => { const [co, tp] = k.split('||'); CO_TP[co] = tp; });
+Object.entries(CO_TPS).forEach(([co, tps]) => { CO_TP[co] = tps[tps.length - 1]; });
 
 const ALL_KEY = '__ALL__';
 const ALL_LABEL = 'All coalitions combined';
+CO_TP[ALL_KEY] = 'ALL';
 const displayName = co => (co === ALL_KEY ? ALL_LABEL : co);
+
+// The View menu is coalition-dependent: "Change over time" appears for coalitions with two
+// waves, "New questions" for coalitions that asked extra questions.
+function rebuildViewMenu(co) {
+  const prev = selPage.value;
+  selPage.innerHTML = '';
+  PAGES.forEach(p => selPage.add(new Option(p.name, p.key)));
+  if (co !== ALL_KEY && (CO_TPS[co] || []).length >= 2) selPage.add(new Option('Change over time', 'compare'));
+  if (co !== ALL_KEY && (D.newQuestions || {})[`${co}||${CO_TP[co]}`]) selPage.add(new Option('New questions', 'newq'));
+  selPage.value = [...selPage.options].some(o => o.value === prev) ? prev : 'home';
+}
 
 // The coalition dropdown offers only: this coalition, or the all-coalitions aggregate.
 // (No browsing to other individual coalitions.)
@@ -367,7 +412,7 @@ document.getElementById('meta-line').textContent =
   `${VIEWABLE.length} coalitions · ${D.constructs.length} scales · scale 1–${D.scaleMax}`;
 
 // Selecting toggles between this coalition and the aggregate; both set the (hidden) time point.
-selCo.addEventListener('change', () => { selT.value = CO_TP[selCo.value]; render(); });
+selCo.addEventListener('change', () => { selT.value = CO_TP[selCo.value]; rebuildViewMenu(selCo.value); render(); });
 selPage.addEventListener('change', render);
 document.getElementById('net-showall').addEventListener('change',
   () => renderNetwork(selCo.value, selT.value));
@@ -437,6 +482,8 @@ function render() {
   document.getElementById('page-home').classList.toggle('active', page === 'home');
   document.getElementById('page-member').classList.toggle('active', page === 'member');
   document.getElementById('page-domain').classList.toggle('active', isDomain);
+  document.getElementById('page-compare').classList.toggle('active', page === 'compare');
+  document.getElementById('page-newq').classList.toggle('active', page === 'newq');
 
   if (page === 'home' || page === 'member') {
     const pre = page === 'home' ? 'slot-home' : 'slot-member';
@@ -451,6 +498,8 @@ function render() {
   if (page === 'home') renderHome(co, tp);
   else if (page === 'member') renderProfile(co, tp);
   else if (isDomain) renderDomain(page, co, tp);
+  else if (page === 'compare') renderCompare(co);
+  else if (page === 'newq') renderNewQuestions(co, tp);
 }
 
 // ---------- Coalition home ----------
@@ -602,6 +651,116 @@ function meanChart(id, items) {
         tooltip: { callbacks: { label: ctx => ` mean ${ctx.parsed.x}  (n=${items[ctx.dataIndex].n})` } } },
       scales: { x: { min: 1, max: 5, ticks: { stepSize: 1 },
         title: { display: true, text: 'Mean degree (1 = None at all … 5 = A great deal)' } } } }
+  });
+}
+
+// ---------- Change over time (earliest vs latest wave) ----------
+const waveLabel = tp => ({ T0: 'Time 0', T1: 'Time 1', T2: 'Time 2' }[tp] || tp);
+function renderCompare(co) {
+  const cmp = D.comparisons[co];
+  if (!cmp) return;
+  const [a, b] = cmp.waves;
+  document.getElementById('compare-scope').textContent = `${displayName(co)} · ${waveLabel(a)} → ${waveLabel(b)}`;
+  const dot = col => `<span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:${col};margin:0 5px 0 12px;vertical-align:middle;"></span>`;
+  document.getElementById('compare-legend').innerHTML =
+    `${dot('#6a7a6a')}${waveLabel(a)} ${dot('#45d47f')}significant increase ${dot('#e0614f')}significant decrease`;
+
+  // Domain scores grouped
+  const dl = D.domains.map(d => d.name);
+  destroy('cmp-domains');
+  charts['cmp-domains'] = new Chart(document.getElementById('chart-cmp-domains'), {
+    type: 'bar',
+    data: { labels: dl, datasets: [
+      { label: waveLabel(a), data: D.domains.map(d => (cmp.domains[d.key] || {}).t0 ?? null), backgroundColor: '#6a7a6a', borderRadius: 4 },
+      { label: waveLabel(b), data: D.domains.map(d => (cmp.domains[d.key] || {}).t1 ?? null), backgroundColor: c('--accent'), borderRadius: 4 },
+    ]},
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } },
+      scales: { y: { min: 1, max: 5, ticks: { stepSize: 1 } } } }
+  });
+
+  // Constructs grouped (horizontal); T1 bars colored by significance/direction, labels flagged.
+  const cons = D.constructs.filter(x => cmp.constructs[x.key]);
+  const rec = x => cmp.constructs[x.key];
+  const labels = cons.map(x => x.name + (rec(x).sig ? (rec(x).dir === 'up' ? '  ▲' : '  ▼') : ''));
+  const t1col = cons.map(x => rec(x).sig ? (rec(x).dir === 'up' ? '#45d47f' : '#e0614f') : '#4a7a5c');
+  document.getElementById('chart-cmp-constructs').closest('.chart-box').style.height = Math.max(360, cons.length * 26 + 60) + 'px';
+  destroy('cmp-constructs');
+  charts['cmp-constructs'] = new Chart(document.getElementById('chart-cmp-constructs'), {
+    type: 'bar',
+    data: { labels, datasets: [
+      { label: waveLabel(a), data: cons.map(x => rec(x).t0.mean), backgroundColor: '#6a7a6a', borderRadius: 3 },
+      { label: waveLabel(b), data: cons.map(x => rec(x).t1.mean), backgroundColor: t1col, borderRadius: 3 },
+    ]},
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } },
+      scales: { x: { min: 1, max: 5, ticks: { stepSize: 1 } } } }
+  });
+
+  // Significant-changes summary
+  const sigCon = cons.filter(x => rec(x).sig).map(x => ({ name: x.name, ...rec(x) }));
+  const sigItems = Object.values(cmp.items).filter(i => i.sig).sort((x, y) => Math.abs(y.delta) - Math.abs(x.delta));
+  const chg = r => `<span class="${r.dir === 'up' ? 'chg-up' : 'chg-down'}">${r.dir === 'up' ? '▲' : '▼'} ${r.delta > 0 ? '+' : ''}${r.delta}</span>`;
+  let html = '';
+  if (!sigCon.length && !sigItems.length) {
+    html = `<p class="empty">No statistically significant changes between waves (p&lt;0.05).</p>`;
+  } else {
+    html += `<table class="raw"><thead><tr><th>Scale</th><th>${waveLabel(a)}</th><th>${waveLabel(b)}</th><th>Change</th></tr></thead><tbody>`;
+    sigCon.forEach(s => { html += `<tr><td>${s.name}</td><td>${s.t0.mean}</td><td>${s.t1.mean}</td><td>${chg(s)}</td></tr>`; });
+    html += `</tbody></table>`;
+    if (sigItems.length) {
+      html += `<details style="margin-top:12px;"><summary>${sigItems.length} individual survey item(s) also changed significantly</summary>`
+        + `<table class="raw"><tbody>` + sigItems.map(i => `<tr><td>${escapeHtml(i.text)}</td><td style="white-space:nowrap;">${chg(i)}</td></tr>`).join('') + `</tbody></table></details>`;
+    }
+  }
+  document.getElementById('compare-sig').innerHTML = html;
+}
+
+// ---------- New questions (coalition-specific) ----------
+let nqCharts = [];
+function newqBar(id, labels, data, opt) {
+  charts[id] = new Chart(document.getElementById(id), {
+    type: 'bar',
+    data: { labels, datasets: [{ data, backgroundColor: c('--accent'), borderRadius: 4, maxBarThickness: 30 }] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => opt.pct ? ` ${ctx.parsed.x}%  (n=${opt.counts[ctx.dataIndex]})` : ` ${ctx.parsed.x}` } } },
+      scales: { x: Object.assign({ beginAtZero: opt.min == null }, opt.min != null ? { min: opt.min } : {}, opt.max != null ? { max: opt.max } : {},
+        opt.pct ? { ticks: { callback: v => v + '%' } } : {}) } }
+  });
+}
+function renderNewQuestions(co, tp) {
+  document.getElementById('newq-scope').textContent = `${displayName(co)} · questions added at this wave`;
+  const body = document.getElementById('newq-body');
+  nqCharts.forEach(id => destroy(id)); nqCharts = [];
+  body.innerHTML = '';
+  const specs = (D.newQuestions || {})[`${co}||${tp}`] || [];
+  if (!specs.length) { body.innerHTML = '<p class="empty">No additional questions for this coalition.</p>'; return; }
+
+  specs.forEach((spec, idx) => {
+    const card = document.createElement('div'); card.className = 'card';
+    const h = document.createElement('h2'); h.textContent = spec.title; card.appendChild(h);
+
+    if (spec.kind === 'verbatim') {
+      const sub = document.createElement('p'); sub.className = 'sub'; sub.textContent = `${spec.n} responses`; card.appendChild(sub);
+      const box = document.createElement('div'); box.className = 'verbatim-box';
+      spec.responses.forEach(r => { const p = document.createElement('p'); p.className = 'verbatim-item'; p.textContent = r; box.appendChild(p); });
+      card.appendChild(box); body.appendChild(card); return;
+    }
+
+    let items = spec.items || [];
+    let opt = { pct: false }, note = '';
+    if (spec.kind === 'multi' || spec.kind === 'ordinal') { opt = { pct: true, max: 100, counts: items.map(i => i.count) }; }
+    else if (spec.kind === 'rank') { items = [...items].sort((x, y) => x.mean - y.mean); note = 'Lower mean rank = higher priority.'; }
+    else { items = [...items].sort((x, y) => y.mean - x.mean); opt = { pct: false, min: 1, max: 5 }; note = 'Mean rating (1–5).'; }
+
+    const meta = document.createElement('p'); meta.className = 'sub';
+    meta.textContent = (spec.n != null ? `n = ${spec.n}. ` : '') + note; card.appendChild(meta);
+    const cbox = document.createElement('div'); cbox.className = 'chart-box';
+    cbox.style.height = Math.max(160, items.length * 30 + 46) + 'px';
+    const cid = 'nq-' + idx; const cv = document.createElement('canvas'); cv.id = cid;
+    cbox.appendChild(cv); card.appendChild(cbox); body.appendChild(card);
+    nqCharts.push(cid);
+    const val = spec.kind === 'multi' || spec.kind === 'ordinal' ? items.map(i => i.pct) : items.map(i => i.mean);
+    newqBar(cid, items.map(i => i.label), val, opt);
   });
 }
 
@@ -818,6 +977,7 @@ function escapeHtml(s) { return String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;'
 function enterDashboard(co) {
   selT.value = CO_TP[co];
   setCoalitionOptions(co);
+  rebuildViewMenu(co);
   selPage.value = 'home';
   document.getElementById('gate').classList.add('hidden');
   render();
