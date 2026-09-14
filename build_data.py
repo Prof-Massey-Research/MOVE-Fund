@@ -362,6 +362,7 @@ def load_codebook_text():
 def clean_item_text(txt):
     """Generalize the codebook's KCPEC-specific wording to any coalition."""
     txt = txt.replace("***", "").strip()
+    txt = txt.replace("strogn", "strong").replace("feelign", "feeling")  # fix codebook typos
     txt = re.sub(r"\bthe\s+K?CPEC\b", "the coalition", txt, flags=re.I)
     txt = re.sub(r"\bK?CPEC\b", "the coalition", txt, flags=re.I)
     txt = re.sub(r"\s+", " ", txt).strip()
@@ -434,6 +435,19 @@ def read_file(path):
 TIME_RE = re.compile(r"time\s*0*(\d+)", re.I)
 COALITION_RE = re.compile(r"MOVE Fund Eval\s*-\s*(.+?)_", re.I)
 DATA_EXTS = (".csv", ".xls", ".xlsx", ".xlsm")
+
+# Columns that do NOT count as "answering a real question" when deciding whether a response is a
+# non-starter (see the filter in build()). Qualtrics operational metadata + navigation paradata +
+# the consent checkbox + the respondent-type dropdown, plus the coded workbook's ID/Coalition
+# label columns. Anything else (demographics, program fields, org name, construct items, added
+# "new questions") counts as real participation. Matched case-insensitively on the header.
+NONSTARTER_EXCLUDE = {
+    "startdate", "enddate", "status", "ipaddress", "progress", "duration (in seconds)",
+    "finished", "recordeddate", "responseid", "recipientlastname", "recipientfirstname",
+    "recipientemail", "externalreference", "locationlatitude", "locationlongitude",
+    "distributionchannel", "userlanguage", "last seen flow element id", "last seen question ids",
+    "informconsent", "respondent", "id", "coalition",
+}
 
 
 def parse_coalition(fname):
@@ -644,9 +658,7 @@ NEWQ_SPECS = [
     {"kind": "ordinal", "title": "Organization size (FTE staff)", "q": "how many fte staff", "order": ["0-5", "6-12", "13-17", "18-24", "25+"]},
     {"kind": "ordinal", "title": "Team members involved in the coalition", "q": "how many team members are involved", "order": ["0-5", "6-12", "13-17", "18-24", "25+"]},
     {"kind": "ordinal", "title": "Youth served annually", "q": "approximately how many youth does your organization serve", "order": ["less than 50", "51-150", "150-500", "500+"]},
-    {"kind": "verbatim", "title": "Biggest unaddressed challenge (verbatim)", "q": "what challenge facing"},
-    {"kind": "verbatim", "title": "How the organization engages (verbatim)", "q": "how does your organization engage with the coalition"},
-    {"kind": "verbatim", "title": "Who in the organization engages (verbatim)", "q": "who in your organization engages"},
+    # Open-ended (verbatim) blocks intentionally omitted from the Strategic Plan view.
 ]
 
 
@@ -986,10 +998,23 @@ def main():
         print(f"\n{fname}  [{timepoint}, {'coded' if coded else 'qualtrics'}]  "
               f"-> {len(groups)} coalition(s)")
 
+        # Drop "non-starter" responses: rows that answered NOTHING beyond Qualtrics operational
+        # metadata, navigation paradata, the consent checkbox and the respondent-type dropdown
+        # (i.e. people who opened the survey and quit before answering any real question). A row
+        # that answered ANY real question -- a construct item, a demographic, a program field, an
+        # added "new question", or its organization name -- is KEPT, even if it skipped the core
+        # scales, so no partially-completed data is lost.
+        content_idx = [i for i, h in enumerate(header)
+                       if str(h).strip().lower() not in NONSTARTER_EXCLUDE]
         for coalition, rows in groups:
             if coalition not in coalitions:
                 coalitions.append(coalition)
-            print(f"    [{coalition}]  {len(rows)} rows")
+            kept = [r for r in rows
+                    if any((i < len(r) and not is_blank(r[i])) for i in content_idx)]
+            dropped = len(rows) - len(kept)
+            note = f"  (dropped {dropped} non-starter{'s' if dropped != 1 else ''})" if dropped else ""
+            print(f"    [{coalition}]  {len(kept)} rows{note}")
+            rows = kept
             process_cell(coalition, timepoint, header, idx, qtext, rows, coded,
                          cells, program, question_text_map,
                          prof_n, prof_counts, prof_answered,

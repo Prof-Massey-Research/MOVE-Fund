@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Coalition Comparison (internal)</title>
+<script src="dashboard_data.js"></script>
+<style>
+  :root{ --bg:#0b0f0c; --panel:#17201a; --ink:#f2f8f2; --muted:#b9cbb9; --line:#33423a; --accent:#45d47f; }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.45;}
+  .wrap{max-width:1200px;margin:0 auto;padding:22px 24px 80px;}
+  h1{font-size:22px;margin:0 0 2px;}
+  .sub{color:var(--muted);font-size:13px;margin:0 0 18px;}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:18px;}
+  .panel h2{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 10px;font-weight:700;}
+  .cogrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:4px 14px;}
+  .cogrid label{display:flex;align-items:center;gap:8px;font-size:13.5px;padding:3px 0;cursor:pointer;}
+  .cogrid input{accent-color:var(--accent);}
+  .tag{font-size:10.5px;color:#c99;margin-left:4px;}
+  .row2{display:flex;gap:22px;flex-wrap:wrap;align-items:center;margin-top:10px;}
+  .row2 label{font-size:13px;color:var(--muted);}
+  select,button{background:#0f140f;color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:7px 10px;font-size:13px;}
+  button{cursor:pointer;font-weight:600;}
+  button.link{background:none;border:none;color:var(--accent);padding:0;font-size:12.5px;}
+  table{border-collapse:collapse;width:100%;font-size:13px;}
+  th,td{padding:6px 9px;text-align:center;border-bottom:1px solid var(--line);white-space:nowrap;}
+  th.scale,td.scale{text-align:left;position:sticky;left:0;background:var(--bg);z-index:1;min-width:230px;}
+  thead th{color:var(--muted);font-weight:700;font-size:12px;border-bottom:2px solid var(--line);}
+  .domrow td{background:#10160f;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;font-size:11px;font-weight:700;text-align:left;}
+  .domavg td{font-weight:700;}
+  .mean{border-radius:5px;padding:3px 6px;color:#08120b;font-weight:600;display:inline-block;min-width:38px;}
+  .sig-up{outline:2px solid #45d47f;} .sig-down{outline:2px solid #e0614f;}
+  .marker{font-size:11px;margin-left:3px;}
+  .up{color:#1e7d43;} .down{color:#a83226;}
+  .refcol{background:rgba(69,212,127,.06);}
+  .empty{color:var(--muted);padding:24px;text-align:center;}
+  .legend{font-size:12px;color:var(--muted);margin-top:10px;}
+  .legend b{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Coalition comparison <span style="font-size:13px;color:var(--muted);font-weight:400;">· internal analysis tool</span></h1>
+  <p class="sub">All scale scores (1–5) side by side. Pick coalitions, and a reference coalition to flag statistically significant differences (Welch two-sample t-test, p&lt;0.05). Each coalition uses its latest survey wave.</p>
+
+  <div class="panel">
+    <h2>Coalitions</h2>
+    <div class="cogrid" id="cogrid"></div>
+    <div class="row2">
+      <button class="link" id="all">Select all</button>
+      <button class="link" id="none">Clear</button>
+      <label>Reference for significance:
+        <select id="ref"></select>
+      </label>
+    </div>
+  </div>
+
+  <div class="panel" id="tablewrap" style="overflow-x:auto;">
+    <div id="out"><p class="empty">Select two or more coalitions above.</p></div>
+    <div class="legend" id="legend" hidden>
+      Cell = mean (1–5), shaded low→high. When a reference is set: <b><span class="up">▲</span></b> significantly higher than reference, <b><span class="down">▼</span></b> significantly lower (p&lt;0.05). Hover a cell for n and SD.
+    </div>
+  </div>
+</div>
+
+<script>
+const D = DASHBOARD_DATA;
+const CO_TP = {};
+Object.entries(D.coalitionTimepoints || {}).forEach(([c, t]) => { CO_TP[c] = t[t.length - 1]; });
+const HIDDEN = new Set(['Baltimore Youth Sports Collaborative','LA 84 Play Equity Fund','OKC Youth Sport Coalition',
+  'Positive Coaching Alliance - Oakland','Project Play WNY','SE Michigan','Sport for Good New York']);
+const coalitions = D.coalitions.slice().sort();
+
+// ---- Welch two-sample t-test (p-value via incomplete beta) ----
+function betacf(a,b,x){const M=200,EPS=3e-7,FP=1e-30;let qab=a+b,qap=a+1,qam=a-1,c=1,d=1-qab*x/qap;if(Math.abs(d)<FP)d=FP;d=1/d;let h=d;for(let m=1;m<=M;m++){let m2=2*m,aa=m*(b-m)*x/((qam+m2)*(a+m2));d=1+aa*d;if(Math.abs(d)<FP)d=FP;c=1+aa/c;if(Math.abs(c)<FP)c=FP;d=1/d;h*=d*c;aa=-(a+m)*(qab+m)*x/((a+m2)*(qap+m2));d=1+aa*d;if(Math.abs(d)<FP)d=FP;c=1+aa/c;if(Math.abs(c)<FP)c=FP;d=1/d;let de=d*c;h*=de;if(Math.abs(de-1)<EPS)break;}return h;}
+function betai(a,b,x){if(x<=0)return 0;if(x>=1)return 1;const lb=lgamma(a+b)-lgamma(a)-lgamma(b)+a*Math.log(x)+b*Math.log(1-x),bt=Math.exp(lb);return x<(a+1)/(a+b+2)?bt*betacf(a,b,x)/a:1-bt*betacf(b,a,1-x)/b;}
+function lgamma(z){const g=[76.18009172947146,-86.50532032941677,24.01409824083091,-1.231739572450155,0.1208650973866179e-2,-0.5395239384953e-5];let x=z,y=z,t=x+5.5;t-=(x+0.5)*Math.log(t);let s=1.000000000190015;for(let j=0;j<6;j++)s+=g[j]/++y;return -t+Math.log(2.5066282746310005*s/x);}
+function welchP(m1,v1,n1,m2,v2,n2){if(n1<2||n2<2)return 1;const se=v1/n1+v2/n2;if(se<=0)return 1;const t=(m1-m2)/Math.sqrt(se);const df=se*se/((v1/n1)**2/(n1-1)+(v2/n2)**2/(n2-1));return betai(df/2,0.5,df/(df+t*t));}
+
+function cellOf(co, ck){ const c = D.cells[`${co}||${CO_TP[co]}`]; return c ? c[ck] : null; }
+function heat(v){ if(v==null) return 'transparent'; const t=Math.max(0,Math.min(1,(v-1)/4)); const h=8+112*t; return `hsl(${h} 62% ${38+18*t}%)`; }
+
+// ---- Build controls ----
+const cogrid = document.getElementById('cogrid');
+coalitions.forEach(co => {
+  const l = document.createElement('label');
+  l.innerHTML = `<input type="checkbox" class="cb" value="${co.replace(/"/g,'&quot;')}"> <span>${co}${HIDDEN.has(co)?'<span class="tag">hidden on site</span>':''}</span>`;
+  cogrid.appendChild(l);
+});
+document.getElementById('all').onclick = () => { document.querySelectorAll('.cb').forEach(c=>c.checked=true); render(); };
+document.getElementById('none').onclick = () => { document.querySelectorAll('.cb').forEach(c=>c.checked=false); render(); };
+cogrid.addEventListener('change', render);
+document.getElementById('ref').addEventListener('change', render);
+
+function selected(){ return [...document.querySelectorAll('.cb:checked')].map(c=>c.value); }
+
+function render(){
+  const sel = selected();
+  const refSelSaved = document.getElementById('ref').value;
+  const ref = document.getElementById('ref');
+  ref.innerHTML = '<option value="">None</option>' + sel.map(c=>`<option value="${c.replace(/"/g,'&quot;')}">${c}</option>`).join('');
+  ref.value = sel.includes(refSelSaved) ? refSelSaved : '';
+  const refCo = ref.value;
+
+  const out = document.getElementById('out');
+  document.getElementById('legend').hidden = sel.length < 2;
+  if (sel.length < 2){ out.innerHTML = '<p class="empty">Select two or more coalitions above.</p>'; return; }
+
+  let html = '<table><thead><tr><th class="scale">Scale</th>' +
+    sel.map(co=>`<th class="${co===refCo?'refcol':''}">${co}<div style="font-weight:400;color:var(--muted);font-size:11px;">latest wave</div></th>`).join('') +
+    '</tr></thead><tbody>';
+
+  D.domains.forEach(dom => {
+    html += `<tr class="domrow"><td class="scale">${dom.name}</td>${sel.map(()=>'<td></td>').join('')}</tr>`;
+    // domain average row
+    const domAvg = co => { const vs = dom.constructs.map(ck=>{const c=cellOf(co,ck);return c?c.mean:null;}).filter(v=>v!=null); return vs.length? vs.reduce((a,b)=>a+b,0)/vs.length : null; };
+    html += `<tr class="domavg"><td class="scale">— domain average —</td>` + sel.map(co=>{const v=domAvg(co);return `<td class="${co===refCo?'refcol':''}">${v!=null?`<span class="mean" style="background:${heat(v)}">${v.toFixed(2)}</span>`:'—'}</td>`;}).join('') + '</tr>';
+    dom.constructs.forEach(ck => {
+      const con = D.constructs.find(c=>c.key===ck); if(!con) return;
+      const refC = refCo ? cellOf(refCo, ck) : null;
+      html += `<tr><td class="scale">${con.name}</td>` + sel.map(co=>{
+        const c = cellOf(co, ck);
+        if(!c || c.mean==null) return `<td class="${co===refCo?'refcol':''}">—</td>`;
+        let marker='', cls='';
+        if(refCo && refC && co!==refCo){
+          const p = welchP(c.mean,(c.sd||0)**2,c.n, refC.mean,(refC.sd||0)**2,refC.n);
+          if(p<0.05){ const up=c.mean>refC.mean; marker=`<span class="marker ${up?'up':'down'}">${up?'▲':'▼'}</span>`; cls=up?'sig-up':'sig-down'; }
+        }
+        return `<td class="${co===refCo?'refcol':''}" title="n=${c.n}, SD=${c.sd}"><span class="mean ${cls}" style="background:${heat(c.mean)}">${c.mean.toFixed(2)}</span>${marker}</td>`;
+      }).join('') + '</tr>';
+    });
+  });
+  html += '</tbody></table>';
+  out.innerHTML = html;
+}
+render();
+</script>
+</body>
+</html>

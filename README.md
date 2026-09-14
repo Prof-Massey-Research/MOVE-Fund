@@ -85,6 +85,14 @@ Reading Excel needs `openpyxl` (for `.xlsx`) and `xlrd` (for legacy `.xls`):
 - **Scales:** Most constructs use a 5-point agreement scale (1 = Strongly disagree … 5 =
   Strongly agree). Decision-Making uses a frequency scale and Organizational Capacity a
   positivity scale — both also 1–5, so they're comparable in magnitude.
+- **Non-starter responses are dropped:** a response is excluded in `build_data.py` only if it
+  answered *nothing beyond* Qualtrics operational metadata, navigation paradata, the consent
+  checkbox and the respondent-type dropdown — i.e. people who opened the survey and quit before
+  answering any real question (see `NONSTARTER_EXCLUDE`). A response that answered **any** real
+  question is kept, even if it skipped the core scales — including demographics, program fields,
+  the organization name, or an added "new question" (so, e.g., Chicago members who answered the
+  extra questions but not the core scales are retained). Dropping non-starters does not change any
+  scale mean (available-case scoring already ignored those blanks); it only corrects member counts.
 - **Reverse coding:** Negatively-worded items are reverse-scored (6 − value) so a high mean
   always means "more". Currently reversed: `TF_2`, `PROD_1-3`, `MemEng_Sat_1-3` (set via
   `"reverse": [...]` on the construct in `build_data.py`). Verified to match the Time 0
