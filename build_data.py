@@ -99,6 +99,32 @@ CONSTRUCTS = [
     {"key": "O",         "name": "Social Outcomes",                 "items": ["O_1", "O_2"],                 "scale": "agreement"},
 ]
 
+# Sub-scale definitions + source, quoted verbatim from "Final Report - Member Surveys (final).pdf"
+# (Instrumentation table, pp. 10-12; the Motivation sub-scales from their pages, pp. 22 and 24).
+# Shown under each sub-scale heading on the domain pages. Do not paraphrase.
+DEFINITIONS = {
+    "TACT":       ("Motivated by potential of gaining access to more resources, improving efficiency, and reducing transaction costs.", "Proulx et al., 2014 & Mendel & Brudney, 2014"),
+    "TRAN":       ("Motivated by potential of addressing complex social problem(s) and facilitating systems-level change.", "Proulx et al., 2014 & Mendel & Brudney, 2014"),
+    "GC":         ("Degree to which members agree on network-level goals.", "Marek et al., 2015"),
+    "COM":        ("Quality of interactions between members in the coalition.", "Kegler & Swan, 2011"),
+    "COH":        ("Sense of unity and togetherness among members involved in the coalition.", "Kegler & Swan, 2011"),
+    "TF":         ("Ability of a coalition to remain focused on achieving practical tasks.", "Kegler & Swan, 2011"),
+    "DM":         ("Involvement of members in collective decision-making processes.", "Kegler & Swan, 2011"),
+    "LEAD":       ("Perceptions of coalition leadership.", "Kegler & Swan, 2011"),
+    "STAFF":      ("Perceptions of coalition staff.", "Kegler & Swan, 2011"),
+    "TRUST":      ("Willingness of members to be vulnerable based on expectations about other members’ behavior.", "Marek et al., 2015"),
+    "EQUITY":     ("Fairness and justice achieved through representation and addressing disparities through targeted actions.", "Preskill et al., 2014"),
+    "AGENDA":     ("Shared vision for change communicated through an action plan that articulates problem and solution.", "Preskill et al., 2014"),
+    "MA":         ("Coordinated and mutually reinforcing member activities that reinforce the common agenda.", "Preskill et al., 2014"),
+    "SM":         ("Collecting data across member organizations to track progress and ensure efforts remain aligned.", "Preskill et al., 2014"),
+    "MemEng_Sat": ("Degree to which member organizations are empowered and develop a sense of belonging to a coalition.", "Kegler & Swan, 2011"),
+    "PROD":       ("Tangible benefits derived from being involved in the coalition.", "Preskill et al., 2014"),
+    "LEGIT":      ("Credibility and reputation of the coalition among influential funders, partners, and community groups.", "Waddock & Bannister, 1991"),
+    "OC":         ("How an organization acquires and utilizes resources to achieve desired outcomes.", "Bryan & Brown, 2015"),
+    "SC":         ("Shifting the conditions that are holding the problem in place.", "Preskill et al., 2014"),
+    "O":          ("Indicators of the effectiveness of a coalition in improving targeted outcomes.", "Kegler & Swan, 2011"),
+}
+
 # Higher-order domains (from the codebook) that group the constructs. Ordered for the menu.
 DOMAINS = [
     {"key": "processes", "name": "Collaborative Processes", "constructs": ["TACT", "TRAN", "GC", "COM", "COH", "TF", "DM"]},
@@ -1172,7 +1198,9 @@ def main():
         "timepoints": timepoints,
         "scaleMax": SCALE_MAX,
         "constructs": [{"key": c["key"], "name": c["name"], "scale": c["scale"],
-                        "items": c["items"]} for c in CONSTRUCTS],
+                        "items": c["items"],
+                        "definition": DEFINITIONS.get(c["key"], (None, None))[0],
+                        "source": DEFINITIONS.get(c["key"], (None, None))[1]} for c in CONSTRUCTS],
         "questionText": question_text_map,
         "programFields": [{"key": k, "label": v["label"], "agg": v["agg"]}
                           for k, v in PROGRAM_FIELDS.items()],

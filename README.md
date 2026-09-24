@@ -93,6 +93,9 @@ Reading Excel needs `openpyxl` (for `.xlsx`) and `xlrd` (for legacy `.xls`):
   the organization name, or an added "new question" (so, e.g., Chicago members who answered the
   extra questions but not the core scales are retained). Dropping non-starters does not change any
   scale mean (available-case scoring already ignored those blanks); it only corrects member counts.
+- **Sub-scale labels & definitions:** each domain page groups its items under their sub-scale
+  (construct), with the definition and source quoted verbatim from *Final Report - Member
+  Surveys (final).pdf* (pp. 10-12, 22, 24). They live in `DEFINITIONS` in `build_data.py`.
 - **Reverse coding:** Negatively-worded items are reverse-scored (6 − value) so a high mean
   always means "more". Currently reversed: `TF_2`, `PROD_1-3`, `MemEng_Sat_1-3` (set via
   `"reverse": [...]` on the construct in `build_data.py`). Verified to match the Time 0

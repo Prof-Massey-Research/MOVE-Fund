@@ -98,6 +98,11 @@
   details { margin-top: 8px; }
   details summary { cursor: pointer; color: var(--accent); font-size: 13px; }
   .note { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .subscale { padding: 16px 0 6px; border-top: 1px solid var(--line); }
+  .subscale:first-child { border-top: none; padding-top: 4px; }
+  .subscale h3 { margin: 0 0 3px; font-size: 14.5px; }
+  .subscale-def { margin: 0 0 8px; color: var(--muted); font-size: 12.5px; max-width: 760px; }
+  .subscale-src { font-style: italic; opacity: .85; }
   .empty { color: var(--muted); font-style: italic; padding: 40px 0; text-align: center; }
   .nodata { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0; }
 
@@ -274,7 +279,7 @@
     <div class="card">
       <p class="sub" id="domain-scale" style="margin:0 0 10px;"></p>
       <p class="sub" id="domain-legend"></p>
-      <div class="chart-box" id="domain-box"><canvas id="chart-domain"></canvas></div>
+      <div id="domain-groups"></div>
     </div>
   </section>
 
@@ -596,16 +601,35 @@ function renderDomain(dkey, co, tp) {
     + swatch(hexFade(col, 0.4), false) + `not significant`;
 
   const scores = D.itemScores[`${co}||${tp}`] || {};
-  const items = D.items.filter(it => it.domain === dkey && scores[it.code]);
-  const box = document.getElementById('domain-box');
+  // One block per sub-scale (construct): heading, published definition + source, then its items.
+  Object.keys(charts).filter(k => k.startsWith('domain-')).forEach(destroy);
+  const groupsEl = document.getElementById('domain-groups');
+  groupsEl.innerHTML = '';
+  const present = dom.constructs.filter(ck => D.items.some(it => it.construct === ck && scores[it.code]));
+  present.forEach((ck, i) => {
+    const items = D.items.filter(it => it.construct === ck && scores[it.code]);
+    const con = D.constructs.find(x => x.key === ck) || {};
+    const block = document.createElement('div');
+    block.className = 'subscale';
+    block.innerHTML = `<h3>${escapeHtml(con.name || ck)}</h3>`
+      + (con.definition
+        ? `<p class="subscale-def">${escapeHtml(con.definition)} <span class="subscale-src">(${escapeHtml(con.source)})</span></p>`
+        : '')
+      + `<div class="chart-box"><canvas id="chart-domain-${ck}"></canvas></div>`;
+    groupsEl.appendChild(block);
+    renderSubscaleChart('domain-' + ck, block, items, scores, col, co, i === present.length - 1);
+  });
+}
+
+function renderSubscaleChart(id, block, items, scores, col, co, isLast) {
   // Size the chart from the ACTUAL number of wrapped label lines so long item text (e.g. Social
   // Outcomes) always has room — otherwise tall multi-line labels overlap in a fixed per-bar slot.
   const wrapped = items.map(it => wrapText(geoText(it.text, co), 48));
   const totalLines = wrapped.reduce((sum, w) => sum + w.length, 0);
-  box.style.height = Math.max(240, totalLines * 15 + items.length * 24 + 56) + 'px';
+  const box = block.querySelector('.chart-box');
+  box.style.height = Math.max(120, totalLines * 15 + items.length * 24 + 44) + 'px';
 
-  destroy('domain');
-  charts['domain'] = new Chart(document.getElementById('chart-domain'), {
+  charts[id] = new Chart(block.querySelector('canvas'), {
     type: 'bar',
     data: {
       labels: wrapped,
@@ -630,8 +654,8 @@ function renderDomain(dkey, co, tp) {
         } },
       },
       scales: {
-        x: { min: 1, max: D.scaleMax, ticks: { stepSize: 1 }, title: { display: true, text: `Score (1–${D.scaleMax})` } },
-        y: { ticks: { font: { size: 11 }, autoSkip: false, crossAlign: 'far' }, afterFit: (a) => { a.width = Math.min(a.width, 340); } },
+        x: { min: 1, max: D.scaleMax, ticks: { stepSize: 1 }, title: { display: isLast, text: `Score (1–${D.scaleMax})` } },
+        y: { ticks: { font: { size: 11 }, autoSkip: false, crossAlign: 'far' }, afterFit: (a) => { a.width = Math.min(340, a.chart.width * 0.5); } },
       },
     },
   });
@@ -1007,7 +1031,9 @@ const REPORT_ITEMS = [
   { id: 'top5', group: 'Overview', label: 'Top 5 highest-rated scales', page: 'home', charts: [['chart-top5', 'Top 5 highest-rated scales']] },
   { id: 'bottom5', group: 'Overview', label: '5 lowest-rated scales', page: 'home', charts: [['chart-bottom5', '5 lowest-rated scales']] },
   ...D.domains.map(d => ({ id: 'dom-' + d.key, group: 'Coalition functioning (by domain)', label: d.name, page: d.key,
-                           charts: [['chart-domain', d.name + ' — item scores']] })),
+                           // one snapshot per sub-scale chart (missing ones are skipped by buildBlock)
+                           charts: d.constructs.map(ck => ['chart-domain-' + ck,
+                             `${d.name} — ${(D.constructs.find(x => x.key === ck) || {}).name || ck}`]) })),
   { id: 'demographics', group: 'Member characteristics', label: 'Demographics (sector, engagement, ages, focus areas, populations…)', page: 'member',
     charts: [['chart-sector'], ['chart-duration'], ['chart-engagement'], ['chart-age'], ['chart-field'], ['chart-pops'], ['chart-engageFeedback']] },
   { id: 'program', group: 'Member characteristics', label: 'Program metrics (youth served, financial aid, coaches)', page: 'member',

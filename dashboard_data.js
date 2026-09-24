@@ -44,7 +44,9 @@ const DASHBOARD_DATA = {
         "TACT_1",
         "TACT_2",
         "TACT_3"
-      ]
+      ],
+      "definition": "Motivated by potential of gaining access to more resources, improving efficiency, and reducing transaction costs.",
+      "source": "Proulx et al., 2014 & Mendel & Brudney, 2014"
     },
     {
       "key": "TRAN",
@@ -54,7 +56,9 @@ const DASHBOARD_DATA = {
         "TRAN_1",
         "TRAN_2",
         "TRAN_3"
-      ]
+      ],
+      "definition": "Motivated by potential of addressing complex social problem(s) and facilitating systems-level change.",
+      "source": "Proulx et al., 2014 & Mendel & Brudney, 2014"
     },
     {
       "key": "GC",
@@ -64,7 +68,9 @@ const DASHBOARD_DATA = {
         "GC_1",
         "GC_2",
         "GC_3"
-      ]
+      ],
+      "definition": "Degree to which members agree on network-level goals.",
+      "source": "Marek et al., 2015"
     },
     {
       "key": "COM",
@@ -74,7 +80,9 @@ const DASHBOARD_DATA = {
         "COM_1",
         "COM_2",
         "COM_3"
-      ]
+      ],
+      "definition": "Quality of interactions between members in the coalition.",
+      "source": "Kegler & Swan, 2011"
     },
     {
       "key": "COH",
@@ -84,7 +92,9 @@ const DASHBOARD_DATA = {
         "COH_1",
         "COH_2",
         "COH_3"
-      ]
+      ],
+      "definition": "Sense of unity and togetherness among members involved in the coalition.",
+      "source": "Kegler & Swan, 2011"
     },
     {
       "key": "TF",
@@ -94,7 +104,9 @@ const DASHBOARD_DATA = {
         "TF_1",
         "TF_2",
         "TF_3"
-      ]
+      ],
+      "definition": "Ability of a coalition to remain focused on achieving practical tasks.",
+      "source": "Kegler & Swan, 2011"
     },
     {
       "key": "DM",
@@ -104,7 +116,9 @@ const DASHBOARD_DATA = {
         "DM_1",
         "DM_2",
         "DM_3"
-      ]
+      ],
+      "definition": "Involvement of members in collective decision-making processes.",
+      "source": "Kegler & Swan, 2011"
     },
     {
       "key": "LEAD",
@@ -114,7 +128,9 @@ const DASHBOARD_DATA = {
         "LEAD_1",
         "LEAD_2",
         "LEAD_3"
-      ]
+      ],
+      "definition": "Perceptions of coalition leadership.",
+      "source": "Kegler & Swan, 2011"
     },
     {
       "key": "STAFF",
@@ -124,7 +140,9 @@ const DASHBOARD_DATA = {
         "STAFF_1",
         "STAFF_2",
         "STAFF_3"
-      ]
+      ],
+      "definition": "Perceptions of coalition staff.",
+      "source": "Kegler & Swan, 2011"
     },
     {
       "key": "TRUST",
@@ -134,7 +152,9 @@ const DASHBOARD_DATA = {
         "TRUST_1",
         "TRUST_2",
         "TRUST_3"
-      ]
+      ],
+      "definition": "Willingness of members to be vulnerable based on expectations about other members’ behavior.",
+      "source": "Marek et al., 2015"
     },
     {
       "key": "MemEng_Sat",
@@ -144,7 +164,9 @@ const DASHBOARD_DATA = {
         "MemEng_Sat_1",
         "MemEng_Sat_2",
         "MemEng_Sat_3"
-      ]
+      ],
+      "definition": "Degree to which member organizations are empowered and develop a sense of belonging to a coalition.",
+      "source": "Kegler & Swan, 2011"
     },
     {
       "key": "PROD",
@@ -154,7 +176,9 @@ const DASHBOARD_DATA = {
         "PROD_1",
         "PROD_2",
         "PROD_3"
-      ]
+      ],
+      "definition": "Tangible benefits derived from being involved in the coalition.",
+      "source": "Preskill et al., 2014"
     },
     {
       "key": "LEGIT",
@@ -164,7 +188,9 @@ const DASHBOARD_DATA = {
         "LEGIT_1",
         "LEGIT_2",
         "LEGIT_3"
-      ]
+      ],
+      "definition": "Credibility and reputation of the coalition among influential funders, partners, and community groups.",
+      "source": "Waddock & Bannister, 1991"
     },
     {
       "key": "AGENDA",
@@ -174,7 +200,9 @@ const DASHBOARD_DATA = {
         "AGENDA_1",
         "AGENDA_2",
         "AGENDA_3"
-      ]
+      ],
+      "definition": "Shared vision for change communicated through an action plan that articulates problem and solution.",
+      "source": "Preskill et al., 2014"
     },
     {
       "key": "MA",
@@ -184,7 +212,9 @@ const DASHBOARD_DATA = {
         "MA_1",
         "MA_2",
         "MA_3"
-      ]
+      ],
+      "definition": "Coordinated and mutually reinforcing member activities that reinforce the common agenda.",
+      "source": "Preskill et al., 2014"
     },
     {
       "key": "SM",
@@ -194,7 +224,9 @@ const DASHBOARD_DATA = {
         "SM_1",
         "SM_2",
         "SM_3"
-      ]
+      ],
+      "definition": "Collecting data across member organizations to track progress and ensure efforts remain aligned.",
+      "source": "Preskill et al., 2014"
     },
     {
       "key": "EQUITY",
@@ -204,7 +236,9 @@ const DASHBOARD_DATA = {
         "EQUITY_1",
         "EQUITY_2",
         "EQUITY_3"
-      ]
+      ],
+      "definition": "Fairness and justice achieved through representation and addressing disparities through targeted actions.",
+      "source": "Preskill et al., 2014"
     },
     {
       "key": "OC",
@@ -215,7 +249,9 @@ const DASHBOARD_DATA = {
         "OC_G_2",
         "OC_O_3",
         "OC_C_4"
-      ]
+      ],
+      "definition": "How an organization acquires and utilizes resources to achieve desired outcomes.",
+      "source": "Bryan & Brown, 2015"
     },
     {
       "key": "SC",
@@ -228,7 +264,9 @@ const DASHBOARD_DATA = {
         "SC_4",
         "SC_5",
         "SC_6"
-      ]
+      ],
+      "definition": "Shifting the conditions that are holding the problem in place.",
+      "source": "Preskill et al., 2014"
     },
     {
       "key": "O",
@@ -237,7 +275,9 @@ const DASHBOARD_DATA = {
       "items": [
         "O_1",
         "O_2"
-      ]
+      ],
+      "definition": "Indicators of the effectiveness of a coalition in improving targeted outcomes.",
+      "source": "Kegler & Swan, 2011"
     }
   ],
   "questionText": {
