@@ -50,6 +50,9 @@
   }
   .gate-btn:hover { transform: translateY(-2px); background: #18201a; border-left-color: var(--grand); }
   .gate-btn .g-n { display: block; font-size: 11.5px; font-weight: 500; color: var(--muted); margin-top: 3px; }
+  .gate-btn.gate-all { border-left-color: var(--grand); font-size: 16px; padding: 16px 18px; }
+  .gate-btn:disabled { opacity: .38; cursor: not-allowed; border-left-color: var(--line); }
+  .gate-btn:disabled:hover { transform: none; background: var(--panel); border-left-color: var(--line); }
   header {
     background: var(--panel); border-bottom: 1px solid var(--line);
     padding: 20px 28px;
@@ -383,6 +386,15 @@ const CO_TPS = D.coalitionTimepoints || {};
 const CO_TP = {};
 Object.entries(CO_TPS).forEach(([co, tps]) => { CO_TP[co] = tps[tps.length - 1]; });
 
+// DEMO MODE (live all-call demo): individual coalitions are greyed out and can't be opened;
+// visitors can only view "All coalitions combined". Set to false to restore normal browsing.
+const DEMO_MODE = true;
+
+// Display-only member-count overrides (the scores still use the responses in the data file).
+// San Diego: one more response is coming — remove this entry once it's added to data/Time 1/.
+const N_DISPLAY_OVERRIDE = { 'San Diego': 8 };
+const memberN = (co, n) => N_DISPLAY_OVERRIDE[co] ?? n;
+
 const ALL_KEY = '__ALL__';
 const ALL_LABEL = 'All coalitions combined';
 CO_TP[ALL_KEY] = 'ALL';
@@ -431,11 +443,16 @@ function rebuildViewMenu(co) {
 // (No browsing to other individual coalitions.)
 function setCoalitionOptions(co) {
   selCo.innerHTML = '';
-  selCo.add(new Option(co, co));
+  if (co !== ALL_KEY && !DEMO_MODE) selCo.add(new Option(co, co));
   selCo.add(new Option(ALL_LABEL, ALL_KEY));
   selCo.value = co;
 }
 
+if (DEMO_MODE) {
+  document.querySelector('.gate-card h1').textContent = 'MOVE Fund Coalition Dashboard';
+  document.querySelector('.gate-sub').textContent =
+    'For this session we\u2019re looking at everyone\u2019s results together. Open the all-coalition average below.';
+}
 document.getElementById('meta-line').textContent =
   `${VIEWABLE.length} coalitions · ${D.constructs.length} scales · scale 1–${D.scaleMax}`;
 
@@ -817,7 +834,7 @@ function renderNewQuestions(co, tp) {
 
 function renderProfile(co, tp) {
   const p = D.profiles[`${co}||${tp}`];
-  document.getElementById('profile-scope').textContent = p ? `${displayName(co)} · N = ${p.n} respondents` : '';
+  document.getElementById('profile-scope').textContent = p ? `${displayName(co)} · N = ${memberN(co, p.n)} respondents` : '';
   if (!p) return;
   pctChart('sector', p.sector.items, false);
   pctChart('duration', p.duration ? p.duration.items : [], false);
@@ -1013,15 +1030,34 @@ function enterDashboard(co) {
 
 (function buildGate() {
   const host = document.getElementById('gate-groups');
+  const group = (title, grid) => {
+    const g = document.createElement('div'); g.className = 'gate-group';
+    const h = document.createElement('h2'); h.textContent = title;
+    g.appendChild(h); g.appendChild(grid); host.appendChild(g);
+  };
+  if (DEMO_MODE) {
+    const allGrid = document.createElement('div'); allGrid.className = 'gate-grid';
+    const nAll = (D.profiles[`${ALL_KEY}||ALL`] || {}).n;
+    const a = document.createElement('button'); a.className = 'gate-btn gate-all';
+    a.innerHTML = `${ALL_LABEL}<span class="g-n">Average across all coalitions${nAll ? ' · n = ' + nAll + ' members' : ''}</span>`;
+    a.addEventListener('click', () => enterDashboard(ALL_KEY));
+    allGrid.appendChild(a);
+    group('Open the dashboard', allGrid);
+  }
   const grid = document.createElement('div'); grid.className = 'gate-grid';
   VIEWABLE.slice().sort().forEach(co => {
-    const n = (D.profiles[`${co}||${CO_TP[co]}`] || {}).n;
+    const n = memberN(co, (D.profiles[`${co}||${CO_TP[co]}`] || {}).n);
     const b = document.createElement('button'); b.className = 'gate-btn';
-    b.innerHTML = `${co}<span class="g-n">${n ? ('n = ' + n + ' members') : ''}</span>`;
-    b.addEventListener('click', () => enterDashboard(co));
+    if (DEMO_MODE) {
+      b.disabled = true; b.title = 'Individual coalition views are turned off for this demo';
+      b.innerHTML = `${co}<span class="g-n">Unavailable during demo</span>`;
+    } else {
+      b.innerHTML = `${co}<span class="g-n">${n ? ('n = ' + n + ' members') : ''}</span>`;
+      b.addEventListener('click', () => enterDashboard(co));
+    }
     grid.appendChild(b);
   });
-  host.appendChild(grid);
+  if (DEMO_MODE) group('Individual coalitions', grid); else host.appendChild(grid);
 })();
 
 // ---- PDF report builder: pick sections, snapshot the chosen charts, open Save-as-PDF. ----
@@ -1193,7 +1229,7 @@ async function generatePPTX(items) {
 // Optional deep link: index.html?coalition=Salem opens straight to that coalition (viewable only).
 (function initEntry() {
   const wanted = new URLSearchParams(location.search).get('coalition');
-  if (wanted && VIEWABLE.includes(wanted)) { enterDashboard(wanted); }
+  if (wanted && VIEWABLE.includes(wanted) && !DEMO_MODE) { enterDashboard(wanted); }
   // else: leave the gate visible until the visitor chooses.
 })();
 </script>
