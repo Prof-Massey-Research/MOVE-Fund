@@ -26,10 +26,12 @@ To add data:
 """
 
 import csv
+import hashlib
 import json
 import math
 import os
 import re
+import secrets
 
 try:
     import openpyxl
@@ -1233,6 +1235,7 @@ def main():
     # Also emit a single self-contained HTML with the data inlined -- easiest to host
     # (one file, no separate dashboard_data.js path to get wrong on a website).
     wrote_standalone = write_standalone(data_js)
+    locked = write_locked_dashboards(out)
 
     print("\n" + "=" * 70)
     print(f"Wrote {OUT_JS}")
@@ -1241,6 +1244,12 @@ def main():
     print(f"  coalitions: {coalitions}")
     print(f"  timepoints: {timepoints}")
     print(f"  constructs: {len(CONSTRUCTS)}")
+    if locked:
+        print(f"\nWrote {len(locked)} password-gated per-coalition dashboards to {LOCKED_DIR}/")
+        print(f"  (keys saved to {os.path.join(LOCKED_DIR, 'ACCESS_KEYS.csv')})")
+        print(f"  {'coalition':<42} {'file':<28} access key")
+        for co, key, fn in locked:
+            print(f"  {co:<42} {fn:<28} {key}")
 
 
 def write_standalone(data_js):
@@ -1258,6 +1267,86 @@ def write_standalone(data_js):
     with open(STANDALONE_HTML, "w", encoding="utf-8") as f:
         f.write(html)
     return True
+
+
+# Coalitions kept out of the individually-browsable set (kept in the data as comparison baseline
+# only). Mirrors the HIDDEN set in dashboard.html.
+HIDDEN_COALITIONS = {
+    "Baltimore Youth Sports Collaborative", "LA 84 Play Equity Fund", "OKC Youth Sport Coalition",
+    "Positive Coaching Alliance - Oakland", "Project Play WNY", "SE Michigan",
+    "Sport for Good New York",
+}
+LOCKED_DIR = os.path.join(HERE, "coalition_dashboards")
+_PW_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"   # no I/O/0/1 ambiguity
+
+
+def _gen_key():
+    """A readable high-entropy access key, e.g. 'K7PM-3RXQ-9TWD'."""
+    return "-".join("".join(secrets.choice(_PW_ALPHABET) for _ in range(4)) for _ in range(3))
+
+
+def _slug(name):
+    s = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+    return s or "coalition"
+
+
+def _coalition_subset(out, co):
+    """A DASHBOARD_DATA dict containing ONLY coalition `co` (plus the shared, non-identifying CSEq
+    baseline it is compared against). Other coalitions' individual rows are omitted entirely, so a
+    per-coalition file cannot leak anyone else's data even if its password gate is bypassed."""
+    def keep_keyed(d):
+        return {k: v for k, v in d.items() if k.split("||")[0] == co}
+    sub = dict(out)                                     # shallow copy; replace the per-coalition maps
+    sub["coalitions"] = [co]
+    sub["coalitionTimepoints"] = {co: out.get("coalitionTimepoints", {}).get(co, [])}
+    for key in ("cells", "program", "profiles", "network", "zipYouth", "itemScores",
+                "domainScores", "newQuestions"):
+        sub[key] = keep_keyed(out.get(key, {}))
+    sub["comparisons"] = {co: out["comparisons"][co]} if co in out.get("comparisons", {}) else {}
+    return sub
+
+
+def write_locked_dashboards(out):
+    """Emit one password-gated, self-contained HTML per viewable coalition, each holding only that
+    coalition's data. Returns [(coalition, access_key)] and also writes an ACCESS_KEYS.csv."""
+    if not os.path.exists(INDEX_HTML):
+        return []
+    with open(INDEX_HTML, encoding="utf-8") as f:
+        template = f.read()
+    tag = '<script src="dashboard_data.js"></script>'
+    if tag not in template:
+        return []
+    os.makedirs(LOCKED_DIR, exist_ok=True)
+    # Reuse any keys already issued so rebuilds don't invalidate distributed access keys.
+    existing = {}
+    keys_csv = os.path.join(LOCKED_DIR, "ACCESS_KEYS.csv")
+    if os.path.exists(keys_csv):
+        with open(keys_csv, newline="", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                if r.get("coalition") and r.get("access_key"):
+                    existing[r["coalition"].strip()] = r["access_key"].strip()
+    viewable = [c for c in out["coalitions"] if c not in HIDDEN_COALITIONS]
+    keys = []
+    for co in viewable:
+        key = existing.get(co) or _gen_key()
+        h = hashlib.sha256(key.encode("utf-8")).hexdigest()
+        sub = _coalition_subset(out, co)
+        data_js = "const DASHBOARD_DATA = " + json.dumps(sub, ensure_ascii=False) + ";\n"
+        cfg = ('<script>window.DASH_CFG = '
+               + json.dumps({"demo": False, "lock": {"coalition": co, "hash": h}},
+                            ensure_ascii=False) + ";</script>\n")
+        safe = data_js.replace("</script>", "<\\/script>")
+        html = template.replace(tag, cfg + "<script>\n" + safe + "\n</script>")
+        path = os.path.join(LOCKED_DIR, _slug(co) + ".html")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(html)
+        keys.append((co, key, os.path.basename(path)))
+    with open(os.path.join(LOCKED_DIR, "ACCESS_KEYS.csv"), "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["coalition", "file", "access_key"])
+        for co, key, fn in keys:
+            w.writerow([co, fn, key])
+    return keys
 
 
 if __name__ == "__main__":

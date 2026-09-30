@@ -37,6 +37,14 @@
     display: flex; align-items: center; justify-content: center; padding: 40px 20px;
   }
   #gate.hidden { display: none; }
+  /* Password gate (locked single-coalition builds) */
+  #pwgate { position: fixed; inset: 0; z-index: 60; background: var(--bg);
+    display: flex; align-items: center; justify-content: center; padding: 24px; }
+  #pwgate[hidden] { display: none !important; }
+  #pwform { max-width: 460px; text-align: left; }
+  #pw-input { width: 100%; box-sizing: border-box; font-size: 16px; padding: 12px 14px;
+    background: #10160f; color: var(--ink); border: 1px solid var(--line); border-radius: 8px; }
+  #pw-input:focus { outline: none; border-color: var(--grand); }
   .gate-card { width: 100%; max-width: 760px; }
   .gate-card h1 { margin: 0 0 8px; font-size: 26px; }
   .gate-sub { margin: 0 0 26px; color: var(--muted); font-size: 15px; max-width: 560px; }
@@ -189,6 +197,18 @@
     <p class="gate-sub">Select a coalition to open its dashboard. You can switch to any other coalition once you're inside.</p>
     <div id="gate-groups"></div>
   </div>
+</div>
+
+<!-- Password gate: shown only in a locked, single-coalition build (window.DASH_CFG.lock). -->
+<div id="pwgate" hidden>
+  <form class="gate-card" id="pwform" autocomplete="off">
+    <h1 id="pw-co">Coalition dashboard</h1>
+    <p class="gate-sub">This dashboard is private. Enter your access key to open it.</p>
+    <input id="pw-input" type="password" placeholder="Access key" autocomplete="off"
+           autocapitalize="off" autocorrect="off" spellcheck="false" />
+    <button id="pw-btn" type="submit" class="gate-btn gate-all" style="border:0;margin-top:14px;cursor:pointer;">Open dashboard</button>
+    <p id="pw-err" class="gate-sub" style="color:#e0614f;margin-top:14px;" hidden>That key isn’t right — please try again.</p>
+  </form>
 </div>
 
 <header>
@@ -386,13 +406,19 @@ const CO_TPS = D.coalitionTimepoints || {};
 const CO_TP = {};
 Object.entries(CO_TPS).forEach(([co, tps]) => { CO_TP[co] = tps[tps.length - 1]; });
 
+// Optional per-file config, injected by build_data.py as window.DASH_CFG.
+//   lock: { coalition, hash } -> single-coalition, password-gated build (see the password gate).
+//   demo: overrides DEMO_MODE below.
+const DASH_CFG = (typeof window !== 'undefined' && window.DASH_CFG) || {};
+const LOCK = DASH_CFG.lock || null;
+
 // DEMO MODE (live all-call demo): individual coalitions are greyed out and can't be opened;
 // visitors can only view "All coalitions combined". Set to false to restore normal browsing.
-const DEMO_MODE = true;
+// A password-gated per-coalition build (LOCK) always turns it off.
+const DEMO_MODE = LOCK ? false : ('demo' in DASH_CFG ? DASH_CFG.demo : true);
 
 // Display-only member-count overrides (the scores still use the responses in the data file).
-// San Diego: one more response is coming — remove this entry once it's added to data/Time 1/.
-const N_DISPLAY_OVERRIDE = { 'San Diego': 8 };
+const N_DISPLAY_OVERRIDE = {};
 const memberN = (co, n) => N_DISPLAY_OVERRIDE[co] ?? n;
 
 const ALL_KEY = '__ALL__';
@@ -443,12 +469,12 @@ function rebuildViewMenu(co) {
 // (No browsing to other individual coalitions.)
 function setCoalitionOptions(co) {
   selCo.innerHTML = '';
-  if (co !== ALL_KEY && !DEMO_MODE) selCo.add(new Option(co, co));
-  selCo.add(new Option(ALL_LABEL, ALL_KEY));
+  if (co !== ALL_KEY && (!DEMO_MODE || LOCK)) selCo.add(new Option(co, co));
+  if (!LOCK) selCo.add(new Option(ALL_LABEL, ALL_KEY));   // no all-coalitions option in a locked build
   selCo.value = co;
 }
 
-if (DEMO_MODE) {
+if (DEMO_MODE && !LOCK) {
   document.querySelector('.gate-card h1').textContent = 'MOVE Fund Coalition Dashboard';
   document.querySelector('.gate-sub').textContent =
     'For this session we\u2019re looking at everyone\u2019s results together. Open the all-coalition average below.';
@@ -1029,6 +1055,7 @@ function enterDashboard(co) {
 }
 
 (function buildGate() {
+  if (LOCK) return;   // locked builds use the password gate instead of the coalition chooser
   const host = document.getElementById('gate-groups');
   const group = (title, grid) => {
     const g = document.createElement('div'); g.className = 'gate-group';
@@ -1058,6 +1085,70 @@ function enterDashboard(co) {
     grid.appendChild(b);
   });
   if (DEMO_MODE) group('Individual coalitions', grid); else host.appendChild(grid);
+})();
+
+// ---- Password gate (locked single-coalition builds) ----
+// A small pure-JS SHA-256 fallback so the gate also works when crypto.subtle is unavailable.
+function syncSha256(ascii) {
+  function rr(v, a) { return (v >>> a) | (v << (32 - a)); }
+  const mp = Math.pow, mw = mp(2, 32); let result = '';
+  const words = [], bitLen = ascii.length * 8;
+  let hash = syncSha256.h = syncSha256.h || [];
+  const k = syncSha256.k = syncSha256.k || [];
+  let pc = k.length; const comp = {};
+  for (let cand = 2; pc < 64; cand++) {
+    if (!comp[cand]) {
+      for (let i = 0; i < 313; i += cand) comp[i] = cand;
+      hash[pc] = (mp(cand, 0.5) * mw) | 0; k[pc++] = (mp(cand, 1 / 3) * mw) | 0;
+    }
+  }
+  ascii += '\x80'; while (ascii.length % 64 - 56) ascii += '\x00';
+  for (let i = 0; i < ascii.length; i++) {
+    const j = ascii.charCodeAt(i); if (j >> 8) return null; words[i >> 2] |= j << ((3 - i) % 4) * 8;
+  }
+  words[words.length] = (bitLen / mw) | 0; words[words.length] = bitLen;
+  for (let j = 0; j < words.length;) {
+    const w = words.slice(j, j += 16), oldHash = hash; hash = hash.slice(0, 8);
+    for (let i = 0; i < 64; i++) {
+      const w15 = w[i - 15], w2 = w[i - 2], a = hash[0], e = hash[4];
+      const t1 = hash[7] + (rr(e, 6) ^ rr(e, 11) ^ rr(e, 25)) + ((e & hash[5]) ^ (~e & hash[6])) + k[i]
+        + (w[i] = i < 16 ? w[i] : (w[i - 16] + (rr(w15, 7) ^ rr(w15, 18) ^ (w15 >>> 3)) + w[i - 7]
+          + (rr(w2, 17) ^ rr(w2, 19) ^ (w2 >>> 10))) | 0);
+      const t2 = (rr(a, 2) ^ rr(a, 13) ^ rr(a, 22)) + ((a & hash[1]) ^ (a & hash[2]) ^ (hash[1] & hash[2]));
+      hash = [(t1 + t2) | 0].concat(hash); hash[4] = (hash[4] + t1) | 0;
+    }
+    for (let i = 0; i < 8; i++) hash[i] = (hash[i] + oldHash[i]) | 0;
+  }
+  for (let i = 0; i < 8; i++) for (let j = 3; j + 1; j--) {
+    const b = (hash[i] >> (j * 8)) & 255; result += ((b < 16) ? 0 : '') + b.toString(16);
+  }
+  return result;
+}
+async function sha256hex(s) {
+  try {
+    if (window.crypto && crypto.subtle) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+      return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+  } catch (e) { /* fall through to sync */ }
+  return syncSha256(s);
+}
+(function initLock() {
+  if (!LOCK) return;
+  const g = document.getElementById('gate'); if (g) g.classList.add('hidden');
+  const pg = document.getElementById('pwgate');
+  document.getElementById('pw-co').textContent = displayName(LOCK.coalition);
+  document.title = displayName(LOCK.coalition) + ' — MOVE Fund Dashboard';
+  pg.hidden = false;
+  const inp = document.getElementById('pw-input');
+  setTimeout(() => inp.focus(), 50);
+  document.getElementById('pwform').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const err = document.getElementById('pw-err'); err.hidden = true;
+    const h = await sha256hex((inp.value || '').trim());
+    if (h && h === LOCK.hash) { pg.hidden = true; enterDashboard(LOCK.coalition); }
+    else { err.hidden = false; inp.select(); }
+  });
 })();
 
 // ---- PDF report builder: pick sections, snapshot the chosen charts, open Save-as-PDF. ----
