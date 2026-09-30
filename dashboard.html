@@ -207,6 +207,7 @@
     <input id="pw-input" type="password" placeholder="Access key" autocomplete="off"
            autocapitalize="off" autocorrect="off" spellcheck="false" />
     <button id="pw-btn" type="submit" class="gate-btn gate-all" style="border:0;margin-top:14px;cursor:pointer;">Open dashboard</button>
+    <button id="pw-back" type="button" hidden style="background:none;border:0;color:var(--muted);cursor:pointer;margin-top:14px;padding:0;font-size:13px;">← Choose a different coalition</button>
     <p id="pw-err" class="gate-sub" style="color:#e0614f;margin-top:14px;" hidden>That key isn’t right — please try again.</p>
   </form>
 </div>
@@ -412,10 +413,17 @@ Object.entries(CO_TPS).forEach(([co, tps]) => { CO_TP[co] = tps[tps.length - 1];
 const DASH_CFG = (typeof window !== 'undefined' && window.DASH_CFG) || {};
 const LOCK = DASH_CFG.lock || null;
 
+// Per-coalition access keys (sha-256 hashes) for the main, all-in-one dashboard. When present,
+// the chooser asks each visitor for their coalition's access key before opening it.
+const ACCESS = (D && D.accessHashes) || {};
+const GATED = !LOCK && Object.keys(ACCESS).length > 0;
+// A "single-coalition" view (locked file, or a key-gated coalition in the main file): the coalition
+// dropdown offers only that coalition, never the all-coalitions aggregate or other coalitions.
+const SINGLE = !!(LOCK || GATED);
+
 // DEMO MODE (live all-call demo): individual coalitions are greyed out and can't be opened;
-// visitors can only view "All coalitions combined". Set to false to restore normal browsing.
-// A password-gated per-coalition build (LOCK) always turns it off.
-const DEMO_MODE = LOCK ? false : ('demo' in DASH_CFG ? DASH_CFG.demo : true);
+// visitors can only view "All coalitions combined". A LOCK or key-gated (GATED) build turns it off.
+const DEMO_MODE = (LOCK || GATED) ? false : ('demo' in DASH_CFG ? DASH_CFG.demo : true);
 
 // Display-only member-count overrides (the scores still use the responses in the data file).
 const N_DISPLAY_OVERRIDE = {};
@@ -469,8 +477,8 @@ function rebuildViewMenu(co) {
 // (No browsing to other individual coalitions.)
 function setCoalitionOptions(co) {
   selCo.innerHTML = '';
-  if (co !== ALL_KEY && (!DEMO_MODE || LOCK)) selCo.add(new Option(co, co));
-  if (!LOCK) selCo.add(new Option(ALL_LABEL, ALL_KEY));   // no all-coalitions option in a locked build
+  if (co !== ALL_KEY && (!DEMO_MODE || SINGLE)) selCo.add(new Option(co, co));
+  if (!SINGLE) selCo.add(new Option(ALL_LABEL, ALL_KEY));   // no all-coalitions option in a gated/locked view
   selCo.value = co;
 }
 
@@ -478,6 +486,10 @@ if (DEMO_MODE && !LOCK) {
   document.querySelector('.gate-card h1').textContent = 'MOVE Fund Coalition Dashboard';
   document.querySelector('.gate-sub').textContent =
     'For this session we\u2019re looking at everyone\u2019s results together. Open the all-coalition average below.';
+} else if (GATED) {
+  document.querySelector('.gate-card h1').textContent = 'MOVE Fund Coalition Dashboards';
+  document.querySelector('.gate-sub').textContent =
+    'Select your coalition, then enter the access key you were given to open its dashboard.';
 }
 document.getElementById('meta-line').textContent =
   `${VIEWABLE.length} coalitions · ${D.constructs.length} scales · scale 1–${D.scaleMax}`;
@@ -1078,6 +1090,9 @@ function enterDashboard(co) {
     if (DEMO_MODE) {
       b.disabled = true; b.title = 'Individual coalition views are turned off for this demo';
       b.innerHTML = `${co}<span class="g-n">Unavailable during demo</span>`;
+    } else if (GATED) {
+      b.innerHTML = `${co}<span class="g-n">🔒 Enter access key to open</span>`;
+      b.addEventListener('click', () => openPwGate(co, { allowBack: true }));
     } else {
       b.innerHTML = `${co}<span class="g-n">${n ? ('n = ' + n + ' members') : ''}</span>`;
       b.addEventListener('click', () => enterDashboard(co));
@@ -1133,22 +1148,42 @@ async function sha256hex(s) {
   } catch (e) { /* fall through to sync */ }
   return syncSha256(s);
 }
-(function initLock() {
-  if (!LOCK) return;
-  const g = document.getElementById('gate'); if (g) g.classList.add('hidden');
-  const pg = document.getElementById('pwgate');
-  document.getElementById('pw-co').textContent = displayName(LOCK.coalition);
-  document.title = displayName(LOCK.coalition) + ' — MOVE Fund Dashboard';
-  pg.hidden = false;
-  const inp = document.getElementById('pw-input');
+// Shared gate controller — used by both locked single-coalition files (LOCK) and the key-gated
+// main dashboard (GATED), where each coalition button opens this prompt for its own key.
+let pwPending = null;
+function openPwGate(co, opts) {
+  opts = opts || {};
+  pwPending = co;
+  document.getElementById('pw-co').textContent = displayName(co);
+  document.getElementById('pw-err').hidden = true;
+  const back = document.getElementById('pw-back'); if (back) back.hidden = !opts.allowBack;
+  const inp = document.getElementById('pw-input'); inp.value = '';
+  document.getElementById('gate').classList.add('hidden');
+  document.getElementById('pwgate').hidden = false;
   setTimeout(() => inp.focus(), 50);
-  document.getElementById('pwform').addEventListener('submit', async (e) => {
+}
+(function initPwGate() {
+  const form = document.getElementById('pwform');
+  if (!form) return;
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const err = document.getElementById('pw-err'); err.hidden = true;
+    const inp = document.getElementById('pw-input');
+    const target = LOCK ? LOCK.hash : ACCESS[pwPending];
     const h = await sha256hex((inp.value || '').trim());
-    if (h && h === LOCK.hash) { pg.hidden = true; enterDashboard(LOCK.coalition); }
-    else { err.hidden = false; inp.select(); }
+    if (h && target && h === target) {
+      document.getElementById('pwgate').hidden = true;
+      enterDashboard(pwPending);
+    } else {
+      document.getElementById('pw-err').hidden = false; inp.select();
+    }
   });
+  const back = document.getElementById('pw-back');
+  if (back) back.addEventListener('click', () => {
+    document.getElementById('pwgate').hidden = true;
+    document.getElementById('gate').classList.remove('hidden');
+    pwPending = null;
+  });
+  if (LOCK) { document.title = displayName(LOCK.coalition) + ' — MOVE Fund Dashboard'; openPwGate(LOCK.coalition, { allowBack: false }); }
 })();
 
 // ---- PDF report builder: pick sections, snapshot the chosen charts, open Save-as-PDF. ----
