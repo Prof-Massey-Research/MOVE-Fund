@@ -7,7 +7,7 @@ const DASHBOARD_DATA = {
     "Time 1/MOVE Fund Eval - DC_July 28, 2026_21.26.xls",
     "Time 1/MOVE Fund Eval - Delaware_July 28, 2026_21.27.xlsx",
     "Time 1/MOVE Fund Eval - Salem_July 28, 2026_21.25.xlsx",
-    "Time 1/MOVE Fund Eval - San Diego_September 14, 2026_06.05.xlsx"
+    "Time 1/MOVE Fund Eval - San Diego_October 16, 2026_13.36.xlsx"
   ],
   "coalitions": [
     "Baltimore Youth Sports Collaborative",
@@ -2313,39 +2313,39 @@ const DASHBOARD_DATA = {
     },
     "San Diego||T1": {
       "TACT": {
-        "mean": 3.714,
-        "sd": 0.911,
-        "n": 7
+        "mean": 3.833,
+        "sd": 0.909,
+        "n": 8
       },
       "TRAN": {
-        "mean": 4.333,
-        "sd": 0.816,
-        "n": 7
+        "mean": 4.417,
+        "sd": 0.792,
+        "n": 8
       },
       "GC": {
-        "mean": 4.0,
-        "sd": 1.072,
-        "n": 7
+        "mean": 3.875,
+        "sd": 1.053,
+        "n": 8
       },
       "COM": {
-        "mean": 3.952,
-        "sd": 1.008,
-        "n": 7
+        "mean": 3.833,
+        "sd": 0.992,
+        "n": 8
       },
       "COH": {
-        "mean": 4.19,
-        "sd": 0.813,
-        "n": 7
+        "mean": 4.042,
+        "sd": 0.863,
+        "n": 8
       },
       "TF": {
-        "mean": 4.0,
-        "sd": 0.816,
-        "n": 7
+        "mean": 3.875,
+        "sd": 0.835,
+        "n": 8
       },
       "DM": {
-        "mean": 3.286,
-        "sd": 0.951,
-        "n": 7
+        "mean": 3.25,
+        "sd": 0.886,
+        "n": 8
       },
       "LEAD": {
         "mean": 4.75,
@@ -2358,24 +2358,24 @@ const DASHBOARD_DATA = {
         "n": 4
       },
       "TRUST": {
-        "mean": 3.952,
-        "sd": 1.339,
-        "n": 7
+        "mean": 3.875,
+        "sd": 1.259,
+        "n": 8
       },
       "MemEng_Sat": {
-        "mean": 3.762,
-        "sd": 0.787,
-        "n": 7
+        "mean": 3.667,
+        "sd": 0.777,
+        "n": 8
       },
       "PROD": {
-        "mean": 4.048,
-        "sd": 0.989,
-        "n": 7
+        "mean": 3.917,
+        "sd": 0.988,
+        "n": 8
       },
       "LEGIT": {
-        "mean": 3.667,
-        "sd": 0.923,
-        "n": 7
+        "mean": 3.583,
+        "sd": 0.886,
+        "n": 8
       },
       "AGENDA": {
         "mean": 4.667,
@@ -2393,61 +2393,61 @@ const DASHBOARD_DATA = {
         "n": 3
       },
       "EQUITY": {
-        "mean": 4.095,
-        "sd": 0.854,
-        "n": 7
+        "mean": 3.958,
+        "sd": 0.881,
+        "n": 8
       },
       "OC": {
-        "mean": 3.464,
-        "sd": 0.699,
-        "n": 7
+        "mean": 3.406,
+        "sd": 0.667,
+        "n": 8
       },
       "SC": {
-        "mean": 3.952,
-        "sd": 0.821,
-        "n": 7
+        "mean": 3.833,
+        "sd": 0.831,
+        "n": 8
       },
       "O": {
-        "mean": 3.167,
-        "sd": 0.408,
-        "n": 6
+        "mean": 3.143,
+        "sd": 0.378,
+        "n": 7
       }
     },
     "__ALL__||ALL": {
       "TACT": {
-        "mean": 3.825,
+        "mean": 3.827,
         "sd": 0.907,
-        "n": 530
-      },
-      "TRAN": {
-        "mean": 4.385,
-        "sd": 0.715,
         "n": 531
       },
+      "TRAN": {
+        "mean": 4.387,
+        "sd": 0.714,
+        "n": 532
+      },
       "GC": {
-        "mean": 4.072,
-        "sd": 0.817,
-        "n": 529
+        "mean": 4.07,
+        "sd": 0.818,
+        "n": 530
       },
       "COM": {
-        "mean": 4.162,
-        "sd": 0.781,
-        "n": 528
-      },
-      "COH": {
-        "mean": 4.334,
-        "sd": 0.717,
-        "n": 528
-      },
-      "TF": {
-        "mean": 4.113,
-        "sd": 0.698,
+        "mean": 4.16,
+        "sd": 0.782,
         "n": 529
       },
+      "COH": {
+        "mean": 4.331,
+        "sd": 0.719,
+        "n": 529
+      },
+      "TF": {
+        "mean": 4.111,
+        "sd": 0.699,
+        "n": 530
+      },
       "DM": {
-        "mean": 2.645,
-        "sd": 1.21,
-        "n": 524
+        "mean": 2.646,
+        "sd": 1.209,
+        "n": 525
       },
       "LEAD": {
         "mean": 4.553,
@@ -2460,24 +2460,24 @@ const DASHBOARD_DATA = {
         "n": 370
       },
       "TRUST": {
-        "mean": 4.649,
-        "sd": 0.619,
-        "n": 525
+        "mean": 4.646,
+        "sd": 0.621,
+        "n": 526
       },
       "MemEng_Sat": {
-        "mean": 3.635,
+        "mean": 3.634,
         "sd": 0.989,
-        "n": 522
+        "n": 523
       },
       "PROD": {
-        "mean": 4.017,
+        "mean": 4.015,
         "sd": 0.987,
-        "n": 522
+        "n": 523
       },
       "LEGIT": {
-        "mean": 4.032,
-        "sd": 0.785,
-        "n": 518
+        "mean": 4.03,
+        "sd": 0.786,
+        "n": 519
       },
       "AGENDA": {
         "mean": 4.237,
@@ -2495,24 +2495,24 @@ const DASHBOARD_DATA = {
         "n": 127
       },
       "EQUITY": {
-        "mean": 3.835,
+        "mean": 3.833,
         "sd": 0.854,
-        "n": 520
+        "n": 521
       },
       "OC": {
-        "mean": 3.823,
+        "mean": 3.822,
         "sd": 0.681,
-        "n": 522
+        "n": 523
       },
       "SC": {
-        "mean": 4.066,
-        "sd": 0.73,
-        "n": 520
+        "mean": 4.064,
+        "sd": 0.731,
+        "n": 521
       },
       "O": {
-        "mean": 4.332,
-        "sd": 0.763,
-        "n": 521
+        "mean": 4.33,
+        "sd": 0.764,
+        "n": 522
       }
     }
   },
@@ -2540,26 +2540,26 @@ const DASHBOARD_DATA = {
       "O": 4.405
     },
     "T1": {
-      "TACT": 3.788,
-      "TRAN": 4.391,
-      "GC": 4.007,
-      "COM": 4.24,
-      "COH": 4.425,
-      "TF": 3.929,
-      "DM": 2.993,
+      "TACT": 3.807,
+      "TRAN": 4.405,
+      "GC": 3.986,
+      "COM": 4.22,
+      "COH": 4.401,
+      "TF": 3.909,
+      "DM": 2.988,
       "LEAD": 4.426,
       "STAFF": 4.66,
-      "TRUST": 4.57,
-      "MemEng_Sat": 3.584,
-      "PROD": 4.161,
-      "LEGIT": 3.828,
+      "TRUST": 4.557,
+      "MemEng_Sat": 3.568,
+      "PROD": 4.14,
+      "LEGIT": 3.814,
       "AGENDA": 4.104,
       "MA": 4.039,
       "SM": 4.278,
-      "EQUITY": 3.787,
-      "OC": 3.628,
-      "SC": 3.733,
-      "O": 3.805
+      "EQUITY": 3.764,
+      "OC": 3.618,
+      "SC": 3.713,
+      "O": 3.801
     }
   },
   "program": {
@@ -4301,8 +4301,8 @@ const DASHBOARD_DATA = {
         "raw": []
       },
       "coaches_worked": {
-        "value": 59.0,
-        "n": 5,
+        "value": 84.0,
+        "n": 6,
         "raw": [
           {
             "raw": "4",
@@ -4338,12 +4338,17 @@ const DASHBOARD_DATA = {
             "raw": "31",
             "value": 31.0,
             "conf": "ok"
+          },
+          {
+            "raw": "25",
+            "value": 25.0,
+            "conf": "ok"
           }
         ]
       },
       "coaches_trained": {
-        "value": 84.0,
-        "n": 6,
+        "value": 109.0,
+        "n": 7,
         "raw": [
           {
             "raw": "4",
@@ -4379,6 +4384,11 @@ const DASHBOARD_DATA = {
             "raw": "31",
             "value": 31.0,
             "conf": "ok"
+          },
+          {
+            "raw": "25",
+            "value": 25.0,
+            "conf": "ok"
           }
         ]
       }
@@ -4400,13 +4410,13 @@ const DASHBOARD_DATA = {
         "raw": []
       },
       "coaches_worked": {
-        "value": 9962.0,
-        "n": 109,
+        "value": 9987.0,
+        "n": 110,
         "raw": []
       },
       "coaches_trained": {
-        "value": 11094.5,
-        "n": 104,
+        "value": 11119.5,
+        "n": 105,
         "raw": []
       }
     }
@@ -9198,74 +9208,84 @@ const DASHBOARD_DATA = {
       }
     },
     "San Diego||T1": {
-      "n": 7,
+      "n": 9,
       "sector": {
-        "answered": 5,
+        "answered": 6,
         "items": [
           {
             "label": "Nonprofit or not-for-profit organization",
-            "count": 4,
-            "pct": 57.1
+            "count": 5,
+            "pct": 55.6
           },
           {
             "label": "Public organization or agency",
             "count": 1,
-            "pct": 14.3
+            "pct": 11.1
           }
         ]
       },
       "field": {
-        "answered": 7,
+        "answered": 9,
         "items": [
           {
             "label": "Sports",
-            "count": 7,
-            "pct": 100.0
-          },
-          {
-            "label": "Youth development",
-            "count": 5,
-            "pct": 71.4
+            "count": 8,
+            "pct": 88.9
           },
           {
             "label": "Criminal justice/safety",
-            "count": 4,
-            "pct": 57.1
+            "count": 6,
+            "pct": 66.7
           },
           {
             "label": "Outdoor recreation",
-            "count": 4,
-            "pct": 57.1
+            "count": 6,
+            "pct": 66.7
+          },
+          {
+            "label": "Youth development",
+            "count": 6,
+            "pct": 66.7
           },
           {
             "label": "Education",
-            "count": 3,
-            "pct": 42.9
+            "count": 5,
+            "pct": 55.6
           },
           {
             "label": "Community or civic engagement",
-            "count": 2,
-            "pct": 28.6
+            "count": 4,
+            "pct": 44.4
           },
           {
             "label": "Parks, recreation, and leisure services",
-            "count": 2,
-            "pct": 28.6
+            "count": 4,
+            "pct": 44.4
           },
           {
             "label": "Business",
             "count": 1,
-            "pct": 14.3
+            "pct": 11.1
+          },
+          {
+            "label": "Faith",
+            "count": 1,
+            "pct": 11.1
+          },
+          {
+            "label": "Politics",
+            "count": 1,
+            "pct": 11.1
           },
           {
             "label": "Social/human services",
             "count": 1,
-            "pct": 14.3
+            "pct": 11.1
           }
         ]
       },
       "engagement": {
-        "answered": 7,
+        "answered": 9,
         "items": [
           {
             "label": "None at all",
@@ -9279,18 +9299,18 @@ const DASHBOARD_DATA = {
           },
           {
             "label": "A moderate amount",
-            "count": 4,
-            "pct": 57.1
+            "count": 5,
+            "pct": 55.6
           },
           {
             "label": "A lot",
-            "count": 2,
-            "pct": 28.6
+            "count": 3,
+            "pct": 33.3
           },
           {
             "label": "A great deal",
             "count": 1,
-            "pct": 14.3
+            "pct": 11.1
           }
         ]
       },
@@ -9325,57 +9345,57 @@ const DASHBOARD_DATA = {
         ]
       },
       "age": {
-        "answered": 7,
+        "answered": 8,
         "items": [
           {
             "label": "0-5",
             "count": 1,
-            "pct": 14.3
+            "pct": 11.1
           },
           {
             "label": "6-12",
-            "count": 6,
-            "pct": 85.7
+            "count": 7,
+            "pct": 77.8
           },
           {
             "label": "13-17",
-            "count": 6,
-            "pct": 85.7
+            "count": 7,
+            "pct": 77.8
           },
           {
             "label": "18-24",
-            "count": 3,
-            "pct": 42.9
+            "count": 4,
+            "pct": 44.4
           }
         ]
       },
       "pops": {
-        "answered": 7,
+        "answered": 8,
         "items": [
           {
             "label": "Girls",
-            "count": 4,
-            "pct": 57.1
+            "count": 5,
+            "pct": 55.6
           },
           {
             "label": "Youth in poverty",
-            "count": 6,
-            "pct": 85.7
+            "count": 7,
+            "pct": 77.8
           },
           {
             "label": "BIPOC Youth",
-            "count": 4,
-            "pct": 57.1
+            "count": 5,
+            "pct": 55.6
           },
           {
             "label": "Immigrant and newcomer youth",
             "count": 2,
-            "pct": 28.6
+            "pct": 22.2
           },
           {
             "label": "LGBTQIA+ youth",
             "count": 2,
-            "pct": 28.6
+            "pct": 22.2
           },
           {
             "label": "Non-binary, gender non-conforming, and/or trans youth",
@@ -9384,23 +9404,23 @@ const DASHBOARD_DATA = {
           },
           {
             "label": "Youth involved in the criminal justice system",
-            "count": 1,
-            "pct": 14.3
+            "count": 2,
+            "pct": 22.2
           },
           {
             "label": "Youth in foster care",
-            "count": 2,
-            "pct": 28.6
+            "count": 3,
+            "pct": 33.3
           },
           {
             "label": "Youth with physical disabilities",
             "count": 2,
-            "pct": 28.6
+            "pct": 22.2
           },
           {
             "label": "Youth with intellectual disabilities",
             "count": 2,
-            "pct": 28.6
+            "pct": 22.2
           }
         ]
       },
@@ -9408,45 +9428,45 @@ const DASHBOARD_DATA = {
         "items": [
           {
             "label": "Increased stipend",
-            "mean": 3.14,
-            "n": 7
+            "mean": 3.25,
+            "n": 8
           },
           {
             "label": "Strong facilittaion",
-            "mean": 3.86,
-            "n": 7
+            "mean": 3.88,
+            "n": 8
           },
           {
             "label": "More networking and breakouts",
-            "mean": 3.57,
-            "n": 7
+            "mean": 3.62,
+            "n": 8
           },
           {
             "label": "Clear agenda and goals",
-            "mean": 3.86,
-            "n": 7
+            "mean": 3.88,
+            "n": 8
           },
           {
             "label": "In person meetings",
-            "mean": 3.43,
-            "n": 7
+            "mean": 3.38,
+            "n": 8
           },
           {
             "label": "More varied and interesting content",
-            "mean": 3.57,
-            "n": 7
+            "mean": 3.5,
+            "n": 8
           }
         ]
       }
     },
     "__ALL__||ALL": {
-      "n": 545,
+      "n": 547,
       "sector": {
-        "answered": 479,
+        "answered": 480,
         "items": [
           {
             "label": "Nonprofit or not-for-profit organization",
-            "count": 409,
+            "count": 410,
             "pct": 75.0
           },
           {
@@ -9467,42 +9487,42 @@ const DASHBOARD_DATA = {
           {
             "label": "Informal organization or association",
             "count": 3,
-            "pct": 0.6
+            "pct": 0.5
           }
         ]
       },
       "field": {
-        "answered": 486,
+        "answered": 488,
         "items": [
           {
             "label": "Youth development",
-            "count": 384,
-            "pct": 70.5
+            "count": 385,
+            "pct": 70.4
           },
           {
             "label": "Sports",
-            "count": 364,
-            "pct": 66.8
+            "count": 365,
+            "pct": 66.7
           },
           {
             "label": "Education",
-            "count": 193,
-            "pct": 35.4
+            "count": 195,
+            "pct": 35.6
           },
           {
             "label": "Outdoor recreation",
-            "count": 169,
-            "pct": 31.0
+            "count": 171,
+            "pct": 31.3
           },
           {
             "label": "Community-based organization",
             "count": 143,
-            "pct": 26.2
+            "pct": 26.1
           },
           {
             "label": "Parks, recreation, and leisure services",
-            "count": 112,
-            "pct": 20.6
+            "count": 114,
+            "pct": 20.8
           },
           {
             "label": "Social/human services",
@@ -9521,38 +9541,38 @@ const DASHBOARD_DATA = {
           },
           {
             "label": "Criminal justice/safety",
-            "count": 28,
-            "pct": 5.1
+            "count": 30,
+            "pct": 5.5
           },
           {
             "label": "Community or civic engagement",
-            "count": 22,
-            "pct": 4.0
+            "count": 24,
+            "pct": 4.4
           },
           {
             "label": "Business",
             "count": 15,
-            "pct": 2.8
+            "pct": 2.7
           },
           {
             "label": "Faith",
-            "count": 11,
-            "pct": 2.0
+            "count": 12,
+            "pct": 2.2
           },
           {
             "label": "Research",
             "count": 9,
-            "pct": 1.7
+            "pct": 1.6
           },
           {
             "label": "Politics",
-            "count": 1,
-            "pct": 0.2
+            "count": 2,
+            "pct": 0.4
           }
         ]
       },
       "engagement": {
-        "answered": 484,
+        "answered": 486,
         "items": [
           {
             "label": "None at all",
@@ -9562,22 +9582,22 @@ const DASHBOARD_DATA = {
           {
             "label": "A little",
             "count": 109,
-            "pct": 20.0
+            "pct": 19.9
           },
           {
             "label": "A moderate amount",
-            "count": 192,
-            "pct": 35.2
+            "count": 193,
+            "pct": 35.3
           },
           {
             "label": "A lot",
-            "count": 106,
-            "pct": 19.4
+            "count": 107,
+            "pct": 19.6
           },
           {
             "label": "A great deal",
             "count": 75,
-            "pct": 13.8
+            "pct": 13.7
           }
         ]
       },
@@ -9587,22 +9607,22 @@ const DASHBOARD_DATA = {
           {
             "label": "Less than 1 year",
             "count": 38,
-            "pct": 7.0
+            "pct": 6.9
           },
           {
             "label": "1-3 years",
             "count": 189,
-            "pct": 34.7
+            "pct": 34.6
           },
           {
             "label": "4-6 years",
             "count": 123,
-            "pct": 22.6
+            "pct": 22.5
           },
           {
             "label": "6-8 years",
             "count": 33,
-            "pct": 6.1
+            "pct": 6.0
           },
           {
             "label": "More than 9 years",
@@ -9612,7 +9632,7 @@ const DASHBOARD_DATA = {
         ]
       },
       "age": {
-        "answered": 145,
+        "answered": 146,
         "items": [
           {
             "label": "0-5",
@@ -9621,43 +9641,43 @@ const DASHBOARD_DATA = {
           },
           {
             "label": "6-12",
-            "count": 125,
-            "pct": 22.9
+            "count": 126,
+            "pct": 23.0
           },
           {
             "label": "13-17",
-            "count": 130,
+            "count": 131,
             "pct": 23.9
           },
           {
             "label": "18-24",
-            "count": 89,
-            "pct": 16.3
+            "count": 90,
+            "pct": 16.5
           }
         ]
       },
       "pops": {
-        "answered": 59,
+        "answered": 60,
         "items": [
           {
             "label": "Girls",
-            "count": 41,
-            "pct": 7.5
+            "count": 42,
+            "pct": 7.7
           },
           {
             "label": "Youth in poverty",
-            "count": 49,
-            "pct": 9.0
+            "count": 50,
+            "pct": 9.1
           },
           {
             "label": "BIPOC Youth",
-            "count": 28,
-            "pct": 5.1
+            "count": 29,
+            "pct": 5.3
           },
           {
             "label": "Immigrant and newcomer youth",
             "count": 15,
-            "pct": 2.8
+            "pct": 2.7
           },
           {
             "label": "LGBTQIA+ youth",
@@ -9667,22 +9687,22 @@ const DASHBOARD_DATA = {
           {
             "label": "Non-binary, gender non-conforming, and/or trans youth",
             "count": 9,
-            "pct": 1.7
+            "pct": 1.6
           },
           {
             "label": "Youth involved in the criminal justice system",
-            "count": 3,
-            "pct": 0.6
+            "count": 4,
+            "pct": 0.7
           },
           {
             "label": "Youth in foster care",
-            "count": 10,
-            "pct": 1.8
+            "count": 11,
+            "pct": 2.0
           },
           {
             "label": "Youth with physical disabilities",
             "count": 15,
-            "pct": 2.8
+            "pct": 2.7
           },
           {
             "label": "Youth with intellectual disabilities",
@@ -9695,33 +9715,33 @@ const DASHBOARD_DATA = {
         "items": [
           {
             "label": "Increased stipend",
-            "mean": 3.43,
-            "n": 56
+            "mean": 3.44,
+            "n": 57
           },
           {
             "label": "Strong facilittaion",
-            "mean": 3.55,
-            "n": 56
+            "mean": 3.56,
+            "n": 57
           },
           {
             "label": "More networking and breakouts",
-            "mean": 3.07,
-            "n": 54
+            "mean": 3.09,
+            "n": 55
           },
           {
             "label": "Clear agenda and goals",
-            "mean": 3.67,
-            "n": 55
+            "mean": 3.68,
+            "n": 56
           },
           {
             "label": "In person meetings",
             "mean": 3.07,
-            "n": 54
+            "n": 55
           },
           {
             "label": "More varied and interesting content",
             "mean": 3.09,
-            "n": 55
+            "n": 56
           }
         ]
       }
@@ -22715,441 +22735,693 @@ const DASHBOARD_DATA = {
         "n": 14,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 78.6,
+        "pctNeutral": 7.1,
+        "pctDisagree": 14.3,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 3.143,
         "n": 14,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 42.9,
+        "pctNeutral": 21.4,
+        "pctDisagree": 35.7,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 3.286,
         "n": 14,
         "cseqMean": 4.031,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 28.6,
+        "pctDisagree": 21.4,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.643,
         "n": 14,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.286,
         "n": 14,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.7,
+        "pctNeutral": 14.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 3.643,
         "n": 14,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 35.7,
+        "pctDisagree": 14.3,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 3.643,
         "n": 14,
         "cseqMean": 4.22,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 64.3,
+        "pctNeutral": 21.4,
+        "pctDisagree": 14.3,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 3.429,
         "n": 14,
         "cseqMean": 4.045,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 42.9,
+        "pctNeutral": 42.9,
+        "pctDisagree": 14.3,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 2.857,
         "n": 14,
         "cseqMean": 3.986,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 28.6,
+        "pctNeutral": 21.4,
+        "pctDisagree": 50.0,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 3.643,
         "n": 14,
         "cseqMean": 4.242,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 3.786,
         "n": 14,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 64.3,
+        "pctNeutral": 28.6,
+        "pctDisagree": 7.1,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 3.357,
         "n": 14,
         "cseqMean": 4.043,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 42.9,
+        "pctNeutral": 42.9,
+        "pctDisagree": 14.3,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 2.786,
         "n": 14,
         "cseqMean": 4.043,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 21.4,
+        "pctNeutral": 28.6,
+        "pctDisagree": 50.0,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 2.929,
         "n": 14,
         "cseqMean": 4.136,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 21.4,
+        "pctNeutral": 42.9,
+        "pctDisagree": 35.7,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.214,
         "n": 14,
         "cseqMean": 4.74,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.7,
+        "pctNeutral": 14.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.0,
         "n": 14,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 78.6,
+        "pctNeutral": 21.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.5,
         "n": 14,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 42.9,
+        "pctDisagree": 7.1,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 3.429,
         "n": 14,
         "cseqMean": 4.126,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.7,
+        "pctNeutral": 64.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 1.714,
         "n": 14,
         "cseqMean": 2.7,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 0.0,
+        "pctNeutral": 7.1,
+        "pctDisagree": 92.9,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 1.857,
         "n": 14,
         "cseqMean": 2.69,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 7.1,
+        "pctNeutral": 14.3,
+        "pctDisagree": 78.6,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 1.786,
         "n": 14,
         "cseqMean": 2.511,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 7.1,
+        "pctNeutral": 7.1,
+        "pctDisagree": 85.7,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.167,
         "n": 6,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.167,
         "n": 6,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.667,
         "n": 6,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.333,
         "n": 3,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.667,
         "n": 3,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.667,
         "n": 3,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.429,
         "n": 14,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.5,
         "n": 14,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.429,
         "n": 14,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 92.9,
+        "pctNeutral": 7.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 2.643,
         "n": 14,
         "cseqMean": 3.298,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 14.3,
+        "pctNeutral": 35.7,
+        "pctDisagree": 50.0,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 3.857,
         "n": 14,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 3.643,
         "n": 14,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.7,
+        "pctNeutral": 64.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 3.5,
         "n": 14,
         "cseqMean": 3.964,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 42.9,
+        "pctNeutral": 57.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 3.5,
         "n": 14,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.7,
+        "pctNeutral": 64.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 3.5,
         "n": 14,
         "cseqMean": 4.06,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.7,
+        "pctNeutral": 64.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 3.429,
         "n": 14,
         "cseqMean": 4.179,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 57.1,
+        "pctNeutral": 21.4,
+        "pctDisagree": 21.4,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 3.143,
         "n": 14,
         "cseqMean": 4.102,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.7,
+        "pctNeutral": 35.7,
+        "pctDisagree": 28.6,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 3.5,
         "n": 14,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 57.1,
+        "pctNeutral": 28.6,
+        "pctDisagree": 14.3,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.8,
         "n": 5,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.6,
         "n": 5,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.6,
         "n": 5,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 3.6,
         "n": 5,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 60.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 20.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 3.2,
         "n": 5,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 40.0,
+        "pctNeutral": 40.0,
+        "pctDisagree": 20.0,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.2,
         "n": 5,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 40.0,
+        "pctNeutral": 40.0,
+        "pctDisagree": 20.0,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 3.0,
         "n": 1,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 0.0,
+        "pctNeutral": 100.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 3.0,
         "n": 1,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 0.0,
+        "pctNeutral": 100.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 3.0,
         "n": 1,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 0.0,
+        "pctNeutral": 100.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 3.214,
         "n": 14,
         "cseqMean": 4.014,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 42.9,
+        "pctNeutral": 35.7,
+        "pctDisagree": 21.4,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.214,
         "n": 14,
         "cseqMean": 3.824,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 42.9,
+        "pctNeutral": 28.6,
+        "pctDisagree": 28.6,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.0,
         "n": 14,
         "cseqMean": 3.645,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 21.4,
+        "pctNeutral": 50.0,
+        "pctDisagree": 28.6,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.071,
         "n": 14,
         "cseqMean": 3.476,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 7.1,
+        "pctNeutral": 92.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 3.714,
         "n": 14,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 64.3,
+        "pctNeutral": 35.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 3.571,
         "n": 14,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 42.9,
+        "pctNeutral": 57.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 3.5,
         "n": 14,
         "cseqMean": 4.017,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 42.9,
+        "pctNeutral": 57.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.357,
         "n": 14,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 57.1,
+        "pctNeutral": 21.4,
+        "pctDisagree": 21.4,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 3.429,
         "n": 14,
         "cseqMean": 4.178,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.7,
+        "pctNeutral": 57.1,
+        "pctDisagree": 7.1,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 3.214,
         "n": 14,
         "cseqMean": 3.913,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.7,
+        "pctNeutral": 42.9,
+        "pctDisagree": 21.4,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.0,
         "n": 14,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.7,
+        "pctNeutral": 14.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 3.286,
         "n": 14,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.7,
+        "pctNeutral": 42.9,
+        "pctDisagree": 21.4,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 3.643,
         "n": 14,
         "cseqMean": 4.377,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 64.3,
+        "pctNeutral": 21.4,
+        "pctDisagree": 14.3,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 3.714,
         "n": 14,
         "cseqMean": 4.356,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 57.1,
+        "pctNeutral": 42.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 3.429,
         "n": 14,
         "cseqMean": 4.442,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.7,
+        "pctNeutral": 64.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "King Co. Play Equity Coalition||T0": {
@@ -23158,441 +23430,693 @@ const DASHBOARD_DATA = {
         "n": 87,
         "cseqMean": 3.777,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 44.8,
+        "pctNeutral": 24.1,
+        "pctDisagree": 31.0,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 3.114,
         "n": 88,
         "cseqMean": 3.715,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 36.4,
+        "pctNeutral": 34.1,
+        "pctDisagree": 29.5,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 3.759,
         "n": 87,
         "cseqMean": 4.031,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 20.7,
+        "pctDisagree": 12.6,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.591,
         "n": 88,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.2,
+        "pctNeutral": 4.5,
+        "pctDisagree": 2.3,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.523,
         "n": 88,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 89.8,
+        "pctNeutral": 6.8,
+        "pctDisagree": 3.4,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.409,
         "n": 88,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 10.2,
+        "pctDisagree": 2.3,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.318,
         "n": 88,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.9,
+        "pctNeutral": 4.5,
+        "pctDisagree": 4.5,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 4.102,
         "n": 88,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 78.4,
+        "pctNeutral": 18.2,
+        "pctDisagree": 3.4,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 4.011,
         "n": 88,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 77.3,
+        "pctNeutral": 14.8,
+        "pctDisagree": 8.0,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.114,
         "n": 88,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 79.5,
+        "pctNeutral": 12.5,
+        "pctDisagree": 8.0,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.068,
         "n": 88,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 67.0,
+        "pctNeutral": 28.4,
+        "pctDisagree": 4.5,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 3.909,
         "n": 88,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 69.3,
+        "pctNeutral": 15.9,
+        "pctDisagree": 14.8,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 3.875,
         "n": 88,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.5,
+        "pctNeutral": 20.5,
+        "pctDisagree": 9.1,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 3.841,
         "n": 88,
         "cseqMean": 4.136,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 64.8,
+        "pctNeutral": 25.0,
+        "pctDisagree": 10.2,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.625,
         "n": 88,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 93.2,
+        "pctNeutral": 4.5,
+        "pctDisagree": 2.3,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.273,
         "n": 88,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 84.1,
+        "pctNeutral": 13.6,
+        "pctDisagree": 2.3,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.818,
         "n": 88,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 67.0,
+        "pctNeutral": 18.2,
+        "pctDisagree": 14.8,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.057,
         "n": 88,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 78.4,
+        "pctNeutral": 19.3,
+        "pctDisagree": 2.3,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 2.5,
         "n": 88,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 23.9,
+        "pctNeutral": 20.5,
+        "pctDisagree": 55.7,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 2.489,
         "n": 88,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 20.5,
+        "pctNeutral": 23.9,
+        "pctDisagree": 55.7,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.425,
         "n": 87,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 20.7,
+        "pctNeutral": 21.8,
+        "pctDisagree": 57.5,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.508,
         "n": 59,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 94.9,
+        "pctNeutral": 5.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.576,
         "n": 59,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 88.1,
+        "pctNeutral": 11.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.559,
         "n": 59,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 86.4,
+        "pctNeutral": 13.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.836,
         "n": 61,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.1,
+        "pctNeutral": 4.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.885,
         "n": 61,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 96.7,
+        "pctNeutral": 3.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.623,
         "n": 61,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.4,
+        "pctNeutral": 4.9,
+        "pctDisagree": 1.6,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.557,
         "n": 88,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 88.6,
+        "pctNeutral": 9.1,
+        "pctDisagree": 2.3,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.602,
         "n": 88,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 88.6,
+        "pctNeutral": 10.2,
+        "pctDisagree": 1.1,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.466,
         "n": 88,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.2,
+        "pctNeutral": 12.5,
+        "pctDisagree": 2.3,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 3.568,
         "n": 88,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 52.3,
+        "pctNeutral": 29.5,
+        "pctDisagree": 18.2,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 4.011,
         "n": 88,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 63.6,
+        "pctNeutral": 27.3,
+        "pctDisagree": 9.1,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 3.739,
         "n": 88,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 51.1,
+        "pctNeutral": 38.6,
+        "pctDisagree": 10.2,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 4.091,
         "n": 88,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 69.3,
+        "pctNeutral": 28.4,
+        "pctDisagree": 2.3,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 3.862,
         "n": 87,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 57.5,
+        "pctNeutral": 32.2,
+        "pctDisagree": 10.3,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 4.115,
         "n": 87,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 65.5,
+        "pctNeutral": 29.9,
+        "pctDisagree": 4.6,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 3.977,
         "n": 88,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 72.7,
+        "pctNeutral": 21.6,
+        "pctDisagree": 5.7,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 3.909,
         "n": 88,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 64.8,
+        "pctNeutral": 31.8,
+        "pctDisagree": 3.4,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 3.648,
         "n": 88,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 48.9,
+        "pctNeutral": 45.5,
+        "pctDisagree": 5.7,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.19,
         "n": 63,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 82.5,
+        "pctNeutral": 15.9,
+        "pctDisagree": 1.6,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 3.905,
         "n": 63,
         "cseqMean": 4.209,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 71.4,
+        "pctNeutral": 23.8,
+        "pctDisagree": 4.8,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.254,
         "n": 63,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 82.5,
+        "pctNeutral": 11.1,
+        "pctDisagree": 6.3,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.19,
         "n": 63,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 81.0,
+        "pctNeutral": 17.5,
+        "pctDisagree": 1.6,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 3.873,
         "n": 63,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.5,
+        "pctNeutral": 31.7,
+        "pctDisagree": 4.8,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.694,
         "n": 62,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 53.2,
+        "pctNeutral": 41.9,
+        "pctDisagree": 4.8,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.5,
         "n": 18,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 88.9,
+        "pctNeutral": 11.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.333,
         "n": 18,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 72.2,
+        "pctNeutral": 22.2,
+        "pctDisagree": 5.6,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.389,
         "n": 18,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 11.1,
+        "pctDisagree": 5.6,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 4.034,
         "n": 88,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 77.3,
+        "pctNeutral": 15.9,
+        "pctDisagree": 6.8,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.818,
         "n": 88,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.6,
+        "pctNeutral": 29.5,
+        "pctDisagree": 6.8,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.659,
         "n": 88,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 54.5,
+        "pctNeutral": 37.5,
+        "pctDisagree": 8.0,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.295,
         "n": 88,
         "cseqMean": 3.476,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 23.9,
+        "pctNeutral": 73.9,
+        "pctDisagree": 2.3,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 3.784,
         "n": 88,
         "cseqMean": 3.998,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 61.4,
+        "pctNeutral": 36.4,
+        "pctDisagree": 2.3,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 3.545,
         "n": 88,
         "cseqMean": 3.868,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 48.9,
+        "pctNeutral": 46.6,
+        "pctDisagree": 4.5,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 3.705,
         "n": 88,
         "cseqMean": 4.017,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 55.7,
+        "pctNeutral": 40.9,
+        "pctDisagree": 3.4,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.932,
         "n": 88,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 63.6,
+        "pctNeutral": 31.8,
+        "pctDisagree": 4.5,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 3.966,
         "n": 88,
         "cseqMean": 4.178,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.9,
+        "pctNeutral": 22.7,
+        "pctDisagree": 3.4,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 3.716,
         "n": 88,
         "cseqMean": 3.913,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 55.7,
+        "pctNeutral": 38.6,
+        "pctDisagree": 5.7,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.034,
         "n": 88,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 21.6,
+        "pctDisagree": 3.4,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 3.807,
         "n": 88,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 65.9,
+        "pctNeutral": 26.1,
+        "pctDisagree": 8.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.318,
         "n": 88,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 81.8,
+        "pctNeutral": 13.6,
+        "pctDisagree": 4.5,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.205,
         "n": 88,
         "cseqMean": 4.356,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 84.1,
+        "pctNeutral": 13.6,
+        "pctDisagree": 2.3,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.295,
         "n": 88,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.7,
+        "pctNeutral": 15.9,
+        "pctDisagree": 3.4,
+        "cseqAgree": 86.8
       }
     },
     "LA 84 Play Equity Fund||T0": {
@@ -23601,441 +24125,693 @@ const DASHBOARD_DATA = {
         "n": 24,
         "cseqMean": 3.777,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 4.2,
+        "pctDisagree": 4.2,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 4.292,
         "n": 24,
         "cseqMean": 3.715,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 79.2,
+        "pctNeutral": 16.7,
+        "pctDisagree": 4.2,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 4.458,
         "n": 24,
         "cseqMean": 4.031,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 12.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.875,
         "n": 24,
         "cseqMean": 4.571,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.625,
         "n": 24,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.8,
+        "pctNeutral": 4.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.583,
         "n": 24,
         "cseqMean": 4.27,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 8.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.708,
         "n": 24,
         "cseqMean": 4.22,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.8,
+        "pctNeutral": 4.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 4.5,
         "n": 24,
         "cseqMean": 4.045,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 12.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 4.542,
         "n": 24,
         "cseqMean": 3.986,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 8.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.458,
         "n": 24,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 4.2,
+        "pctDisagree": 4.2,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.625,
         "n": 24,
         "cseqMean": 4.238,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 8.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 4.417,
         "n": 24,
         "cseqMean": 4.043,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 8.3,
+        "pctDisagree": 4.2,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.25,
         "n": 24,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 12.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.417,
         "n": 24,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 8.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.833,
         "n": 24,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.8,
+        "pctNeutral": 4.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.583,
         "n": 24,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 12.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.667,
         "n": 24,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 4.2,
+        "pctDisagree": 29.2,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.625,
         "n": 24,
         "cseqMean": 4.126,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.8,
+        "pctNeutral": 4.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 3.417,
         "n": 24,
         "cseqMean": 2.7,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 45.8,
+        "pctNeutral": 33.3,
+        "pctDisagree": 20.8,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 3.292,
         "n": 24,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 45.8,
+        "pctNeutral": 25.0,
+        "pctDisagree": 29.2,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.917,
         "n": 24,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 37.5,
+        "pctNeutral": 25.0,
+        "pctDisagree": 37.5,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.7,
         "n": 20,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.65,
         "n": 20,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.8,
         "n": 20,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.857,
         "n": 14,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.857,
         "n": 14,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.5,
         "n": 14,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 92.9,
+        "pctNeutral": 7.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.792,
         "n": 24,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.75,
         "n": 24,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.8,
+        "pctNeutral": 4.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.667,
         "n": 24,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 8.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 2.958,
         "n": 24,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 29.2,
+        "pctNeutral": 33.3,
+        "pctDisagree": 37.5,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 3.792,
         "n": 24,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 58.3,
+        "pctNeutral": 25.0,
+        "pctDisagree": 16.7,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 3.5,
         "n": 24,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 58.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 25.0,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 3.708,
         "n": 24,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 58.3,
+        "pctNeutral": 25.0,
+        "pctDisagree": 16.7,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 3.542,
         "n": 24,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 54.2,
+        "pctNeutral": 25.0,
+        "pctDisagree": 20.8,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 3.625,
         "n": 24,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 58.3,
+        "pctNeutral": 20.8,
+        "pctDisagree": 20.8,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.5,
         "n": 24,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 79.2,
+        "pctNeutral": 20.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 4.542,
         "n": 24,
         "cseqMean": 4.102,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 4.167,
         "n": 24,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 62.5,
+        "pctNeutral": 37.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.5,
         "n": 20,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.65,
         "n": 20,
         "cseqMean": 4.209,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.7,
         "n": 20,
         "cseqMean": 4.366,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.45,
         "n": 20,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.25,
         "n": 20,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.75,
         "n": 20,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 50.0,
+        "pctNeutral": 45.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.875,
         "n": 8,
         "cseqMean": 4.556,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.875,
         "n": 8,
         "cseqMean": 4.374,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.875,
         "n": 8,
         "cseqMean": 4.324,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 4.0,
         "n": 24,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 25.0,
+        "pctDisagree": 8.3,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.875,
         "n": 24,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 58.3,
+        "pctNeutral": 33.3,
+        "pctDisagree": 8.3,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.875,
         "n": 24,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 58.3,
+        "pctNeutral": 33.3,
+        "pctDisagree": 8.3,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.875,
         "n": 24,
         "cseqMean": 3.476,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 54.2,
+        "pctNeutral": 45.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 4.333,
         "n": 24,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 79.2,
+        "pctNeutral": 20.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 4.25,
         "n": 24,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 4.292,
         "n": 24,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 4.458,
         "n": 24,
         "cseqMean": 3.875,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 12.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 4.542,
         "n": 24,
         "cseqMean": 4.178,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 8.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 4.458,
         "n": 24,
         "cseqMean": 3.913,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 79.2,
+        "pctNeutral": 20.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.333,
         "n": 24,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 79.2,
+        "pctNeutral": 16.7,
+        "pctDisagree": 4.2,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 4.25,
         "n": 24,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 70.8,
+        "pctNeutral": 29.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.708,
         "n": 24,
         "cseqMean": 4.377,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 12.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.667,
         "n": 24,
         "cseqMean": 4.356,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.8,
+        "pctNeutral": 4.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.708,
         "n": 24,
         "cseqMean": 4.442,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.8,
+        "pctNeutral": 4.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "Lawrence Sports Alliance||T0": {
@@ -24044,441 +24820,693 @@ const DASHBOARD_DATA = {
         "n": 15,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 6.7,
+        "pctDisagree": 6.7,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 4.067,
         "n": 15,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 13.3,
+        "pctDisagree": 6.7,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 4.267,
         "n": 15,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 6.7,
+        "pctDisagree": 6.7,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.467,
         "n": 15,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.333,
         "n": 15,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.4,
         "n": 15,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.2,
         "n": 15,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.3,
+        "pctNeutral": 20.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 3.933,
         "n": 15,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 26.7,
+        "pctDisagree": 6.7,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 4.2,
         "n": 15,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 3.867,
         "n": 15,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.3,
+        "pctNeutral": 13.3,
+        "pctDisagree": 13.3,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.067,
         "n": 15,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.3,
+        "pctNeutral": 26.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 3.933,
         "n": 15,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.3,
+        "pctNeutral": 20.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 3.8,
         "n": 15,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 60.0,
+        "pctNeutral": 33.3,
+        "pctDisagree": 6.7,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.133,
         "n": 15,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 13.3,
+        "pctDisagree": 6.7,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.733,
         "n": 15,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.333,
         "n": 15,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 4.4,
         "n": 15,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 13.3,
+        "pctDisagree": 6.7,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.214,
         "n": 14,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 71.4,
+        "pctNeutral": 28.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 2.267,
         "n": 15,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 13.3,
+        "pctNeutral": 40.0,
+        "pctDisagree": 46.7,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 2.267,
         "n": 15,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 13.3,
+        "pctNeutral": 33.3,
+        "pctDisagree": 53.3,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.333,
         "n": 15,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 26.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 60.0,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.75,
         "n": 8,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.857,
         "n": 7,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.375,
         "n": 8,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 87.5,
+        "pctNeutral": 12.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.4,
         "n": 5,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.6,
         "n": 5,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.2,
         "n": 5,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.8,
         "n": 15,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.733,
         "n": 15,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.533,
         "n": 15,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 86.7,
+        "pctNeutral": 6.7,
+        "pctDisagree": 6.7,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 2.933,
         "n": 15,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 20.0,
+        "pctNeutral": 60.0,
+        "pctDisagree": 20.0,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 3.533,
         "n": 15,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 53.3,
+        "pctNeutral": 26.7,
+        "pctDisagree": 20.0,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 3.2,
         "n": 15,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 33.3,
+        "pctNeutral": 40.0,
+        "pctDisagree": 26.7,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 4.067,
         "n": 15,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 60.0,
+        "pctNeutral": 40.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 4.467,
         "n": 15,
         "cseqMean": 3.911,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 4.533,
         "n": 15,
         "cseqMean": 4.06,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 3.8,
         "n": 15,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 46.7,
+        "pctNeutral": 53.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 3.867,
         "n": 15,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 3.4,
         "n": 15,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 33.3,
+        "pctNeutral": 60.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 3.667,
         "n": 9,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 22.2,
+        "pctDisagree": 11.1,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 3.778,
         "n": 9,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 22.2,
+        "pctDisagree": 11.1,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 3.778,
         "n": 9,
         "cseqMean": 4.366,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.222,
         "n": 9,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.8,
+        "pctNeutral": 22.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.333,
         "n": 9,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 77.8,
+        "pctNeutral": 22.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.556,
         "n": 9,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 33.3,
+        "pctNeutral": 66.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.667,
         "n": 3,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.667,
         "n": 3,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.333,
         "n": 3,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 3.867,
         "n": 15,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 60.0,
+        "pctNeutral": 40.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.533,
         "n": 15,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 46.7,
+        "pctNeutral": 53.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.533,
         "n": 15,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 46.7,
+        "pctNeutral": 46.7,
+        "pctDisagree": 6.7,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.733,
         "n": 15,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 53.3,
+        "pctNeutral": 46.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 4.0,
         "n": 15,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 73.3,
+        "pctNeutral": 26.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 4.2,
         "n": 15,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 73.3,
+        "pctNeutral": 26.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 4.267,
         "n": 15,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.4,
         "n": 15,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 40.0,
+        "pctNeutral": 53.3,
+        "pctDisagree": 6.7,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 4.267,
         "n": 15,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 3.867,
         "n": 15,
         "cseqMean": 3.913,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 60.0,
+        "pctNeutral": 40.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.133,
         "n": 15,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 4.0,
         "n": 15,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.357,
         "n": 14,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.7,
+        "pctNeutral": 14.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.6,
         "n": 15,
         "cseqMean": 4.356,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.6,
         "n": 15,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "MYSA||T0": {
@@ -24487,441 +25515,693 @@ const DASHBOARD_DATA = {
         "n": 22,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 22.7,
+        "pctDisagree": 27.3,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 3.619,
         "n": 21,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 61.9,
+        "pctNeutral": 14.3,
+        "pctDisagree": 23.8,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 3.682,
         "n": 22,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 72.7,
+        "pctNeutral": 9.1,
+        "pctDisagree": 18.2,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.727,
         "n": 22,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.5,
+        "pctNeutral": 4.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.545,
         "n": 22,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.4,
+        "pctNeutral": 4.5,
+        "pctDisagree": 9.1,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.273,
         "n": 22,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.4,
+        "pctNeutral": 4.5,
+        "pctDisagree": 9.1,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 3.818,
         "n": 22,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 72.7,
+        "pctNeutral": 9.1,
+        "pctDisagree": 18.2,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 3.818,
         "n": 22,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.6,
+        "pctNeutral": 27.3,
+        "pctDisagree": 9.1,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 3.818,
         "n": 22,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 68.2,
+        "pctNeutral": 18.2,
+        "pctDisagree": 13.6,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 3.905,
         "n": 21,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 81.0,
+        "pctNeutral": 9.5,
+        "pctDisagree": 9.5,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.143,
         "n": 21,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 71.4,
+        "pctNeutral": 28.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 3.667,
         "n": 21,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 19.0,
+        "pctDisagree": 14.3,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.0,
         "n": 21,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.7,
+        "pctNeutral": 0.0,
+        "pctDisagree": 14.3,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 3.952,
         "n": 21,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 81.0,
+        "pctNeutral": 9.5,
+        "pctDisagree": 9.5,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.524,
         "n": 21,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 95.2,
+        "pctNeutral": 4.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.524,
         "n": 21,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.2,
+        "pctNeutral": 4.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.667,
         "n": 21,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 14.3,
+        "pctDisagree": 19.0,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.095,
         "n": 21,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 81.0,
+        "pctNeutral": 19.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 2.286,
         "n": 21,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 14.3,
+        "pctNeutral": 33.3,
+        "pctDisagree": 52.4,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 2.333,
         "n": 21,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 19.0,
+        "pctNeutral": 28.6,
+        "pctDisagree": 52.4,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.333,
         "n": 21,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 19.0,
+        "pctNeutral": 28.6,
+        "pctDisagree": 52.4,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.333,
         "n": 12,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 91.7,
+        "pctNeutral": 0.0,
+        "pctDisagree": 8.3,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.5,
         "n": 12,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 91.7,
+        "pctNeutral": 0.0,
+        "pctDisagree": 8.3,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.25,
         "n": 12,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.692,
         "n": 13,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.615,
         "n": 13,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 92.3,
+        "pctNeutral": 7.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 3.846,
         "n": 13,
         "cseqMean": 4.531,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 69.2,
+        "pctNeutral": 23.1,
+        "pctDisagree": 7.7,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.429,
         "n": 21,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 90.5,
+        "pctNeutral": 9.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.476,
         "n": 21,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.7,
+        "pctNeutral": 14.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.429,
         "n": 21,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 81.0,
+        "pctNeutral": 19.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 2.524,
         "n": 21,
         "cseqMean": 3.298,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 14.3,
+        "pctNeutral": 33.3,
+        "pctDisagree": 52.4,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 4.048,
         "n": 21,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.2,
+        "pctNeutral": 14.3,
+        "pctDisagree": 9.5,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 3.524,
         "n": 21,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 42.9,
+        "pctNeutral": 38.1,
+        "pctDisagree": 19.0,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 3.905,
         "n": 21,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 23.8,
+        "pctDisagree": 9.5,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 3.619,
         "n": 21,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 57.1,
+        "pctNeutral": 23.8,
+        "pctDisagree": 19.0,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 3.81,
         "n": 21,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 57.1,
+        "pctNeutral": 38.1,
+        "pctDisagree": 4.8,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.3,
         "n": 20,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 4.35,
         "n": 20,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 3.6,
         "n": 20,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 40.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.333,
         "n": 9,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.9,
+        "pctNeutral": 11.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.222,
         "n": 9,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.9,
+        "pctNeutral": 11.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.333,
         "n": 9,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.8,
+        "pctNeutral": 22.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.222,
         "n": 9,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.8,
+        "pctNeutral": 22.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.0,
         "n": 9,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.667,
         "n": 9,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 55.6,
+        "pctNeutral": 33.3,
+        "pctDisagree": 11.1,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.667,
         "n": 3,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.667,
         "n": 3,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.667,
         "n": 3,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 3.95,
         "n": 20,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.55,
         "n": 20,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 35.0,
+        "pctDisagree": 15.0,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.5,
         "n": 20,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 45.0,
+        "pctNeutral": 45.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.45,
         "n": 20,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.0,
+        "pctNeutral": 65.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 4.2,
         "n": 20,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 3.6,
         "n": 20,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 55.0,
+        "pctNeutral": 35.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 4.15,
         "n": 20,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.8,
         "n": 20,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 60.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 4.1,
         "n": 20,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 3.7,
         "n": 20,
         "cseqMean": 3.913,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 55.0,
+        "pctNeutral": 45.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.15,
         "n": 20,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 3.9,
         "n": 20,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 15.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.3,
         "n": 20,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.2,
         "n": 20,
         "cseqMean": 4.356,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 95.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.3,
         "n": 20,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 95.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 86.8
       }
     },
     "OKC Youth Sport Coalition||T0": {
@@ -24930,441 +26210,693 @@ const DASHBOARD_DATA = {
         "n": 20,
         "cseqMean": 3.777,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 35.0,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 4.25,
         "n": 20,
         "cseqMean": 3.715,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 4.4,
         "n": 20,
         "cseqMean": 4.031,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.75,
         "n": 20,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.65,
         "n": 20,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.35,
         "n": 20,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.05,
         "n": 20,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 4.2,
         "n": 20,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 3.95,
         "n": 20,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.55,
         "n": 20,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.55,
         "n": 20,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 4.65,
         "n": 20,
         "cseqMean": 4.043,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.6,
         "n": 20,
         "cseqMean": 4.043,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.65,
         "n": 20,
         "cseqMean": 4.136,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.85,
         "n": 20,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.35,
         "n": 20,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.55,
         "n": 20,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 55.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 15.0,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 3.95,
         "n": 20,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 3.35,
         "n": 20,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 55.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 3.3,
         "n": 20,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 45.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 3.3,
         "n": 20,
         "cseqMean": 2.511,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 55.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 30.0,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.364,
         "n": 11,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 90.9,
+        "pctNeutral": 9.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.5,
         "n": 10,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 90.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.6,
         "n": 10,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 5.0,
         "n": 2,
         "cseqMean": 4.815,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 5.0,
         "n": 2,
         "cseqMean": 4.832,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.5,
         "n": 2,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.8,
         "n": 20,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.9,
         "n": 20,
         "cseqMean": 4.68,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.9,
         "n": 20,
         "cseqMean": 4.578,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 3.5,
         "n": 20,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 50.0,
+        "pctNeutral": 35.0,
+        "pctDisagree": 15.0,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 4.75,
         "n": 20,
         "cseqMean": 3.964,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 4.45,
         "n": 20,
         "cseqMean": 3.695,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 4.15,
         "n": 20,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 4.25,
         "n": 20,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 4.45,
         "n": 20,
         "cseqMean": 4.06,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.1,
         "n": 20,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 4.0,
         "n": 20,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 3.3,
         "n": 20,
         "cseqMean": 3.801,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 15.0,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.077,
         "n": 13,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 76.9,
+        "pctNeutral": 23.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.231,
         "n": 13,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 84.6,
+        "pctNeutral": 15.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.462,
         "n": 13,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.3,
+        "pctNeutral": 7.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.154,
         "n": 13,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 84.6,
+        "pctNeutral": 15.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 3.846,
         "n": 13,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 69.2,
+        "pctNeutral": 23.1,
+        "pctDisagree": 7.7,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.462,
         "n": 13,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 46.2,
+        "pctNeutral": 46.2,
+        "pctDisagree": 7.7,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 5.0,
         "n": 2,
         "cseqMean": 4.556,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 5.0,
         "n": 2,
         "cseqMean": 4.374,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 3.0,
         "n": 2,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 50.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 4.0,
         "n": 20,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.8,
         "n": 20,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 55.0,
+        "pctNeutral": 40.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.7,
         "n": 20,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 50.0,
+        "pctNeutral": 45.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.4,
         "n": 20,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 25.0,
+        "pctNeutral": 75.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 4.4,
         "n": 20,
         "cseqMean": 3.998,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 3.7,
         "n": 20,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 45.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 4.15,
         "n": 20,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 70.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.5,
         "n": 20,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 60.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 4.35,
         "n": 20,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 3.35,
         "n": 20,
         "cseqMean": 3.913,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 15.0,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.3,
         "n": 20,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 3.4,
         "n": 20,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 45.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.1,
         "n": 20,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.35,
         "n": 20,
         "cseqMean": 4.356,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.35,
         "n": 20,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "Philadelphia Youth Sports Collaborative||T0": {
@@ -25373,441 +26905,693 @@ const DASHBOARD_DATA = {
         "n": 56,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 66.1,
+        "pctNeutral": 23.2,
+        "pctDisagree": 10.7,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 3.839,
         "n": 56,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 64.3,
+        "pctNeutral": 21.4,
+        "pctDisagree": 14.3,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 3.964,
         "n": 56,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 76.8,
+        "pctNeutral": 10.7,
+        "pctDisagree": 12.5,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.429,
         "n": 56,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 87.5,
+        "pctNeutral": 10.7,
+        "pctDisagree": 1.8,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.304,
         "n": 56,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.9,
+        "pctNeutral": 10.7,
+        "pctDisagree": 5.4,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 3.982,
         "n": 56,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.2,
+        "pctNeutral": 14.3,
+        "pctDisagree": 12.5,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.018,
         "n": 55,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 74.5,
+        "pctNeutral": 16.4,
+        "pctDisagree": 9.1,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 3.709,
         "n": 55,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 61.8,
+        "pctNeutral": 20.0,
+        "pctDisagree": 18.2,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 3.8,
         "n": 55,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 67.3,
+        "pctNeutral": 21.8,
+        "pctDisagree": 10.9,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.2,
         "n": 55,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.6,
+        "pctNeutral": 10.9,
+        "pctDisagree": 5.5,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.109,
         "n": 55,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.9,
+        "pctNeutral": 27.3,
+        "pctDisagree": 1.8,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 3.855,
         "n": 55,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 65.5,
+        "pctNeutral": 21.8,
+        "pctDisagree": 12.7,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 3.873,
         "n": 55,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.6,
+        "pctNeutral": 29.1,
+        "pctDisagree": 7.3,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.073,
         "n": 55,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 76.4,
+        "pctNeutral": 20.0,
+        "pctDisagree": 3.6,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.709,
         "n": 55,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 94.5,
+        "pctNeutral": 3.6,
+        "pctDisagree": 1.8,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.4,
         "n": 55,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 89.1,
+        "pctNeutral": 7.3,
+        "pctDisagree": 3.6,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.709,
         "n": 55,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.6,
+        "pctNeutral": 21.8,
+        "pctDisagree": 14.5,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 3.945,
         "n": 55,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.6,
+        "pctNeutral": 34.5,
+        "pctDisagree": 1.8,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 2.309,
         "n": 55,
         "cseqMean": 2.7,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 14.5,
+        "pctNeutral": 21.8,
+        "pctDisagree": 63.6,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 2.364,
         "n": 55,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 16.4,
+        "pctNeutral": 21.8,
+        "pctDisagree": 61.8,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.164,
         "n": 55,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 14.5,
+        "pctNeutral": 18.2,
+        "pctDisagree": 67.3,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.512,
         "n": 41,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.1,
+        "pctNeutral": 4.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.683,
         "n": 41,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 92.7,
+        "pctNeutral": 7.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.463,
         "n": 41,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.4,
+        "pctNeutral": 14.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.818,
         "n": 44,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 97.7,
+        "pctNeutral": 2.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.795,
         "n": 44,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 97.7,
+        "pctNeutral": 2.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.341,
         "n": 44,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 81.8,
+        "pctNeutral": 15.9,
+        "pctDisagree": 2.3,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.545,
         "n": 55,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 90.9,
+        "pctNeutral": 5.5,
+        "pctDisagree": 3.6,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.527,
         "n": 55,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 87.3,
+        "pctNeutral": 10.9,
+        "pctDisagree": 1.8,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.4,
         "n": 55,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 18.2,
+        "pctDisagree": 1.8,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 3.2,
         "n": 55,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 32.7,
+        "pctNeutral": 41.8,
+        "pctDisagree": 25.5,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 3.818,
         "n": 55,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 56.4,
+        "pctNeutral": 30.9,
+        "pctDisagree": 12.7,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 3.673,
         "n": 55,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 54.5,
+        "pctNeutral": 32.7,
+        "pctDisagree": 12.7,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 3.764,
         "n": 55,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 58.2,
+        "pctNeutral": 30.9,
+        "pctDisagree": 10.9,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 3.727,
         "n": 55,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 54.5,
+        "pctNeutral": 36.4,
+        "pctDisagree": 9.1,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 3.891,
         "n": 55,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 58.2,
+        "pctNeutral": 34.5,
+        "pctDisagree": 7.3,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.148,
         "n": 54,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.8,
+        "pctNeutral": 18.5,
+        "pctDisagree": 3.7,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 4.093,
         "n": 54,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.8,
+        "pctNeutral": 18.5,
+        "pctDisagree": 3.7,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 3.87,
         "n": 54,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 68.5,
+        "pctNeutral": 20.4,
+        "pctDisagree": 11.1,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.2,
         "n": 30,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 86.7,
+        "pctNeutral": 10.0,
+        "pctDisagree": 3.3,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.2,
         "n": 30,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.3,
+        "pctNeutral": 13.3,
+        "pctDisagree": 3.3,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.167,
         "n": 30,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 16.7,
+        "pctDisagree": 3.3,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.167,
         "n": 30,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 76.7,
+        "pctNeutral": 23.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.067,
         "n": 30,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 73.3,
+        "pctNeutral": 26.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.8,
         "n": 30,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 56.7,
+        "pctNeutral": 43.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.812,
         "n": 16,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.8,
+        "pctNeutral": 6.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.375,
         "n": 16,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.625,
         "n": 16,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.8,
+        "pctNeutral": 6.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 3.889,
         "n": 54,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 64.8,
+        "pctNeutral": 24.1,
+        "pctDisagree": 11.1,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.741,
         "n": 54,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 61.1,
+        "pctNeutral": 25.9,
+        "pctDisagree": 13.0,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.574,
         "n": 54,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 53.7,
+        "pctNeutral": 29.6,
+        "pctDisagree": 16.7,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.364,
         "n": 55,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 29.1,
+        "pctNeutral": 69.1,
+        "pctDisagree": 1.8,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 3.907,
         "n": 54,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 3.741,
         "n": 54,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 51.9,
+        "pctNeutral": 44.4,
+        "pctDisagree": 3.7,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 3.815,
         "n": 54,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 59.3,
+        "pctNeutral": 38.9,
+        "pctDisagree": 1.9,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.907,
         "n": 54,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 70.4,
+        "pctNeutral": 25.9,
+        "pctDisagree": 3.7,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 4.111,
         "n": 54,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 79.6,
+        "pctNeutral": 14.8,
+        "pctDisagree": 5.6,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 3.778,
         "n": 54,
         "cseqMean": 3.913,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 57.4,
+        "pctNeutral": 35.2,
+        "pctDisagree": 7.4,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.019,
         "n": 54,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.4,
+        "pctNeutral": 27.8,
+        "pctDisagree": 1.9,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 3.963,
         "n": 54,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 29.6,
+        "pctDisagree": 3.7,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.259,
         "n": 54,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.2,
+        "pctNeutral": 13.0,
+        "pctDisagree": 1.9,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.164,
         "n": 55,
         "cseqMean": 4.356,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 76.4,
+        "pctNeutral": 23.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.364,
         "n": 55,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 87.3,
+        "pctNeutral": 12.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "Positive Coaching Alliance - Oakland||T0": {
@@ -25816,441 +27600,693 @@ const DASHBOARD_DATA = {
         "n": 25,
         "cseqMean": 3.777,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 20.0,
+        "pctNeutral": 36.0,
+        "pctDisagree": 44.0,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 3.24,
         "n": 25,
         "cseqMean": 3.715,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 44.0,
+        "pctNeutral": 36.0,
+        "pctDisagree": 20.0,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 4.0,
         "n": 25,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 76.0,
+        "pctNeutral": 16.0,
+        "pctDisagree": 8.0,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.72,
         "n": 25,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.56,
         "n": 25,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.0,
+        "pctNeutral": 8.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.48,
         "n": 25,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.0,
+        "pctNeutral": 8.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.48,
         "n": 25,
         "cseqMean": 4.22,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 96.0,
+        "pctNeutral": 4.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 4.16,
         "n": 25,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 84.0,
+        "pctNeutral": 8.0,
+        "pctDisagree": 8.0,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 4.0,
         "n": 25,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 68.0,
+        "pctNeutral": 28.0,
+        "pctDisagree": 4.0,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.4,
         "n": 25,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.0,
+        "pctNeutral": 8.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.24,
         "n": 25,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.0,
+        "pctNeutral": 16.0,
+        "pctDisagree": 8.0,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 4.0,
         "n": 25,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 68.0,
+        "pctNeutral": 28.0,
+        "pctDisagree": 4.0,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.12,
         "n": 25,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 4.0,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.24,
         "n": 25,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 84.0,
+        "pctNeutral": 16.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.84,
         "n": 25,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 96.0,
+        "pctNeutral": 4.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.2,
         "n": 25,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 88.0,
+        "pctNeutral": 8.0,
+        "pctDisagree": 4.0,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.56,
         "n": 25,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 56.0,
+        "pctNeutral": 24.0,
+        "pctDisagree": 20.0,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.12,
         "n": 25,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 84.0,
+        "pctNeutral": 16.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 3.12,
         "n": 25,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 32.0,
+        "pctNeutral": 36.0,
+        "pctDisagree": 32.0,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 3.08,
         "n": 25,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 32.0,
+        "pctNeutral": 36.0,
+        "pctDisagree": 32.0,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 3.04,
         "n": 25,
         "cseqMean": 2.511,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 28.0,
+        "pctNeutral": 36.0,
+        "pctDisagree": 36.0,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.533,
         "n": 15,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 5.0,
         "n": 15,
         "cseqMean": 4.687,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.933,
         "n": 15,
         "cseqMean": 4.597,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.938,
         "n": 16,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 5.0,
         "n": 16,
         "cseqMean": 4.832,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.75,
         "n": 16,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.8,
+        "pctNeutral": 6.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.87,
         "n": 23,
         "cseqMean": 4.673,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.783,
         "n": 23,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.7,
+        "pctNeutral": 4.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.913,
         "n": 23,
         "cseqMean": 4.578,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 3.227,
         "n": 22,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 40.9,
+        "pctNeutral": 27.3,
+        "pctDisagree": 31.8,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 3.818,
         "n": 22,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 59.1,
+        "pctNeutral": 22.7,
+        "pctDisagree": 18.2,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 3.455,
         "n": 22,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 40.9,
+        "pctNeutral": 31.8,
+        "pctDisagree": 27.3,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 3.591,
         "n": 22,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 36.4,
+        "pctDisagree": 13.6,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 3.5,
         "n": 22,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 45.5,
+        "pctNeutral": 36.4,
+        "pctDisagree": 18.2,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 3.773,
         "n": 22,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 59.1,
+        "pctNeutral": 22.7,
+        "pctDisagree": 18.2,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.273,
         "n": 22,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 81.8,
+        "pctNeutral": 13.6,
+        "pctDisagree": 4.5,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 3.909,
         "n": 22,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 68.2,
+        "pctNeutral": 22.7,
+        "pctDisagree": 9.1,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 3.591,
         "n": 22,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 36.4,
+        "pctDisagree": 13.6,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.474,
         "n": 19,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.158,
         "n": 19,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 84.2,
+        "pctNeutral": 15.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.526,
         "n": 19,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.316,
         "n": 19,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 94.7,
+        "pctNeutral": 5.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 3.895,
         "n": 19,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 68.4,
+        "pctNeutral": 26.3,
+        "pctDisagree": 5.3,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.579,
         "n": 19,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 47.4,
+        "pctNeutral": 36.8,
+        "pctDisagree": 15.8,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.0,
         "n": 6,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 3.833,
         "n": 6,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 16.7,
+        "pctDisagree": 16.7,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 3.333,
         "n": 6,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 33.3,
+        "pctNeutral": 33.3,
+        "pctDisagree": 33.3,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 4.227,
         "n": 22,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.9,
+        "pctNeutral": 4.5,
+        "pctDisagree": 4.5,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.909,
         "n": 22,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 68.2,
+        "pctNeutral": 27.3,
+        "pctDisagree": 4.5,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.864,
         "n": 22,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 63.6,
+        "pctNeutral": 31.8,
+        "pctDisagree": 4.5,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.391,
         "n": 23,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 30.4,
+        "pctNeutral": 65.2,
+        "pctDisagree": 4.3,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 3.957,
         "n": 23,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 65.2,
+        "pctNeutral": 34.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 3.391,
         "n": 23,
         "cseqMean": 3.868,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 26.1,
+        "pctNeutral": 69.6,
+        "pctDisagree": 4.3,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 4.174,
         "n": 23,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 78.3,
+        "pctNeutral": 21.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.5,
         "n": 22,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 45.5,
+        "pctNeutral": 45.5,
+        "pctDisagree": 9.1,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 3.864,
         "n": 22,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 68.2,
+        "pctNeutral": 27.3,
+        "pctDisagree": 4.5,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 3.409,
         "n": 22,
         "cseqMean": 3.913,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 36.4,
+        "pctNeutral": 50.0,
+        "pctDisagree": 13.6,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 3.909,
         "n": 22,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.6,
+        "pctNeutral": 31.8,
+        "pctDisagree": 4.5,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 3.864,
         "n": 22,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.6,
+        "pctNeutral": 27.3,
+        "pctDisagree": 9.1,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.182,
         "n": 22,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 72.7,
+        "pctNeutral": 22.7,
+        "pctDisagree": 4.5,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.091,
         "n": 22,
         "cseqMean": 4.356,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 72.7,
+        "pctNeutral": 27.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.5,
         "n": 22,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.9,
+        "pctNeutral": 9.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "Project Play WNY||T0": {
@@ -26259,441 +28295,693 @@ const DASHBOARD_DATA = {
         "n": 30,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 10.0,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 4.0,
         "n": 30,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 73.3,
+        "pctNeutral": 20.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 4.2,
         "n": 30,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.7,
+        "pctNeutral": 16.7,
+        "pctDisagree": 6.7,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.367,
         "n": 30,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.1,
         "n": 30,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.3,
+        "pctNeutral": 20.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.167,
         "n": 30,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 76.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 10.0,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.4,
         "n": 30,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 3.3,
+        "pctDisagree": 6.7,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 4.267,
         "n": 30,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 4.1,
         "n": 30,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 10.0,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.367,
         "n": 30,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 6.7,
+        "pctDisagree": 3.3,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.533,
         "n": 30,
         "cseqMean": 4.238,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 4.067,
         "n": 30,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 10.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.3,
         "n": 30,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 10.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.367,
         "n": 30,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 13.3,
+        "pctDisagree": 3.3,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.9,
         "n": 30,
         "cseqMean": 4.74,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.533,
         "n": 30,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 4.3,
         "n": 30,
         "cseqMean": 3.86,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 10.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.3,
         "n": 30,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 10.0,
+        "pctDisagree": 3.3,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 2.867,
         "n": 30,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 23.3,
+        "pctNeutral": 40.0,
+        "pctDisagree": 36.7,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 3.0,
         "n": 30,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 33.3,
+        "pctNeutral": 23.3,
+        "pctDisagree": 43.3,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.5,
         "n": 30,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 20.0,
+        "pctNeutral": 23.3,
+        "pctDisagree": 56.7,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.333,
         "n": 24,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.3,
+        "pctNeutral": 12.5,
+        "pctDisagree": 4.2,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.833,
         "n": 24,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.8,
+        "pctNeutral": 4.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.75,
         "n": 24,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.8,
+        "pctNeutral": 4.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.741,
         "n": 27,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 92.6,
+        "pctNeutral": 7.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.741,
         "n": 27,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 92.6,
+        "pctNeutral": 7.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.556,
         "n": 27,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.9,
+        "pctNeutral": 11.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.7,
         "n": 30,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 96.7,
+        "pctNeutral": 3.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.8,
         "n": 30,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 96.7,
+        "pctNeutral": 3.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.567,
         "n": 30,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 3.433,
         "n": 30,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 43.3,
+        "pctNeutral": 30.0,
+        "pctDisagree": 26.7,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 3.867,
         "n": 30,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 16.7,
+        "pctDisagree": 16.7,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 3.567,
         "n": 30,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 46.7,
+        "pctNeutral": 36.7,
+        "pctDisagree": 16.7,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 4.233,
         "n": 30,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 73.3,
+        "pctNeutral": 20.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 4.2,
         "n": 30,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 73.3,
+        "pctNeutral": 20.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 4.233,
         "n": 30,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 10.0,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.467,
         "n": 30,
         "cseqMean": 4.179,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 4.4,
         "n": 30,
         "cseqMean": 4.102,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 3.733,
         "n": 30,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 46.7,
+        "pctDisagree": 3.3,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.417,
         "n": 24,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.583,
         "n": 24,
         "cseqMean": 4.209,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 8.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.667,
         "n": 24,
         "cseqMean": 4.366,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.8,
+        "pctNeutral": 4.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.75,
         "n": 24,
         "cseqMean": 4.317,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.375,
         "n": 24,
         "cseqMean": 4.042,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 8.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.958,
         "n": 24,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 62.5,
+        "pctNeutral": 37.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.5,
         "n": 10,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.4,
         "n": 10,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.3,
         "n": 10,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 4.2,
         "n": 30,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.9,
         "n": 30,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 66.7,
+        "pctNeutral": 26.7,
+        "pctDisagree": 6.7,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.733,
         "n": 30,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 60.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.7,
         "n": 30,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 50.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 4.033,
         "n": 30,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 73.3,
+        "pctNeutral": 26.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 3.9,
         "n": 30,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 60.0,
+        "pctNeutral": 40.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 4.167,
         "n": 30,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.7,
+        "pctNeutral": 23.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.933,
         "n": 30,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 73.3,
+        "pctNeutral": 20.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 4.6,
         "n": 30,
         "cseqMean": 4.178,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 96.7,
+        "pctNeutral": 3.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 4.5,
         "n": 30,
         "cseqMean": 3.913,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 96.7,
+        "pctNeutral": 3.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.4,
         "n": 30,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 4.133,
         "n": 30,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.6,
         "n": 30,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.7,
         "n": 30,
         "cseqMean": 4.356,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 96.7,
+        "pctNeutral": 3.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.733,
         "n": 30,
         "cseqMean": 4.442,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "SE Michigan||T0": {
@@ -26702,441 +28990,693 @@ const DASHBOARD_DATA = {
         "n": 20,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 4.3,
         "n": 20,
         "cseqMean": 3.715,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 4.5,
         "n": 20,
         "cseqMean": 4.031,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.35,
         "n": 20,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.3,
         "n": 20,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.25,
         "n": 20,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.45,
         "n": 20,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 4.0,
         "n": 20,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 3.9,
         "n": 20,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 65.0,
+        "pctNeutral": 35.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.35,
         "n": 20,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.3,
         "n": 20,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 4.0,
         "n": 20,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 15.0,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.15,
         "n": 20,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 65.0,
+        "pctNeutral": 35.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.15,
         "n": 20,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.9,
         "n": 20,
         "cseqMean": 4.74,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.4,
         "n": 20,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.7,
         "n": 20,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 35.0,
+        "pctDisagree": 15.0,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.2,
         "n": 20,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 2.9,
         "n": 20,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 25.0,
+        "pctNeutral": 40.0,
+        "pctDisagree": 35.0,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 2.95,
         "n": 20,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 30.0,
+        "pctNeutral": 35.0,
+        "pctDisagree": 35.0,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.5,
         "n": 20,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 20.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 60.0,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.2,
         "n": 15,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.8,
         "n": 15,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.8,
         "n": 15,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.875,
         "n": 16,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.8,
+        "pctNeutral": 6.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 5.0,
         "n": 16,
         "cseqMean": 4.832,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.812,
         "n": 16,
         "cseqMean": 4.531,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.8,
         "n": 20,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.8,
         "n": 20,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.5,
         "n": 20,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 3.25,
         "n": 20,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.0,
+        "pctNeutral": 45.0,
+        "pctDisagree": 20.0,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 4.45,
         "n": 20,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 4.05,
         "n": 20,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 65.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 4.25,
         "n": 20,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 3.95,
         "n": 20,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 60.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 15.0,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 4.15,
         "n": 20,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 65.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.25,
         "n": 20,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.0,
+        "pctNeutral": 15.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 4.2,
         "n": 20,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 4.15,
         "n": 20,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 3.941,
         "n": 17,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.6,
+        "pctNeutral": 23.5,
+        "pctDisagree": 5.9,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 3.882,
         "n": 17,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 76.5,
+        "pctNeutral": 17.6,
+        "pctDisagree": 5.9,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 3.941,
         "n": 17,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.6,
+        "pctNeutral": 23.5,
+        "pctDisagree": 5.9,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.235,
         "n": 17,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 88.2,
+        "pctNeutral": 0.0,
+        "pctDisagree": 11.8,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 3.471,
         "n": 17,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 47.1,
+        "pctNeutral": 35.3,
+        "pctDisagree": 17.6,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.412,
         "n": 17,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 47.1,
+        "pctNeutral": 23.5,
+        "pctDisagree": 29.4,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 5.0,
         "n": 3,
         "cseqMean": 4.556,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 5.0,
         "n": 3,
         "cseqMean": 4.374,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 3.667,
         "n": 3,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 33.3,
+        "pctNeutral": 66.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 4.5,
         "n": 20,
         "cseqMean": 4.014,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 4.2,
         "n": 20,
         "cseqMean": 3.824,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.75,
         "n": 20,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 60.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 10.0,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.4,
         "n": 20,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 30.0,
+        "pctNeutral": 70.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 3.85,
         "n": 20,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 55.0,
+        "pctNeutral": 45.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 3.95,
         "n": 20,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 70.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 4.1,
         "n": 20,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 70.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.35,
         "n": 20,
         "cseqMean": 3.875,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 15.0,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 4.25,
         "n": 20,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 4.0,
         "n": 20,
         "cseqMean": 3.913,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 65.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.25,
         "n": 20,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 4.4,
         "n": 20,
         "cseqMean": 3.969,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.6,
         "n": 20,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.5,
         "n": 20,
         "cseqMean": 4.356,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 5.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.5,
         "n": 20,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 5.0,
+        "cseqAgree": 86.8
       }
     },
     "Sport for Good Atlanta||T0": {
@@ -27145,441 +29685,693 @@ const DASHBOARD_DATA = {
         "n": 13,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 84.6,
+        "pctNeutral": 7.7,
+        "pctDisagree": 7.7,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 3.75,
         "n": 12,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 8.3,
+        "pctDisagree": 16.7,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 4.167,
         "n": 12,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 8.3,
+        "pctDisagree": 8.3,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.583,
         "n": 12,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.538,
         "n": 13,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.167,
         "n": 12,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 16.7,
+        "pctDisagree": 8.3,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.0,
         "n": 13,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 76.9,
+        "pctNeutral": 7.7,
+        "pctDisagree": 15.4,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 4.231,
         "n": 13,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.3,
+        "pctNeutral": 0.0,
+        "pctDisagree": 7.7,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 4.0,
         "n": 13,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.9,
+        "pctNeutral": 15.4,
+        "pctDisagree": 7.7,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.154,
         "n": 13,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 76.9,
+        "pctNeutral": 7.7,
+        "pctDisagree": 15.4,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.462,
         "n": 13,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 84.6,
+        "pctNeutral": 15.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 4.231,
         "n": 13,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.9,
+        "pctNeutral": 7.7,
+        "pctDisagree": 15.4,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.077,
         "n": 13,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.9,
+        "pctNeutral": 7.7,
+        "pctDisagree": 15.4,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.385,
         "n": 13,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.3,
+        "pctNeutral": 0.0,
+        "pctDisagree": 7.7,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.923,
         "n": 13,
         "cseqMean": 4.74,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.154,
         "n": 13,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 76.9,
+        "pctNeutral": 7.7,
+        "pctDisagree": 15.4,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.692,
         "n": 13,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 61.5,
+        "pctNeutral": 15.4,
+        "pctDisagree": 23.1,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.462,
         "n": 13,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.3,
+        "pctNeutral": 7.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 3.154,
         "n": 13,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 46.2,
+        "pctNeutral": 23.1,
+        "pctDisagree": 30.8,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 2.923,
         "n": 13,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 38.5,
+        "pctNeutral": 23.1,
+        "pctDisagree": 38.5,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.769,
         "n": 13,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 30.8,
+        "pctNeutral": 23.1,
+        "pctDisagree": 46.2,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.636,
         "n": 11,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.9,
+        "pctNeutral": 9.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.7,
         "n": 10,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.455,
         "n": 11,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 81.8,
+        "pctNeutral": 9.1,
+        "pctDisagree": 9.1,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.846,
         "n": 13,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.769,
         "n": 13,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.538,
         "n": 13,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 84.6,
+        "pctNeutral": 15.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.923,
         "n": 13,
         "cseqMean": 4.673,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.769,
         "n": 13,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.615,
         "n": 13,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 84.6,
+        "pctNeutral": 7.7,
+        "pctDisagree": 7.7,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 3.077,
         "n": 13,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 30.8,
+        "pctNeutral": 30.8,
+        "pctDisagree": 38.5,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 4.308,
         "n": 13,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.9,
+        "pctNeutral": 23.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 4.077,
         "n": 13,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.9,
+        "pctNeutral": 7.7,
+        "pctDisagree": 15.4,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 3.923,
         "n": 13,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 61.5,
+        "pctNeutral": 23.1,
+        "pctDisagree": 15.4,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 4.077,
         "n": 13,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 69.2,
+        "pctNeutral": 23.1,
+        "pctDisagree": 7.7,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 4.231,
         "n": 13,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 69.2,
+        "pctNeutral": 23.1,
+        "pctDisagree": 7.7,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.154,
         "n": 13,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 69.2,
+        "pctNeutral": 30.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 4.231,
         "n": 13,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 69.2,
+        "pctNeutral": 30.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 4.0,
         "n": 13,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 61.5,
+        "pctNeutral": 38.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.333,
         "n": 9,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.9,
+        "pctNeutral": 11.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.111,
         "n": 9,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.8,
+        "pctNeutral": 22.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.444,
         "n": 9,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 77.8,
+        "pctNeutral": 22.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.667,
         "n": 9,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.333,
         "n": 9,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.9,
+        "pctNeutral": 11.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.222,
         "n": 9,
         "cseqMean": 3.648,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 22.2,
+        "pctNeutral": 77.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.5,
         "n": 6,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.0,
         "n": 6,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.167,
         "n": 6,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 3.846,
         "n": 13,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 61.5,
+        "pctNeutral": 38.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.692,
         "n": 13,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 61.5,
+        "pctNeutral": 30.8,
+        "pctDisagree": 7.7,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.385,
         "n": 13,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 46.2,
+        "pctNeutral": 46.2,
+        "pctDisagree": 7.7,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.538,
         "n": 13,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 30.8,
+        "pctNeutral": 69.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 4.462,
         "n": 13,
         "cseqMean": 3.998,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.3,
+        "pctNeutral": 7.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 4.308,
         "n": 13,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 84.6,
+        "pctNeutral": 15.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 4.077,
         "n": 13,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 84.6,
+        "pctNeutral": 15.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.462,
         "n": 13,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 38.5,
+        "pctNeutral": 46.2,
+        "pctDisagree": 15.4,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 4.308,
         "n": 13,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.9,
+        "pctNeutral": 23.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 3.462,
         "n": 13,
         "cseqMean": 3.913,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 46.2,
+        "pctNeutral": 38.5,
+        "pctDisagree": 15.4,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.0,
         "n": 13,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 69.2,
+        "pctNeutral": 30.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 4.154,
         "n": 13,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.9,
+        "pctNeutral": 15.4,
+        "pctDisagree": 7.7,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.538,
         "n": 13,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 84.6,
+        "pctNeutral": 15.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.538,
         "n": 13,
         "cseqMean": 4.356,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.3,
+        "pctNeutral": 7.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.692,
         "n": 13,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.3,
+        "pctNeutral": 7.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "Sport for Good Chicago||T0": {
@@ -27588,441 +30380,693 @@ const DASHBOARD_DATA = {
         "n": 42,
         "cseqMean": 3.777,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 14.3,
+        "pctDisagree": 2.4,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 3.881,
         "n": 42,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 59.5,
+        "pctNeutral": 33.3,
+        "pctDisagree": 7.1,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 4.19,
         "n": 42,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 78.6,
+        "pctNeutral": 21.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.571,
         "n": 42,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 95.2,
+        "pctNeutral": 2.4,
+        "pctDisagree": 2.4,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.571,
         "n": 42,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 97.6,
+        "pctNeutral": 2.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.381,
         "n": 42,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.357,
         "n": 42,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.5,
+        "pctNeutral": 7.1,
+        "pctDisagree": 2.4,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 4.286,
         "n": 42,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.1,
+        "pctNeutral": 9.5,
+        "pctDisagree": 2.4,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 4.317,
         "n": 41,
         "cseqMean": 3.986,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.2,
+        "pctNeutral": 7.3,
+        "pctDisagree": 2.4,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.619,
         "n": 42,
         "cseqMean": 4.242,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 97.6,
+        "pctNeutral": 2.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.405,
         "n": 42,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 78.6,
+        "pctNeutral": 21.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 4.31,
         "n": 42,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 81.0,
+        "pctNeutral": 16.7,
+        "pctDisagree": 2.4,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.463,
         "n": 41,
         "cseqMean": 4.043,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.8,
+        "pctNeutral": 9.8,
+        "pctDisagree": 2.4,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.634,
         "n": 41,
         "cseqMean": 4.136,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.7,
+        "pctNeutral": 4.9,
+        "pctDisagree": 2.4,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.976,
         "n": 41,
         "cseqMean": 4.74,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.5,
         "n": 42,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.1,
+        "pctNeutral": 11.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 4.429,
         "n": 42,
         "cseqMean": 3.86,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.1,
+        "pctNeutral": 4.8,
+        "pctDisagree": 7.1,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.476,
         "n": 42,
         "cseqMean": 4.126,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.2,
+        "pctNeutral": 4.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 3.122,
         "n": 41,
         "cseqMean": 2.7,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 31.7,
+        "pctNeutral": 41.5,
+        "pctDisagree": 26.8,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 3.146,
         "n": 41,
         "cseqMean": 2.69,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 34.1,
+        "pctNeutral": 41.5,
+        "pctDisagree": 24.4,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.829,
         "n": 41,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 24.4,
+        "pctNeutral": 36.6,
+        "pctDisagree": 39.0,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.447,
         "n": 38,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 86.8,
+        "pctNeutral": 10.5,
+        "pctDisagree": 2.6,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.789,
         "n": 38,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.605,
         "n": 38,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.1,
+        "pctNeutral": 5.3,
+        "pctDisagree": 2.6,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.921,
         "n": 38,
         "cseqMean": 4.815,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.974,
         "n": 38,
         "cseqMean": 4.832,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.947,
         "n": 38,
         "cseqMean": 4.531,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.857,
         "n": 42,
         "cseqMean": 4.673,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 97.6,
+        "pctNeutral": 0.0,
+        "pctDisagree": 2.4,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.881,
         "n": 42,
         "cseqMean": 4.68,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 97.6,
+        "pctNeutral": 0.0,
+        "pctDisagree": 2.4,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.881,
         "n": 42,
         "cseqMean": 4.578,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 97.6,
+        "pctNeutral": 0.0,
+        "pctDisagree": 2.4,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 3.683,
         "n": 41,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 58.5,
+        "pctNeutral": 22.0,
+        "pctDisagree": 19.5,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 4.171,
         "n": 41,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 78.0,
+        "pctNeutral": 7.3,
+        "pctDisagree": 14.6,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 3.854,
         "n": 41,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 58.5,
+        "pctNeutral": 26.8,
+        "pctDisagree": 14.6,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 4.405,
         "n": 42,
         "cseqMean": 3.964,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.1,
+        "pctNeutral": 7.1,
+        "pctDisagree": 4.8,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 4.357,
         "n": 42,
         "cseqMean": 3.911,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 78.6,
+        "pctNeutral": 16.7,
+        "pctDisagree": 4.8,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 4.5,
         "n": 42,
         "cseqMean": 4.06,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.7,
+        "pctNeutral": 11.9,
+        "pctDisagree": 2.4,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.475,
         "n": 40,
         "cseqMean": 4.179,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 10.0,
+        "pctDisagree": 2.5,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 4.475,
         "n": 40,
         "cseqMean": 4.102,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 12.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 4.275,
         "n": 40,
         "cseqMean": 3.801,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 77.5,
+        "pctNeutral": 22.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.278,
         "n": 36,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.1,
+        "pctNeutral": 8.3,
+        "pctDisagree": 5.6,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.361,
         "n": 36,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 5.6,
+        "pctDisagree": 2.8,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.528,
         "n": 36,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 94.4,
+        "pctNeutral": 2.8,
+        "pctDisagree": 2.8,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.559,
         "n": 34,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.2,
+        "pctNeutral": 5.9,
+        "pctDisagree": 2.9,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.229,
         "n": 35,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 82.9,
+        "pctNeutral": 14.3,
+        "pctDisagree": 2.9,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.471,
         "n": 34,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 41.2,
+        "pctNeutral": 47.1,
+        "pctDisagree": 11.8,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.474,
         "n": 19,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 89.5,
+        "pctNeutral": 5.3,
+        "pctDisagree": 5.3,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.222,
         "n": 18,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.8,
+        "pctNeutral": 16.7,
+        "pctDisagree": 5.6,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.316,
         "n": 19,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 78.9,
+        "pctNeutral": 15.8,
+        "pctDisagree": 5.3,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 4.268,
         "n": 41,
         "cseqMean": 4.014,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.4,
+        "pctNeutral": 14.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 4.146,
         "n": 41,
         "cseqMean": 3.824,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.6,
+        "pctNeutral": 19.5,
+        "pctDisagree": 4.9,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.805,
         "n": 41,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 61.0,
+        "pctNeutral": 29.3,
+        "pctDisagree": 9.8,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.756,
         "n": 41,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 46.3,
+        "pctNeutral": 53.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 4.119,
         "n": 42,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 69.0,
+        "pctNeutral": 31.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 4.548,
         "n": 42,
         "cseqMean": 3.868,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.1,
+        "pctNeutral": 11.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 4.476,
         "n": 42,
         "cseqMean": 4.017,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.7,
+        "pctNeutral": 14.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 4.571,
         "n": 42,
         "cseqMean": 3.875,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.7,
+        "pctNeutral": 14.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 4.619,
         "n": 42,
         "cseqMean": 4.178,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.5,
+        "pctNeutral": 9.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 4.762,
         "n": 42,
         "cseqMean": 3.913,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.9,
+        "pctNeutral": 7.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.561,
         "n": 41,
         "cseqMean": 4.162,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.7,
+        "pctNeutral": 7.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 4.244,
         "n": 41,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 78.0,
+        "pctNeutral": 17.1,
+        "pctDisagree": 4.9,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.619,
         "n": 42,
         "cseqMean": 4.377,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 92.9,
+        "pctNeutral": 7.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.714,
         "n": 42,
         "cseqMean": 4.356,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.738,
         "n": 42,
         "cseqMean": 4.442,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "Sport for Good New Orleans||T0": {
@@ -28031,441 +31075,693 @@ const DASHBOARD_DATA = {
         "n": 17,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 64.7,
+        "pctNeutral": 29.4,
+        "pctDisagree": 5.9,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 3.824,
         "n": 17,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 58.8,
+        "pctNeutral": 41.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 4.176,
         "n": 17,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 82.4,
+        "pctNeutral": 17.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.588,
         "n": 17,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.2,
+        "pctNeutral": 11.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.412,
         "n": 17,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 82.4,
+        "pctNeutral": 17.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.118,
         "n": 17,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.6,
+        "pctNeutral": 29.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.294,
         "n": 17,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 82.4,
+        "pctNeutral": 11.8,
+        "pctDisagree": 5.9,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 4.0,
         "n": 17,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.6,
+        "pctNeutral": 23.5,
+        "pctDisagree": 5.9,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 4.0,
         "n": 17,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 70.6,
+        "pctNeutral": 17.6,
+        "pctDisagree": 11.8,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.647,
         "n": 17,
         "cseqMean": 4.242,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 94.1,
+        "pctNeutral": 5.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.235,
         "n": 17,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.6,
+        "pctNeutral": 29.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 4.118,
         "n": 17,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 82.4,
+        "pctNeutral": 11.8,
+        "pctDisagree": 5.9,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.059,
         "n": 17,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.5,
+        "pctNeutral": 11.8,
+        "pctDisagree": 11.8,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.176,
         "n": 17,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.5,
+        "pctNeutral": 11.8,
+        "pctDisagree": 11.8,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.647,
         "n": 17,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 88.2,
+        "pctNeutral": 5.9,
+        "pctDisagree": 5.9,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.176,
         "n": 17,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 82.4,
+        "pctNeutral": 11.8,
+        "pctDisagree": 5.9,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.882,
         "n": 17,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 70.6,
+        "pctNeutral": 11.8,
+        "pctDisagree": 17.6,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.0,
         "n": 17,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.6,
+        "pctNeutral": 23.5,
+        "pctDisagree": 5.9,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 2.824,
         "n": 17,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 29.4,
+        "pctNeutral": 29.4,
+        "pctDisagree": 41.2,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 2.588,
         "n": 17,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 29.4,
+        "pctNeutral": 23.5,
+        "pctDisagree": 47.1,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.353,
         "n": 17,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 17.6,
+        "pctNeutral": 23.5,
+        "pctDisagree": 58.8,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.6,
         "n": 15,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.8,
         "n": 15,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.667,
         "n": 15,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.833,
         "n": 12,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 8.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.75,
         "n": 12,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 91.7,
+        "pctNeutral": 8.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.5,
         "n": 12,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.706,
         "n": 17,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 94.1,
+        "pctNeutral": 0.0,
+        "pctDisagree": 5.9,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.647,
         "n": 17,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 94.1,
+        "pctNeutral": 0.0,
+        "pctDisagree": 5.9,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.765,
         "n": 17,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 94.1,
+        "pctNeutral": 0.0,
+        "pctDisagree": 5.9,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 3.353,
         "n": 17,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 23.5,
+        "pctNeutral": 64.7,
+        "pctDisagree": 11.8,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 3.882,
         "n": 17,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 58.8,
+        "pctNeutral": 29.4,
+        "pctDisagree": 11.8,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 3.353,
         "n": 17,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 35.3,
+        "pctNeutral": 52.9,
+        "pctDisagree": 11.8,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 3.824,
         "n": 17,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 52.9,
+        "pctNeutral": 35.3,
+        "pctDisagree": 11.8,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 4.059,
         "n": 17,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 70.6,
+        "pctNeutral": 11.8,
+        "pctDisagree": 17.6,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 4.235,
         "n": 17,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.5,
+        "pctNeutral": 17.6,
+        "pctDisagree": 5.9,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.412,
         "n": 17,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.2,
+        "pctNeutral": 5.9,
+        "pctDisagree": 5.9,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 3.941,
         "n": 17,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.6,
+        "pctNeutral": 17.6,
+        "pctDisagree": 11.8,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 4.059,
         "n": 17,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 70.6,
+        "pctNeutral": 23.5,
+        "pctDisagree": 5.9,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.333,
         "n": 9,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.444,
         "n": 9,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.444,
         "n": 9,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.9,
+        "pctNeutral": 11.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.667,
         "n": 9,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.556,
         "n": 9,
         "cseqMean": 4.042,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 4.0,
         "n": 9,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 77.8,
+        "pctNeutral": 22.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.5,
         "n": 6,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.5,
         "n": 6,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.5,
         "n": 6,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 3.941,
         "n": 17,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.6,
+        "pctNeutral": 17.6,
+        "pctDisagree": 11.8,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.824,
         "n": 17,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 64.7,
+        "pctNeutral": 23.5,
+        "pctDisagree": 11.8,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.647,
         "n": 17,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 58.8,
+        "pctNeutral": 29.4,
+        "pctDisagree": 11.8,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.412,
         "n": 17,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 41.2,
+        "pctNeutral": 52.9,
+        "pctDisagree": 5.9,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 4.176,
         "n": 17,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 70.6,
+        "pctNeutral": 29.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 4.176,
         "n": 17,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.5,
+        "pctNeutral": 17.6,
+        "pctDisagree": 5.9,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 4.188,
         "n": 16,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.529,
         "n": 17,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 47.1,
+        "pctNeutral": 47.1,
+        "pctDisagree": 5.9,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 3.941,
         "n": 17,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.6,
+        "pctNeutral": 23.5,
+        "pctDisagree": 5.9,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 3.941,
         "n": 17,
         "cseqMean": 3.913,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 64.7,
+        "pctNeutral": 29.4,
+        "pctDisagree": 5.9,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.059,
         "n": 17,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 64.7,
+        "pctNeutral": 29.4,
+        "pctDisagree": 5.9,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 4.176,
         "n": 17,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 82.4,
+        "pctNeutral": 17.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.529,
         "n": 17,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 94.1,
+        "pctNeutral": 5.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.353,
         "n": 17,
         "cseqMean": 4.356,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 82.4,
+        "pctNeutral": 17.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.588,
         "n": 17,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.2,
+        "pctNeutral": 5.9,
+        "pctDisagree": 5.9,
+        "cseqAgree": 86.8
       }
     },
     "Sport for Good New York||T0": {
@@ -28474,441 +31770,693 @@ const DASHBOARD_DATA = {
         "n": 37,
         "cseqMean": 3.777,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 94.6,
+        "pctNeutral": 5.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 3.946,
         "n": 37,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 62.2,
+        "pctNeutral": 35.1,
+        "pctDisagree": 2.7,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 4.027,
         "n": 37,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.7,
+        "pctNeutral": 18.9,
+        "pctDisagree": 5.4,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.541,
         "n": 37,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 91.9,
+        "pctNeutral": 8.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.378,
         "n": 37,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 91.9,
+        "pctNeutral": 8.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.243,
         "n": 37,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 78.4,
+        "pctNeutral": 18.9,
+        "pctDisagree": 2.7,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 3.973,
         "n": 37,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 67.6,
+        "pctNeutral": 21.6,
+        "pctDisagree": 10.8,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 3.892,
         "n": 37,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 67.6,
+        "pctNeutral": 24.3,
+        "pctDisagree": 8.1,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 3.865,
         "n": 37,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 67.6,
+        "pctNeutral": 16.2,
+        "pctDisagree": 16.2,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.027,
         "n": 37,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.7,
+        "pctNeutral": 18.9,
+        "pctDisagree": 5.4,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.162,
         "n": 37,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 64.9,
+        "pctNeutral": 35.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 4.216,
         "n": 37,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.8,
+        "pctNeutral": 10.8,
+        "pctDisagree": 5.4,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.054,
         "n": 37,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 67.6,
+        "pctNeutral": 27.0,
+        "pctDisagree": 5.4,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.108,
         "n": 37,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.7,
+        "pctNeutral": 18.9,
+        "pctDisagree": 5.4,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.703,
         "n": 37,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 97.3,
+        "pctNeutral": 2.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.189,
         "n": 37,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 78.4,
+        "pctNeutral": 18.9,
+        "pctDisagree": 2.7,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.838,
         "n": 37,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 67.6,
+        "pctNeutral": 24.3,
+        "pctDisagree": 8.1,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 3.946,
         "n": 37,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 62.2,
+        "pctNeutral": 37.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 2.514,
         "n": 37,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 13.5,
+        "pctNeutral": 37.8,
+        "pctDisagree": 48.6,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 2.432,
         "n": 37,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 13.5,
+        "pctNeutral": 37.8,
+        "pctDisagree": 48.6,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.27,
         "n": 37,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 13.5,
+        "pctNeutral": 27.0,
+        "pctDisagree": 59.5,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.421,
         "n": 19,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 94.7,
+        "pctNeutral": 5.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.579,
         "n": 19,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 89.5,
+        "pctNeutral": 10.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.474,
         "n": 19,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 84.2,
+        "pctNeutral": 15.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.714,
         "n": 28,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 89.3,
+        "pctNeutral": 10.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.679,
         "n": 28,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 92.9,
+        "pctNeutral": 7.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.143,
         "n": 28,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 71.4,
+        "pctNeutral": 21.4,
+        "pctDisagree": 7.1,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.649,
         "n": 37,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 91.9,
+        "pctNeutral": 5.4,
+        "pctDisagree": 2.7,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.622,
         "n": 37,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 86.5,
+        "pctNeutral": 13.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.432,
         "n": 37,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 81.1,
+        "pctNeutral": 16.2,
+        "pctDisagree": 2.7,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 3.333,
         "n": 36,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 27.8,
+        "pctNeutral": 61.1,
+        "pctDisagree": 11.1,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 3.5,
         "n": 36,
         "cseqMean": 3.964,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 38.9,
+        "pctNeutral": 44.4,
+        "pctDisagree": 16.7,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 3.556,
         "n": 36,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 38.9,
+        "pctNeutral": 52.8,
+        "pctDisagree": 8.3,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 3.611,
         "n": 36,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 44.4,
+        "pctNeutral": 47.2,
+        "pctDisagree": 8.3,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 3.806,
         "n": 36,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 52.8,
+        "pctNeutral": 38.9,
+        "pctDisagree": 8.3,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 3.75,
         "n": 36,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 52.8,
+        "pctNeutral": 38.9,
+        "pctDisagree": 8.3,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.167,
         "n": 36,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 4.111,
         "n": 36,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 69.4,
+        "pctNeutral": 30.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 3.778,
         "n": 36,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.25,
         "n": 24,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.3,
+        "pctNeutral": 12.5,
+        "pctDisagree": 4.2,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.333,
         "n": 24,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 12.5,
+        "pctDisagree": 4.2,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.333,
         "n": 24,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 87.5,
+        "pctNeutral": 8.3,
+        "pctDisagree": 4.2,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.043,
         "n": 23,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 69.6,
+        "pctNeutral": 30.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.083,
         "n": 24,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 20.8,
+        "pctDisagree": 4.2,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.667,
         "n": 24,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 54.2,
+        "pctNeutral": 37.5,
+        "pctDisagree": 8.3,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.429,
         "n": 7,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.7,
+        "pctNeutral": 14.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.429,
         "n": 7,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.7,
+        "pctNeutral": 0.0,
+        "pctDisagree": 14.3,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.429,
         "n": 7,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.7,
+        "pctNeutral": 14.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 3.833,
         "n": 36,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.9,
+        "pctNeutral": 33.3,
+        "pctDisagree": 2.8,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.806,
         "n": 36,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 58.3,
+        "pctNeutral": 36.1,
+        "pctDisagree": 5.6,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.556,
         "n": 36,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 44.4,
+        "pctNeutral": 41.7,
+        "pctDisagree": 13.9,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.528,
         "n": 36,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 33.3,
+        "pctNeutral": 66.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 3.889,
         "n": 36,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 58.3,
+        "pctNeutral": 41.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 3.944,
         "n": 36,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 63.9,
+        "pctNeutral": 33.3,
+        "pctDisagree": 2.8,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 3.944,
         "n": 36,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 58.3,
+        "pctNeutral": 38.9,
+        "pctDisagree": 2.8,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.917,
         "n": 36,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 63.9,
+        "pctNeutral": 36.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 4.111,
         "n": 36,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 72.2,
+        "pctNeutral": 25.0,
+        "pctDisagree": 2.8,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 3.889,
         "n": 36,
         "cseqMean": 3.913,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 61.1,
+        "pctNeutral": 36.1,
+        "pctDisagree": 2.8,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.139,
         "n": 36,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 72.2,
+        "pctNeutral": 27.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 4.0,
         "n": 36,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 63.9,
+        "pctNeutral": 36.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.361,
         "n": 36,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 86.1,
+        "pctNeutral": 13.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.361,
         "n": 36,
         "cseqMean": 4.356,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.389,
         "n": 36,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "Sport for Good Chicago||T1": {
@@ -28917,434 +32465,682 @@ const DASHBOARD_DATA = {
         "n": 48,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 70.8,
+        "pctNeutral": 18.8,
+        "pctDisagree": 10.4,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 3.213,
         "n": 47,
         "cseqMean": 3.715,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 36.2,
+        "pctNeutral": 40.4,
+        "pctDisagree": 23.4,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 3.5,
         "n": 48,
         "cseqMean": 4.031,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 54.2,
+        "pctNeutral": 25.0,
+        "pctDisagree": 20.8,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.479,
         "n": 48,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 89.6,
+        "pctNeutral": 8.3,
+        "pctDisagree": 2.1,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.188,
         "n": 48,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 16.7,
+        "pctDisagree": 8.3,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.021,
         "n": 47,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 76.6,
+        "pctNeutral": 14.9,
+        "pctDisagree": 8.5,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.184,
         "n": 49,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 87.8,
+        "pctNeutral": 8.2,
+        "pctDisagree": 4.1,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 4.102,
         "n": 49,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 77.6,
+        "pctNeutral": 18.4,
+        "pctDisagree": 4.1,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 3.98,
         "n": 49,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.6,
+        "pctNeutral": 16.3,
+        "pctDisagree": 6.1,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 3.776,
         "n": 49,
         "cseqMean": 4.242,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.3,
+        "pctNeutral": 28.6,
+        "pctDisagree": 8.2,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.417,
         "n": 48,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 14.6,
+        "pctDisagree": 2.1,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 4.062,
         "n": 48,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 20.8,
+        "pctDisagree": 4.2,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.408,
         "n": 49,
         "cseqMean": 4.043,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.7,
+        "pctNeutral": 10.2,
+        "pctDisagree": 4.1,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.388,
         "n": 49,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.7,
+        "pctNeutral": 8.2,
+        "pctDisagree": 6.1,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.694,
         "n": 49,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 89.8,
+        "pctNeutral": 8.2,
+        "pctDisagree": 2.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.327,
         "n": 49,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.7,
+        "pctNeutral": 10.2,
+        "pctDisagree": 4.1,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 4.469,
         "n": 49,
         "cseqMean": 3.86,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 89.8,
+        "pctNeutral": 6.1,
+        "pctDisagree": 4.1,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.143,
         "n": 49,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 81.6,
+        "pctNeutral": 14.3,
+        "pctDisagree": 4.1,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 2.702,
         "n": 47,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 23.4,
+        "pctNeutral": 29.8,
+        "pctDisagree": 46.8,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 2.532,
         "n": 47,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 19.1,
+        "pctNeutral": 27.7,
+        "pctDisagree": 53.2,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.511,
         "n": 47,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 21.3,
+        "pctNeutral": 25.5,
+        "pctDisagree": 53.2,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.459,
         "n": 37,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 94.6,
+        "pctNeutral": 2.7,
+        "pctDisagree": 2.7,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.73,
         "n": 37,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.9,
+        "pctNeutral": 5.4,
+        "pctDisagree": 2.7,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.378,
         "n": 37,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.8,
+        "pctNeutral": 13.5,
+        "pctDisagree": 2.7,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.721,
         "n": 43,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 93.0,
+        "pctNeutral": 2.3,
+        "pctDisagree": 4.7,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.698,
         "n": 43,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 93.0,
+        "pctNeutral": 4.7,
+        "pctDisagree": 2.3,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.558,
         "n": 43,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.4,
+        "pctNeutral": 9.3,
+        "pctDisagree": 2.3,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.771,
         "n": 48,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.8,
+        "pctNeutral": 4.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.792,
         "n": 48,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.8,
+        "pctNeutral": 4.2,
+        "pctDisagree": 2.1,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.729,
         "n": 48,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.8,
+        "pctNeutral": 4.2,
+        "pctDisagree": 2.1,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 3.188,
         "n": 48,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 37.5,
+        "pctNeutral": 35.4,
+        "pctDisagree": 27.1,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 3.917,
         "n": 48,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 68.8,
+        "pctNeutral": 20.8,
+        "pctDisagree": 10.4,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 3.812,
         "n": 48,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 62.5,
+        "pctNeutral": 27.1,
+        "pctDisagree": 10.4,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 4.125,
         "n": 48,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 81.2,
+        "pctNeutral": 10.4,
+        "pctDisagree": 8.3,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 4.25,
         "n": 48,
         "cseqMean": 3.911,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 79.2,
+        "pctNeutral": 14.6,
+        "pctDisagree": 6.2,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 4.417,
         "n": 48,
         "cseqMean": 4.06,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 10.4,
+        "pctDisagree": 6.2,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.521,
         "n": 48,
         "cseqMean": 4.179,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 12.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 4.333,
         "n": 48,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.4,
+        "pctNeutral": 10.4,
+        "pctDisagree": 4.2,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 4.021,
         "n": 48,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 70.8,
+        "pctNeutral": 27.1,
+        "pctDisagree": 2.1,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.03,
         "n": 33,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 90.9,
+        "pctNeutral": 3.0,
+        "pctDisagree": 6.1,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 3.939,
         "n": 33,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 84.8,
+        "pctNeutral": 6.1,
+        "pctDisagree": 9.1,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.061,
         "n": 33,
         "cseqMean": 4.366,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 87.9,
+        "pctNeutral": 6.1,
+        "pctDisagree": 6.1,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.636,
         "n": 33,
         "cseqMean": 4.317,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.9,
+        "pctNeutral": 6.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.091,
         "n": 33,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 84.8,
+        "pctNeutral": 9.1,
+        "pctDisagree": 6.1,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.606,
         "n": 33,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 57.6,
+        "pctNeutral": 33.3,
+        "pctDisagree": 9.1,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.4,
         "n": 5,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_3": {
         "mean": 4.2,
         "n": 5,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 4.188,
         "n": 48,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 14.6,
+        "pctDisagree": 2.1,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 4.083,
         "n": 48,
         "cseqMean": 3.824,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 79.2,
+        "pctNeutral": 16.7,
+        "pctDisagree": 4.2,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.708,
         "n": 48,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 60.4,
+        "pctNeutral": 31.2,
+        "pctDisagree": 8.3,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.261,
         "n": 46,
         "cseqMean": 3.476,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 19.6,
+        "pctNeutral": 80.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 3.896,
         "n": 48,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 31.2,
+        "pctDisagree": 2.1,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 4.021,
         "n": 48,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 68.8,
+        "pctNeutral": 27.1,
+        "pctDisagree": 4.2,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 3.917,
         "n": 48,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 64.6,
+        "pctNeutral": 33.3,
+        "pctDisagree": 2.1,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 4.312,
         "n": 48,
         "cseqMean": 3.875,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.4,
+        "pctNeutral": 12.5,
+        "pctDisagree": 2.1,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 4.188,
         "n": 48,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.4,
+        "pctNeutral": 8.3,
+        "pctDisagree": 6.2,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 4.25,
         "n": 48,
         "cseqMean": 3.913,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 79.2,
+        "pctNeutral": 12.5,
+        "pctDisagree": 8.3,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 4.521,
         "n": 48,
         "cseqMean": 4.162,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 8.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 4.021,
         "n": 48,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 20.8,
+        "pctDisagree": 4.2,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.542,
         "n": 48,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.7,
+        "pctNeutral": 8.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.021,
         "n": 47,
         "cseqMean": 4.356,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 68.1,
+        "pctNeutral": 25.5,
+        "pctDisagree": 6.4,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.104,
         "n": 48,
         "cseqMean": 4.442,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 72.9,
+        "pctNeutral": 22.9,
+        "pctDisagree": 4.2,
+        "cseqAgree": 86.8
       }
     },
     "Cleveland||T1": {
@@ -29353,399 +33149,627 @@ const DASHBOARD_DATA = {
         "n": 4,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 3.75,
         "n": 4,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 50.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 4.25,
         "n": 4,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 5.0,
         "n": 4,
         "cseqMean": 4.571,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.75,
         "n": 4,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 5.0,
         "n": 4,
         "cseqMean": 4.27,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.0,
         "n": 3,
         "cseqMean": 4.22,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 4.667,
         "n": 3,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 3.333,
         "n": 3,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 33.3,
+        "pctNeutral": 33.3,
+        "pctDisagree": 33.3,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.667,
         "n": 3,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 5.0,
         "n": 3,
         "cseqMean": 4.238,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 4.333,
         "n": 3,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.5,
         "n": 4,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.5,
         "n": 4,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 5.0,
         "n": 4,
         "cseqMean": 4.74,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 3.5,
         "n": 4,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.0,
         "n": 4,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 25.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.0,
         "n": 4,
         "cseqMean": 4.126,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 4.0,
         "n": 4,
         "cseqMean": 2.7,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 4.0,
         "n": 4,
         "cseqMean": 2.69,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 4.0,
         "n": 4,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 50.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.333,
         "n": 3,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.0,
         "n": 3,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 5.0,
         "n": 3,
         "cseqMean": 4.597,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "TRUST_1": {
         "mean": 4.25,
         "n": 4,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.75,
         "n": 4,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 5.0,
         "n": 4,
         "cseqMean": 4.578,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 2.5,
         "n": 4,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 25.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 50.0,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 4.0,
         "n": 4,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 4.25,
         "n": 4,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 3.75,
         "n": 4,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 4.75,
         "n": 4,
         "cseqMean": 3.911,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 4.75,
         "n": 4,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.25,
         "n": 4,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 4.0,
         "n": 4,
         "cseqMean": 4.102,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 3.25,
         "n": 4,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 3.5,
         "n": 4,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 3.5,
         "n": 4,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.0,
         "n": 4,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.25,
         "n": 4,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 3.5,
         "n": 4,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.0,
         "n": 4,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 50.0,
+        "cseqAgree": 50.7
       },
       "EQUITY_1": {
         "mean": 3.75,
         "n": 4,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.5,
         "n": 4,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 25.0,
+        "pctNeutral": 75.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.75,
         "n": 4,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.0,
         "n": 4,
         "cseqMean": 3.476,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 0.0,
+        "pctNeutral": 100.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 3.25,
         "n": 4,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 25.0,
+        "pctNeutral": 75.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 2.75,
         "n": 4,
         "cseqMean": 3.868,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 0.0,
+        "pctNeutral": 75.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 3.25,
         "n": 4,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 25.0,
+        "pctNeutral": 75.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 2.0,
         "n": 4,
         "cseqMean": 3.875,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 0.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 100.0,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 2.25,
         "n": 4,
         "cseqMean": 4.178,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 0.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 75.0,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 2.75,
         "n": 4,
         "cseqMean": 3.913,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 25.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 50.0,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 3.75,
         "n": 4,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 2.5,
         "n": 4,
         "cseqMean": 3.969,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 0.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 50.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.5,
         "n": 4,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 2.75,
         "n": 4,
         "cseqMean": 4.356,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 0.0,
+        "pctNeutral": 75.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 3.5,
         "n": 4,
         "cseqMean": 4.442,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "DC||T1": {
@@ -29754,441 +33778,693 @@ const DASHBOARD_DATA = {
         "n": 24,
         "cseqMean": 3.777,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 8.3,
+        "pctDisagree": 4.2,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 4.0,
         "n": 24,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 16.7,
+        "pctDisagree": 8.3,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 3.875,
         "n": 24,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.8,
+        "pctNeutral": 12.5,
+        "pctDisagree": 16.7,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.042,
         "n": 24,
         "cseqMean": 4.571,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 79.2,
+        "pctNeutral": 12.5,
+        "pctDisagree": 8.3,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 3.917,
         "n": 24,
         "cseqMean": 4.442,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.8,
+        "pctNeutral": 16.7,
+        "pctDisagree": 12.5,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 3.391,
         "n": 23,
         "cseqMean": 4.27,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 52.2,
+        "pctNeutral": 26.1,
+        "pctDisagree": 21.7,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.208,
         "n": 24,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.3,
+        "pctNeutral": 8.3,
+        "pctDisagree": 8.3,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 3.826,
         "n": 23,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 69.6,
+        "pctNeutral": 26.1,
+        "pctDisagree": 4.3,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 3.667,
         "n": 24,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 20.8,
+        "pctDisagree": 12.5,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 3.708,
         "n": 24,
         "cseqMean": 4.242,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 16.7,
+        "pctDisagree": 16.7,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.083,
         "n": 24,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 29.2,
+        "pctDisagree": 4.2,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 3.875,
         "n": 24,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.8,
+        "pctNeutral": 16.7,
+        "pctDisagree": 12.5,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.083,
         "n": 24,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 83.3,
+        "pctNeutral": 12.5,
+        "pctDisagree": 4.2,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.5,
         "n": 24,
         "cseqMean": 4.136,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 8.3,
+        "pctDisagree": 4.2,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.917,
         "n": 24,
         "cseqMean": 4.74,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.083,
         "n": 24,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 79.2,
+        "pctNeutral": 12.5,
+        "pctDisagree": 8.3,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 4.13,
         "n": 23,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 78.3,
+        "pctNeutral": 21.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.042,
         "n": 24,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 79.2,
+        "pctNeutral": 16.7,
+        "pctDisagree": 4.2,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 2.318,
         "n": 22,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 18.2,
+        "pctNeutral": 27.3,
+        "pctDisagree": 54.5,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 2.227,
         "n": 22,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 18.2,
+        "pctNeutral": 18.2,
+        "pctDisagree": 63.6,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.091,
         "n": 22,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 9.1,
+        "pctNeutral": 22.7,
+        "pctDisagree": 68.2,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.263,
         "n": 19,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 84.2,
+        "pctNeutral": 10.5,
+        "pctDisagree": 5.3,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.474,
         "n": 19,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 78.9,
+        "pctNeutral": 21.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.158,
         "n": 19,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.7,
+        "pctNeutral": 21.1,
+        "pctDisagree": 5.3,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.6,
         "n": 20,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.7,
         "n": 20,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 3.944,
         "n": 18,
         "cseqMean": 4.531,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 61.1,
+        "pctNeutral": 38.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.783,
         "n": 23,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.565,
         "n": 23,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 91.3,
+        "pctNeutral": 4.3,
+        "pctDisagree": 4.3,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.609,
         "n": 23,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.3,
+        "pctNeutral": 4.3,
+        "pctDisagree": 4.3,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 2.957,
         "n": 23,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 17.4,
+        "pctNeutral": 56.5,
+        "pctDisagree": 26.1,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 3.696,
         "n": 23,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 52.2,
+        "pctNeutral": 30.4,
+        "pctDisagree": 17.4,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 3.522,
         "n": 23,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 47.8,
+        "pctNeutral": 39.1,
+        "pctDisagree": 13.0,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 3.818,
         "n": 22,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.6,
+        "pctNeutral": 31.8,
+        "pctDisagree": 4.5,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 3.818,
         "n": 22,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.6,
+        "pctNeutral": 31.8,
+        "pctDisagree": 4.5,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 3.864,
         "n": 22,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 59.1,
+        "pctNeutral": 36.4,
+        "pctDisagree": 4.5,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 4.318,
         "n": 22,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 81.8,
+        "pctNeutral": 18.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 4.318,
         "n": 22,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.4,
+        "pctNeutral": 13.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 3.818,
         "n": 22,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 54.5,
+        "pctNeutral": 40.9,
+        "pctDisagree": 4.5,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.125,
         "n": 16,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 81.2,
+        "pctNeutral": 18.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.0,
         "n": 16,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.375,
         "n": 16,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 12.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.294,
         "n": 17,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 88.2,
+        "pctNeutral": 11.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 3.882,
         "n": 17,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 70.6,
+        "pctNeutral": 11.8,
+        "pctDisagree": 17.6,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.5,
         "n": 16,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.667,
         "n": 3,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 3.667,
         "n": 3,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 3.667,
         "n": 3,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 3.739,
         "n": 23,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 65.2,
+        "pctNeutral": 26.1,
+        "pctDisagree": 8.7,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.609,
         "n": 23,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 52.2,
+        "pctNeutral": 39.1,
+        "pctDisagree": 8.7,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.348,
         "n": 23,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 39.1,
+        "pctNeutral": 47.8,
+        "pctDisagree": 13.0,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.545,
         "n": 22,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 45.5,
+        "pctNeutral": 54.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 4.0,
         "n": 22,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 72.7,
+        "pctNeutral": 27.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 4.0,
         "n": 22,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 72.7,
+        "pctNeutral": 27.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 4.0,
         "n": 22,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 72.7,
+        "pctNeutral": 27.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.682,
         "n": 22,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 54.5,
+        "pctNeutral": 45.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 4.318,
         "n": 22,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.4,
+        "pctNeutral": 13.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 3.909,
         "n": 22,
         "cseqMean": 3.913,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.6,
+        "pctNeutral": 36.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 3.955,
         "n": 22,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 59.1,
+        "pctNeutral": 40.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 3.773,
         "n": 22,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 68.2,
+        "pctNeutral": 31.8,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.455,
         "n": 22,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.4,
+        "pctNeutral": 13.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 4.565,
         "n": 23,
         "cseqMean": 4.356,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.609,
         "n": 23,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 91.3,
+        "pctNeutral": 8.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "Delaware||T1": {
@@ -30197,441 +34473,693 @@ const DASHBOARD_DATA = {
         "n": 15,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 6.7,
+        "pctDisagree": 6.7,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 3.8,
         "n": 15,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 60.0,
+        "pctNeutral": 33.3,
+        "pctDisagree": 6.7,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 4.333,
         "n": 15,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 0.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.6,
         "n": 15,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.467,
         "n": 15,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.467,
         "n": 15,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.267,
         "n": 15,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 3.8,
         "n": 15,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 60.0,
+        "pctNeutral": 33.3,
+        "pctDisagree": 6.7,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 3.933,
         "n": 15,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.3,
+        "pctNeutral": 20.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.6,
         "n": 15,
         "cseqMean": 4.242,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.667,
         "n": 15,
         "cseqMean": 4.238,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 4.4,
         "n": 15,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 13.3,
+        "pctDisagree": 6.7,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 3.667,
         "n": 15,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 53.3,
+        "pctNeutral": 33.3,
+        "pctDisagree": 13.3,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.067,
         "n": 15,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 13.3,
+        "pctDisagree": 6.7,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 4.8,
         "n": 15,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 4.4,
         "n": 15,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.6,
         "n": 15,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 60.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 20.0,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 4.333,
         "n": 15,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 2.933,
         "n": 15,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 33.3,
+        "pctNeutral": 26.7,
+        "pctDisagree": 40.0,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 2.867,
         "n": 15,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 26.7,
+        "pctNeutral": 40.0,
+        "pctDisagree": 33.3,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 2.733,
         "n": 15,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 20.0,
+        "pctNeutral": 40.0,
+        "pctDisagree": 40.0,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.6,
         "n": 10,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.5,
         "n": 10,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.7,
         "n": 10,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.857,
         "n": 7,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.857,
         "n": 7,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.857,
         "n": 7,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.8,
         "n": 15,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.667,
         "n": 15,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 93.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.8,
         "n": 15,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 2.467,
         "n": 15,
         "cseqMean": 3.298,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 13.3,
+        "pctNeutral": 33.3,
+        "pctDisagree": 53.3,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 3.8,
         "n": 15,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.3,
+        "pctNeutral": 6.7,
+        "pctDisagree": 20.0,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 4.0,
         "n": 15,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 66.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 20.0,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 4.4,
         "n": 15,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 4.333,
         "n": 15,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 13.3,
+        "pctDisagree": 6.7,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 4.6,
         "n": 15,
         "cseqMean": 4.06,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 3.733,
         "n": 15,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 53.3,
+        "pctNeutral": 26.7,
+        "pctDisagree": 20.0,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 4.2,
         "n": 15,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 73.3,
+        "pctNeutral": 20.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 3.8,
         "n": 15,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 53.3,
+        "pctNeutral": 46.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.3,
         "n": 10,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.5,
         "n": 10,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.4,
         "n": 10,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.5,
         "n": 10,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.4,
         "n": 10,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 90.0,
+        "pctNeutral": 10.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 4.2,
         "n": 10,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 70.0,
+        "pctNeutral": 30.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.2,
         "n": 5,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 60.0,
+        "pctNeutral": 40.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.2,
         "n": 5,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.2,
         "n": 5,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 4.333,
         "n": 15,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 86.7,
+        "pctNeutral": 13.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 4.267,
         "n": 15,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 4.267,
         "n": 15,
         "cseqMean": 3.645,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 73.3,
+        "pctNeutral": 26.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.667,
         "n": 15,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 46.7,
+        "pctNeutral": 53.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 3.867,
         "n": 15,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 60.0,
+        "pctNeutral": 40.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 4.0,
         "n": 15,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 4.2,
         "n": 15,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 80.0,
+        "pctNeutral": 20.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 3.6,
         "n": 15,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 53.3,
+        "pctNeutral": 40.0,
+        "pctDisagree": 6.7,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 3.533,
         "n": 15,
         "cseqMean": 4.178,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 46.7,
+        "pctNeutral": 46.7,
+        "pctDisagree": 6.7,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 3.733,
         "n": 15,
         "cseqMean": 3.913,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 60.0,
+        "pctNeutral": 33.3,
+        "pctDisagree": 6.7,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 3.933,
         "n": 15,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 53.3,
+        "pctNeutral": 46.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 3.714,
         "n": 14,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 42.9,
+        "pctNeutral": 57.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 4.2,
         "n": 15,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 3.667,
         "n": 15,
         "cseqMean": 4.356,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 53.3,
+        "pctNeutral": 46.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.2,
         "n": 15,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.3,
+        "pctNeutral": 26.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "Salem||T1": {
@@ -30640,1327 +35168,2083 @@ const DASHBOARD_DATA = {
         "n": 9,
         "cseqMean": 3.777,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 22.2,
+        "pctNeutral": 33.3,
+        "pctDisagree": 44.4,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
         "mean": 3.667,
         "n": 9,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 22.2,
+        "pctDisagree": 11.1,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
         "mean": 3.444,
         "n": 9,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 44.4,
+        "pctNeutral": 44.4,
+        "pctDisagree": 11.1,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
         "mean": 4.667,
         "n": 9,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
         "mean": 4.444,
         "n": 9,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 77.8,
+        "pctNeutral": 11.1,
+        "pctDisagree": 11.1,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
         "mean": 4.667,
         "n": 9,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.9,
+        "pctNeutral": 11.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.3
       },
       "GC_1": {
         "mean": 4.0,
         "n": 9,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.8,
+        "pctNeutral": 22.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.6
       },
       "GC_2": {
         "mean": 4.111,
         "n": 9,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 75.1
       },
       "GC_3": {
         "mean": 4.0,
         "n": 9,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 77.8,
+        "pctNeutral": 22.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.1
       },
       "COM_1": {
         "mean": 4.333,
         "n": 9,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 77.8,
+        "pctNeutral": 22.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.8
       },
       "COM_2": {
         "mean": 4.222,
         "n": 9,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.8,
+        "pctNeutral": 11.1,
+        "pctDisagree": 11.1,
+        "cseqAgree": 74.6
       },
       "COM_3": {
         "mean": 4.444,
         "n": 9,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.8
       },
       "COH_1": {
         "mean": 4.222,
         "n": 9,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.9,
+        "pctNeutral": 11.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.3
       },
       "COH_2": {
         "mean": 4.333,
         "n": 9,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.1
       },
       "COH_3": {
         "mean": 5.0,
         "n": 9,
         "cseqMean": 4.74,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.0
       },
       "TF_1": {
         "mean": 3.889,
         "n": 9,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.222,
         "n": 9,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 33.3,
+        "pctNeutral": 44.4,
+        "pctDisagree": 22.2,
+        "cseqAgree": 67.7
       },
       "TF_3": {
         "mean": 3.556,
         "n": 9,
         "cseqMean": 4.126,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 55.6,
+        "pctNeutral": 44.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 3.0,
         "n": 9,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 33.3,
+        "pctNeutral": 33.3,
+        "pctDisagree": 33.3,
+        "cseqAgree": 25.0
       },
       "DM_2": {
         "mean": 2.889,
         "n": 9,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 33.3,
+        "pctNeutral": 33.3,
+        "pctDisagree": 33.3,
+        "cseqAgree": 25.5
       },
       "DM_3": {
         "mean": 3.222,
         "n": 9,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 55.6,
+        "pctNeutral": 0.0,
+        "pctDisagree": 44.4,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.167,
         "n": 6,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.3,
+        "pctNeutral": 16.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 3.667,
         "n": 6,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 0.0,
+        "pctDisagree": 33.3,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.0,
         "n": 6,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.5,
         "n": 4,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.75,
         "n": 4,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.5,
         "n": 4,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.556,
         "n": 9,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
         "mean": 4.667,
         "n": 9,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
         "mean": 4.667,
         "n": 9,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 3.0,
         "n": 9,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 33.3,
+        "pctNeutral": 22.2,
+        "pctDisagree": 44.4,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
         "mean": 4.111,
         "n": 9,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 66.7,
+        "pctNeutral": 22.2,
+        "pctDisagree": 11.1,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
         "mean": 4.0,
         "n": 9,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 77.8,
+        "pctNeutral": 22.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 3.556,
         "n": 9,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 44.4,
+        "pctNeutral": 55.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
         "mean": 3.889,
         "n": 9,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 22.2,
+        "pctDisagree": 11.1,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
         "mean": 4.444,
         "n": 9,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.9,
+        "pctNeutral": 11.1,
+        "pctDisagree": 0.0,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
         "mean": 3.0,
         "n": 9,
         "cseqMean": 4.179,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 33.3,
+        "pctNeutral": 22.2,
+        "pctDisagree": 44.4,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
         "mean": 3.556,
         "n": 9,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 55.6,
+        "pctNeutral": 22.2,
+        "pctDisagree": 22.2,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
         "mean": 2.778,
         "n": 9,
         "cseqMean": 3.801,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 22.2,
+        "pctNeutral": 44.4,
+        "pctDisagree": 33.3,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 3.571,
         "n": 7,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 57.1,
+        "pctNeutral": 28.6,
+        "pctDisagree": 14.3,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 3.857,
         "n": 7,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 71.4,
+        "pctNeutral": 28.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 3.714,
         "n": 7,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 57.1,
+        "pctNeutral": 42.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.0,
         "n": 7,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 71.4,
+        "pctNeutral": 28.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.0,
         "n": 7,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 71.4,
+        "pctNeutral": 28.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.833,
         "n": 6,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.667,
         "n": 3,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.0,
         "n": 3,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.333,
         "n": 3,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
         "mean": 3.111,
         "n": 9,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 33.3,
+        "pctNeutral": 33.3,
+        "pctDisagree": 33.3,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
         "mean": 3.111,
         "n": 9,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 22.2,
+        "pctNeutral": 55.6,
+        "pctDisagree": 22.2,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
         "mean": 3.111,
         "n": 9,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 22.2,
+        "pctNeutral": 55.6,
+        "pctDisagree": 22.2,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
         "mean": 3.222,
         "n": 9,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 11.1,
+        "pctNeutral": 88.9,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
         "mean": 3.889,
         "n": 9,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.8,
+        "pctNeutral": 22.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 3.667,
         "n": 9,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 44.4,
+        "pctNeutral": 55.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
         "mean": 3.778,
         "n": 9,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 55.6,
+        "pctNeutral": 44.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 68.0
       },
       "SC_1": {
         "mean": 2.667,
         "n": 9,
         "cseqMean": 3.875,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 11.1,
+        "pctNeutral": 44.4,
+        "pctDisagree": 44.4,
+        "cseqAgree": 63.6
       },
       "SC_2": {
         "mean": 3.556,
         "n": 9,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 55.6,
+        "pctNeutral": 22.2,
+        "pctDisagree": 22.2,
+        "cseqAgree": 79.3
       },
       "SC_3": {
         "mean": 2.778,
         "n": 9,
         "cseqMean": 3.913,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 22.2,
+        "pctNeutral": 44.4,
+        "pctDisagree": 33.3,
+        "cseqAgree": 62.4
       },
       "SC_4": {
         "mean": 3.889,
         "n": 9,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 55.6,
+        "pctNeutral": 44.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
         "mean": 3.444,
         "n": 9,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 33.3,
+        "pctNeutral": 66.7,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
         "mean": 3.889,
         "n": 9,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 66.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.5
       },
       "O_1": {
         "mean": 3.667,
         "n": 9,
         "cseqMean": 4.356,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 44.4,
+        "pctNeutral": 55.6,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
         "mean": 4.222,
         "n": 9,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.8,
+        "pctNeutral": 22.2,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       }
     },
     "San Diego||T1": {
       "TACT_1": {
-        "mean": 3.571,
-        "n": 7,
+        "mean": 3.625,
+        "n": 8,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 37.5,
+        "pctDisagree": 12.5,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
-        "mean": 3.714,
-        "n": 7,
+        "mean": 3.875,
+        "n": 8,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "lower"
+        "dir": "higher",
+        "pctAgree": 62.5,
+        "pctNeutral": 37.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
-        "mean": 3.857,
-        "n": 7,
+        "mean": 4.0,
+        "n": 8,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
-        "mean": 4.143,
-        "n": 7,
+        "mean": 4.25,
+        "n": 8,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 87.5,
+        "pctNeutral": 0.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
-        "mean": 4.571,
-        "n": 7,
+        "mean": 4.625,
+        "n": 8,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
-        "mean": 4.286,
-        "n": 7,
+        "mean": 4.375,
+        "n": 8,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 0.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 81.3
       },
       "GC_1": {
-        "mean": 3.857,
-        "n": 7,
+        "mean": 3.75,
+        "n": 8,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 37.5,
+        "pctDisagree": 12.5,
+        "cseqAgree": 83.6
       },
       "GC_2": {
-        "mean": 4.143,
-        "n": 7,
+        "mean": 4.0,
+        "n": 8,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "higher"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 37.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 75.1
       },
       "GC_3": {
-        "mean": 4.0,
-        "n": 7,
+        "mean": 3.875,
+        "n": 8,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "higher"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 37.5,
+        "pctDisagree": 12.5,
+        "cseqAgree": 74.1
       },
       "COM_1": {
-        "mean": 3.857,
-        "n": 7,
+        "mean": 3.75,
+        "n": 8,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 83.8
       },
       "COM_2": {
-        "mean": 4.143,
-        "n": 7,
+        "mean": 4.0,
+        "n": 8,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 25.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 74.6
       },
       "COM_3": {
-        "mean": 3.857,
-        "n": 7,
+        "mean": 3.75,
+        "n": 8,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 37.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 74.8
       },
       "COH_1": {
-        "mean": 4.143,
-        "n": 7,
+        "mean": 4.0,
+        "n": 8,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.3
       },
       "COH_2": {
-        "mean": 4.286,
-        "n": 7,
+        "mean": 4.125,
+        "n": 8,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "higher"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 37.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.1
       },
       "COH_3": {
-        "mean": 4.143,
-        "n": 7,
+        "mean": 4.0,
+        "n": 8,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 25.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 96.0
       },
       "TF_1": {
-        "mean": 4.0,
-        "n": 7,
+        "mean": 3.875,
+        "n": 8,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.2
       },
       "TF_2": {
-        "mean": 4.143,
-        "n": 7,
+        "mean": 4.0,
+        "n": 8,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 62.5,
+        "pctNeutral": 37.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 67.7
       },
       "TF_3": {
-        "mean": 3.857,
-        "n": 7,
+        "mean": 3.75,
+        "n": 8,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 37.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.4
       },
       "DM_1": {
-        "mean": 3.143,
-        "n": 7,
+        "mean": 3.125,
+        "n": 8,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 25.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 25.0
       },
       "DM_2": {
-        "mean": 3.286,
-        "n": 7,
+        "mean": 3.25,
+        "n": 8,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 37.5,
+        "pctNeutral": 37.5,
+        "pctDisagree": 25.0,
+        "cseqAgree": 25.5
       },
       "DM_3": {
-        "mean": 3.429,
-        "n": 7,
+        "mean": 3.375,
+        "n": 8,
         "cseqMean": 2.511,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 25.0,
+        "pctNeutral": 75.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.75,
         "n": 4,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.5,
         "n": 4,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 5.0,
         "n": 4,
         "cseqMean": 4.597,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 5.0,
         "n": 4,
         "cseqMean": 4.815,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 5.0,
         "n": 4,
         "cseqMean": 4.832,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.25,
         "n": 4,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
         "mean": 4.0,
-        "n": 7,
+        "n": 8,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 25.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
-        "mean": 4.0,
-        "n": 7,
+        "mean": 3.875,
+        "n": 8,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 25.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
-        "mean": 3.857,
-        "n": 7,
+        "mean": 3.75,
+        "n": 8,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
-        "mean": 3.714,
-        "n": 7,
+        "mean": 3.625,
+        "n": 8,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 50.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
-        "mean": 3.714,
-        "n": 7,
+        "mean": 3.625,
+        "n": 8,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 37.5,
+        "pctNeutral": 62.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
-        "mean": 3.857,
-        "n": 7,
+        "mean": 3.75,
+        "n": 8,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 62.5,
+        "pctNeutral": 25.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
-        "mean": 4.0,
-        "n": 7,
+        "mean": 3.875,
+        "n": 8,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 25.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
-        "mean": 4.143,
-        "n": 7,
+        "mean": 4.0,
+        "n": 8,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 62.5,
+        "pctNeutral": 25.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
-        "mean": 4.0,
-        "n": 7,
+        "mean": 3.875,
+        "n": 8,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
-        "mean": 3.714,
-        "n": 7,
+        "mean": 3.625,
+        "n": 8,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 37.5,
+        "pctDisagree": 12.5,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
-        "mean": 3.714,
-        "n": 7,
+        "mean": 3.625,
+        "n": 8,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 37.5,
+        "pctDisagree": 12.5,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
-        "mean": 3.571,
-        "n": 7,
+        "mean": 3.5,
+        "n": 8,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 37.5,
+        "pctNeutral": 62.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.75,
         "n": 4,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.75,
         "n": 4,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.5,
         "n": 4,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.5,
         "n": 4,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.5,
         "n": 4,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.75,
         "n": 4,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 5.0,
         "n": 3,
         "cseqMean": 4.556,
         "sig": true,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.333,
         "n": 3,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.333,
         "n": 3,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 100.0,
+        "pctNeutral": 0.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
-        "mean": 4.143,
-        "n": 7,
+        "mean": 4.0,
+        "n": 8,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "higher"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 37.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
-        "mean": 4.286,
-        "n": 7,
+        "mean": 4.125,
+        "n": 8,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
-        "mean": 3.857,
-        "n": 7,
+        "mean": 3.75,
+        "n": 8,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 62.5,
+        "pctNeutral": 25.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
-        "mean": 3.429,
-        "n": 7,
+        "mean": 3.375,
+        "n": 8,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 37.5,
+        "pctNeutral": 62.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
-        "mean": 3.714,
-        "n": 7,
+        "mean": 3.625,
+        "n": 8,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 37.5,
+        "pctDisagree": 12.5,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
         "mean": 3.0,
-        "n": 7,
+        "n": 8,
         "cseqMean": 3.868,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 25.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 25.0,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
-        "mean": 3.714,
-        "n": 7,
+        "mean": 3.625,
+        "n": 8,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 25.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 68.0
       },
       "SC_1": {
-        "mean": 3.857,
-        "n": 7,
+        "mean": 3.75,
+        "n": 8,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 25.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 63.6
       },
       "SC_2": {
-        "mean": 3.571,
-        "n": 7,
+        "mean": 3.5,
+        "n": 8,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 25.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 79.3
       },
       "SC_3": {
-        "mean": 3.571,
-        "n": 7,
+        "mean": 3.5,
+        "n": 8,
         "cseqMean": 3.913,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 50.0,
+        "pctNeutral": 50.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 62.4
       },
       "SC_4": {
-        "mean": 4.143,
-        "n": 7,
+        "mean": 4.0,
+        "n": 8,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 25.0,
+        "pctDisagree": 0.0,
+        "cseqAgree": 77.5
       },
       "SC_5": {
-        "mean": 4.429,
-        "n": 7,
+        "mean": 4.25,
+        "n": 8,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 87.5,
+        "pctNeutral": 12.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 69.1
       },
       "SC_6": {
-        "mean": 4.143,
-        "n": 7,
+        "mean": 4.0,
+        "n": 8,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 62.5,
+        "pctNeutral": 25.0,
+        "pctDisagree": 12.5,
+        "cseqAgree": 85.5
       },
       "O_1": {
-        "mean": 3.5,
-        "n": 6,
+        "mean": 3.429,
+        "n": 7,
         "cseqMean": 4.356,
-        "sig": false,
-        "dir": "lower"
+        "sig": true,
+        "dir": "lower",
+        "pctAgree": 28.6,
+        "pctNeutral": 71.4,
+        "pctDisagree": 0.0,
+        "cseqAgree": 86.1
       },
       "O_2": {
-        "mean": 2.833,
-        "n": 6,
+        "mean": 2.857,
+        "n": 7,
         "cseqMean": 4.442,
         "sig": true,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 0.0,
+        "pctNeutral": 85.7,
+        "pctDisagree": 14.3,
+        "cseqAgree": 86.8
       }
     },
     "__ALL__||ALL": {
       "TACT_1": {
         "mean": 3.815,
-        "n": 529,
+        "n": 530,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 67.0,
+        "pctNeutral": 17.9,
+        "pctDisagree": 15.1,
+        "cseqAgree": 65.9
       },
       "TACT_2": {
-        "mean": 3.685,
-        "n": 527,
+        "mean": 3.688,
+        "n": 528,
         "cseqMean": 3.715,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 58.9,
+        "pctNeutral": 26.9,
+        "pctDisagree": 14.2,
+        "cseqAgree": 60.3
       },
       "TACT_3": {
-        "mean": 3.973,
-        "n": 528,
+        "mean": 3.975,
+        "n": 529,
         "cseqMean": 4.031,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.9,
+        "pctNeutral": 16.6,
+        "pctDisagree": 9.5,
+        "cseqAgree": 76.2
       },
       "TRAN_1": {
-        "mean": 4.539,
-        "n": 529,
+        "mean": 4.54,
+        "n": 530,
         "cseqMean": 4.571,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 91.9,
+        "pctNeutral": 6.6,
+        "pctDisagree": 1.5,
+        "cseqAgree": 92.9
       },
       "TRAN_2": {
-        "mean": 4.4,
-        "n": 530,
+        "mean": 4.401,
+        "n": 531,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 86.8,
+        "pctNeutral": 9.6,
+        "pctDisagree": 3.6,
+        "cseqAgree": 88.9
       },
       "TRAN_3": {
-        "mean": 4.228,
-        "n": 527,
+        "mean": 4.229,
+        "n": 528,
         "cseqMean": 4.27,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.3,
+        "pctNeutral": 14.0,
+        "pctDisagree": 5.7,
+        "cseqAgree": 81.3
       },
       "GC_1": {
-        "mean": 4.208,
-        "n": 529,
+        "mean": 4.206,
+        "n": 530,
         "cseqMean": 4.22,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.8,
+        "pctNeutral": 10.2,
+        "pctDisagree": 6.0,
+        "cseqAgree": 83.6
       },
       "GC_2": {
-        "mean": 4.04,
-        "n": 528,
+        "mean": 4.038,
+        "n": 529,
         "cseqMean": 4.045,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 75.0,
+        "pctNeutral": 19.1,
+        "pctDisagree": 5.9,
+        "cseqAgree": 75.1
       },
       "GC_3": {
-        "mean": 3.966,
-        "n": 528,
+        "mean": 3.964,
+        "n": 529,
         "cseqMean": 3.986,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.5,
+        "pctNeutral": 17.4,
+        "pctDisagree": 9.1,
+        "cseqAgree": 74.1
       },
       "COM_1": {
-        "mean": 4.184,
-        "n": 528,
+        "mean": 4.181,
+        "n": 529,
         "cseqMean": 4.242,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.9,
+        "pctNeutral": 13.2,
+        "pctDisagree": 5.9,
+        "cseqAgree": 83.8
       },
       "COM_2": {
-        "mean": 4.262,
-        "n": 527,
+        "mean": 4.259,
+        "n": 528,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.8,
+        "pctNeutral": 21.8,
+        "pctDisagree": 2.5,
+        "cseqAgree": 74.6
       },
       "COM_3": {
-        "mean": 4.053,
-        "n": 527,
+        "mean": 4.051,
+        "n": 528,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.2,
+        "pctNeutral": 16.3,
+        "pctDisagree": 8.5,
+        "cseqAgree": 74.8
       },
       "COH_1": {
-        "mean": 4.076,
-        "n": 528,
+        "mean": 4.074,
+        "n": 529,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 74.9,
+        "pctNeutral": 18.0,
+        "pctDisagree": 7.2,
+        "cseqAgree": 73.3
       },
       "COH_2": {
-        "mean": 4.182,
-        "n": 528,
+        "mean": 4.18,
+        "n": 529,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 78.8,
+        "pctNeutral": 14.9,
+        "pctDisagree": 6.2,
+        "cseqAgree": 77.1
       },
       "COH_3": {
-        "mean": 4.744,
-        "n": 528,
+        "mean": 4.741,
+        "n": 529,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 95.3,
+        "pctNeutral": 3.6,
+        "pctDisagree": 1.1,
+        "cseqAgree": 96.0
       },
       "TF_1": {
-        "mean": 4.314,
-        "n": 529,
+        "mean": 4.311,
+        "n": 530,
         "cseqMean": 4.344,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.1,
+        "pctNeutral": 12.3,
+        "pctDisagree": 2.6,
+        "cseqAgree": 86.2
       },
       "TF_2": {
-        "mean": 3.907,
-        "n": 528,
+        "mean": 3.905,
+        "n": 529,
         "cseqMean": 3.86,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 69.0,
+        "pctNeutral": 18.3,
+        "pctDisagree": 12.7,
+        "cseqAgree": 67.7
       },
       "TF_3": {
-        "mean": 4.116,
-        "n": 528,
+        "mean": 4.113,
+        "n": 529,
         "cseqMean": 4.126,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.9,
+        "pctNeutral": 20.6,
+        "pctDisagree": 1.5,
+        "cseqAgree": 77.4
       },
       "DM_1": {
         "mean": 2.712,
-        "n": 524,
+        "n": 525,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 25.3,
+        "pctNeutral": 29.7,
+        "pctDisagree": 45.0,
+        "cseqAgree": 25.0
       },
       "DM_2": {
-        "mean": 2.683,
-        "n": 524,
+        "mean": 2.684,
+        "n": 525,
         "cseqMean": 2.69,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 25.3,
+        "pctNeutral": 28.4,
+        "pctDisagree": 46.3,
+        "cseqAgree": 25.5
       },
       "DM_3": {
-        "mean": 2.535,
-        "n": 523,
+        "mean": 2.536,
+        "n": 524,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 22.5,
+        "pctNeutral": 24.8,
+        "pctDisagree": 52.7,
+        "cseqAgree": 22.4
       },
       "LEAD_1": {
         "mean": 4.464,
         "n": 373,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 92.2,
+        "pctNeutral": 6.4,
+        "pctDisagree": 1.3,
+        "cseqAgree": 92.2
       },
       "LEAD_2": {
         "mean": 4.651,
         "n": 370,
         "cseqMean": 4.687,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 91.1,
+        "pctNeutral": 7.6,
+        "pctDisagree": 1.4,
+        "cseqAgree": 93.1
       },
       "LEAD_3": {
         "mean": 4.554,
         "n": 372,
         "cseqMean": 4.597,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 88.7,
+        "pctNeutral": 10.2,
+        "pctDisagree": 1.1,
+        "cseqAgree": 90.1
       },
       "STAFF_1": {
         "mean": 4.792,
         "n": 370,
         "cseqMean": 4.815,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 95.9,
+        "pctNeutral": 3.5,
+        "pctDisagree": 0.5,
+        "cseqAgree": 95.9
       },
       "STAFF_2": {
         "mean": 4.811,
         "n": 370,
         "cseqMean": 4.832,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 96.8,
+        "pctNeutral": 3.0,
+        "pctDisagree": 0.3,
+        "cseqAgree": 96.9
       },
       "STAFF_3": {
         "mean": 4.508,
         "n": 368,
         "cseqMean": 4.531,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 87.5,
+        "pctNeutral": 10.9,
+        "pctDisagree": 1.6,
+        "cseqAgree": 88.4
       },
       "TRUST_1": {
-        "mean": 4.676,
-        "n": 525,
+        "mean": 4.675,
+        "n": 526,
         "cseqMean": 4.673,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 94.3,
+        "pctNeutral": 4.2,
+        "pctDisagree": 1.5,
+        "cseqAgree": 94.3
       },
       "TRUST_2": {
-        "mean": 4.676,
-        "n": 525,
+        "mean": 4.673,
+        "n": 526,
         "cseqMean": 4.68,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 92.4,
+        "pctNeutral": 6.3,
+        "pctDisagree": 1.3,
+        "cseqAgree": 92.6
       },
       "TRUST_3": {
-        "mean": 4.594,
-        "n": 525,
+        "mean": 4.591,
+        "n": 526,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 88.4,
+        "pctNeutral": 9.1,
+        "pctDisagree": 2.5,
+        "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
         "mean": 3.243,
-        "n": 522,
+        "n": 523,
         "cseqMean": 3.298,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 36.7,
+        "pctNeutral": 37.7,
+        "pctDisagree": 25.6,
+        "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
-        "mean": 3.943,
-        "n": 522,
+        "mean": 3.941,
+        "n": 523,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 64.1,
+        "pctNeutral": 24.1,
+        "pctDisagree": 11.9,
+        "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
-        "mean": 3.718,
-        "n": 522,
+        "mean": 3.717,
+        "n": 523,
         "cseqMean": 3.695,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 53.7,
+        "pctNeutral": 33.1,
+        "pctDisagree": 13.2,
+        "cseqAgree": 51.7
       },
       "PROD_1": {
-        "mean": 3.977,
-        "n": 522,
+        "mean": 3.975,
+        "n": 523,
         "cseqMean": 3.964,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 66.2,
+        "pctNeutral": 27.3,
+        "pctDisagree": 6.5,
+        "cseqAgree": 64.7
       },
       "PROD_2": {
-        "mean": 3.96,
-        "n": 521,
+        "mean": 3.958,
+        "n": 522,
         "cseqMean": 3.911,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 64.2,
+        "pctNeutral": 26.6,
+        "pctDisagree": 9.2,
+        "cseqAgree": 61.5
       },
       "PROD_3": {
-        "mean": 4.111,
-        "n": 521,
+        "mean": 4.109,
+        "n": 522,
         "cseqMean": 4.06,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 68.2,
+        "pctNeutral": 25.7,
+        "pctDisagree": 6.1,
+        "cseqAgree": 66.1
       },
       "LEGIT_1": {
-        "mean": 4.178,
-        "n": 518,
+        "mean": 4.175,
+        "n": 519,
         "cseqMean": 4.179,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.5,
+        "pctNeutral": 18.3,
+        "pctDisagree": 4.2,
+        "cseqAgree": 78.2
       },
       "LEGIT_2": {
-        "mean": 4.12,
-        "n": 518,
+        "mean": 4.118,
+        "n": 519,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 75.3,
+        "pctNeutral": 21.0,
+        "pctDisagree": 3.7,
+        "cseqAgree": 74.3
       },
       "LEGIT_3": {
-        "mean": 3.797,
-        "n": 518,
+        "mean": 3.796,
+        "n": 519,
         "cseqMean": 3.801,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 57.0,
+        "pctNeutral": 37.2,
+        "pctDisagree": 5.8,
+        "cseqAgree": 56.9
       },
       "AGENDA_1": {
         "mean": 4.213,
         "n": 361,
         "cseqMean": 4.254,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 85.0,
+        "pctNeutral": 11.9,
+        "pctDisagree": 3.0,
+        "cseqAgree": 85.0
       },
       "AGENDA_2": {
         "mean": 4.175,
         "n": 361,
         "cseqMean": 4.209,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.1,
+        "pctNeutral": 13.6,
+        "pctDisagree": 3.3,
+        "cseqAgree": 83.3
       },
       "AGENDA_3": {
         "mean": 4.324,
         "n": 361,
         "cseqMean": 4.366,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 86.7,
+        "pctNeutral": 10.5,
+        "pctDisagree": 2.8,
+        "cseqAgree": 86.8
       },
       "MA_1": {
         "mean": 4.345,
         "n": 359,
         "cseqMean": 4.317,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 85.8,
+        "pctNeutral": 12.8,
+        "pctDisagree": 1.4,
+        "cseqAgree": 84.9
       },
       "MA_2": {
         "mean": 4.047,
         "n": 361,
         "cseqMean": 4.042,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 74.5,
+        "pctNeutral": 20.8,
+        "pctDisagree": 4.7,
+        "cseqAgree": 72.7
       },
       "MA_3": {
         "mean": 3.65,
         "n": 357,
         "cseqMean": 3.648,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 52.4,
+        "pctNeutral": 39.2,
+        "pctDisagree": 8.4,
+        "cseqAgree": 50.7
       },
       "SM_1": {
         "mean": 4.551,
         "n": 127,
         "cseqMean": 4.556,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 89.8,
+        "pctNeutral": 9.4,
+        "pctDisagree": 0.8,
+        "cseqAgree": 89.8
       },
       "SM_2": {
         "mean": 4.339,
         "n": 121,
         "cseqMean": 4.374,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 80.2,
+        "pctNeutral": 16.5,
+        "pctDisagree": 3.3,
+        "cseqAgree": 80.4
       },
       "SM_3": {
         "mean": 4.299,
         "n": 127,
         "cseqMean": 4.324,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 81.9,
+        "pctNeutral": 14.2,
+        "pctDisagree": 3.9,
+        "cseqAgree": 81.5
       },
       "EQUITY_1": {
-        "mean": 4.012,
-        "n": 520,
+        "mean": 4.01,
+        "n": 521,
         "cseqMean": 4.014,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 73.3,
+        "pctNeutral": 21.1,
+        "pctDisagree": 5.6,
+        "cseqAgree": 73.4
       },
       "EQUITY_2": {
-        "mean": 3.842,
-        "n": 520,
+        "mean": 3.841,
+        "n": 521,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 63.7,
+        "pctNeutral": 28.6,
+        "pctDisagree": 7.7,
+        "cseqAgree": 63.0
       },
       "EQUITY_3": {
-        "mean": 3.65,
-        "n": 520,
+        "mean": 3.649,
+        "n": 521,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 53.7,
+        "pctNeutral": 35.9,
+        "pctDisagree": 10.4,
+        "cseqAgree": 53.4
       },
       "OC_I_1": {
-        "mean": 3.457,
-        "n": 519,
+        "mean": 3.456,
+        "n": 520,
         "cseqMean": 3.476,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 32.9,
+        "pctNeutral": 66.2,
+        "pctDisagree": 1.0,
+        "cseqAgree": 33.9
       },
       "OC_G_2": {
-        "mean": 3.973,
-        "n": 521,
+        "mean": 3.971,
+        "n": 522,
         "cseqMean": 3.998,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 68.2,
+        "pctNeutral": 31.0,
+        "pctDisagree": 0.8,
+        "cseqAgree": 69.0
       },
       "OC_O_3": {
-        "mean": 3.868,
-        "n": 521,
+        "mean": 3.866,
+        "n": 522,
         "cseqMean": 3.868,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 60.2,
+        "pctNeutral": 36.4,
+        "pctDisagree": 3.4,
+        "cseqAgree": 59.4
       },
       "OC_C_4": {
-        "mean": 3.998,
-        "n": 520,
+        "mean": 3.996,
+        "n": 521,
         "cseqMean": 4.017,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 67.6,
+        "pctNeutral": 30.9,
+        "pctDisagree": 1.5,
+        "cseqAgree": 68.0
       },
       "SC_1": {
-        "mean": 3.863,
-        "n": 520,
+        "mean": 3.862,
+        "n": 521,
         "cseqMean": 3.875,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 63.5,
+        "pctNeutral": 29.8,
+        "pctDisagree": 6.7,
+        "cseqAgree": 63.6
       },
       "SC_2": {
-        "mean": 4.133,
-        "n": 520,
+        "mean": 4.131,
+        "n": 521,
         "cseqMean": 4.178,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 77.9,
+        "pctNeutral": 17.9,
+        "pctDisagree": 4.2,
+        "cseqAgree": 79.3
       },
       "SC_3": {
-        "mean": 3.906,
-        "n": 520,
+        "mean": 3.904,
+        "n": 521,
         "cseqMean": 3.913,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 62.8,
+        "pctNeutral": 30.9,
+        "pctDisagree": 6.3,
+        "cseqAgree": 62.4
       },
       "SC_4": {
-        "mean": 4.171,
-        "n": 519,
+        "mean": 4.169,
+        "n": 520,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "higher"
+        "dir": "higher",
+        "pctAgree": 76.9,
+        "pctNeutral": 21.3,
+        "pctDisagree": 1.7,
+        "cseqAgree": 77.5
       },
       "SC_5": {
-        "mean": 3.944,
-        "n": 518,
+        "mean": 3.942,
+        "n": 519,
         "cseqMean": 3.969,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 68.0,
+        "pctNeutral": 26.4,
+        "pctDisagree": 5.6,
+        "cseqAgree": 69.1
       },
       "SC_6": {
-        "mean": 4.38,
-        "n": 519,
+        "mean": 4.377,
+        "n": 520,
         "cseqMean": 4.377,
         "sig": false,
-        "dir": "higher"
+        "dir": "lower",
+        "pctAgree": 85.0,
+        "pctNeutral": 13.3,
+        "pctDisagree": 1.7,
+        "cseqAgree": 85.5
       },
       "O_1": {
-        "mean": 4.281,
-        "n": 520,
+        "mean": 4.278,
+        "n": 521,
         "cseqMean": 4.356,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 82.0,
+        "pctNeutral": 16.7,
+        "pctDisagree": 1.3,
+        "cseqAgree": 86.1
       },
       "O_2": {
-        "mean": 4.382,
-        "n": 521,
+        "mean": 4.379,
+        "n": 522,
         "cseqMean": 4.442,
         "sig": false,
-        "dir": "lower"
+        "dir": "lower",
+        "pctAgree": 83.7,
+        "pctNeutral": 14.6,
+        "pctDisagree": 1.7,
+        "cseqAgree": 86.8
       }
     }
   },
@@ -31968,317 +37252,506 @@ const DASHBOARD_DATA = {
     "TACT_1": {
       "mean": 3.777,
       "var": 1.5417140412693757,
-      "n": 422
+      "n": 422,
+      "pctAgree": 65.9,
+      "pctNeutral": 18.0,
+      "pctDisagree": 16.1
     },
     "TACT_2": {
       "mean": 3.715,
       "var": 1.3280850582513288,
-      "n": 421
+      "n": 421,
+      "pctAgree": 60.3,
+      "pctNeutral": 25.4,
+      "pctDisagree": 14.3
     },
     "TACT_3": {
       "mean": 4.031,
       "var": 1.029996606718697,
-      "n": 421
+      "n": 421,
+      "pctAgree": 76.2,
+      "pctNeutral": 15.7,
+      "pctDisagree": 8.1
     },
     "TRAN_1": {
       "mean": 4.571,
       "var": 0.45455415339239796,
-      "n": 422
+      "n": 422,
+      "pctAgree": 92.9,
+      "pctNeutral": 6.2,
+      "pctDisagree": 0.9
     },
     "TRAN_2": {
       "mean": 4.442,
       "var": 0.5884620124813724,
-      "n": 423
+      "n": 423,
+      "pctAgree": 88.9,
+      "pctNeutral": 8.5,
+      "pctDisagree": 2.6
     },
     "TRAN_3": {
       "mean": 4.27,
       "var": 0.819961499926828,
-      "n": 422
+      "n": 422,
+      "pctAgree": 81.3,
+      "pctNeutral": 14.0,
+      "pctDisagree": 4.7
     },
     "GC_1": {
       "mean": 4.22,
       "var": 0.8278022312030713,
-      "n": 422
+      "n": 422,
+      "pctAgree": 83.6,
+      "pctNeutral": 10.0,
+      "pctDisagree": 6.4
     },
     "GC_2": {
       "mean": 4.045,
       "var": 0.8697020184395082,
-      "n": 422
+      "n": 422,
+      "pctAgree": 75.1,
+      "pctNeutral": 18.5,
+      "pctDisagree": 6.4
     },
     "GC_3": {
       "mean": 3.986,
       "var": 0.9617011650265817,
-      "n": 421
+      "n": 421,
+      "pctAgree": 74.1,
+      "pctNeutral": 16.6,
+      "pctDisagree": 9.3
     },
     "COM_1": {
       "mean": 4.242,
       "var": 0.7649700260151565,
-      "n": 421
+      "n": 421,
+      "pctAgree": 83.8,
+      "pctNeutral": 11.2,
+      "pctDisagree": 5.0
     },
     "COM_2": {
       "mean": 4.238,
       "var": 0.7910643592353803,
-      "n": 421
+      "n": 421,
+      "pctAgree": 74.6,
+      "pctNeutral": 23.3,
+      "pctDisagree": 2.1
     },
     "COM_3": {
       "mean": 4.043,
       "var": 0.9886438185725595,
-      "n": 421
+      "n": 421,
+      "pctAgree": 74.8,
+      "pctNeutral": 15.9,
+      "pctDisagree": 9.3
     },
     "COH_1": {
       "mean": 4.043,
       "var": 0.9193999318104338,
-      "n": 420
+      "n": 420,
+      "pctAgree": 73.3,
+      "pctNeutral": 18.8,
+      "pctDisagree": 7.9
     },
     "COH_2": {
       "mean": 4.136,
       "var": 0.8860722809410155,
-      "n": 420
+      "n": 420,
+      "pctAgree": 77.1,
+      "pctNeutral": 16.2,
+      "pctDisagree": 6.7
     },
     "COH_3": {
       "mean": 4.74,
       "var": 0.31196158654392675,
-      "n": 420
+      "n": 420,
+      "pctAgree": 96.0,
+      "pctNeutral": 3.1,
+      "pctDisagree": 1.0
     },
     "TF_1": {
       "mean": 4.344,
       "var": 0.6310937676733396,
-      "n": 421
+      "n": 421,
+      "pctAgree": 86.2,
+      "pctNeutral": 11.6,
+      "pctDisagree": 2.1
     },
     "TF_2": {
       "mean": 3.86,
       "var": 1.506503789164121,
-      "n": 421
+      "n": 421,
+      "pctAgree": 67.7,
+      "pctNeutral": 18.3,
+      "pctDisagree": 14.0
     },
     "TF_3": {
       "mean": 4.126,
       "var": 0.626042732128651,
-      "n": 420
+      "n": 420,
+      "pctAgree": 77.4,
+      "pctNeutral": 21.4,
+      "pctDisagree": 1.2
     },
     "DM_1": {
       "mean": 2.7,
       "var": 1.6042959427207633,
-      "n": 420
+      "n": 420,
+      "pctAgree": 25.0,
+      "pctNeutral": 29.5,
+      "pctDisagree": 45.5
     },
     "DM_2": {
       "mean": 2.69,
       "var": 1.6175701784293666,
-      "n": 420
+      "n": 420,
+      "pctAgree": 25.5,
+      "pctNeutral": 28.3,
+      "pctDisagree": 46.2
     },
     "DM_3": {
       "mean": 2.511,
       "var": 1.652396341254525,
-      "n": 419
+      "n": 419,
+      "pctAgree": 22.4,
+      "pctNeutral": 23.6,
+      "pctDisagree": 53.9
     },
     "LEAD_1": {
       "mean": 4.476,
       "var": 0.4482366325369728,
-      "n": 294
+      "n": 294,
+      "pctAgree": 92.2,
+      "pctNeutral": 6.8,
+      "pctDisagree": 1.0
     },
     "LEAD_2": {
       "mean": 4.687,
       "var": 0.381182604574001,
-      "n": 291
+      "n": 291,
+      "pctAgree": 93.1,
+      "pctNeutral": 6.2,
+      "pctDisagree": 0.7
     },
     "LEAD_3": {
       "mean": 4.597,
       "var": 0.4673897797933528,
-      "n": 293
+      "n": 293,
+      "pctAgree": 90.1,
+      "pctNeutral": 9.2,
+      "pctDisagree": 0.7
     },
     "STAFF_1": {
       "mean": 4.815,
       "var": 0.23372405027538415,
-      "n": 292
+      "n": 292,
+      "pctAgree": 95.9,
+      "pctNeutral": 4.1,
+      "pctDisagree": 0.0
     },
     "STAFF_2": {
       "mean": 4.832,
       "var": 0.2019841830249951,
-      "n": 292
+      "n": 292,
+      "pctAgree": 96.9,
+      "pctNeutral": 3.1,
+      "pctDisagree": 0.0
     },
     "STAFF_3": {
       "mean": 4.531,
       "var": 0.572929906322084,
-      "n": 292
+      "n": 292,
+      "pctAgree": 88.4,
+      "pctNeutral": 9.9,
+      "pctDisagree": 1.7
     },
     "TRUST_1": {
       "mean": 4.673,
       "var": 0.4311130397049247,
-      "n": 419
+      "n": 419,
+      "pctAgree": 94.3,
+      "pctNeutral": 4.1,
+      "pctDisagree": 1.7
     },
     "TRUST_2": {
       "mean": 4.68,
       "var": 0.40465450891276683,
-      "n": 419
+      "n": 419,
+      "pctAgree": 92.6,
+      "pctNeutral": 6.4,
+      "pctDisagree": 1.0
     },
     "TRUST_3": {
       "mean": 4.578,
       "var": 0.6082036290552807,
-      "n": 419
+      "n": 419,
+      "pctAgree": 87.6,
+      "pctNeutral": 10.3,
+      "pctDisagree": 2.1
     },
     "MemEng_Sat_1": {
       "mean": 3.298,
       "var": 1.4145505097312334,
-      "n": 416
+      "n": 416,
+      "pctAgree": 38.5,
+      "pctNeutral": 37.3,
+      "pctDisagree": 24.3
     },
     "MemEng_Sat_2": {
       "mean": 3.964,
       "var": 1.4758051436515296,
-      "n": 416
+      "n": 416,
+      "pctAgree": 64.2,
+      "pctNeutral": 24.3,
+      "pctDisagree": 11.5
     },
     "MemEng_Sat_3": {
       "mean": 3.695,
       "var": 1.4366948563484705,
-      "n": 416
+      "n": 416,
+      "pctAgree": 51.7,
+      "pctNeutral": 34.6,
+      "pctDisagree": 13.7
     },
     "PROD_1": {
       "mean": 3.964,
       "var": 1.169376037631434,
-      "n": 417
+      "n": 417,
+      "pctAgree": 64.7,
+      "pctNeutral": 28.5,
+      "pctDisagree": 6.7
     },
     "PROD_2": {
       "mean": 3.911,
       "var": 1.343877432808156,
-      "n": 416
+      "n": 416,
+      "pctAgree": 61.5,
+      "pctNeutral": 28.6,
+      "pctDisagree": 9.9
     },
     "PROD_3": {
       "mean": 4.06,
       "var": 1.1939701112140861,
-      "n": 416
+      "n": 416,
+      "pctAgree": 66.1,
+      "pctNeutral": 27.2,
+      "pctDisagree": 6.7
     },
     "LEGIT_1": {
       "mean": 4.179,
       "var": 0.7348080584875055,
-      "n": 413
+      "n": 413,
+      "pctAgree": 78.2,
+      "pctNeutral": 18.4,
+      "pctDisagree": 3.4
     },
     "LEGIT_2": {
       "mean": 4.102,
       "var": 0.7906039164061206,
-      "n": 413
+      "n": 413,
+      "pctAgree": 74.3,
+      "pctNeutral": 22.5,
+      "pctDisagree": 3.1
     },
     "LEGIT_3": {
       "mean": 3.801,
       "var": 0.9313571075953829,
-      "n": 413
+      "n": 413,
+      "pctAgree": 56.9,
+      "pctNeutral": 37.3,
+      "pctDisagree": 5.8
     },
     "AGENDA_1": {
       "mean": 4.254,
       "var": 0.609902292829123,
-      "n": 287
+      "n": 287,
+      "pctAgree": 85.0,
+      "pctNeutral": 12.5,
+      "pctDisagree": 2.4
     },
     "AGENDA_2": {
       "mean": 4.209,
       "var": 0.6554421188567539,
-      "n": 287
+      "n": 287,
+      "pctAgree": 83.3,
+      "pctNeutral": 13.9,
+      "pctDisagree": 2.8
     },
     "AGENDA_3": {
       "mean": 4.366,
       "var": 0.6314173631246816,
-      "n": 287
+      "n": 287,
+      "pctAgree": 86.8,
+      "pctNeutral": 10.5,
+      "pctDisagree": 2.8
     },
     "MA_1": {
       "mean": 4.317,
       "var": 0.591798138655252,
-      "n": 284
+      "n": 284,
+      "pctAgree": 84.9,
+      "pctNeutral": 13.4,
+      "pctDisagree": 1.8
     },
     "MA_2": {
       "mean": 4.042,
       "var": 0.7841982578824683,
-      "n": 286
+      "n": 286,
+      "pctAgree": 72.7,
+      "pctNeutral": 23.4,
+      "pctDisagree": 3.8
     },
     "MA_3": {
       "mean": 3.648,
       "var": 0.8720449907928126,
-      "n": 284
+      "n": 284,
+      "pctAgree": 50.7,
+      "pctNeutral": 41.9,
+      "pctDisagree": 7.4
     },
     "SM_1": {
       "mean": 4.556,
       "var": 0.4922118380062291,
-      "n": 108
+      "n": 108,
+      "pctAgree": 89.8,
+      "pctNeutral": 9.3,
+      "pctDisagree": 0.9
     },
     "SM_2": {
       "mean": 4.374,
       "var": 0.8400634808675725,
-      "n": 107
+      "n": 107,
+      "pctAgree": 80.4,
+      "pctNeutral": 15.9,
+      "pctDisagree": 3.7
     },
     "SM_3": {
       "mean": 4.324,
       "var": 0.8939944617514709,
-      "n": 108
+      "n": 108,
+      "pctAgree": 81.5,
+      "pctNeutral": 13.9,
+      "pctDisagree": 4.6
     },
     "EQUITY_1": {
       "mean": 4.014,
       "var": 0.7988209285187917,
-      "n": 414
+      "n": 414,
+      "pctAgree": 73.4,
+      "pctNeutral": 21.0,
+      "pctDisagree": 5.6
     },
     "EQUITY_2": {
       "mean": 3.824,
       "var": 0.9058789814132485,
-      "n": 414
+      "n": 414,
+      "pctAgree": 63.0,
+      "pctNeutral": 28.7,
+      "pctDisagree": 8.2
     },
     "EQUITY_3": {
       "mean": 3.645,
       "var": 0.9365722707653438,
-      "n": 414
+      "n": 414,
+      "pctAgree": 53.4,
+      "pctNeutral": 36.0,
+      "pctDisagree": 10.6
     },
     "OC_I_1": {
       "mean": 3.476,
       "var": 0.6162882298424464,
-      "n": 416
+      "n": 416,
+      "pctAgree": 33.9,
+      "pctNeutral": 64.9,
+      "pctDisagree": 1.2
     },
     "OC_G_2": {
       "mean": 3.998,
       "var": 0.6530062557923993,
-      "n": 416
+      "n": 416,
+      "pctAgree": 69.0,
+      "pctNeutral": 30.5,
+      "pctDisagree": 0.5
     },
     "OC_O_3": {
       "mean": 3.868,
       "var": 0.8764538924930488,
-      "n": 416
+      "n": 416,
+      "pctAgree": 59.4,
+      "pctNeutral": 37.5,
+      "pctDisagree": 3.1
     },
     "OC_C_4": {
       "mean": 4.017,
       "var": 0.7750771200745006,
-      "n": 415
+      "n": 415,
+      "pctAgree": 68.0,
+      "pctNeutral": 30.6,
+      "pctDisagree": 1.4
     },
     "SC_1": {
       "mean": 3.875,
       "var": 0.9504452592980621,
-      "n": 415
+      "n": 415,
+      "pctAgree": 63.6,
+      "pctNeutral": 30.6,
+      "pctDisagree": 5.8
     },
     "SC_2": {
       "mean": 4.178,
       "var": 0.721750771200745,
-      "n": 415
+      "n": 415,
+      "pctAgree": 79.3,
+      "pctNeutral": 17.8,
+      "pctDisagree": 2.9
     },
     "SC_3": {
       "mean": 3.913,
       "var": 0.9827949479075724,
-      "n": 415
+      "n": 415,
+      "pctAgree": 62.4,
+      "pctNeutral": 32.0,
+      "pctDisagree": 5.5
     },
     "SC_4": {
       "mean": 4.162,
       "var": 0.7025593337310355,
-      "n": 414
+      "n": 414,
+      "pctAgree": 77.5,
+      "pctNeutral": 20.3,
+      "pctDisagree": 2.2
     },
     "SC_5": {
       "mean": 3.969,
       "var": 0.9166871366576602,
-      "n": 414
+      "n": 414,
+      "pctAgree": 69.1,
+      "pctNeutral": 24.9,
+      "pctDisagree": 6.0
     },
     "SC_6": {
       "mean": 4.377,
       "var": 0.6324876302768716,
-      "n": 414
+      "n": 414,
+      "pctAgree": 85.5,
+      "pctNeutral": 12.6,
+      "pctDisagree": 1.9
     },
     "O_1": {
       "mean": 4.356,
       "var": 0.5526413345690464,
-      "n": 416
+      "n": 416,
+      "pctAgree": 86.1,
+      "pctNeutral": 13.2,
+      "pctDisagree": 0.7
     },
     "O_2": {
       "mean": 4.442,
       "var": 0.584615384615385,
-      "n": 416
+      "n": 416,
+      "pctAgree": 86.8,
+      "pctNeutral": 11.8,
+      "pctDisagree": 1.4
     }
   },
   "domainScores": {
@@ -32416,18 +37889,18 @@ const DASHBOARD_DATA = {
       "outcomes": 3.651
     },
     "San Diego||T1": {
-      "processes": 3.925,
-      "backbone": 4.387,
+      "processes": 3.875,
+      "backbone": 4.333,
       "impact": 4.491,
-      "outputs": 3.826,
-      "outcomes": 3.528
+      "outputs": 3.722,
+      "outcomes": 3.461
     },
     "__ALL__||ALL": {
-      "processes": 3.934,
-      "backbone": 4.436,
+      "processes": 3.933,
+      "backbone": 4.434,
       "impact": 4.218,
-      "outputs": 3.895,
-      "outcomes": 4.074
+      "outputs": 3.893,
+      "outcomes": 4.072
     }
   },
   "cseqDomain": {

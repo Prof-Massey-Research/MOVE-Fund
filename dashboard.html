@@ -37,6 +37,13 @@
     display: flex; align-items: center; justify-content: center; padding: 40px 20px;
   }
   #gate.hidden { display: none; }
+  /* Mean / % Agree toggle on domain pages */
+  .mode-toggle { display: inline-flex; gap: 0; border: 1px solid var(--line); border-radius: 8px;
+    overflow: hidden; margin: 0 0 14px; }
+  .mode-btn { background: transparent; color: var(--muted); border: 0; padding: 7px 14px;
+    font-size: 13px; font-weight: 600; cursor: pointer; }
+  .mode-btn + .mode-btn { border-left: 1px solid var(--line); }
+  .mode-btn.active { background: var(--accent); color: #08120b; }
   /* Password gate (locked single-coalition builds) */
   #pwgate { position: fixed; inset: 0; z-index: 60; background: var(--bg);
     display: flex; align-items: center; justify-content: center; padding: 24px; }
@@ -301,6 +308,10 @@
     <div class="section-title" id="domain-title"></div>
     <p class="sub" id="domain-scope" style="margin:-6px 0 14px;"></p>
     <div class="card">
+      <div class="mode-toggle" id="domain-mode">
+        <button type="button" class="mode-btn active" data-mode="mean">Mean score (1–5)</button>
+        <button type="button" class="mode-btn" data-mode="pct">% Agree / Disagree</button>
+      </div>
       <p class="sub" id="domain-scale" style="margin:0 0 10px;"></p>
       <p class="sub" id="domain-legend"></p>
       <div id="domain-groups"></div>
@@ -500,6 +511,15 @@ selPage.addEventListener('change', render);
 document.getElementById('net-showall').addEventListener('change',
   () => renderNetwork(selCo.value, selT.value));
 
+// Domain pages: toggle item bars between mean score (1–5) and % agree / disagree.
+let domainMode = 'mean';
+document.getElementById('domain-mode').addEventListener('click', (e) => {
+  const b = e.target.closest('.mode-btn'); if (!b || b.dataset.mode === domainMode) return;
+  domainMode = b.dataset.mode;
+  document.querySelectorAll('#domain-mode .mode-btn').forEach(x => x.classList.toggle('active', x === b));
+  render();
+});
+
 // ---- helpers ----
 const cell = (co, tp) => (D.cells[`${co}||${tp}`] || null);
 const constructByKey = k => D.constructs.find(c => c.key === k);
@@ -644,16 +664,29 @@ function hexFade(hex, a) {
 function renderDomain(dkey, co, tp) {
   const dom = domainByKey(dkey);
   const col = DOMAIN_COLOR[dkey] || c('--accent');
+  const pctMode = domainMode === 'pct';
   document.getElementById('domain-title').textContent = dom.name;
-  document.getElementById('domain-scope').textContent = `${displayName(co)} · item scores (1–${D.scaleMax})`;
-  // Scale key: list the anchors for each scale type used by this domain's constructs.
-  const scalesHere = [...new Set(dom.constructs.map(ck => CONSTRUCT_SCALE[ck]).filter(Boolean))];
-  document.getElementById('domain-scale').innerHTML = 'How to read the scores — '
-    + scalesHere.map(s => `<strong>${SCALE_LABEL[s] || s}:</strong> ${SCALE_ANCHOR[s] || ''}`).join(' &nbsp;·&nbsp; ');
+  document.getElementById('domain-scope').textContent = `${displayName(co)} · `
+    + (pctMode ? 'share of members agreeing vs. disagreeing' : `item scores (1–${D.scaleMax})`);
   const swatch = (bg, border) => `<span class="dot" style="background:${bg};${border ? 'outline:2px solid #fff;outline-offset:-1px;' : ''}display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:middle;"></span>`;
-  document.getElementById('domain-legend').innerHTML =
-    swatch(col, true) + `significantly different from the CSEq Average (p&lt;0.05) &nbsp;&nbsp;`
-    + swatch(hexFade(col, 0.4), false) + `not significant`;
+  if (pctMode) {
+    document.getElementById('domain-scale').innerHTML = 'Each bar shows the share of members who '
+      + '<strong>agreed</strong> (top 2, e.g. agree / strongly agree), were <strong>neutral</strong>, '
+      + 'or <strong>disagreed</strong> (bottom 2) with the statement as written. Colour marks the '
+      + '<strong>favorable</strong> answer green — for reverse-scored (negatively worded) items that '
+      + 'means <em>disagreeing</em> is favorable, so green sits on the “Disagree” side.';
+    document.getElementById('domain-legend').innerHTML =
+      swatch(PCT_COL.agree) + 'Favorable answer &nbsp;&nbsp;' + swatch(PCT_COL.neutral) + 'Neutral &nbsp;&nbsp;'
+      + swatch(PCT_COL.disagree) + 'Unfavorable answer';
+  } else {
+    // Scale key: list the anchors for each scale type used by this domain's constructs.
+    const scalesHere = [...new Set(dom.constructs.map(ck => CONSTRUCT_SCALE[ck]).filter(Boolean))];
+    document.getElementById('domain-scale').innerHTML = 'How to read the scores — '
+      + scalesHere.map(s => `<strong>${SCALE_LABEL[s] || s}:</strong> ${SCALE_ANCHOR[s] || ''}`).join(' &nbsp;·&nbsp; ');
+    document.getElementById('domain-legend').innerHTML =
+      swatch(col, true) + `significantly different from the CSEq Average (p&lt;0.05) &nbsp;&nbsp;`
+      + swatch(hexFade(col, 0.4), false) + `not significant`;
+  }
 
   const scores = D.itemScores[`${co}||${tp}`] || {};
   // One block per sub-scale (construct): heading, published definition + source, then its items.
@@ -676,6 +709,8 @@ function renderDomain(dkey, co, tp) {
   });
 }
 
+const PCT_COL = { agree: '#2f9e57', neutral: '#8a938d', disagree: '#cf5b45' };
+
 function renderSubscaleChart(id, block, items, scores, col, co, isLast) {
   // Size the chart from the ACTUAL number of wrapped label lines so long item text (e.g. Social
   // Outcomes) always has room — otherwise tall multi-line labels overlap in a fixed per-bar slot.
@@ -683,6 +718,51 @@ function renderSubscaleChart(id, block, items, scores, col, co, isLast) {
   const totalLines = wrapped.reduce((sum, w) => sum + w.length, 0);
   const box = block.querySelector('.chart-box');
   box.style.height = Math.max(120, totalLines * 15 + items.length * 24 + 44) + 'px';
+  const yAxis = { ticks: { font: { size: 11 }, autoSkip: false, crossAlign: 'far' },
+                  afterFit: (a) => { a.width = Math.min(340, a.chart.width * 0.5); } };
+
+  if (domainMode === 'pct') {
+    // Show the agree/disagree split LITERALLY, matching the statement as written. Reverse-scored
+    // items are negatively worded, so their stored % (which is oriented favorable=high) is swapped
+    // back to literal agree/disagree. Colour always marks the FAVORABLE answer green — so for a
+    // reverse item the "Disagree" segment is green and "Agree" is red.
+    const rev = items.map(it => !!it.reverse);
+    const litAgree = items.map((it, i) => rev[i] ? scores[it.code].pctDisagree : scores[it.code].pctAgree);
+    const litDisagree = items.map((it, i) => rev[i] ? scores[it.code].pctAgree : scores[it.code].pctDisagree);
+    const agreeCol = items.map((it, i) => rev[i] ? PCT_COL.disagree : PCT_COL.agree);
+    const disagreeCol = items.map((it, i) => rev[i] ? PCT_COL.agree : PCT_COL.disagree);
+    charts[id] = new Chart(block.querySelector('canvas'), {
+      type: 'bar',
+      data: {
+        labels: wrapped,
+        datasets: [
+          { label: 'Disagree', data: litDisagree, backgroundColor: disagreeCol, stack: 's' },
+          { label: 'Neutral', data: items.map(it => scores[it.code].pctNeutral), backgroundColor: PCT_COL.neutral, stack: 's' },
+          { label: 'Agree', data: litAgree, backgroundColor: agreeCol, stack: 's' },
+        ],
+      },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: {
+            title: () => '',
+            label: ctx => ` ${ctx.dataset.label}: ${Math.round(ctx.parsed.x)}%`,
+            afterBody: ctx => {
+              const it = items[ctx[0].dataIndex], s = scores[it.code];
+              return `n = ${s.n}${it.reverse ? '  ·  reverse-scored (negatively worded)' : ''}`;
+            },
+          } },
+        },
+        scales: {
+          x: { min: 0, max: 100, stacked: true, ticks: { callback: v => v + '%' },
+               title: { display: isLast, text: '% of members' } },
+          y: Object.assign({ stacked: true }, yAxis),
+        },
+      },
+    });
+    return;
+  }
 
   charts[id] = new Chart(block.querySelector('canvas'), {
     type: 'bar',
@@ -710,7 +790,7 @@ function renderSubscaleChart(id, block, items, scores, col, co, isLast) {
       },
       scales: {
         x: { min: 1, max: D.scaleMax, ticks: { stepSize: 1 }, title: { display: isLast, text: `Score (1–${D.scaleMax})` } },
-        y: { ticks: { font: { size: 11 }, autoSkip: false, crossAlign: 'far' }, afterFit: (a) => { a.width = Math.min(340, a.chart.width * 0.5); } },
+        y: yAxis,
       },
     },
   });
