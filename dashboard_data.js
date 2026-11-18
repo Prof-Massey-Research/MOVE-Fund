@@ -2415,104 +2415,104 @@ const DASHBOARD_DATA = {
     },
     "__ALL__||ALL": {
       "TACT": {
-        "mean": 3.827,
-        "sd": 0.907,
-        "n": 531
+        "mean": 3.699,
+        "sd": 0.95,
+        "n": 319
       },
       "TRAN": {
-        "mean": 4.387,
-        "sd": 0.714,
-        "n": 532
+        "mean": 4.35,
+        "sd": 0.771,
+        "n": 320
       },
       "GC": {
-        "mean": 4.07,
-        "sd": 0.818,
-        "n": 530
+        "mean": 4.019,
+        "sd": 0.836,
+        "n": 318
       },
       "COM": {
-        "mean": 4.16,
-        "sd": 0.782,
-        "n": 529
+        "mean": 4.075,
+        "sd": 0.818,
+        "n": 317
       },
       "COH": {
-        "mean": 4.331,
-        "sd": 0.719,
-        "n": 529
+        "mean": 4.271,
+        "sd": 0.737,
+        "n": 318
       },
       "TF": {
-        "mean": 4.111,
-        "sd": 0.699,
-        "n": 530
+        "mean": 4.082,
+        "sd": 0.714,
+        "n": 318
       },
       "DM": {
-        "mean": 2.646,
-        "sd": 1.209,
-        "n": 525
+        "mean": 2.519,
+        "sd": 1.192,
+        "n": 314
       },
       "LEAD": {
-        "mean": 4.553,
-        "sd": 0.564,
-        "n": 373
+        "mean": 4.514,
+        "sd": 0.598,
+        "n": 225
       },
       "STAFF": {
-        "mean": 4.705,
-        "sd": 0.516,
-        "n": 370
+        "mean": 4.662,
+        "sd": 0.546,
+        "n": 226
       },
       "TRUST": {
-        "mean": 4.646,
-        "sd": 0.621,
-        "n": 526
+        "mean": 4.591,
+        "sd": 0.663,
+        "n": 316
       },
       "MemEng_Sat": {
-        "mean": 3.634,
-        "sd": 0.989,
-        "n": 523
+        "mean": 3.6,
+        "sd": 0.963,
+        "n": 316
       },
       "PROD": {
-        "mean": 4.015,
-        "sd": 0.987,
-        "n": 523
+        "mean": 4.032,
+        "sd": 0.94,
+        "n": 315
       },
       "LEGIT": {
-        "mean": 4.03,
-        "sd": 0.786,
-        "n": 519
+        "mean": 3.979,
+        "sd": 0.799,
+        "n": 313
       },
       "AGENDA": {
-        "mean": 4.237,
-        "sd": 0.692,
-        "n": 361
+        "mean": 4.128,
+        "sd": 0.703,
+        "n": 203
       },
       "MA": {
-        "mean": 4.019,
-        "sd": 0.715,
-        "n": 361
+        "mean": 4.026,
+        "sd": 0.693,
+        "n": 204
       },
       "SM": {
-        "mean": 4.398,
-        "sd": 0.714,
-        "n": 127
+        "mean": 4.425,
+        "sd": 0.641,
+        "n": 71
       },
       "EQUITY": {
-        "mean": 3.833,
-        "sd": 0.854,
-        "n": 521
+        "mean": 3.795,
+        "sd": 0.87,
+        "n": 314
       },
       "OC": {
-        "mean": 3.822,
-        "sd": 0.681,
-        "n": 523
+        "mean": 3.744,
+        "sd": 0.66,
+        "n": 314
       },
       "SC": {
-        "mean": 4.064,
-        "sd": 0.731,
-        "n": 521
+        "mean": 3.993,
+        "sd": 0.737,
+        "n": 313
       },
       "O": {
-        "mean": 4.33,
-        "sd": 0.764,
-        "n": 522
+        "mean": 4.231,
+        "sd": 0.802,
+        "n": 314
       }
     }
   },
@@ -9460,174 +9460,174 @@ const DASHBOARD_DATA = {
       }
     },
     "__ALL__||ALL": {
-      "n": 547,
+      "n": 335,
       "sector": {
-        "answered": 480,
+        "answered": 267,
         "items": [
           {
             "label": "Nonprofit or not-for-profit organization",
-            "count": 410,
-            "pct": 75.0
+            "count": 229,
+            "pct": 68.4
           },
           {
             "label": "Public organization or agency",
-            "count": 29,
-            "pct": 5.3
-          },
-          {
-            "label": "For-profit organization",
-            "count": 20,
-            "pct": 3.7
+            "count": 17,
+            "pct": 5.1
           },
           {
             "label": "Other",
-            "count": 18,
-            "pct": 3.3
+            "count": 10,
+            "pct": 3.0
+          },
+          {
+            "label": "For-profit organization",
+            "count": 8,
+            "pct": 2.4
           },
           {
             "label": "Informal organization or association",
             "count": 3,
-            "pct": 0.5
+            "pct": 0.9
           }
         ]
       },
       "field": {
-        "answered": 488,
+        "answered": 275,
         "items": [
           {
             "label": "Youth development",
-            "count": 385,
-            "pct": 70.4
+            "count": 216,
+            "pct": 64.5
           },
           {
             "label": "Sports",
-            "count": 365,
-            "pct": 66.7
-          },
-          {
-            "label": "Education",
-            "count": 195,
-            "pct": 35.6
+            "count": 199,
+            "pct": 59.4
           },
           {
             "label": "Outdoor recreation",
-            "count": 171,
-            "pct": 31.3
+            "count": 108,
+            "pct": 32.2
+          },
+          {
+            "label": "Education",
+            "count": 102,
+            "pct": 30.4
           },
           {
             "label": "Community-based organization",
-            "count": 143,
-            "pct": 26.1
+            "count": 78,
+            "pct": 23.3
           },
           {
             "label": "Parks, recreation, and leisure services",
-            "count": 114,
-            "pct": 20.8
+            "count": 69,
+            "pct": 20.6
           },
           {
             "label": "Social/human services",
-            "count": 84,
-            "pct": 15.4
+            "count": 47,
+            "pct": 14.0
           },
           {
             "label": "Public health or healthcare",
-            "count": 59,
-            "pct": 10.8
-          },
-          {
-            "label": "Other",
-            "count": 34,
-            "pct": 6.2
-          },
-          {
-            "label": "Criminal justice/safety",
-            "count": 30,
-            "pct": 5.5
+            "count": 32,
+            "pct": 9.6
           },
           {
             "label": "Community or civic engagement",
             "count": 24,
-            "pct": 4.4
+            "pct": 7.2
           },
           {
-            "label": "Business",
-            "count": 15,
-            "pct": 2.7
+            "label": "Criminal justice/safety",
+            "count": 20,
+            "pct": 6.0
+          },
+          {
+            "label": "Other",
+            "count": 20,
+            "pct": 6.0
           },
           {
             "label": "Faith",
-            "count": 12,
-            "pct": 2.2
+            "count": 9,
+            "pct": 2.7
+          },
+          {
+            "label": "Business",
+            "count": 7,
+            "pct": 2.1
           },
           {
             "label": "Research",
-            "count": 9,
-            "pct": 1.6
+            "count": 4,
+            "pct": 1.2
           },
           {
             "label": "Politics",
-            "count": 2,
-            "pct": 0.4
+            "count": 1,
+            "pct": 0.3
           }
         ]
       },
       "engagement": {
-        "answered": 486,
+        "answered": 275,
         "items": [
           {
             "label": "None at all",
-            "count": 2,
-            "pct": 0.4
+            "count": 1,
+            "pct": 0.3
           },
           {
             "label": "A little",
-            "count": 109,
-            "pct": 19.9
+            "count": 75,
+            "pct": 22.4
           },
           {
             "label": "A moderate amount",
-            "count": 193,
-            "pct": 35.3
+            "count": 109,
+            "pct": 32.5
           },
           {
             "label": "A lot",
-            "count": 107,
-            "pct": 19.6
+            "count": 48,
+            "pct": 14.3
           },
           {
             "label": "A great deal",
-            "count": 75,
-            "pct": 13.7
+            "count": 42,
+            "pct": 12.5
           }
         ]
       },
       "duration": {
-        "answered": 423,
+        "answered": 211,
         "items": [
           {
             "label": "Less than 1 year",
-            "count": 38,
-            "pct": 6.9
+            "count": 21,
+            "pct": 6.3
           },
           {
             "label": "1-3 years",
-            "count": 189,
-            "pct": 34.6
+            "count": 89,
+            "pct": 26.6
           },
           {
             "label": "4-6 years",
-            "count": 123,
-            "pct": 22.5
+            "count": 64,
+            "pct": 19.1
           },
           {
             "label": "6-8 years",
-            "count": 33,
-            "pct": 6.0
+            "count": 15,
+            "pct": 4.5
           },
           {
             "label": "More than 9 years",
-            "count": 40,
-            "pct": 7.3
+            "count": 22,
+            "pct": 6.6
           }
         ]
       },
@@ -9637,22 +9637,22 @@ const DASHBOARD_DATA = {
           {
             "label": "0-5",
             "count": 43,
-            "pct": 7.9
+            "pct": 12.8
           },
           {
             "label": "6-12",
             "count": 126,
-            "pct": 23.0
+            "pct": 37.6
           },
           {
             "label": "13-17",
             "count": 131,
-            "pct": 23.9
+            "pct": 39.1
           },
           {
             "label": "18-24",
             "count": 90,
-            "pct": 16.5
+            "pct": 26.9
           }
         ]
       },
@@ -9662,52 +9662,52 @@ const DASHBOARD_DATA = {
           {
             "label": "Girls",
             "count": 42,
-            "pct": 7.7
+            "pct": 12.5
           },
           {
             "label": "Youth in poverty",
             "count": 50,
-            "pct": 9.1
+            "pct": 14.9
           },
           {
             "label": "BIPOC Youth",
             "count": 29,
-            "pct": 5.3
+            "pct": 8.7
           },
           {
             "label": "Immigrant and newcomer youth",
             "count": 15,
-            "pct": 2.7
+            "pct": 4.5
           },
           {
             "label": "LGBTQIA+ youth",
             "count": 16,
-            "pct": 2.9
+            "pct": 4.8
           },
           {
             "label": "Non-binary, gender non-conforming, and/or trans youth",
             "count": 9,
-            "pct": 1.6
+            "pct": 2.7
           },
           {
             "label": "Youth involved in the criminal justice system",
             "count": 4,
-            "pct": 0.7
+            "pct": 1.2
           },
           {
             "label": "Youth in foster care",
             "count": 11,
-            "pct": 2.0
+            "pct": 3.3
           },
           {
             "label": "Youth with physical disabilities",
             "count": 15,
-            "pct": 2.7
+            "pct": 4.5
           },
           {
             "label": "Youth with intellectual disabilities",
             "count": 18,
-            "pct": 3.3
+            "pct": 5.4
           }
         ]
       },
@@ -36554,697 +36554,697 @@ const DASHBOARD_DATA = {
     },
     "__ALL__||ALL": {
       "TACT_1": {
-        "mean": 3.815,
-        "n": 530,
+        "mean": 3.698,
+        "n": 318,
         "cseqMean": 3.777,
         "sig": false,
-        "dir": "higher",
-        "pctAgree": 67.0,
-        "pctNeutral": 17.9,
-        "pctDisagree": 15.1,
+        "dir": "lower",
+        "pctAgree": 62.6,
+        "pctNeutral": 20.4,
+        "pctDisagree": 17.0,
         "cseqAgree": 65.9
       },
       "TACT_2": {
-        "mean": 3.688,
-        "n": 528,
+        "mean": 3.541,
+        "n": 316,
         "cseqMean": 3.715,
-        "sig": false,
+        "sig": true,
         "dir": "lower",
-        "pctAgree": 58.9,
-        "pctNeutral": 26.9,
-        "pctDisagree": 14.2,
+        "pctAgree": 53.5,
+        "pctNeutral": 28.5,
+        "pctDisagree": 18.0,
         "cseqAgree": 60.3
       },
       "TACT_3": {
-        "mean": 3.975,
-        "n": 529,
+        "mean": 3.852,
+        "n": 317,
         "cseqMean": 4.031,
-        "sig": false,
+        "sig": true,
         "dir": "lower",
-        "pctAgree": 73.9,
-        "pctNeutral": 16.6,
-        "pctDisagree": 9.5,
+        "pctAgree": 70.7,
+        "pctNeutral": 16.7,
+        "pctDisagree": 12.6,
         "cseqAgree": 76.2
       },
       "TRAN_1": {
-        "mean": 4.54,
-        "n": 530,
+        "mean": 4.506,
+        "n": 318,
         "cseqMean": 4.571,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 91.9,
-        "pctNeutral": 6.6,
-        "pctDisagree": 1.5,
+        "pctAgree": 90.3,
+        "pctNeutral": 7.5,
+        "pctDisagree": 2.2,
         "cseqAgree": 92.9
       },
       "TRAN_2": {
-        "mean": 4.401,
-        "n": 531,
+        "mean": 4.376,
+        "n": 319,
         "cseqMean": 4.442,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 86.8,
-        "pctNeutral": 9.6,
-        "pctDisagree": 3.6,
+        "pctAgree": 84.6,
+        "pctNeutral": 10.3,
+        "pctDisagree": 5.0,
         "cseqAgree": 88.9
       },
       "TRAN_3": {
-        "mean": 4.229,
-        "n": 528,
+        "mean": 4.184,
+        "n": 316,
         "cseqMean": 4.27,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 80.3,
-        "pctNeutral": 14.0,
-        "pctDisagree": 5.7,
+        "pctAgree": 80.1,
+        "pctNeutral": 13.0,
+        "pctDisagree": 7.0,
         "cseqAgree": 81.3
       },
       "GC_1": {
-        "mean": 4.206,
-        "n": 530,
+        "mean": 4.154,
+        "n": 318,
         "cseqMean": 4.22,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 83.8,
-        "pctNeutral": 10.2,
-        "pctDisagree": 6.0,
+        "pctAgree": 82.7,
+        "pctNeutral": 10.4,
+        "pctDisagree": 6.9,
         "cseqAgree": 83.6
       },
       "GC_2": {
-        "mean": 4.038,
-        "n": 529,
+        "mean": 3.975,
+        "n": 317,
         "cseqMean": 4.045,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 75.0,
-        "pctNeutral": 19.1,
-        "pctDisagree": 5.9,
+        "pctAgree": 72.9,
+        "pctNeutral": 20.2,
+        "pctDisagree": 6.9,
         "cseqAgree": 75.1
       },
       "GC_3": {
-        "mean": 3.964,
-        "n": 529,
+        "mean": 3.925,
+        "n": 318,
         "cseqMean": 3.986,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 73.5,
-        "pctNeutral": 17.4,
-        "pctDisagree": 9.1,
+        "pctAgree": 72.6,
+        "pctNeutral": 18.6,
+        "pctDisagree": 8.8,
         "cseqAgree": 74.1
       },
       "COM_1": {
-        "mean": 4.181,
-        "n": 529,
+        "mean": 4.076,
+        "n": 317,
         "cseqMean": 4.242,
-        "sig": false,
+        "sig": true,
         "dir": "lower",
-        "pctAgree": 80.9,
-        "pctNeutral": 13.2,
-        "pctDisagree": 5.9,
+        "pctAgree": 77.3,
+        "pctNeutral": 14.5,
+        "pctDisagree": 8.2,
         "cseqAgree": 83.8
       },
       "COM_2": {
-        "mean": 4.259,
-        "n": 528,
+        "mean": 4.199,
+        "n": 316,
         "cseqMean": 4.238,
         "sig": false,
-        "dir": "higher",
-        "pctAgree": 75.8,
-        "pctNeutral": 21.8,
-        "pctDisagree": 2.5,
+        "dir": "lower",
+        "pctAgree": 73.7,
+        "pctNeutral": 23.4,
+        "pctDisagree": 2.8,
         "cseqAgree": 74.6
       },
       "COM_3": {
-        "mean": 4.051,
-        "n": 528,
+        "mean": 3.968,
+        "n": 316,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher",
-        "pctAgree": 75.2,
-        "pctNeutral": 16.3,
-        "pctDisagree": 8.5,
+        "dir": "lower",
+        "pctAgree": 72.2,
+        "pctNeutral": 17.4,
+        "pctDisagree": 10.4,
         "cseqAgree": 74.8
       },
       "COH_1": {
-        "mean": 4.074,
-        "n": 529,
+        "mean": 4.006,
+        "n": 318,
         "cseqMean": 4.043,
         "sig": false,
-        "dir": "higher",
-        "pctAgree": 74.9,
-        "pctNeutral": 18.0,
-        "pctDisagree": 7.2,
+        "dir": "lower",
+        "pctAgree": 73.9,
+        "pctNeutral": 18.2,
+        "pctDisagree": 7.9,
         "cseqAgree": 73.3
       },
       "COH_2": {
-        "mean": 4.18,
-        "n": 529,
+        "mean": 4.116,
+        "n": 318,
         "cseqMean": 4.136,
         "sig": false,
-        "dir": "higher",
-        "pctAgree": 78.8,
-        "pctNeutral": 14.9,
-        "pctDisagree": 6.2,
+        "dir": "lower",
+        "pctAgree": 77.4,
+        "pctNeutral": 15.7,
+        "pctDisagree": 6.9,
         "cseqAgree": 77.1
       },
       "COH_3": {
-        "mean": 4.741,
-        "n": 529,
+        "mean": 4.692,
+        "n": 318,
         "cseqMean": 4.74,
         "sig": false,
-        "dir": "higher",
-        "pctAgree": 95.3,
-        "pctNeutral": 3.6,
-        "pctDisagree": 1.1,
+        "dir": "lower",
+        "pctAgree": 93.7,
+        "pctNeutral": 4.4,
+        "pctDisagree": 1.9,
         "cseqAgree": 96.0
       },
       "TF_1": {
-        "mean": 4.311,
-        "n": 530,
+        "mean": 4.274,
+        "n": 318,
         "cseqMean": 4.344,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 85.1,
-        "pctNeutral": 12.3,
-        "pctDisagree": 2.6,
+        "pctAgree": 84.3,
+        "pctNeutral": 11.9,
+        "pctDisagree": 3.8,
         "cseqAgree": 86.2
       },
       "TF_2": {
         "mean": 3.905,
-        "n": 529,
+        "n": 317,
         "cseqMean": 3.86,
         "sig": false,
         "dir": "higher",
-        "pctAgree": 69.0,
-        "pctNeutral": 18.3,
-        "pctDisagree": 12.7,
+        "pctAgree": 69.4,
+        "pctNeutral": 18.0,
+        "pctDisagree": 12.6,
         "cseqAgree": 67.7
       },
       "TF_3": {
-        "mean": 4.113,
-        "n": 529,
+        "mean": 4.063,
+        "n": 317,
         "cseqMean": 4.126,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 77.9,
-        "pctNeutral": 20.6,
-        "pctDisagree": 1.5,
+        "pctAgree": 76.3,
+        "pctNeutral": 21.5,
+        "pctDisagree": 2.2,
         "cseqAgree": 77.4
       },
       "DM_1": {
-        "mean": 2.712,
-        "n": 525,
+        "mean": 2.573,
+        "n": 314,
         "cseqMean": 2.7,
         "sig": false,
-        "dir": "higher",
-        "pctAgree": 25.3,
-        "pctNeutral": 29.7,
-        "pctDisagree": 45.0,
+        "dir": "lower",
+        "pctAgree": 23.2,
+        "pctNeutral": 26.4,
+        "pctDisagree": 50.3,
         "cseqAgree": 25.0
       },
       "DM_2": {
-        "mean": 2.684,
-        "n": 525,
+        "mean": 2.525,
+        "n": 314,
         "cseqMean": 2.69,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 25.3,
-        "pctNeutral": 28.4,
-        "pctDisagree": 46.3,
+        "pctAgree": 22.0,
+        "pctNeutral": 25.8,
+        "pctDisagree": 52.2,
         "cseqAgree": 25.5
       },
       "DM_3": {
-        "mean": 2.536,
-        "n": 524,
+        "mean": 2.45,
+        "n": 313,
         "cseqMean": 2.511,
         "sig": false,
-        "dir": "higher",
-        "pctAgree": 22.5,
-        "pctNeutral": 24.8,
-        "pctDisagree": 52.7,
+        "dir": "lower",
+        "pctAgree": 20.8,
+        "pctNeutral": 24.0,
+        "pctDisagree": 55.3,
         "cseqAgree": 22.4
       },
       "LEAD_1": {
-        "mean": 4.464,
-        "n": 373,
+        "mean": 4.489,
+        "n": 225,
         "cseqMean": 4.476,
         "sig": false,
-        "dir": "lower",
-        "pctAgree": 92.2,
-        "pctNeutral": 6.4,
+        "dir": "higher",
+        "pctAgree": 93.8,
+        "pctNeutral": 4.9,
         "pctDisagree": 1.3,
         "cseqAgree": 92.2
       },
       "LEAD_2": {
-        "mean": 4.651,
-        "n": 370,
+        "mean": 4.601,
+        "n": 223,
         "cseqMean": 4.687,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 91.1,
-        "pctNeutral": 7.6,
-        "pctDisagree": 1.4,
+        "pctAgree": 88.3,
+        "pctNeutral": 9.9,
+        "pctDisagree": 1.8,
         "cseqAgree": 93.1
       },
       "LEAD_3": {
-        "mean": 4.554,
-        "n": 372,
+        "mean": 4.462,
+        "n": 225,
         "cseqMean": 4.597,
-        "sig": false,
+        "sig": true,
         "dir": "lower",
-        "pctAgree": 88.7,
-        "pctNeutral": 10.2,
-        "pctDisagree": 1.1,
+        "pctAgree": 84.9,
+        "pctNeutral": 13.8,
+        "pctDisagree": 1.3,
         "cseqAgree": 90.1
       },
-      "STAFF_1": {
-        "mean": 4.792,
-        "n": 370,
-        "cseqMean": 4.815,
-        "sig": false,
-        "dir": "lower",
-        "pctAgree": 95.9,
-        "pctNeutral": 3.5,
-        "pctDisagree": 0.5,
-        "cseqAgree": 95.9
-      },
-      "STAFF_2": {
-        "mean": 4.811,
-        "n": 370,
-        "cseqMean": 4.832,
-        "sig": false,
-        "dir": "lower",
-        "pctAgree": 96.8,
-        "pctNeutral": 3.0,
-        "pctDisagree": 0.3,
-        "cseqAgree": 96.9
-      },
-      "STAFF_3": {
-        "mean": 4.508,
-        "n": 368,
-        "cseqMean": 4.531,
-        "sig": false,
-        "dir": "lower",
-        "pctAgree": 87.5,
-        "pctNeutral": 10.9,
-        "pctDisagree": 1.6,
-        "cseqAgree": 88.4
-      },
       "TRUST_1": {
-        "mean": 4.675,
-        "n": 526,
+        "mean": 4.623,
+        "n": 316,
         "cseqMean": 4.673,
-        "sig": false,
-        "dir": "higher",
-        "pctAgree": 94.3,
-        "pctNeutral": 4.2,
-        "pctDisagree": 1.5,
-        "cseqAgree": 94.3
-      },
-      "TRUST_2": {
-        "mean": 4.673,
-        "n": 526,
-        "cseqMean": 4.68,
         "sig": false,
         "dir": "lower",
         "pctAgree": 92.4,
-        "pctNeutral": 6.3,
-        "pctDisagree": 1.3,
+        "pctNeutral": 5.7,
+        "pctDisagree": 1.9,
+        "cseqAgree": 94.3
+      },
+      "TRUST_2": {
+        "mean": 4.611,
+        "n": 316,
+        "cseqMean": 4.68,
+        "sig": false,
+        "dir": "lower",
+        "pctAgree": 90.5,
+        "pctNeutral": 7.6,
+        "pctDisagree": 1.9,
         "cseqAgree": 92.6
       },
       "TRUST_3": {
-        "mean": 4.591,
-        "n": 526,
+        "mean": 4.538,
+        "n": 316,
         "cseqMean": 4.578,
         "sig": false,
-        "dir": "higher",
-        "pctAgree": 88.4,
-        "pctNeutral": 9.1,
-        "pctDisagree": 2.5,
+        "dir": "lower",
+        "pctAgree": 86.7,
+        "pctNeutral": 10.1,
+        "pctDisagree": 3.2,
         "cseqAgree": 87.6
       },
       "MemEng_Sat_1": {
-        "mean": 3.243,
-        "n": 523,
+        "mean": 3.19,
+        "n": 316,
         "cseqMean": 3.298,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 36.7,
-        "pctNeutral": 37.7,
-        "pctDisagree": 25.6,
+        "pctAgree": 34.8,
+        "pctNeutral": 38.6,
+        "pctDisagree": 26.6,
         "cseqAgree": 38.5
       },
       "MemEng_Sat_2": {
-        "mean": 3.941,
-        "n": 523,
+        "mean": 3.908,
+        "n": 316,
         "cseqMean": 3.964,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 64.1,
-        "pctNeutral": 24.1,
-        "pctDisagree": 11.9,
+        "pctAgree": 63.0,
+        "pctNeutral": 25.6,
+        "pctDisagree": 11.4,
         "cseqAgree": 64.2
       },
       "MemEng_Sat_3": {
-        "mean": 3.717,
-        "n": 523,
+        "mean": 3.703,
+        "n": 316,
         "cseqMean": 3.695,
         "sig": false,
         "dir": "higher",
-        "pctAgree": 53.7,
-        "pctNeutral": 33.1,
-        "pctDisagree": 13.2,
+        "pctAgree": 54.1,
+        "pctNeutral": 33.2,
+        "pctDisagree": 12.7,
         "cseqAgree": 51.7
       },
       "PROD_1": {
         "mean": 3.975,
-        "n": 523,
+        "n": 315,
         "cseqMean": 3.964,
         "sig": false,
         "dir": "higher",
-        "pctAgree": 66.2,
+        "pctAgree": 66.3,
         "pctNeutral": 27.3,
-        "pctDisagree": 6.5,
+        "pctDisagree": 6.3,
         "cseqAgree": 64.7
       },
       "PROD_2": {
-        "mean": 3.958,
-        "n": 522,
+        "mean": 3.965,
+        "n": 314,
         "cseqMean": 3.911,
         "sig": false,
         "dir": "higher",
-        "pctAgree": 64.2,
-        "pctNeutral": 26.6,
+        "pctAgree": 65.3,
+        "pctNeutral": 25.5,
         "pctDisagree": 9.2,
         "cseqAgree": 61.5
       },
       "PROD_3": {
-        "mean": 4.109,
-        "n": 522,
+        "mean": 4.15,
+        "n": 314,
         "cseqMean": 4.06,
         "sig": false,
         "dir": "higher",
-        "pctAgree": 68.2,
-        "pctNeutral": 25.7,
-        "pctDisagree": 6.1,
+        "pctAgree": 68.8,
+        "pctNeutral": 26.4,
+        "pctDisagree": 4.8,
         "cseqAgree": 66.1
       },
       "LEGIT_1": {
-        "mean": 4.175,
-        "n": 519,
+        "mean": 4.112,
+        "n": 313,
         "cseqMean": 4.179,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 77.5,
-        "pctNeutral": 18.3,
-        "pctDisagree": 4.2,
+        "pctAgree": 74.8,
+        "pctNeutral": 19.8,
+        "pctDisagree": 5.4,
         "cseqAgree": 78.2
       },
       "LEGIT_2": {
-        "mean": 4.118,
-        "n": 519,
+        "mean": 4.073,
+        "n": 313,
         "cseqMean": 4.102,
         "sig": false,
-        "dir": "higher",
-        "pctAgree": 75.3,
-        "pctNeutral": 21.0,
-        "pctDisagree": 3.7,
+        "dir": "lower",
+        "pctAgree": 74.4,
+        "pctNeutral": 21.4,
+        "pctDisagree": 4.2,
         "cseqAgree": 74.3
       },
       "LEGIT_3": {
-        "mean": 3.796,
-        "n": 519,
+        "mean": 3.751,
+        "n": 313,
         "cseqMean": 3.801,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 57.0,
-        "pctNeutral": 37.2,
-        "pctDisagree": 5.8,
+        "pctAgree": 56.2,
+        "pctNeutral": 37.1,
+        "pctDisagree": 6.7,
         "cseqAgree": 56.9
       },
       "AGENDA_1": {
-        "mean": 4.213,
-        "n": 361,
+        "mean": 4.138,
+        "n": 203,
         "cseqMean": 4.254,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 85.0,
-        "pctNeutral": 11.9,
-        "pctDisagree": 3.0,
+        "pctAgree": 84.7,
+        "pctNeutral": 11.8,
+        "pctDisagree": 3.4,
         "cseqAgree": 85.0
       },
       "AGENDA_2": {
-        "mean": 4.175,
-        "n": 361,
+        "mean": 4.039,
+        "n": 203,
         "cseqMean": 4.209,
-        "sig": false,
+        "sig": true,
         "dir": "lower",
-        "pctAgree": 83.1,
-        "pctNeutral": 13.6,
-        "pctDisagree": 3.3,
+        "pctAgree": 79.3,
+        "pctNeutral": 16.3,
+        "pctDisagree": 4.4,
         "cseqAgree": 83.3
       },
       "AGENDA_3": {
-        "mean": 4.324,
-        "n": 361,
+        "mean": 4.207,
+        "n": 203,
         "cseqMean": 4.366,
-        "sig": false,
+        "sig": true,
         "dir": "lower",
-        "pctAgree": 86.7,
-        "pctNeutral": 10.5,
-        "pctDisagree": 2.8,
+        "pctAgree": 82.8,
+        "pctNeutral": 13.8,
+        "pctDisagree": 3.4,
         "cseqAgree": 86.8
       },
       "MA_1": {
-        "mean": 4.345,
-        "n": 359,
+        "mean": 4.328,
+        "n": 204,
         "cseqMean": 4.317,
         "sig": false,
         "dir": "higher",
-        "pctAgree": 85.8,
-        "pctNeutral": 12.8,
-        "pctDisagree": 1.4,
+        "pctAgree": 84.8,
+        "pctNeutral": 14.7,
+        "pctDisagree": 0.5,
         "cseqAgree": 84.9
       },
       "MA_2": {
-        "mean": 4.047,
-        "n": 361,
+        "mean": 4.049,
+        "n": 204,
         "cseqMean": 4.042,
         "sig": false,
         "dir": "higher",
-        "pctAgree": 74.5,
-        "pctNeutral": 20.8,
-        "pctDisagree": 4.7,
+        "pctAgree": 75.0,
+        "pctNeutral": 20.6,
+        "pctDisagree": 4.4,
         "cseqAgree": 72.7
       },
       "MA_3": {
-        "mean": 3.65,
-        "n": 357,
+        "mean": 3.682,
+        "n": 201,
         "cseqMean": 3.648,
         "sig": false,
         "dir": "higher",
-        "pctAgree": 52.4,
-        "pctNeutral": 39.2,
-        "pctDisagree": 8.4,
+        "pctAgree": 54.7,
+        "pctNeutral": 38.8,
+        "pctDisagree": 6.5,
         "cseqAgree": 50.7
       },
-      "SM_1": {
-        "mean": 4.551,
-        "n": 127,
-        "cseqMean": 4.556,
-        "sig": false,
-        "dir": "lower",
-        "pctAgree": 89.8,
-        "pctNeutral": 9.4,
-        "pctDisagree": 0.8,
-        "cseqAgree": 89.8
-      },
-      "SM_2": {
-        "mean": 4.339,
-        "n": 121,
-        "cseqMean": 4.374,
-        "sig": false,
-        "dir": "lower",
-        "pctAgree": 80.2,
-        "pctNeutral": 16.5,
-        "pctDisagree": 3.3,
-        "cseqAgree": 80.4
-      },
-      "SM_3": {
-        "mean": 4.299,
-        "n": 127,
-        "cseqMean": 4.324,
-        "sig": false,
-        "dir": "lower",
-        "pctAgree": 81.9,
-        "pctNeutral": 14.2,
-        "pctDisagree": 3.9,
-        "cseqAgree": 81.5
-      },
       "EQUITY_1": {
-        "mean": 4.01,
-        "n": 521,
+        "mean": 3.968,
+        "n": 314,
         "cseqMean": 4.014,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 73.3,
-        "pctNeutral": 21.1,
-        "pctDisagree": 5.6,
+        "pctAgree": 71.3,
+        "pctNeutral": 21.7,
+        "pctDisagree": 7.0,
         "cseqAgree": 73.4
       },
       "EQUITY_2": {
-        "mean": 3.841,
-        "n": 521,
+        "mean": 3.799,
+        "n": 314,
         "cseqMean": 3.824,
         "sig": false,
-        "dir": "higher",
-        "pctAgree": 63.7,
-        "pctNeutral": 28.6,
-        "pctDisagree": 7.7,
+        "dir": "lower",
+        "pctAgree": 62.4,
+        "pctNeutral": 29.6,
+        "pctDisagree": 8.0,
         "cseqAgree": 63.0
       },
       "EQUITY_3": {
-        "mean": 3.649,
-        "n": 521,
+        "mean": 3.618,
+        "n": 314,
         "cseqMean": 3.645,
         "sig": false,
-        "dir": "higher",
-        "pctAgree": 53.7,
-        "pctNeutral": 35.9,
-        "pctDisagree": 10.4,
+        "dir": "lower",
+        "pctAgree": 53.5,
+        "pctNeutral": 36.3,
+        "pctDisagree": 10.2,
         "cseqAgree": 53.4
       },
       "OC_I_1": {
-        "mean": 3.456,
-        "n": 520,
+        "mean": 3.381,
+        "n": 312,
         "cseqMean": 3.476,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 32.9,
-        "pctNeutral": 66.2,
-        "pctDisagree": 1.0,
+        "pctAgree": 29.8,
+        "pctNeutral": 68.9,
+        "pctDisagree": 1.3,
         "cseqAgree": 33.9
       },
       "OC_G_2": {
-        "mean": 3.971,
-        "n": 522,
+        "mean": 3.92,
+        "n": 313,
         "cseqMean": 3.998,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 68.2,
+        "pctAgree": 67.7,
         "pctNeutral": 31.0,
-        "pctDisagree": 0.8,
+        "pctDisagree": 1.3,
         "cseqAgree": 69.0
       },
       "OC_O_3": {
-        "mean": 3.866,
-        "n": 522,
+        "mean": 3.786,
+        "n": 313,
         "cseqMean": 3.868,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 60.2,
-        "pctNeutral": 36.4,
-        "pctDisagree": 3.4,
+        "pctAgree": 58.8,
+        "pctNeutral": 36.7,
+        "pctDisagree": 4.5,
         "cseqAgree": 59.4
       },
       "OC_C_4": {
-        "mean": 3.996,
-        "n": 521,
+        "mean": 3.891,
+        "n": 312,
         "cseqMean": 4.017,
-        "sig": false,
+        "sig": true,
         "dir": "lower",
-        "pctAgree": 67.6,
-        "pctNeutral": 30.9,
-        "pctDisagree": 1.5,
+        "pctAgree": 64.7,
+        "pctNeutral": 33.3,
+        "pctDisagree": 1.9,
         "cseqAgree": 68.0
       },
       "SC_1": {
-        "mean": 3.862,
-        "n": 521,
+        "mean": 3.812,
+        "n": 313,
         "cseqMean": 3.875,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 63.5,
-        "pctNeutral": 29.8,
-        "pctDisagree": 6.7,
+        "pctAgree": 61.3,
+        "pctNeutral": 31.3,
+        "pctDisagree": 7.3,
         "cseqAgree": 63.6
       },
       "SC_2": {
-        "mean": 4.131,
-        "n": 521,
+        "mean": 4.019,
+        "n": 313,
         "cseqMean": 4.178,
-        "sig": false,
+        "sig": true,
         "dir": "lower",
-        "pctAgree": 77.9,
-        "pctNeutral": 17.9,
-        "pctDisagree": 4.2,
+        "pctAgree": 75.7,
+        "pctNeutral": 18.2,
+        "pctDisagree": 6.1,
         "cseqAgree": 79.3
       },
       "SC_3": {
-        "mean": 3.904,
-        "n": 521,
+        "mean": 3.786,
+        "n": 313,
         "cseqMean": 3.913,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 62.8,
-        "pctNeutral": 30.9,
-        "pctDisagree": 6.3,
+        "pctAgree": 59.1,
+        "pctNeutral": 33.9,
+        "pctDisagree": 7.0,
         "cseqAgree": 62.4
       },
       "SC_4": {
-        "mean": 4.169,
-        "n": 520,
+        "mean": 4.099,
+        "n": 313,
         "cseqMean": 4.162,
         "sig": false,
-        "dir": "higher",
-        "pctAgree": 76.9,
-        "pctNeutral": 21.3,
-        "pctDisagree": 1.7,
+        "dir": "lower",
+        "pctAgree": 73.8,
+        "pctNeutral": 24.3,
+        "pctDisagree": 1.9,
         "cseqAgree": 77.5
       },
       "SC_5": {
-        "mean": 3.942,
-        "n": 519,
+        "mean": 3.894,
+        "n": 312,
         "cseqMean": 3.969,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 68.0,
-        "pctNeutral": 26.4,
-        "pctDisagree": 5.6,
+        "pctAgree": 67.3,
+        "pctNeutral": 27.2,
+        "pctDisagree": 5.4,
         "cseqAgree": 69.1
       },
       "SC_6": {
-        "mean": 4.377,
-        "n": 520,
+        "mean": 4.349,
+        "n": 312,
         "cseqMean": 4.377,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 85.0,
-        "pctNeutral": 13.3,
-        "pctDisagree": 1.7,
+        "pctAgree": 84.3,
+        "pctNeutral": 13.8,
+        "pctDisagree": 1.9,
         "cseqAgree": 85.5
       },
       "O_1": {
-        "mean": 4.278,
-        "n": 521,
+        "mean": 4.16,
+        "n": 313,
         "cseqMean": 4.356,
-        "sig": false,
+        "sig": true,
         "dir": "lower",
-        "pctAgree": 82.0,
-        "pctNeutral": 16.7,
-        "pctDisagree": 1.3,
+        "pctAgree": 78.0,
+        "pctNeutral": 20.1,
+        "pctDisagree": 1.9,
         "cseqAgree": 86.1
       },
       "O_2": {
-        "mean": 4.379,
-        "n": 522,
+        "mean": 4.299,
+        "n": 314,
         "cseqMean": 4.442,
+        "sig": true,
+        "dir": "lower",
+        "pctAgree": 81.2,
+        "pctNeutral": 16.2,
+        "pctDisagree": 2.5,
+        "cseqAgree": 86.8
+      },
+      "STAFF_1": {
+        "mean": 4.77,
+        "n": 226,
+        "cseqMean": 4.815,
         "sig": false,
         "dir": "lower",
-        "pctAgree": 83.7,
-        "pctNeutral": 14.6,
-        "pctDisagree": 1.7,
-        "cseqAgree": 86.8
+        "pctAgree": 96.0,
+        "pctNeutral": 3.1,
+        "pctDisagree": 0.9,
+        "cseqAgree": 95.9
+      },
+      "STAFF_2": {
+        "mean": 4.779,
+        "n": 226,
+        "cseqMean": 4.832,
+        "sig": false,
+        "dir": "lower",
+        "pctAgree": 96.5,
+        "pctNeutral": 3.1,
+        "pctDisagree": 0.4,
+        "cseqAgree": 96.9
+      },
+      "STAFF_3": {
+        "mean": 4.433,
+        "n": 224,
+        "cseqMean": 4.531,
+        "sig": false,
+        "dir": "lower",
+        "pctAgree": 85.3,
+        "pctNeutral": 12.9,
+        "pctDisagree": 1.8,
+        "cseqAgree": 88.4
+      },
+      "SM_1": {
+        "mean": 4.592,
+        "n": 71,
+        "cseqMean": 4.556,
+        "sig": false,
+        "dir": "higher",
+        "pctAgree": 91.5,
+        "pctNeutral": 8.5,
+        "pctDisagree": 0.0,
+        "cseqAgree": 89.8
+      },
+      "SM_2": {
+        "mean": 4.303,
+        "n": 66,
+        "cseqMean": 4.374,
+        "sig": false,
+        "dir": "lower",
+        "pctAgree": 78.8,
+        "pctNeutral": 19.7,
+        "pctDisagree": 1.5,
+        "cseqAgree": 80.4
+      },
+      "SM_3": {
+        "mean": 4.38,
+        "n": 71,
+        "cseqMean": 4.324,
+        "sig": false,
+        "dir": "higher",
+        "pctAgree": 88.7,
+        "pctNeutral": 9.9,
+        "pctDisagree": 1.4,
+        "cseqAgree": 81.5
       }
     }
   },
@@ -37896,11 +37896,11 @@ const DASHBOARD_DATA = {
       "outcomes": 3.461
     },
     "__ALL__||ALL": {
-      "processes": 3.933,
-      "backbone": 4.434,
-      "impact": 4.218,
-      "outputs": 3.893,
-      "outcomes": 4.072
+      "processes": 3.859,
+      "backbone": 4.39,
+      "impact": 4.193,
+      "outputs": 3.87,
+      "outcomes": 3.989
     }
   },
   "cseqDomain": {
@@ -40026,6 +40026,20 @@ const DASHBOARD_DATA = {
       }
     ]
   },
+  "aggregateMembers": [
+    "Cleveland",
+    "DC",
+    "Delaware",
+    "King Co. Play Equity Coalition",
+    "Lawrence Sports Alliance",
+    "MYSA",
+    "Philadelphia Youth Sports Collaborative",
+    "Salem",
+    "San Diego",
+    "Sport for Good Atlanta",
+    "Sport for Good Chicago",
+    "Sport for Good New Orleans"
+  ],
   "accessHashes": {
     "Cleveland": "eb6b8dfbde42c8edb221d488eb2bfe18411e1f1c8caa247df01658719c0b18e5",
     "DC": "6c87c3fe706fa93fcfeda08d098a858b395fae4f33ee89a37a269fe2281f283a",

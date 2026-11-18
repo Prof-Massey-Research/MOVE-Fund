@@ -423,6 +423,8 @@ Object.entries(CO_TPS).forEach(([co, tps]) => { CO_TP[co] = tps[tps.length - 1];
 //   demo: overrides DEMO_MODE below.
 const DASH_CFG = (typeof window !== 'undefined' && window.DASH_CFG) || {};
 const LOCK = DASH_CFG.lock || null;
+// Unlocked aggregate page (aggregate.html): opens straight into the all-MOVE-Fund combined view.
+const AGG_PAGE = !!DASH_CFG.aggregate;
 
 // Per-coalition access keys (sha-256 hashes) for the main, all-in-one dashboard. When present,
 // the chooser asks each visitor for their coalition's access key before opening it.
@@ -434,14 +436,15 @@ const SINGLE = !!(LOCK || GATED);
 
 // DEMO MODE (live all-call demo): individual coalitions are greyed out and can't be opened;
 // visitors can only view "All coalitions combined". A LOCK or key-gated (GATED) build turns it off.
-const DEMO_MODE = (LOCK || GATED) ? false : ('demo' in DASH_CFG ? DASH_CFG.demo : true);
+const DEMO_MODE = (LOCK || GATED || AGG_PAGE) ? false : ('demo' in DASH_CFG ? DASH_CFG.demo : true);
 
 // Display-only member-count overrides (the scores still use the responses in the data file).
 const N_DISPLAY_OVERRIDE = {};
 const memberN = (co, n) => N_DISPLAY_OVERRIDE[co] ?? n;
 
 const ALL_KEY = '__ALL__';
-const ALL_LABEL = 'All coalitions combined';
+const AGG_N = (D.aggregateMembers || []).length;
+const ALL_LABEL = AGG_N ? `All ${AGG_N} MOVE Fund coalitions combined` : 'All coalitions combined';
 CO_TP[ALL_KEY] = 'ALL';
 const displayName = co => (co === ALL_KEY ? ALL_LABEL : co);
 
@@ -488,6 +491,7 @@ function rebuildViewMenu(co) {
 // (No browsing to other individual coalitions.)
 function setCoalitionOptions(co) {
   selCo.innerHTML = '';
+  if (AGG_PAGE) { selCo.add(new Option(ALL_LABEL, ALL_KEY)); selCo.value = ALL_KEY; return; }
   if (co !== ALL_KEY && (!DEMO_MODE || SINGLE)) selCo.add(new Option(co, co));
   if (!SINGLE) selCo.add(new Option(ALL_LABEL, ALL_KEY));   // no all-coalitions option in a gated/locked view
   selCo.value = co;
@@ -502,8 +506,9 @@ if (DEMO_MODE && !LOCK) {
   document.querySelector('.gate-sub').textContent =
     'Select your coalition, then enter the access key you were given to open its dashboard.';
 }
-document.getElementById('meta-line').textContent =
-  `${VIEWABLE.length} coalitions · ${D.constructs.length} scales · scale 1–${D.scaleMax}`;
+document.getElementById('meta-line').textContent = AGG_PAGE
+  ? `${AGG_N} MOVE Fund coalitions combined (latest survey wave each) · ${D.constructs.length} scales · scale 1–${D.scaleMax}`
+  : `${VIEWABLE.length} coalitions · ${D.constructs.length} scales · scale 1–${D.scaleMax}`;
 
 // Selecting toggles between this coalition and the aggregate; both set the (hidden) time point.
 selCo.addEventListener('change', () => { selT.value = CO_TP[selCo.value]; rebuildViewMenu(selCo.value); render(); });
@@ -1148,12 +1153,26 @@ function enterDashboard(co) {
 
 (function buildGate() {
   if (LOCK) return;   // locked builds use the password gate instead of the coalition chooser
+  if (AGG_PAGE) {     // unlocked aggregate page: skip the chooser and open the combined view
+    document.title = ALL_LABEL + ' — MOVE Fund Dashboard';
+    document.getElementById('gate').classList.add('hidden');
+    setTimeout(() => enterDashboard(ALL_KEY), 0);   // after the rest of the script has run
+    return;
+  }
   const host = document.getElementById('gate-groups');
   const group = (title, grid) => {
     const g = document.createElement('div'); g.className = 'gate-group';
     const h = document.createElement('h2'); h.textContent = title;
     g.appendChild(h); g.appendChild(grid); host.appendChild(g);
   };
+  if (GATED) {        // the combined view is public: link to the unlocked aggregate page
+    const allGrid = document.createElement('div'); allGrid.className = 'gate-grid';
+    const a = document.createElement('a'); a.className = 'gate-btn gate-all'; a.href = 'aggregate.html';
+    a.style.textDecoration = 'none';
+    a.innerHTML = `${ALL_LABEL}<span class="g-n">Open to everyone — no access key needed</span>`;
+    allGrid.appendChild(a);
+    group('Everyone combined', allGrid);
+  }
   if (DEMO_MODE) {
     const allGrid = document.createElement('div'); allGrid.className = 'gate-grid';
     const nAll = (D.profiles[`${ALL_KEY}||ALL`] || {}).n;
@@ -1179,7 +1198,9 @@ function enterDashboard(co) {
     }
     grid.appendChild(b);
   });
-  if (DEMO_MODE) group('Individual coalitions', grid); else host.appendChild(grid);
+  if (DEMO_MODE) group('Individual coalitions', grid);
+  else if (GATED) group('Individual coalitions (access key required)', grid);
+  else host.appendChild(grid);
 })();
 
 // ---- Password gate (locked single-coalition builds) ----

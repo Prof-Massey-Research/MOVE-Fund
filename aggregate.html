@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MOVE Fund — Coalition Evaluation Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+<script>window.DASH_CFG = {"demo": false, "aggregate": true};</script>
+<script>
+const DASHBOARD_DATA = {"generatedFrom": ["Time 0/CSEq Data - de-identified.xlsx", "Time 1/MOVE Fund Eval - Chicago_August 27, 2026_13.14.xlsx", "Time 1/MOVE Fund Eval - Cleveland_July 7, 2026_22.10.xlsx", "Time 1/MOVE Fund Eval - DC_July 28, 2026_21.26.xls", "Time 1/MOVE Fund Eval - Delaware_July 28, 2026_21.27.xlsx", "Time 1/MOVE Fund Eval - Salem_July 28, 2026_21.25.xlsx", "Time 1/MOVE Fund Eval - San Diego_October 16, 2026_13.36.xlsx"], "coalitions": ["__ALL__"], "timepoints": ["T0", "T1"], "scaleMax": 5, "constructs": [{"key": "TACT", "name": "Motivation: Functional", "scale": "agreement", "items": ["TACT_1", "TACT_2", "TACT_3"], "definition": "Motivated by potential of gaining access to more resources, improving efficiency, and reducing transaction costs.", "source": "Proulx et al., 2014 & Mendel & Brudney, 2014"}, {"key": "TRAN", "name": "Motivation: Transformational", "scale": "agreement", "items": ["TRAN_1", "TRAN_2", "TRAN_3"], "definition": "Motivated by potential of addressing complex social problem(s) and facilitating systems-level change.", "source": "Proulx et al., 2014 & Mendel & Brudney, 2014"}, {"key": "GC", "name": "Goal Consensus", "scale": "agreement", "items": ["GC_1", "GC_2", "GC_3"], "definition": "Degree to which members agree on network-level goals.", "source": "Marek et al., 2015"}, {"key": "COM", "name": "Communication", "scale": "agreement", "items": ["COM_1", "COM_2", "COM_3"], "definition": "Quality of interactions between members in the coalition.", "source": "Kegler & Swan, 2011"}, {"key": "COH", "name": "Cohesion", "scale": "agreement", "items": ["COH_1", "COH_2", "COH_3"], "definition": "Sense of unity and togetherness among members involved in the coalition.", "source": "Kegler & Swan, 2011"}, {"key": "TF", "name": "Task Focus", "scale": "agreement", "items": ["TF_1", "TF_2", "TF_3"], "definition": "Ability of a coalition to remain focused on achieving practical tasks.", "source": "Kegler & Swan, 2011"}, {"key": "DM", "name": "Decision-Making", "scale": "frequency", "items": ["DM_1", "DM_2", "DM_3"], "definition": "Involvement of members in collective decision-making processes.", "source": "Kegler & Swan, 2011"}, {"key": "LEAD", "name": "Leadership", "scale": "agreement", "items": ["LEAD_1", "LEAD_2", "LEAD_3"], "definition": "Perceptions of coalition leadership.", "source": "Kegler & Swan, 2011"}, {"key": "STAFF", "name": "Staff", "scale": "agreement", "items": ["STAFF_1", "STAFF_2", "STAFF_3"], "definition": "Perceptions of coalition staff.", "source": "Kegler & Swan, 2011"}, {"key": "TRUST", "name": "Trust", "scale": "agreement", "items": ["TRUST_1", "TRUST_2", "TRUST_3"], "definition": "Willingness of members to be vulnerable based on expectations about other members’ behavior.", "source": "Marek et al., 2015"}, {"key": "MemEng_Sat", "name": "Member Engagement", "scale": "agreement", "items": ["MemEng_Sat_1", "MemEng_Sat_2", "MemEng_Sat_3"], "definition": "Degree to which member organizations are empowered and develop a sense of belonging to a coalition.", "source": "Kegler & Swan, 2011"}, {"key": "PROD", "name": "Productivity", "scale": "agreement", "items": ["PROD_1", "PROD_2", "PROD_3"], "definition": "Tangible benefits derived from being involved in the coalition.", "source": "Preskill et al., 2014"}, {"key": "LEGIT", "name": "External Legitimacy", "scale": "agreement", "items": ["LEGIT_1", "LEGIT_2", "LEGIT_3"], "definition": "Credibility and reputation of the coalition among influential funders, partners, and community groups.", "source": "Waddock & Bannister, 1991"}, {"key": "AGENDA", "name": "Common Agenda", "scale": "agreement", "items": ["AGENDA_1", "AGENDA_2", "AGENDA_3"], "definition": "Shared vision for change communicated through an action plan that articulates problem and solution.", "source": "Preskill et al., 2014"}, {"key": "MA", "name": "Mutually Reinforcing Activities", "scale": "agreement", "items": ["MA_1", "MA_2", "MA_3"], "definition": "Coordinated and mutually reinforcing member activities that reinforce the common agenda.", "source": "Preskill et al., 2014"}, {"key": "SM", "name": "Shared Measurement", "scale": "agreement", "items": ["SM_1", "SM_2", "SM_3"], "definition": "Collecting data across member organizations to track progress and ensure efforts remain aligned.", "source": "Preskill et al., 2014"}, {"key": "EQUITY", "name": "Equity", "scale": "agreement", "items": ["EQUITY_1", "EQUITY_2", "EQUITY_3"], "definition": "Fairness and justice achieved through representation and addressing disparities through targeted actions.", "source": "Preskill et al., 2014"}, {"key": "OC", "name": "Organizational Capacity", "scale": "positivity", "items": ["OC_I_1", "OC_G_2", "OC_O_3", "OC_C_4"], "definition": "How an organization acquires and utilizes resources to achieve desired outcomes.", "source": "Bryan & Brown, 2015"}, {"key": "SC", "name": "Systems Change", "scale": "agreement", "items": ["SC_1", "SC_2", "SC_3", "SC_4", "SC_5", "SC_6"], "definition": "Shifting the conditions that are holding the problem in place.", "source": "Preskill et al., 2014"}, {"key": "O", "name": "Social Outcomes", "scale": "agreement", "items": ["O_1", "O_2"], "definition": "Indicators of the effectiveness of a coalition in improving targeted outcomes.", "source": "Kegler & Swan, 2011"}], "questionText": {"TACT_1": "TACT_1", "TACT_2": "TACT_2", "TACT_3": "TACT_3", "TRAN_1": "TRAN_1", "TRAN_2": "TRAN_2", "TRAN_3": "TRAN_3", "GC_1": "GC_1", "GC_2": "GC_2", "GC_3": "GC_3", "COM_1": "COM_1", "COM_2": "COM_2", "COM_3": "COM_3", "COH_1": "COH_1", "COH_2": "COH_2", "COH_3": "COH_3", "TF_1": "TF_1", "TF_2": "TF_2", "TF_3": "TF_3", "DM_1": "DM_1", "DM_2": "DM_2", "DM_3": "DM_3", "LEAD_1": "LEAD_1", "LEAD_2": "LEAD_2", "LEAD_3": "LEAD_3", "STAFF_1": "STAFF_1", "STAFF_2": "STAFF_2", "STAFF_3": "STAFF_3", "TRUST_1": "TRUST_1", "TRUST_2": "TRUST_2", "TRUST_3": "TRUST_3", "MemEng_Sat_1": "MemEng_Sat_1", "MemEng_Sat_2": "MemEng_Sat_2", "MemEng_Sat_3": "MemEng_Sat_3", "PROD_1": "PROD_1", "PROD_2": "PROD_2", "PROD_3": "PROD_3", "LEGIT_1": "LEGIT_1", "LEGIT_2": "LEGIT_2", "LEGIT_3": "LEGIT_3", "AGENDA_1": "AGENDA_1", "AGENDA_2": "AGENDA_2", "AGENDA_3": "AGENDA_3", "MA_1": "MA_1", "MA_2": "MA_2", "MA_3": "MA_3", "SM_1": "SM_1", "SM_2": "SM_2", "SM_3": "SM_3", "EQUITY_1": "EQUITY_1", "EQUITY_2": "EQUITY_2", "EQUITY_3": "EQUITY_3", "OC_I_1": "OC_I_1", "OC_G_2": "OC_G_2", "OC_O_3": "OC_O_3", "OC_C_4": "OC_C_4", "SC_1": "SC_1", "SC_2": "SC_2", "SC_3": "SC_3", "SC_4": "SC_4", "SC_5": "SC_5", "SC_6": "SC_6", "O_1": "O_1", "O_2": "O_2"}, "programFields": [{"key": "youth_served", "label": "Youth served (last 12 mo.)", "agg": "sum"}, {"key": "pct_aid", "label": "% of youth receiving financial aid", "agg": "wmean"}, {"key": "aid_dollars", "label": "Financial aid disbursed ($)", "agg": "sum"}, {"key": "coaches_worked", "label": "Coaches worked", "agg": "sum"}, {"key": "coaches_trained", "label": "Coaches trained", "agg": "sum"}], "cells": {"__ALL__||ALL": {"TACT": {"mean": 3.699, "sd": 0.95, "n": 319}, "TRAN": {"mean": 4.35, "sd": 0.771, "n": 320}, "GC": {"mean": 4.019, "sd": 0.836, "n": 318}, "COM": {"mean": 4.075, "sd": 0.818, "n": 317}, "COH": {"mean": 4.271, "sd": 0.737, "n": 318}, "TF": {"mean": 4.082, "sd": 0.714, "n": 318}, "DM": {"mean": 2.519, "sd": 1.192, "n": 314}, "LEAD": {"mean": 4.514, "sd": 0.598, "n": 225}, "STAFF": {"mean": 4.662, "sd": 0.546, "n": 226}, "TRUST": {"mean": 4.591, "sd": 0.663, "n": 316}, "MemEng_Sat": {"mean": 3.6, "sd": 0.963, "n": 316}, "PROD": {"mean": 4.032, "sd": 0.94, "n": 315}, "LEGIT": {"mean": 3.979, "sd": 0.799, "n": 313}, "AGENDA": {"mean": 4.128, "sd": 0.703, "n": 203}, "MA": {"mean": 4.026, "sd": 0.693, "n": 204}, "SM": {"mean": 4.425, "sd": 0.641, "n": 71}, "EQUITY": {"mean": 3.795, "sd": 0.87, "n": 314}, "OC": {"mean": 3.744, "sd": 0.66, "n": 314}, "SC": {"mean": 3.993, "sd": 0.737, "n": 313}, "O": {"mean": 4.231, "sd": 0.802, "n": 314}}}, "grandMeans": {"T0": {"TACT": 3.912, "TRAN": 4.425, "GC": 4.062, "COM": 4.184, "COH": 4.306, "TF": 4.098, "DM": 2.665, "LEAD": 4.571, "STAFF": 4.692, "TRUST": 4.67, "MemEng_Sat": 3.622, "PROD": 3.97, "LEGIT": 4.016, "AGENDA": 4.296, "MA": 3.982, "SM": 4.33, "EQUITY": 3.794, "OC": 3.884, "SC": 4.048, "O": 4.405}, "T1": {"TACT": 3.807, "TRAN": 4.405, "GC": 3.986, "COM": 4.22, "COH": 4.401, "TF": 3.909, "DM": 2.988, "LEAD": 4.426, "STAFF": 4.66, "TRUST": 4.557, "MemEng_Sat": 3.568, "PROD": 4.14, "LEGIT": 3.814, "AGENDA": 4.104, "MA": 4.039, "SM": 4.278, "EQUITY": 3.764, "OC": 3.618, "SC": 3.713, "O": 3.801}}, "program": {"__ALL__||ALL": {"youth_served": {"value": 59462.0, "n": 10, "raw": []}, "pct_aid": {"value": 29.33, "n": 9, "raw": []}, "aid_dollars": {"value": 539265.0, "n": 7, "raw": []}, "coaches_worked": {"value": 9987.0, "n": 110, "raw": []}, "coaches_trained": {"value": 11119.5, "n": 105, "raw": []}}}, "profileQuestions": [{"key": "sector", "label": "Organization sector", "type": "single", "mode": "present"}, {"key": "field", "label": "Focus areas", "type": "multi", "mode": "present"}, {"key": "engagement", "label": "Overall engagement in the coalition", "type": "single", "mode": "order"}, {"key": "duration", "label": "Time as a coalition member", "type": "single", "mode": "order"}, {"key": "age", "label": "Ages of youth served", "type": "multi", "mode": "order"}, {"key": "pops", "label": "Populations intentionally served", "type": "multi", "mode": "order"}], "engageFeedbackPrompt": "To what degree would any of the following help you engage more regularly in action team or committee meetings?", "profiles": {"__ALL__||ALL": {"n": 335, "sector": {"answered": 267, "items": [{"label": "Nonprofit or not-for-profit organization", "count": 229, "pct": 68.4}, {"label": "Public organization or agency", "count": 17, "pct": 5.1}, {"label": "Other", "count": 10, "pct": 3.0}, {"label": "For-profit organization", "count": 8, "pct": 2.4}, {"label": "Informal organization or association", "count": 3, "pct": 0.9}]}, "field": {"answered": 275, "items": [{"label": "Youth development", "count": 216, "pct": 64.5}, {"label": "Sports", "count": 199, "pct": 59.4}, {"label": "Outdoor recreation", "count": 108, "pct": 32.2}, {"label": "Education", "count": 102, "pct": 30.4}, {"label": "Community-based organization", "count": 78, "pct": 23.3}, {"label": "Parks, recreation, and leisure services", "count": 69, "pct": 20.6}, {"label": "Social/human services", "count": 47, "pct": 14.0}, {"label": "Public health or healthcare", "count": 32, "pct": 9.6}, {"label": "Community or civic engagement", "count": 24, "pct": 7.2}, {"label": "Criminal justice/safety", "count": 20, "pct": 6.0}, {"label": "Other", "count": 20, "pct": 6.0}, {"label": "Faith", "count": 9, "pct": 2.7}, {"label": "Business", "count": 7, "pct": 2.1}, {"label": "Research", "count": 4, "pct": 1.2}, {"label": "Politics", "count": 1, "pct": 0.3}]}, "engagement": {"answered": 275, "items": [{"label": "None at all", "count": 1, "pct": 0.3}, {"label": "A little", "count": 75, "pct": 22.4}, {"label": "A moderate amount", "count": 109, "pct": 32.5}, {"label": "A lot", "count": 48, "pct": 14.3}, {"label": "A great deal", "count": 42, "pct": 12.5}]}, "duration": {"answered": 211, "items": [{"label": "Less than 1 year", "count": 21, "pct": 6.3}, {"label": "1-3 years", "count": 89, "pct": 26.6}, {"label": "4-6 years", "count": 64, "pct": 19.1}, {"label": "6-8 years", "count": 15, "pct": 4.5}, {"label": "More than 9 years", "count": 22, "pct": 6.6}]}, "age": {"answered": 146, "items": [{"label": "0-5", "count": 43, "pct": 12.8}, {"label": "6-12", "count": 126, "pct": 37.6}, {"label": "13-17", "count": 131, "pct": 39.1}, {"label": "18-24", "count": 90, "pct": 26.9}]}, "pops": {"answered": 60, "items": [{"label": "Girls", "count": 42, "pct": 12.5}, {"label": "Youth in poverty", "count": 50, "pct": 14.9}, {"label": "BIPOC Youth", "count": 29, "pct": 8.7}, {"label": "Immigrant and newcomer youth", "count": 15, "pct": 4.5}, {"label": "LGBTQIA+ youth", "count": 16, "pct": 4.8}, {"label": "Non-binary, gender non-conforming, and/or trans youth", "count": 9, "pct": 2.7}, {"label": "Youth involved in the criminal justice system", "count": 4, "pct": 1.2}, {"label": "Youth in foster care", "count": 11, "pct": 3.3}, {"label": "Youth with physical disabilities", "count": 15, "pct": 4.5}, {"label": "Youth with intellectual disabilities", "count": 18, "pct": 5.4}]}, "engageFeedback": {"items": [{"label": "Increased stipend", "mean": 3.44, "n": 57}, {"label": "Strong facilittaion", "mean": 3.56, "n": 57}, {"label": "More networking and breakouts", "mean": 3.09, "n": 55}, {"label": "Clear agenda and goals", "mean": 3.68, "n": 56}, {"label": "In person meetings", "mean": 3.07, "n": 55}, {"label": "More varied and interesting content", "mean": 3.09, "n": 56}]}}}, "network": {}, "zipYouth": {}, "domains": [{"key": "processes", "name": "Collaborative Processes", "constructs": ["TACT", "TRAN", "GC", "COM", "COH", "TF", "DM"]}, {"key": "backbone", "name": "Backbone Support", "constructs": ["LEAD", "STAFF", "TRUST", "EQUITY"]}, {"key": "impact", "name": "Collective Impact", "constructs": ["AGENDA", "MA", "SM"]}, {"key": "outputs", "name": "Collaborative Outputs", "constructs": ["MemEng_Sat", "PROD", "LEGIT"]}, {"key": "outcomes", "name": "Social Outcomes", "constructs": ["OC", "SC", "O"]}], "items": [{"code": "TACT_1", "domain": "processes", "construct": "TACT", "constructName": "Motivation: Functional", "text": "Gain access to new funding opportunities.", "reverse": false}, {"code": "TACT_2", "domain": "processes", "construct": "TACT", "constructName": "Motivation: Functional", "text": "Operate more efficiently (ex., reduce costs through collaboration).", "reverse": false}, {"code": "TACT_3", "domain": "processes", "construct": "TACT", "constructName": "Motivation: Functional", "text": "Expand our program services.", "reverse": false}, {"code": "TRAN_1", "domain": "processes", "construct": "TRAN", "constructName": "Motivation: Transformational", "text": "Engage with critical issues facing the community.", "reverse": false}, {"code": "TRAN_2", "domain": "processes", "construct": "TRAN", "constructName": "Motivation: Transformational", "text": "Address complex social problems that one organization cannot solive on its own.", "reverse": false}, {"code": "TRAN_3", "domain": "processes", "construct": "TRAN", "constructName": "Motivation: Transformational", "text": "Create a system for change or system of program delivery where none existed before.", "reverse": false}, {"code": "GC_1", "domain": "processes", "construct": "GC", "constructName": "Goal Consensus", "text": "The coalition has clearly defined the problem that it wishes to address.", "reverse": false}, {"code": "GC_2", "domain": "processes", "construct": "GC", "constructName": "Goal Consensus", "text": "Member organizations agree upon the overall goals and objectives of the coalition.", "reverse": false}, {"code": "GC_3", "domain": "processes", "construct": "GC", "constructName": "Goal Consensus", "text": "There is clarity on the vision for where the coalition should be going.", "reverse": false}, {"code": "COM_1", "domain": "processes", "construct": "COM", "constructName": "Communication", "text": "The coalition has established a system of communication for member organizations to discuss their efforts.", "reverse": false}, {"code": "COM_2", "domain": "processes", "construct": "COM", "constructName": "Communication", "text": "The coalition provides a safe environment in which disagreements and conflicts can be discussed.", "reverse": false}, {"code": "COM_3", "domain": "processes", "construct": "COM", "constructName": "Communication", "text": "Communication among organizations in the coalition is effective (i.e., promotes understanding, cooperation, and transfer of information).", "reverse": false}, {"code": "COH_1", "domain": "processes", "construct": "COH", "constructName": "Cohesion", "text": "There is a strong feeling of unity and cohesion in the coalition.", "reverse": false}, {"code": "COH_2", "domain": "processes", "construct": "COH", "constructName": "Cohesion", "text": "There is a strong feeling of belonging in the coalition.", "reverse": false}, {"code": "COH_3", "domain": "processes", "construct": "COH", "constructName": "Cohesion", "text": "My organization is proud to be a part of the coalition.", "reverse": false}, {"code": "TF_1", "domain": "processes", "construct": "TF", "constructName": "Task Focus", "text": "The coalition supports tasks and activities that serve a practical purpose for member organizations.", "reverse": false}, {"code": "TF_2", "domain": "processes", "construct": "TF", "constructName": "Task Focus", "text": "The coalition rarely has anything concrete to show for its efforts. (reverse-scored)", "reverse": true}, {"code": "TF_3", "domain": "processes", "construct": "TF", "constructName": "Task Focus", "text": "The coalition stays on task.", "reverse": false}, {"code": "DM_1", "domain": "processes", "construct": "DM", "constructName": "Decision-Making", "text": "Setting goals and objectives for the coalition.", "reverse": false}, {"code": "DM_2", "domain": "processes", "construct": "DM", "constructName": "Decision-Making", "text": "Determining what activities to prioritize for the coalition.", "reverse": false}, {"code": "DM_3", "domain": "processes", "construct": "DM", "constructName": "Decision-Making", "text": "How the coalition functions overall.", "reverse": false}, {"code": "LEAD_1", "domain": "backbone", "construct": "LEAD", "constructName": "Leadership", "text": "Has a clear vision for the coalition.", "reverse": false}, {"code": "LEAD_2", "domain": "backbone", "construct": "LEAD", "constructName": "Leadership", "text": "Is respected in the community.", "reverse": false}, {"code": "LEAD_3", "domain": "backbone", "construct": "LEAD", "constructName": "Leadership", "text": "Intentionally seeks out the views of member organizations.", "reverse": false}, {"code": "STAFF_1", "domain": "backbone", "construct": "STAFF", "constructName": "Staff", "text": "Is competent.", "reverse": false}, {"code": "STAFF_2", "domain": "backbone", "construct": "STAFF", "constructName": "Staff", "text": "Works well with collaborative members.", "reverse": false}, {"code": "STAFF_3", "domain": "backbone", "construct": "STAFF", "constructName": "Staff", "text": "Shares responsibility for the initiative with organizations in the collaborative.", "reverse": false}, {"code": "TRUST_1", "domain": "backbone", "construct": "TRUST", "constructName": "Trust", "text": "My organization has an understanding and respect for the coalition.", "reverse": false}, {"code": "TRUST_2", "domain": "backbone", "construct": "TRUST", "constructName": "Trust", "text": "My organization trusts the coalition.", "reverse": false}, {"code": "TRUST_3", "domain": "backbone", "construct": "TRUST", "constructName": "Trust", "text": "The coalition carries out the role with fairness.", "reverse": false}, {"code": "MemEng_Sat_1", "domain": "outputs", "construct": "MemEng_Sat", "constructName": "Member Engagement", "text": "Power and control are in the hands of a few individuals in the coalition (reverse-scored)", "reverse": true}, {"code": "MemEng_Sat_2", "domain": "outputs", "construct": "MemEng_Sat", "constructName": "Member Engagement", "text": "Members of the coalition are not always open with information and honest about their motives (reverse-scored)", "reverse": true}, {"code": "MemEng_Sat_3", "domain": "outputs", "construct": "MemEng_Sat", "constructName": "Member Engagement", "text": "Some the coalition members are guarded about putting their ideas forward for discussion (reverse-scored)", "reverse": true}, {"code": "PROD_1", "domain": "outputs", "construct": "PROD", "constructName": "Productivity", "text": "The coalition often fails to meet its goals (reverse-scored)", "reverse": true}, {"code": "PROD_2", "domain": "outputs", "construct": "PROD", "constructName": "Productivity", "text": "There is a lot of inefficiency in the way the coalition uses resources (reverse-scored)", "reverse": true}, {"code": "PROD_3", "domain": "outputs", "construct": "PROD", "constructName": "Productivity", "text": "There are a lot of wasted resources in the coalition (reverse-scored)", "reverse": true}, {"code": "LEGIT_1", "domain": "outputs", "construct": "LEGIT", "constructName": "External Legitimacy", "text": "The coalition commands the respect of a broader group of external stakeholders and can bring key decision-makers to the table.", "reverse": false}, {"code": "LEGIT_2", "domain": "outputs", "construct": "LEGIT", "constructName": "External Legitimacy", "text": "The coalition has external supporters outside the coalition who can champion their strategy with the broader community", "reverse": false}, {"code": "LEGIT_3", "domain": "outputs", "construct": "LEGIT", "constructName": "External Legitimacy", "text": "The coalition has the ability to shift both public and private funds around targeted issues", "reverse": false}, {"code": "AGENDA_1", "domain": "impact", "construct": "AGENDA", "constructName": "Common Agenda", "text": "The leadership of the coalition includes voices from all relevant sectors and constiuencies.", "reverse": false}, {"code": "AGENDA_2", "domain": "impact", "construct": "AGENDA", "constructName": "Common Agenda", "text": "Organizations involved in the coalition understand and can articulate the problem.", "reverse": false}, {"code": "AGENDA_3", "domain": "impact", "construct": "AGENDA", "constructName": "Common Agenda", "text": "Organizations involved in the coalition show comitment to the common agenda.", "reverse": false}, {"code": "MA_1", "domain": "impact", "construct": "MA", "constructName": "Mutually Reinforcing Activities", "text": "The collaborative structures (ex., working groups, subcommittees, action teams) help coordinate activities in alignment with the common agenda.", "reverse": false}, {"code": "MA_2", "domain": "impact", "construct": "MA", "constructName": "Mutually Reinforcing Activities", "text": "Partners have clear approaches/goals for their own contribution to the common agenda.", "reverse": false}, {"code": "MA_3", "domain": "impact", "construct": "MA", "constructName": "Mutually Reinforcing Activities", "text": "The individual activities of member organizations are changing to better align with the common agenda.", "reverse": false}, {"code": "SM_1", "domain": "impact", "construct": "SM", "constructName": "Shared Measurement", "text": "My organization sees value in the shared measurement system.", "reverse": false}, {"code": "SM_2", "domain": "impact", "construct": "SM", "constructName": "Shared Measurement", "text": "A participatory process is used to determine the common set of indicators and data collection methods used by the coalition.", "reverse": false}, {"code": "SM_3", "domain": "impact", "construct": "SM", "constructName": "Shared Measurement", "text": "The common set of indicators and data collection methods provide timely evidence of (a lack of) progress toward the intended outcomes of the coalition.", "reverse": false}, {"code": "EQUITY_1", "domain": "backbone", "construct": "EQUITY", "constructName": "Equity", "text": "Members of the community help shape the goals and objectives of the coalition.", "reverse": false}, {"code": "EQUITY_2", "domain": "backbone", "construct": "EQUITY", "constructName": "Equity", "text": "Members of the community are involved in deciding what activities the coalition prioritizes.", "reverse": false}, {"code": "EQUITY_3", "domain": "backbone", "construct": "EQUITY", "constructName": "Equity", "text": "Members of the community help determine how success is defined and measured by the coalition.", "reverse": false}, {"code": "OC_I_1", "domain": "outcomes", "construct": "OC", "constructName": "Organizational Capacity", "text": "…your organizations' ability to recruit qualified staff and volunteers.", "reverse": false}, {"code": "OC_G_2", "domain": "outcomes", "construct": "OC", "constructName": "Organizational Capacity", "text": "…strengthening the \"community of practice\" in your geographic area (i.e., regularly interacting individuals who share a similar repertoire and are bound together by their engagement in similar goals)", "reverse": false}, {"code": "OC_O_3", "domain": "outcomes", "construct": "OC", "constructName": "Organizational Capacity", "text": "…securing adequate funding to support your organizations' goals and objectives?", "reverse": false}, {"code": "OC_C_4", "domain": "outcomes", "construct": "OC", "constructName": "Organizational Capacity", "text": "…mobilizing resources that support key community members and institutions?", "reverse": false}, {"code": "SC_1", "domain": "outcomes", "construct": "SC", "constructName": "Systems Change", "text": "The coalition has influence over key public and policy decisions that impact sport, recreation, and play equity (e.g. ordinances, ballot-measures, legislation)", "reverse": false}, {"code": "SC_2", "domain": "outcomes", "construct": "SC", "constructName": "Systems Change", "text": "The coalition has improved the quality of sport, recreation, and play services provided to our target population(s)", "reverse": false}, {"code": "SC_3", "domain": "outcomes", "construct": "SC", "constructName": "Systems Change", "text": "The coalition has increased overall funding (government, foundation, contract) for system of sport, recreation, and play.", "reverse": false}, {"code": "SC_4", "domain": "outcomes", "construct": "SC", "constructName": "Systems Change", "text": "The coalition has strengthened relations among key system actors needed to advance sport, recreation, and play equity (e.g, non-profit leaders, public officials, policymakers, healthcare, education).", "reverse": false}, {"code": "SC_5", "domain": "outcomes", "construct": "SC", "constructName": "Systems Change", "text": "The coalition has empowered communities to advocate for their own needs and preferences when it comes to sport, recreation, and play", "reverse": false}, {"code": "SC_6", "domain": "outcomes", "construct": "SC", "constructName": "Systems Change", "text": "The coalition has elevated the importance of equity in sport, recreation, and play to a broader group of stakeholders.", "reverse": false}, {"code": "O_1", "domain": "outcomes", "construct": "O", "constructName": "Social Outcomes", "text": "The coalition will improve sport, recreation, and play equity in Seattle.", "reverse": false}, {"code": "O_2", "domain": "outcomes", "construct": "O", "constructName": "Social Outcomes", "text": "Youth in Seattle are better off today because of the coalition.", "reverse": false}], "itemScores": {"__ALL__||ALL": {"TACT_1": {"mean": 3.698, "n": 318, "cseqMean": 3.777, "sig": false, "dir": "lower", "pctAgree": 62.6, "pctNeutral": 20.4, "pctDisagree": 17.0, "cseqAgree": 65.9}, "TACT_2": {"mean": 3.541, "n": 316, "cseqMean": 3.715, "sig": true, "dir": "lower", "pctAgree": 53.5, "pctNeutral": 28.5, "pctDisagree": 18.0, "cseqAgree": 60.3}, "TACT_3": {"mean": 3.852, "n": 317, "cseqMean": 4.031, "sig": true, "dir": "lower", "pctAgree": 70.7, "pctNeutral": 16.7, "pctDisagree": 12.6, "cseqAgree": 76.2}, "TRAN_1": {"mean": 4.506, "n": 318, "cseqMean": 4.571, "sig": false, "dir": "lower", "pctAgree": 90.3, "pctNeutral": 7.5, "pctDisagree": 2.2, "cseqAgree": 92.9}, "TRAN_2": {"mean": 4.376, "n": 319, "cseqMean": 4.442, "sig": false, "dir": "lower", "pctAgree": 84.6, "pctNeutral": 10.3, "pctDisagree": 5.0, "cseqAgree": 88.9}, "TRAN_3": {"mean": 4.184, "n": 316, "cseqMean": 4.27, "sig": false, "dir": "lower", "pctAgree": 80.1, "pctNeutral": 13.0, "pctDisagree": 7.0, "cseqAgree": 81.3}, "GC_1": {"mean": 4.154, "n": 318, "cseqMean": 4.22, "sig": false, "dir": "lower", "pctAgree": 82.7, "pctNeutral": 10.4, "pctDisagree": 6.9, "cseqAgree": 83.6}, "GC_2": {"mean": 3.975, "n": 317, "cseqMean": 4.045, "sig": false, "dir": "lower", "pctAgree": 72.9, "pctNeutral": 20.2, "pctDisagree": 6.9, "cseqAgree": 75.1}, "GC_3": {"mean": 3.925, "n": 318, "cseqMean": 3.986, "sig": false, "dir": "lower", "pctAgree": 72.6, "pctNeutral": 18.6, "pctDisagree": 8.8, "cseqAgree": 74.1}, "COM_1": {"mean": 4.076, "n": 317, "cseqMean": 4.242, "sig": true, "dir": "lower", "pctAgree": 77.3, "pctNeutral": 14.5, "pctDisagree": 8.2, "cseqAgree": 83.8}, "COM_2": {"mean": 4.199, "n": 316, "cseqMean": 4.238, "sig": false, "dir": "lower", "pctAgree": 73.7, "pctNeutral": 23.4, "pctDisagree": 2.8, "cseqAgree": 74.6}, "COM_3": {"mean": 3.968, "n": 316, "cseqMean": 4.043, "sig": false, "dir": "lower", "pctAgree": 72.2, "pctNeutral": 17.4, "pctDisagree": 10.4, "cseqAgree": 74.8}, "COH_1": {"mean": 4.006, "n": 318, "cseqMean": 4.043, "sig": false, "dir": "lower", "pctAgree": 73.9, "pctNeutral": 18.2, "pctDisagree": 7.9, "cseqAgree": 73.3}, "COH_2": {"mean": 4.116, "n": 318, "cseqMean": 4.136, "sig": false, "dir": "lower", "pctAgree": 77.4, "pctNeutral": 15.7, "pctDisagree": 6.9, "cseqAgree": 77.1}, "COH_3": {"mean": 4.692, "n": 318, "cseqMean": 4.74, "sig": false, "dir": "lower", "pctAgree": 93.7, "pctNeutral": 4.4, "pctDisagree": 1.9, "cseqAgree": 96.0}, "TF_1": {"mean": 4.274, "n": 318, "cseqMean": 4.344, "sig": false, "dir": "lower", "pctAgree": 84.3, "pctNeutral": 11.9, "pctDisagree": 3.8, "cseqAgree": 86.2}, "TF_2": {"mean": 3.905, "n": 317, "cseqMean": 3.86, "sig": false, "dir": "higher", "pctAgree": 69.4, "pctNeutral": 18.0, "pctDisagree": 12.6, "cseqAgree": 67.7}, "TF_3": {"mean": 4.063, "n": 317, "cseqMean": 4.126, "sig": false, "dir": "lower", "pctAgree": 76.3, "pctNeutral": 21.5, "pctDisagree": 2.2, "cseqAgree": 77.4}, "DM_1": {"mean": 2.573, "n": 314, "cseqMean": 2.7, "sig": false, "dir": "lower", "pctAgree": 23.2, "pctNeutral": 26.4, "pctDisagree": 50.3, "cseqAgree": 25.0}, "DM_2": {"mean": 2.525, "n": 314, "cseqMean": 2.69, "sig": false, "dir": "lower", "pctAgree": 22.0, "pctNeutral": 25.8, "pctDisagree": 52.2, "cseqAgree": 25.5}, "DM_3": {"mean": 2.45, "n": 313, "cseqMean": 2.511, "sig": false, "dir": "lower", "pctAgree": 20.8, "pctNeutral": 24.0, "pctDisagree": 55.3, "cseqAgree": 22.4}, "LEAD_1": {"mean": 4.489, "n": 225, "cseqMean": 4.476, "sig": false, "dir": "higher", "pctAgree": 93.8, "pctNeutral": 4.9, "pctDisagree": 1.3, "cseqAgree": 92.2}, "LEAD_2": {"mean": 4.601, "n": 223, "cseqMean": 4.687, "sig": false, "dir": "lower", "pctAgree": 88.3, "pctNeutral": 9.9, "pctDisagree": 1.8, "cseqAgree": 93.1}, "LEAD_3": {"mean": 4.462, "n": 225, "cseqMean": 4.597, "sig": true, "dir": "lower", "pctAgree": 84.9, "pctNeutral": 13.8, "pctDisagree": 1.3, "cseqAgree": 90.1}, "TRUST_1": {"mean": 4.623, "n": 316, "cseqMean": 4.673, "sig": false, "dir": "lower", "pctAgree": 92.4, "pctNeutral": 5.7, "pctDisagree": 1.9, "cseqAgree": 94.3}, "TRUST_2": {"mean": 4.611, "n": 316, "cseqMean": 4.68, "sig": false, "dir": "lower", "pctAgree": 90.5, "pctNeutral": 7.6, "pctDisagree": 1.9, "cseqAgree": 92.6}, "TRUST_3": {"mean": 4.538, "n": 316, "cseqMean": 4.578, "sig": false, "dir": "lower", "pctAgree": 86.7, "pctNeutral": 10.1, "pctDisagree": 3.2, "cseqAgree": 87.6}, "MemEng_Sat_1": {"mean": 3.19, "n": 316, "cseqMean": 3.298, "sig": false, "dir": "lower", "pctAgree": 34.8, "pctNeutral": 38.6, "pctDisagree": 26.6, "cseqAgree": 38.5}, "MemEng_Sat_2": {"mean": 3.908, "n": 316, "cseqMean": 3.964, "sig": false, "dir": "lower", "pctAgree": 63.0, "pctNeutral": 25.6, "pctDisagree": 11.4, "cseqAgree": 64.2}, "MemEng_Sat_3": {"mean": 3.703, "n": 316, "cseqMean": 3.695, "sig": false, "dir": "higher", "pctAgree": 54.1, "pctNeutral": 33.2, "pctDisagree": 12.7, "cseqAgree": 51.7}, "PROD_1": {"mean": 3.975, "n": 315, "cseqMean": 3.964, "sig": false, "dir": "higher", "pctAgree": 66.3, "pctNeutral": 27.3, "pctDisagree": 6.3, "cseqAgree": 64.7}, "PROD_2": {"mean": 3.965, "n": 314, "cseqMean": 3.911, "sig": false, "dir": "higher", "pctAgree": 65.3, "pctNeutral": 25.5, "pctDisagree": 9.2, "cseqAgree": 61.5}, "PROD_3": {"mean": 4.15, "n": 314, "cseqMean": 4.06, "sig": false, "dir": "higher", "pctAgree": 68.8, "pctNeutral": 26.4, "pctDisagree": 4.8, "cseqAgree": 66.1}, "LEGIT_1": {"mean": 4.112, "n": 313, "cseqMean": 4.179, "sig": false, "dir": "lower", "pctAgree": 74.8, "pctNeutral": 19.8, "pctDisagree": 5.4, "cseqAgree": 78.2}, "LEGIT_2": {"mean": 4.073, "n": 313, "cseqMean": 4.102, "sig": false, "dir": "lower", "pctAgree": 74.4, "pctNeutral": 21.4, "pctDisagree": 4.2, "cseqAgree": 74.3}, "LEGIT_3": {"mean": 3.751, "n": 313, "cseqMean": 3.801, "sig": false, "dir": "lower", "pctAgree": 56.2, "pctNeutral": 37.1, "pctDisagree": 6.7, "cseqAgree": 56.9}, "AGENDA_1": {"mean": 4.138, "n": 203, "cseqMean": 4.254, "sig": false, "dir": "lower", "pctAgree": 84.7, "pctNeutral": 11.8, "pctDisagree": 3.4, "cseqAgree": 85.0}, "AGENDA_2": {"mean": 4.039, "n": 203, "cseqMean": 4.209, "sig": true, "dir": "lower", "pctAgree": 79.3, "pctNeutral": 16.3, "pctDisagree": 4.4, "cseqAgree": 83.3}, "AGENDA_3": {"mean": 4.207, "n": 203, "cseqMean": 4.366, "sig": true, "dir": "lower", "pctAgree": 82.8, "pctNeutral": 13.8, "pctDisagree": 3.4, "cseqAgree": 86.8}, "MA_1": {"mean": 4.328, "n": 204, "cseqMean": 4.317, "sig": false, "dir": "higher", "pctAgree": 84.8, "pctNeutral": 14.7, "pctDisagree": 0.5, "cseqAgree": 84.9}, "MA_2": {"mean": 4.049, "n": 204, "cseqMean": 4.042, "sig": false, "dir": "higher", "pctAgree": 75.0, "pctNeutral": 20.6, "pctDisagree": 4.4, "cseqAgree": 72.7}, "MA_3": {"mean": 3.682, "n": 201, "cseqMean": 3.648, "sig": false, "dir": "higher", "pctAgree": 54.7, "pctNeutral": 38.8, "pctDisagree": 6.5, "cseqAgree": 50.7}, "EQUITY_1": {"mean": 3.968, "n": 314, "cseqMean": 4.014, "sig": false, "dir": "lower", "pctAgree": 71.3, "pctNeutral": 21.7, "pctDisagree": 7.0, "cseqAgree": 73.4}, "EQUITY_2": {"mean": 3.799, "n": 314, "cseqMean": 3.824, "sig": false, "dir": "lower", "pctAgree": 62.4, "pctNeutral": 29.6, "pctDisagree": 8.0, "cseqAgree": 63.0}, "EQUITY_3": {"mean": 3.618, "n": 314, "cseqMean": 3.645, "sig": false, "dir": "lower", "pctAgree": 53.5, "pctNeutral": 36.3, "pctDisagree": 10.2, "cseqAgree": 53.4}, "OC_I_1": {"mean": 3.381, "n": 312, "cseqMean": 3.476, "sig": false, "dir": "lower", "pctAgree": 29.8, "pctNeutral": 68.9, "pctDisagree": 1.3, "cseqAgree": 33.9}, "OC_G_2": {"mean": 3.92, "n": 313, "cseqMean": 3.998, "sig": false, "dir": "lower", "pctAgree": 67.7, "pctNeutral": 31.0, "pctDisagree": 1.3, "cseqAgree": 69.0}, "OC_O_3": {"mean": 3.786, "n": 313, "cseqMean": 3.868, "sig": false, "dir": "lower", "pctAgree": 58.8, "pctNeutral": 36.7, "pctDisagree": 4.5, "cseqAgree": 59.4}, "OC_C_4": {"mean": 3.891, "n": 312, "cseqMean": 4.017, "sig": true, "dir": "lower", "pctAgree": 64.7, "pctNeutral": 33.3, "pctDisagree": 1.9, "cseqAgree": 68.0}, "SC_1": {"mean": 3.812, "n": 313, "cseqMean": 3.875, "sig": false, "dir": "lower", "pctAgree": 61.3, "pctNeutral": 31.3, "pctDisagree": 7.3, "cseqAgree": 63.6}, "SC_2": {"mean": 4.019, "n": 313, "cseqMean": 4.178, "sig": true, "dir": "lower", "pctAgree": 75.7, "pctNeutral": 18.2, "pctDisagree": 6.1, "cseqAgree": 79.3}, "SC_3": {"mean": 3.786, "n": 313, "cseqMean": 3.913, "sig": false, "dir": "lower", "pctAgree": 59.1, "pctNeutral": 33.9, "pctDisagree": 7.0, "cseqAgree": 62.4}, "SC_4": {"mean": 4.099, "n": 313, "cseqMean": 4.162, "sig": false, "dir": "lower", "pctAgree": 73.8, "pctNeutral": 24.3, "pctDisagree": 1.9, "cseqAgree": 77.5}, "SC_5": {"mean": 3.894, "n": 312, "cseqMean": 3.969, "sig": false, "dir": "lower", "pctAgree": 67.3, "pctNeutral": 27.2, "pctDisagree": 5.4, "cseqAgree": 69.1}, "SC_6": {"mean": 4.349, "n": 312, "cseqMean": 4.377, "sig": false, "dir": "lower", "pctAgree": 84.3, "pctNeutral": 13.8, "pctDisagree": 1.9, "cseqAgree": 85.5}, "O_1": {"mean": 4.16, "n": 313, "cseqMean": 4.356, "sig": true, "dir": "lower", "pctAgree": 78.0, "pctNeutral": 20.1, "pctDisagree": 1.9, "cseqAgree": 86.1}, "O_2": {"mean": 4.299, "n": 314, "cseqMean": 4.442, "sig": true, "dir": "lower", "pctAgree": 81.2, "pctNeutral": 16.2, "pctDisagree": 2.5, "cseqAgree": 86.8}, "STAFF_1": {"mean": 4.77, "n": 226, "cseqMean": 4.815, "sig": false, "dir": "lower", "pctAgree": 96.0, "pctNeutral": 3.1, "pctDisagree": 0.9, "cseqAgree": 95.9}, "STAFF_2": {"mean": 4.779, "n": 226, "cseqMean": 4.832, "sig": false, "dir": "lower", "pctAgree": 96.5, "pctNeutral": 3.1, "pctDisagree": 0.4, "cseqAgree": 96.9}, "STAFF_3": {"mean": 4.433, "n": 224, "cseqMean": 4.531, "sig": false, "dir": "lower", "pctAgree": 85.3, "pctNeutral": 12.9, "pctDisagree": 1.8, "cseqAgree": 88.4}, "SM_1": {"mean": 4.592, "n": 71, "cseqMean": 4.556, "sig": false, "dir": "higher", "pctAgree": 91.5, "pctNeutral": 8.5, "pctDisagree": 0.0, "cseqAgree": 89.8}, "SM_2": {"mean": 4.303, "n": 66, "cseqMean": 4.374, "sig": false, "dir": "lower", "pctAgree": 78.8, "pctNeutral": 19.7, "pctDisagree": 1.5, "cseqAgree": 80.4}, "SM_3": {"mean": 4.38, "n": 71, "cseqMean": 4.324, "sig": false, "dir": "higher", "pctAgree": 88.7, "pctNeutral": 9.9, "pctDisagree": 1.4, "cseqAgree": 81.5}}}, "cseqItems": {"TACT_1": {"mean": 3.777, "var": 1.5417140412693757, "n": 422, "pctAgree": 65.9, "pctNeutral": 18.0, "pctDisagree": 16.1}, "TACT_2": {"mean": 3.715, "var": 1.3280850582513288, "n": 421, "pctAgree": 60.3, "pctNeutral": 25.4, "pctDisagree": 14.3}, "TACT_3": {"mean": 4.031, "var": 1.029996606718697, "n": 421, "pctAgree": 76.2, "pctNeutral": 15.7, "pctDisagree": 8.1}, "TRAN_1": {"mean": 4.571, "var": 0.45455415339239796, "n": 422, "pctAgree": 92.9, "pctNeutral": 6.2, "pctDisagree": 0.9}, "TRAN_2": {"mean": 4.442, "var": 0.5884620124813724, "n": 423, "pctAgree": 88.9, "pctNeutral": 8.5, "pctDisagree": 2.6}, "TRAN_3": {"mean": 4.27, "var": 0.819961499926828, "n": 422, "pctAgree": 81.3, "pctNeutral": 14.0, "pctDisagree": 4.7}, "GC_1": {"mean": 4.22, "var": 0.8278022312030713, "n": 422, "pctAgree": 83.6, "pctNeutral": 10.0, "pctDisagree": 6.4}, "GC_2": {"mean": 4.045, "var": 0.8697020184395082, "n": 422, "pctAgree": 75.1, "pctNeutral": 18.5, "pctDisagree": 6.4}, "GC_3": {"mean": 3.986, "var": 0.9617011650265817, "n": 421, "pctAgree": 74.1, "pctNeutral": 16.6, "pctDisagree": 9.3}, "COM_1": {"mean": 4.242, "var": 0.7649700260151565, "n": 421, "pctAgree": 83.8, "pctNeutral": 11.2, "pctDisagree": 5.0}, "COM_2": {"mean": 4.238, "var": 0.7910643592353803, "n": 421, "pctAgree": 74.6, "pctNeutral": 23.3, "pctDisagree": 2.1}, "COM_3": {"mean": 4.043, "var": 0.9886438185725595, "n": 421, "pctAgree": 74.8, "pctNeutral": 15.9, "pctDisagree": 9.3}, "COH_1": {"mean": 4.043, "var": 0.9193999318104338, "n": 420, "pctAgree": 73.3, "pctNeutral": 18.8, "pctDisagree": 7.9}, "COH_2": {"mean": 4.136, "var": 0.8860722809410155, "n": 420, "pctAgree": 77.1, "pctNeutral": 16.2, "pctDisagree": 6.7}, "COH_3": {"mean": 4.74, "var": 0.31196158654392675, "n": 420, "pctAgree": 96.0, "pctNeutral": 3.1, "pctDisagree": 1.0}, "TF_1": {"mean": 4.344, "var": 0.6310937676733396, "n": 421, "pctAgree": 86.2, "pctNeutral": 11.6, "pctDisagree": 2.1}, "TF_2": {"mean": 3.86, "var": 1.506503789164121, "n": 421, "pctAgree": 67.7, "pctNeutral": 18.3, "pctDisagree": 14.0}, "TF_3": {"mean": 4.126, "var": 0.626042732128651, "n": 420, "pctAgree": 77.4, "pctNeutral": 21.4, "pctDisagree": 1.2}, "DM_1": {"mean": 2.7, "var": 1.6042959427207633, "n": 420, "pctAgree": 25.0, "pctNeutral": 29.5, "pctDisagree": 45.5}, "DM_2": {"mean": 2.69, "var": 1.6175701784293666, "n": 420, "pctAgree": 25.5, "pctNeutral": 28.3, "pctDisagree": 46.2}, "DM_3": {"mean": 2.511, "var": 1.652396341254525, "n": 419, "pctAgree": 22.4, "pctNeutral": 23.6, "pctDisagree": 53.9}, "LEAD_1": {"mean": 4.476, "var": 0.4482366325369728, "n": 294, "pctAgree": 92.2, "pctNeutral": 6.8, "pctDisagree": 1.0}, "LEAD_2": {"mean": 4.687, "var": 0.381182604574001, "n": 291, "pctAgree": 93.1, "pctNeutral": 6.2, "pctDisagree": 0.7}, "LEAD_3": {"mean": 4.597, "var": 0.4673897797933528, "n": 293, "pctAgree": 90.1, "pctNeutral": 9.2, "pctDisagree": 0.7}, "STAFF_1": {"mean": 4.815, "var": 0.23372405027538415, "n": 292, "pctAgree": 95.9, "pctNeutral": 4.1, "pctDisagree": 0.0}, "STAFF_2": {"mean": 4.832, "var": 0.2019841830249951, "n": 292, "pctAgree": 96.9, "pctNeutral": 3.1, "pctDisagree": 0.0}, "STAFF_3": {"mean": 4.531, "var": 0.572929906322084, "n": 292, "pctAgree": 88.4, "pctNeutral": 9.9, "pctDisagree": 1.7}, "TRUST_1": {"mean": 4.673, "var": 0.4311130397049247, "n": 419, "pctAgree": 94.3, "pctNeutral": 4.1, "pctDisagree": 1.7}, "TRUST_2": {"mean": 4.68, "var": 0.40465450891276683, "n": 419, "pctAgree": 92.6, "pctNeutral": 6.4, "pctDisagree": 1.0}, "TRUST_3": {"mean": 4.578, "var": 0.6082036290552807, "n": 419, "pctAgree": 87.6, "pctNeutral": 10.3, "pctDisagree": 2.1}, "MemEng_Sat_1": {"mean": 3.298, "var": 1.4145505097312334, "n": 416, "pctAgree": 38.5, "pctNeutral": 37.3, "pctDisagree": 24.3}, "MemEng_Sat_2": {"mean": 3.964, "var": 1.4758051436515296, "n": 416, "pctAgree": 64.2, "pctNeutral": 24.3, "pctDisagree": 11.5}, "MemEng_Sat_3": {"mean": 3.695, "var": 1.4366948563484705, "n": 416, "pctAgree": 51.7, "pctNeutral": 34.6, "pctDisagree": 13.7}, "PROD_1": {"mean": 3.964, "var": 1.169376037631434, "n": 417, "pctAgree": 64.7, "pctNeutral": 28.5, "pctDisagree": 6.7}, "PROD_2": {"mean": 3.911, "var": 1.343877432808156, "n": 416, "pctAgree": 61.5, "pctNeutral": 28.6, "pctDisagree": 9.9}, "PROD_3": {"mean": 4.06, "var": 1.1939701112140861, "n": 416, "pctAgree": 66.1, "pctNeutral": 27.2, "pctDisagree": 6.7}, "LEGIT_1": {"mean": 4.179, "var": 0.7348080584875055, "n": 413, "pctAgree": 78.2, "pctNeutral": 18.4, "pctDisagree": 3.4}, "LEGIT_2": {"mean": 4.102, "var": 0.7906039164061206, "n": 413, "pctAgree": 74.3, "pctNeutral": 22.5, "pctDisagree": 3.1}, "LEGIT_3": {"mean": 3.801, "var": 0.9313571075953829, "n": 413, "pctAgree": 56.9, "pctNeutral": 37.3, "pctDisagree": 5.8}, "AGENDA_1": {"mean": 4.254, "var": 0.609902292829123, "n": 287, "pctAgree": 85.0, "pctNeutral": 12.5, "pctDisagree": 2.4}, "AGENDA_2": {"mean": 4.209, "var": 0.6554421188567539, "n": 287, "pctAgree": 83.3, "pctNeutral": 13.9, "pctDisagree": 2.8}, "AGENDA_3": {"mean": 4.366, "var": 0.6314173631246816, "n": 287, "pctAgree": 86.8, "pctNeutral": 10.5, "pctDisagree": 2.8}, "MA_1": {"mean": 4.317, "var": 0.591798138655252, "n": 284, "pctAgree": 84.9, "pctNeutral": 13.4, "pctDisagree": 1.8}, "MA_2": {"mean": 4.042, "var": 0.7841982578824683, "n": 286, "pctAgree": 72.7, "pctNeutral": 23.4, "pctDisagree": 3.8}, "MA_3": {"mean": 3.648, "var": 0.8720449907928126, "n": 284, "pctAgree": 50.7, "pctNeutral": 41.9, "pctDisagree": 7.4}, "SM_1": {"mean": 4.556, "var": 0.4922118380062291, "n": 108, "pctAgree": 89.8, "pctNeutral": 9.3, "pctDisagree": 0.9}, "SM_2": {"mean": 4.374, "var": 0.8400634808675725, "n": 107, "pctAgree": 80.4, "pctNeutral": 15.9, "pctDisagree": 3.7}, "SM_3": {"mean": 4.324, "var": 0.8939944617514709, "n": 108, "pctAgree": 81.5, "pctNeutral": 13.9, "pctDisagree": 4.6}, "EQUITY_1": {"mean": 4.014, "var": 0.7988209285187917, "n": 414, "pctAgree": 73.4, "pctNeutral": 21.0, "pctDisagree": 5.6}, "EQUITY_2": {"mean": 3.824, "var": 0.9058789814132485, "n": 414, "pctAgree": 63.0, "pctNeutral": 28.7, "pctDisagree": 8.2}, "EQUITY_3": {"mean": 3.645, "var": 0.9365722707653438, "n": 414, "pctAgree": 53.4, "pctNeutral": 36.0, "pctDisagree": 10.6}, "OC_I_1": {"mean": 3.476, "var": 0.6162882298424464, "n": 416, "pctAgree": 33.9, "pctNeutral": 64.9, "pctDisagree": 1.2}, "OC_G_2": {"mean": 3.998, "var": 0.6530062557923993, "n": 416, "pctAgree": 69.0, "pctNeutral": 30.5, "pctDisagree": 0.5}, "OC_O_3": {"mean": 3.868, "var": 0.8764538924930488, "n": 416, "pctAgree": 59.4, "pctNeutral": 37.5, "pctDisagree": 3.1}, "OC_C_4": {"mean": 4.017, "var": 0.7750771200745006, "n": 415, "pctAgree": 68.0, "pctNeutral": 30.6, "pctDisagree": 1.4}, "SC_1": {"mean": 3.875, "var": 0.9504452592980621, "n": 415, "pctAgree": 63.6, "pctNeutral": 30.6, "pctDisagree": 5.8}, "SC_2": {"mean": 4.178, "var": 0.721750771200745, "n": 415, "pctAgree": 79.3, "pctNeutral": 17.8, "pctDisagree": 2.9}, "SC_3": {"mean": 3.913, "var": 0.9827949479075724, "n": 415, "pctAgree": 62.4, "pctNeutral": 32.0, "pctDisagree": 5.5}, "SC_4": {"mean": 4.162, "var": 0.7025593337310355, "n": 414, "pctAgree": 77.5, "pctNeutral": 20.3, "pctDisagree": 2.2}, "SC_5": {"mean": 3.969, "var": 0.9166871366576602, "n": 414, "pctAgree": 69.1, "pctNeutral": 24.9, "pctDisagree": 6.0}, "SC_6": {"mean": 4.377, "var": 0.6324876302768716, "n": 414, "pctAgree": 85.5, "pctNeutral": 12.6, "pctDisagree": 1.9}, "O_1": {"mean": 4.356, "var": 0.5526413345690464, "n": 416, "pctAgree": 86.1, "pctNeutral": 13.2, "pctDisagree": 0.7}, "O_2": {"mean": 4.442, "var": 0.584615384615385, "n": 416, "pctAgree": 86.8, "pctNeutral": 11.8, "pctDisagree": 1.4}}, "domainScores": {"__ALL__||ALL": {"processes": 3.859, "backbone": 4.39, "impact": 4.193, "outputs": 3.87, "outcomes": 3.989}}, "cseqDomain": {"processes": 3.95, "backbone": 4.432, "impact": 4.203, "outputs": 3.869, "outcomes": 4.112}, "coalitionTimepoints": {"__ALL__": []}, "comparisons": {}, "newQuestions": {}, "aggregateMembers": ["Cleveland", "DC", "Delaware", "King Co. Play Equity Coalition", "Lawrence Sports Alliance", "MYSA", "Philadelphia Youth Sports Collaborative", "Salem", "San Diego", "Sport for Good Atlanta", "Sport for Good Chicago", "Sport for Good New Orleans"], "accessHashes": {}};
+
+</script>
+<style>
+  :root {
+    --bg: #0b0f0c;          /* near-black */
+    --panel: #17201a;       /* dark panel (lighter for separation) */
+    --ink: #f2f8f2;         /* near-white primary text (high contrast) */
+    --muted: #b9cbb9;       /* lighter secondary text (was too dim) */
+    --line: #33423a;        /* border */
+    --accent: #45d47f;      /* brighter green */
+    --accent-soft: #2f8f54; /* dark green */
+    --grand: #a487f5;       /* lighter purple */
+    --t1: #45d47f;          /* green - coaches worked */
+    --t2: #a487f5;          /* purple - coaches trained */
+    --grid: rgba(255,255,255,0.10);
+    --axis: rgba(255,255,255,0.28);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.45;
+  }
+
+  /* Coalition chooser gate */
+  #gate {
+    position: fixed; inset: 0; z-index: 200; overflow-y: auto;
+    background: radial-gradient(1000px 600px at 70% -10%, rgba(47,196,106,.12), transparent 60%), var(--bg);
+    display: flex; align-items: center; justify-content: center; padding: 40px 20px;
+  }
+  #gate.hidden { display: none; }
+  /* Mean / % Agree toggle on domain pages */
+  .mode-toggle { display: inline-flex; gap: 0; border: 1px solid var(--line); border-radius: 8px;
+    overflow: hidden; margin: 0 0 14px; }
+  .mode-btn { background: transparent; color: var(--muted); border: 0; padding: 7px 14px;
+    font-size: 13px; font-weight: 600; cursor: pointer; }
+  .mode-btn + .mode-btn { border-left: 1px solid var(--line); }
+  .mode-btn.active { background: var(--accent); color: #08120b; }
+  /* Password gate (locked single-coalition builds) */
+  #pwgate { position: fixed; inset: 0; z-index: 60; background: var(--bg);
+    display: flex; align-items: center; justify-content: center; padding: 24px; }
+  #pwgate[hidden] { display: none !important; }
+  #pwform { max-width: 460px; text-align: left; }
+  #pw-input { width: 100%; box-sizing: border-box; font-size: 16px; padding: 12px 14px;
+    background: #10160f; color: var(--ink); border: 1px solid var(--line); border-radius: 8px; }
+  #pw-input:focus { outline: none; border-color: var(--grand); }
+  .gate-card { width: 100%; max-width: 760px; }
+  .gate-card h1 { margin: 0 0 8px; font-size: 26px; }
+  .gate-sub { margin: 0 0 26px; color: var(--muted); font-size: 15px; max-width: 560px; }
+  .gate-group { margin-bottom: 24px; }
+  .gate-group h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 12px; font-weight: 700; }
+  .gate-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; }
+  .gate-btn {
+    text-align: left; background: var(--panel); color: var(--ink); border: 1px solid var(--line);
+    border-left: 4px solid var(--accent); border-radius: 10px; padding: 13px 15px; font-size: 14.5px;
+    font-weight: 600; cursor: pointer; transition: transform .1s ease, border-color .1s ease, background .1s ease;
+  }
+  .gate-btn:hover { transform: translateY(-2px); background: #18201a; border-left-color: var(--grand); }
+  .gate-btn .g-n { display: block; font-size: 11.5px; font-weight: 500; color: var(--muted); margin-top: 3px; }
+  .gate-btn.gate-all { border-left-color: var(--grand); font-size: 16px; padding: 16px 18px; }
+  .gate-btn:disabled { opacity: .38; cursor: not-allowed; border-left-color: var(--line); }
+  .gate-btn:disabled:hover { transform: none; background: var(--panel); border-left-color: var(--line); }
+  header {
+    background: var(--panel); border-bottom: 1px solid var(--line);
+    padding: 20px 28px;
+  }
+  header h1 { margin: 0; font-size: 20px; }
+  header p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+  .back-link { display: inline-block; margin-bottom: 10px; color: var(--accent); text-decoration: none; font-size: 13px; font-weight: 600; }
+  .back-link:hover { text-decoration: underline; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 24px 28px 64px; }
+
+  .controls {
+    display: flex; flex-wrap: wrap; gap: 16px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px 18px; margin-bottom: 24px;
+  }
+  .control { display: flex; flex-direction: column; gap: 4px; }
+  .control label { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; }
+  select {
+    font-size: 14px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 7px;
+    background: #0f140f; color: var(--ink); min-width: 220px;
+  }
+  select:focus { outline: none; border-color: var(--accent); }
+  option { background: #0f140f; color: var(--ink); }
+
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px 22px; margin-bottom: 22px;
+  }
+  .card h2 { margin: 0 0 2px; font-size: 16px; }
+  .card .sub { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+  .chart-box { position: relative; height: 340px; }
+  .chart-box.tall { height: 520px; }
+
+  .section-title {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--muted); font-weight: 700; margin: 34px 0 12px;
+  }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  @media (max-width: 820px) { .grid2 { grid-template-columns: 1fr; } }
+
+  table.raw { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.raw th, table.raw td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.raw th { color: var(--muted); font-weight: 600; }
+  .conf-approx { color: var(--grand); font-weight: 600; }
+  .conf-none { color: #b04a4a; }
+  details { margin-top: 8px; }
+  details summary { cursor: pointer; color: var(--accent); font-size: 13px; }
+  .note { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .subscale { padding: 16px 0 6px; border-top: 1px solid var(--line); }
+  .subscale:first-child { border-top: none; padding-top: 4px; }
+  .subscale h3 { margin: 0 0 3px; font-size: 14.5px; }
+  .subscale-def { margin: 0 0 8px; color: var(--muted); font-size: 12.5px; max-width: 760px; }
+  .subscale-src { font-style: italic; opacity: .85; }
+  .empty { color: var(--muted); font-style: italic; padding: 40px 0; text-align: center; }
+  .nodata { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0; }
+
+  /* Social connections network map */
+  #network-box { position: relative; height: 560px; width: 100%; overflow: hidden; border-radius: 8px; }
+  #network-svg { width: 100%; height: 100%; display: block; cursor: grab; }
+  #network-svg .edge { stroke: var(--muted); stroke-opacity: .25; }
+  #network-svg .node { fill: var(--accent); stroke: #0a0c0a; stroke-width: 1.5; cursor: pointer; }
+  #network-svg .node.hub { fill: var(--grand); }
+  #network-svg .node.sel { stroke: #fff; stroke-width: 3; }
+  #network-selected { min-height: 1.1em; }
+  #network-svg .nlabel { fill: var(--ink); font-size: 11px; paint-order: stroke; stroke: #0a0c0a; stroke-width: 3px; pointer-events: none; }
+  #network-svg .nlabel.inside { font-size: 10px; font-weight: 600; }
+  .net-legend { font-size: 12px; color: var(--muted); display: flex; gap: 18px; flex-wrap: wrap; margin-top: 8px; }
+  .net-legend .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+  .net-toggle { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--muted); margin: 0 0 12px; cursor: pointer; }
+  .net-toggle input { accent-color: var(--accent); }
+  .page { display: none; }
+  .page.active { display: block; }
+  #shared-extra { display: contents; }
+
+  /* Change-over-time + new-question extras */
+  .chg-up { color: #45d47f; font-weight: 700; white-space: nowrap; }
+  .chg-down { color: #e0614f; font-weight: 700; white-space: nowrap; }
+  .verbatim-box { max-height: 280px; overflow-y: auto; border: 1px solid var(--line); border-radius: 8px; padding: 4px 12px; }
+  .verbatim-item { font-size: 13.5px; color: var(--muted); margin: 0; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .verbatim-item:last-child { border-bottom: none; }
+
+  /* Report button */
+  .report-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+  .report-btn {
+    flex: none; background: var(--accent); color: #062012; border: none; border-radius: 9px;
+    padding: 10px 16px; font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap;
+  }
+  .report-btn:hover { filter: brightness(1.08); }
+  .report-btn:disabled { opacity: .6; cursor: default; }
+
+  /* Report-builder modal */
+  .modal { position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,.6);
+    display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .modal.hidden { display: none; }
+  .modal-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    width: 100%; max-width: 540px; max-height: 86vh; overflow-y: auto; padding: 22px 24px; }
+  .modal-card h2 { margin: 0 0 4px; font-size: 19px; }
+  .modal-card .sub { margin: 0 0 14px; }
+  .rp-all { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 13px;
+    padding: 8px 0; border-bottom: 1px solid var(--line); margin-bottom: 6px; cursor: pointer; }
+  #rp-list h3 { font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+    margin: 14px 0 4px; font-weight: 700; }
+  .rp-row { display: flex; align-items: flex-start; gap: 9px; padding: 6px 0; font-size: 14px; cursor: pointer; }
+  .rp-row input, .rp-all input { accent-color: var(--accent); margin-top: 2px; flex: none; }
+  .rp-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+  .rp-secondary { background: transparent; color: var(--ink); border: 1px solid var(--line);
+    border-radius: 9px; padding: 10px 16px; font-size: 14px; font-weight: 600; cursor: pointer; }
+
+  /* On-demand printable report (hidden on screen; shown only when printing) */
+  #report { display: none; }
+  #report .rep-title { border-bottom: 2px solid #222; padding-bottom: 10px; margin-bottom: 18px; }
+  #report .rep-title h1 { margin: 0; font-size: 22px; color: #14231a; }
+  #report .rep-title p { margin: 4px 0 0; color: #556; font-size: 13px; }
+  #report .rep-sec { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: #6a7a6a; margin: 22px 0 4px; font-weight: 700; }
+  #report .rep-h { font-size: 15px; color: #14231a; margin: 12px 0 4px; }
+  #report .rep-block { break-inside: avoid; page-break-inside: avoid; margin-bottom: 10px; }
+  #report .rep-img { width: 100%; border: 1px solid #d8e0d8; border-radius: 8px; display: block; }
+
+  @media print {
+    #gate, header, .wrap { display: none !important; }
+    #report { display: block !important; }
+    body { background: #fff; }
+    @page { margin: 14mm; }
+    #report .rep-img { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Coalition chooser gate: shown on entry so each visitor picks a coalition first. -->
+<div id="gate">
+  <div class="gate-card">
+    <h1>Choose a coalition</h1>
+    <p class="gate-sub">Select a coalition to open its dashboard. You can switch to any other coalition once you're inside.</p>
+    <div id="gate-groups"></div>
+  </div>
+</div>
+
+<!-- Password gate: shown only in a locked, single-coalition build (window.DASH_CFG.lock). -->
+<div id="pwgate" hidden>
+  <form class="gate-card" id="pwform" autocomplete="off">
+    <h1 id="pw-co">Coalition dashboard</h1>
+    <p class="gate-sub">This dashboard is private. Enter your access key to open it.</p>
+    <input id="pw-input" type="password" placeholder="Access key" autocomplete="off"
+           autocapitalize="off" autocorrect="off" spellcheck="false" />
+    <button id="pw-btn" type="submit" class="gate-btn gate-all" style="border:0;margin-top:14px;cursor:pointer;">Open dashboard</button>
+    <button id="pw-back" type="button" hidden style="background:none;border:0;color:var(--muted);cursor:pointer;margin-top:14px;padding:0;font-size:13px;">← Choose a different coalition</button>
+    <p id="pw-err" class="gate-sub" style="color:#e0614f;margin-top:14px;" hidden>That key isn’t right — please try again.</p>
+  </form>
+</div>
+
+<header>
+  <a href="index.html" class="back-link">← About the data</a>
+  <h1>MOVE Fund — Coalition Evaluation Dashboard</h1>
+  <p id="meta-line"></p>
+</header>
+
+<div class="wrap">
+  <div class="controls">
+    <!-- Time point kept in the DOM (hidden) and driven by the coalition; all data is one set for now. -->
+    <select id="sel-timepoint" style="display:none;"></select>
+    <div class="control">
+      <label for="sel-coalition">Coalition</label>
+      <select id="sel-coalition"></select>
+    </div>
+    <div class="control">
+      <label for="sel-page">View</label>
+      <select id="sel-page"></select>
+    </div>
+  </div>
+
+  <!-- Shared blocks relocated into the active page's slots (appear on Home + Member). -->
+  <div id="shared-program" class="grid2">
+    <div class="card" id="card-youth"><h2>Youth served</h2><p class="sub">Total across this coalition's respondents</p><div class="chart-box"><canvas id="chart-youth"></canvas></div></div>
+    <div class="card" id="card-aid-pct"><h2>Receiving financial aid</h2><p class="sub">Average % across this coalition's respondents</p><div class="chart-box"><canvas id="chart-aid-pct"></canvas></div></div>
+    <div class="card" id="card-aid-dollars"><h2>Financial aid disbursed</h2><p class="sub">Total dollars across this coalition's respondents</p><div class="chart-box"><canvas id="chart-aid-dollars"></canvas></div></div>
+    <div class="card" id="card-coaches"><h2>Coaches: worked vs. trained</h2><p class="sub">Totals across this coalition's respondents</p><div class="chart-box"><canvas id="chart-coaches"></canvas></div></div>
+  </div>
+  <div id="shared-extra">
+    <div class="card" id="pcard-zip"><h2>Youth served by zip code</h2><p class="sub">Total youth served annually, by zip code (coalition-specific question)</p><div class="chart-box" style="height:300px"><canvas id="chart-zip"></canvas></div></div>
+    <div class="card" id="pcard-network">
+      <h2>Social connections map</h2>
+      <p class="sub" id="network-sub">Organizations members say they're connected with. Bigger = named by more members; lines link organizations named together. <strong>Click any dot to reveal its name.</strong></p>
+      <label class="net-toggle"><input type="checkbox" id="net-showall"> Include organizations named by only one member</label>
+      <div id="network-box"><svg id="network-svg"></svg></div>
+      <p class="note" id="network-selected">Click a dot to see the organization's name.</p>
+      <div class="net-legend">
+        <span><span class="dot" style="background:var(--grand)"></span>most-named organizations</span>
+        <span><span class="dot" style="background:var(--accent)"></span>other organizations</span>
+        <span id="network-note"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================ COALITION HOME ============================ -->
+  <section class="page" id="page-home">
+    <div class="report-row">
+      <div>
+        <div class="section-title">Coalition home</div>
+        <p class="sub" id="home-scope" style="margin:-6px 0 0;"></p>
+      </div>
+      <button id="btn-report" class="report-btn" type="button">⬇&nbsp; Download PDF report</button>
+    </div>
+    <div class="slot" id="slot-home-program"></div>
+    <div class="card">
+      <h2>Domain scores</h2>
+      <p class="sub">This coalition's average score in each area of coalition functioning. All scores run <strong>1 (lowest) to 5 (highest)</strong> — higher is always more favorable. Most scales: 1 = Strongly disagree, 5 = Strongly agree.</p>
+      <div class="chart-box"><canvas id="chart-domainsum"></canvas></div>
+    </div>
+    <div class="grid2">
+      <div class="card"><h2>Top 5 highest-rated scales</h2><p class="sub">Scores 1–5 (higher = stronger). Bars colored by domain (see Domain scores); <span style="color:#b9c4b9;">grey</span> = CSEq Average</p><div class="chart-box" style="height:260px"><canvas id="chart-top5"></canvas></div></div>
+      <div class="card"><h2>5 lowest-rated scales</h2><p class="sub">Scores 1–5 (higher = stronger). Bars colored by domain (see Domain scores); <span style="color:#b9c4b9;">grey</span> = CSEq Average</p><div class="chart-box" style="height:260px"><canvas id="chart-bottom5"></canvas></div></div>
+    </div>
+    <div class="slot" id="slot-home-extra"></div>
+  </section>
+
+  <!-- ============================ MEMBER CHARACTERISTICS ============================ -->
+  <section class="page" id="page-member">
+    <div class="section-title">Member characteristics</div>
+    <p class="sub" id="profile-scope" style="margin:-6px 0 14px;"></p>
+    <div class="grid2">
+      <div class="card" id="pcard-sector"><h2>Organization sector</h2><p class="sub">% of respondents</p><div class="chart-box" style="height:190px"><canvas id="chart-sector"></canvas></div></div>
+      <div class="card" id="pcard-duration"><h2>Time as a coalition member</h2><p class="sub">% of respondents</p><div class="chart-box" style="height:190px"><canvas id="chart-duration"></canvas></div></div>
+    </div>
+    <div class="grid2">
+      <div class="card" id="pcard-engagement"><h2>Overall engagement</h2><p class="sub">% of respondents, by degree of engagement</p><div class="chart-box"><canvas id="chart-engagement"></canvas></div></div>
+      <div class="card" id="pcard-age"><h2>Ages of youth served</h2><p class="sub">% of organizations serving each age band</p><div class="chart-box"><canvas id="chart-age"></canvas></div></div>
+    </div>
+    <div class="card" id="pcard-field"><h2>Focus areas</h2><p class="sub">% of organizations engaging in each area</p><div class="chart-box" style="height:380px"><canvas id="chart-field"></canvas></div></div>
+    <div class="card" id="pcard-pops"><h2>Populations intentionally served</h2><p class="sub">% of organizations (all populations shown, including 0%)</p><div class="chart-box" style="height:400px"><canvas id="chart-pops"></canvas></div></div>
+    <div class="card" id="pcard-engageFeedback"><h2>What would help you engage more regularly?</h2><p class="sub">Mean degree per item — &ldquo;To what degree would any of the following help you engage more regularly in action team or committee meetings?&rdquo;</p><div class="chart-box" style="height:320px"><canvas id="chart-engageFeedback"></canvas></div></div>
+    <div class="slot" id="slot-member-program"></div>
+    <div class="slot" id="slot-member-extra"></div>
+  </section>
+
+  <!-- ============================ DOMAIN PAGE (reused per domain) ============================ -->
+  <section class="page" id="page-domain">
+    <div class="section-title" id="domain-title"></div>
+    <p class="sub" id="domain-scope" style="margin:-6px 0 14px;"></p>
+    <div class="card">
+      <div class="mode-toggle" id="domain-mode">
+        <button type="button" class="mode-btn active" data-mode="mean">Mean score (1–5)</button>
+        <button type="button" class="mode-btn" data-mode="pct">% Agree / Disagree</button>
+      </div>
+      <p class="sub" id="domain-scale" style="margin:0 0 10px;"></p>
+      <p class="sub" id="domain-legend"></p>
+      <div id="domain-groups"></div>
+    </div>
+  </section>
+
+  <!-- ============================ CHANGE OVER TIME (2+ waves) ============================ -->
+  <section class="page" id="page-compare">
+    <div class="section-title">Change over time</div>
+    <p class="sub" id="compare-scope" style="margin:-6px 0 4px;"></p>
+    <p class="sub" id="compare-legend" style="margin:0 0 14px;"></p>
+    <div class="card">
+      <h2>Domain scores — earlier vs. latest wave</h2>
+      <div class="chart-box"><canvas id="chart-cmp-domains"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Scale scores — earlier vs. latest wave</h2>
+      <p class="sub">▲ / ▼ marks a statistically significant change (p&lt;0.05).</p>
+      <div class="chart-box tall"><canvas id="chart-cmp-constructs"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Statistically significant changes</h2>
+      <div id="compare-sig"></div>
+    </div>
+  </section>
+
+  <!-- ============================ NEW QUESTIONS (coalition-specific) ==================== -->
+  <section class="page" id="page-newq">
+    <div class="section-title">Strategic Plan</div>
+    <p class="sub" id="newq-scope" style="margin:-6px 0 14px;"></p>
+    <div id="newq-body"></div>
+  </section>
+</div>
+
+<!-- Report builder: pick which sections to include, then Save as PDF. -->
+<div id="report-picker" class="modal hidden">
+  <div class="modal-card">
+    <h2>Build your PDF report</h2>
+    <p class="sub">Choose what to include, then generate. Your browser's print dialog opens — pick “Save as PDF.”</p>
+    <label class="rp-all"><input type="checkbox" id="rp-all" checked> <span>Select all</span></label>
+    <div id="rp-list"></div>
+    <div class="rp-actions">
+      <button id="rp-cancel" type="button" class="rp-secondary">Cancel</button>
+      <button id="rp-ppt" type="button" class="rp-secondary">Download PowerPoint</button>
+      <button id="rp-go" type="button" class="report-btn">Download PDF</button>
+    </div>
+  </div>
+</div>
+
+<!-- Print-only report, assembled on demand from chart snapshots (Save as PDF). -->
+<div id="report"></div>
+
+<script>
+const D = DASHBOARD_DATA;
+const charts = {};
+
+// One distinct color per domain; the top/bottom-5 scale bars are colored by their domain
+// so you can see which category a coalition's highest and lowest scores fall into.
+const DOMAIN_COLOR = {
+  processes: '#2fc46a',  // green
+  backbone:  '#3fb0e0',  // blue
+  impact:    '#8a5cf0',  // purple
+  outputs:   '#e0a53a',  // amber
+  outcomes:  '#e0619b',  // pink
+};
+const CSEQ_COLOR = 'rgba(255,255,255,0.28)';  // neutral grey = CSEq Average reference bars
+const DOMAIN_OF = {};
+D.domains.forEach(d => d.constructs.forEach(ck => { DOMAIN_OF[ck] = d.key; }));
+
+// What the 1–5 numbers mean, per scale type, so viewers can read the scores.
+const SCALE_ANCHOR = {
+  agreement:  '1 = Strongly disagree, 5 = Strongly agree',
+  frequency:  '1 = Not at all, 5 = A great deal',
+  positivity: '1 = Extremely negative, 5 = Extremely positive',
+};
+const SCALE_LABEL = { agreement: 'Agreement', frequency: 'Frequency', positivity: 'Impact' };
+const CONSTRUCT_SCALE = {};
+D.constructs.forEach(c => { CONSTRUCT_SCALE[c.key] = c.scale; });
+
+// ---- populate controls ----
+const selPage = document.getElementById('sel-page');
+const selCo = document.getElementById('sel-coalition');
+const selT = document.getElementById('sel-timepoint');
+
+// View menu = Coalition home, Member characteristics, then one page per domain.
+const PAGES = [
+  { key: 'home', name: 'Coalition home' },
+  { key: 'member', name: 'Member characteristics' },
+  ...D.domains.map(d => ({ key: d.key, name: d.name })),
+];
+const TP_LABEL = { T0: 'CSEq Baseline', T1: 'MOVE Fund Baseline' };
+D.timepoints.forEach(tp => selT.add(new Option(TP_LABEL[tp] || tp, tp)));
+selT.add(new Option('ALL', 'ALL'));   // holder for the "All coalitions combined" aggregate cell
+
+// Coalitions hidden from view (data stays in the background so they still feed the CSEq
+// Average and significance comparisons — they just aren't individually browsable).
+const HIDDEN = new Set([
+  'Baltimore Youth Sports Collaborative', 'LA 84 Play Equity Fund', 'OKC Youth Sport Coalition',
+  'Positive Coaching Alliance - Oakland', 'Project Play WNY', 'SE Michigan', 'Sport for Good New York',
+]);
+const VIEWABLE = D.coalitions.filter(co => !HIDDEN.has(co));
+// Normal views show a coalition's LATEST wave; multi-wave coalitions also get a comparison view.
+const CO_TPS = D.coalitionTimepoints || {};
+const CO_TP = {};
+Object.entries(CO_TPS).forEach(([co, tps]) => { CO_TP[co] = tps[tps.length - 1]; });
+
+// Optional per-file config, injected by build_data.py as window.DASH_CFG.
+//   lock: { coalition, hash } -> single-coalition, password-gated build (see the password gate).
+//   demo: overrides DEMO_MODE below.
+const DASH_CFG = (typeof window !== 'undefined' && window.DASH_CFG) || {};
+const LOCK = DASH_CFG.lock || null;
+// Unlocked aggregate page (aggregate.html): opens straight into the all-MOVE-Fund combined view.
+const AGG_PAGE = !!DASH_CFG.aggregate;
+
+// Per-coalition access keys (sha-256 hashes) for the main, all-in-one dashboard. When present,
+// the chooser asks each visitor for their coalition's access key before opening it.
+const ACCESS = (D && D.accessHashes) || {};
+const GATED = !LOCK && Object.keys(ACCESS).length > 0;
+// A "single-coalition" view (locked file, or a key-gated coalition in the main file): the coalition
+// dropdown offers only that coalition, never the all-coalitions aggregate or other coalitions.
+const SINGLE = !!(LOCK || GATED);
+
+// DEMO MODE (live all-call demo): individual coalitions are greyed out and can't be opened;
+// visitors can only view "All coalitions combined". A LOCK or key-gated (GATED) build turns it off.
+const DEMO_MODE = (LOCK || GATED || AGG_PAGE) ? false : ('demo' in DASH_CFG ? DASH_CFG.demo : true);
+
+// Display-only member-count overrides (the scores still use the responses in the data file).
+const N_DISPLAY_OVERRIDE = {};
+const memberN = (co, n) => N_DISPLAY_OVERRIDE[co] ?? n;
+
+const ALL_KEY = '__ALL__';
+const AGG_N = (D.aggregateMembers || []).length;
+const ALL_LABEL = AGG_N ? `All ${AGG_N} MOVE Fund coalitions combined` : 'All coalitions combined';
+CO_TP[ALL_KEY] = 'ALL';
+const displayName = co => (co === ALL_KEY ? ALL_LABEL : co);
+
+// The survey was built for King County, so a couple of Social Outcomes items name "Seattle".
+// Show each coalition's own place instead. Fallback keeps the sentence coalition-neutral.
+const REGION = {
+  'King Co. Play Equity Coalition': 'King County',
+  'Sport for Good Chicago': 'Chicago',
+  'Sport for Good Atlanta': 'Atlanta',
+  'Sport for Good New Orleans': 'New Orleans',
+  'Philadelphia Youth Sports Collaborative': 'Philadelphia',
+  'Cleveland': 'Cleveland',
+  'DC': 'Washington, DC',
+  'Delaware': 'Delaware',
+  'Salem': 'Salem',
+  'San Diego': 'San Diego',
+  'Lawrence Sports Alliance': 'Lawrence',
+  'MYSA': 'Milwaukee',
+  'Baltimore Youth Sports Collaborative': 'Baltimore',
+  'LA 84 Play Equity Fund': 'Los Angeles',
+  'OKC Youth Sport Coalition': 'Oklahoma City',
+  'Positive Coaching Alliance - Oakland': 'Oakland',
+  'Project Play WNY': 'Western New York',
+  'SE Michigan': 'Southeast Michigan',
+  'Sport for Good New York': 'New York',
+};
+const geoText = (text, co) => String(text).replace(/\bSeattle\b/g, REGION[co] || 'their community');
+
+// The View menu is coalition-dependent: "Change over time" appears for coalitions with two
+// waves, "Strategic Plan" (added questions) sits just above Member characteristics.
+function rebuildViewMenu(co) {
+  const prev = selPage.value;
+  selPage.innerHTML = '';
+  const hasNewq = co !== ALL_KEY && (D.newQuestions || {})[`${co}||${CO_TP[co]}`];
+  PAGES.forEach(p => {
+    if (p.key === 'member' && hasNewq) selPage.add(new Option('Strategic Plan', 'newq'));
+    selPage.add(new Option(p.name, p.key));
+  });
+  if (co !== ALL_KEY && (CO_TPS[co] || []).length >= 2) selPage.add(new Option('Change over time', 'compare'));
+  selPage.value = [...selPage.options].some(o => o.value === prev) ? prev : 'home';
+}
+
+// The coalition dropdown offers only: this coalition, or the all-coalitions aggregate.
+// (No browsing to other individual coalitions.)
+function setCoalitionOptions(co) {
+  selCo.innerHTML = '';
+  if (AGG_PAGE) { selCo.add(new Option(ALL_LABEL, ALL_KEY)); selCo.value = ALL_KEY; return; }
+  if (co !== ALL_KEY && (!DEMO_MODE || SINGLE)) selCo.add(new Option(co, co));
+  if (!SINGLE) selCo.add(new Option(ALL_LABEL, ALL_KEY));   // no all-coalitions option in a gated/locked view
+  selCo.value = co;
+}
+
+if (DEMO_MODE && !LOCK) {
+  document.querySelector('.gate-card h1').textContent = 'MOVE Fund Coalition Dashboard';
+  document.querySelector('.gate-sub').textContent =
+    'For this session we\u2019re looking at everyone\u2019s results together. Open the all-coalition average below.';
+} else if (GATED) {
+  document.querySelector('.gate-card h1').textContent = 'MOVE Fund Coalition Dashboards';
+  document.querySelector('.gate-sub').textContent =
+    'Select your coalition, then enter the access key you were given to open its dashboard.';
+}
+document.getElementById('meta-line').textContent = AGG_PAGE
+  ? `${AGG_N} MOVE Fund coalitions combined (latest survey wave each) · ${D.constructs.length} scales · scale 1–${D.scaleMax}`
+  : `${VIEWABLE.length} coalitions · ${D.constructs.length} scales · scale 1–${D.scaleMax}`;
+
+// Selecting toggles between this coalition and the aggregate; both set the (hidden) time point.
+selCo.addEventListener('change', () => { selT.value = CO_TP[selCo.value]; rebuildViewMenu(selCo.value); render(); });
+selPage.addEventListener('change', render);
+document.getElementById('net-showall').addEventListener('change',
+  () => renderNetwork(selCo.value, selT.value));
+
+// Domain pages: toggle item bars between mean score (1–5) and % agree / disagree.
+let domainMode = 'mean';
+document.getElementById('domain-mode').addEventListener('click', (e) => {
+  const b = e.target.closest('.mode-btn'); if (!b || b.dataset.mode === domainMode) return;
+  domainMode = b.dataset.mode;
+  document.querySelectorAll('#domain-mode .mode-btn').forEach(x => x.classList.toggle('active', x === b));
+  render();
+});
+
+// ---- helpers ----
+const cell = (co, tp) => (D.cells[`${co}||${tp}`] || null);
+const constructByKey = k => D.constructs.find(c => c.key === k);
+const domainByKey = k => D.domains.find(d => d.key === k);
+const fmt = v => (v === null || v === undefined) ? '—' : (Math.round(v * 100) / 100);
+const COL = getComputedStyle(document.documentElement);
+const c = n => COL.getPropertyValue(n).trim();
+
+// Dark-theme defaults for all charts (legible text + grid on the near-black background).
+Chart.defaults.color = c('--ink');
+Chart.defaults.scale.grid.color = c('--grid');
+Chart.defaults.scale.grid.tickColor = c('--axis');
+Chart.defaults.scale.border.color = c('--axis');
+Chart.defaults.scale.ticks.color = c('--muted');
+Chart.defaults.scale.title.color = c('--muted');
+Chart.defaults.animation = false;  // draw synchronously (snappier + reliable PDF capture)
+// Paint a solid panel background into each chart canvas so it exports correctly in the PDF
+// (Chart.js canvases are transparent by default, which would look empty on a captured image).
+Chart.register({
+  id: 'panelbg',
+  beforeDraw(chart) {
+    const ctx = chart.ctx;
+    ctx.save();
+    ctx.globalCompositeOperation = 'destination-over';
+    ctx.fillStyle = c('--panel');
+    ctx.fillRect(0, 0, chart.width, chart.height);
+    ctx.restore();
+  },
+});
+
+function destroy(id) { if (charts[id]) { charts[id].destroy(); delete charts[id]; } }
+
+// Horizontal dashed reference line (grand mean) drawn across a bar chart.
+function refLinePlugin(getValue, label) {
+  return {
+    id: 'refline-' + label,
+    afterDatasetsDraw(chart) {
+      const v = getValue();
+      if (v === null || v === undefined) return;
+      const { ctx, chartArea, scales } = chart;
+      const y = scales.y.getPixelForValue(v);
+      if (y < chartArea.top || y > chartArea.bottom) return;
+      ctx.save();
+      ctx.strokeStyle = c('--grand'); ctx.lineWidth = 2; ctx.setLineDash([6, 5]);
+      ctx.beginPath(); ctx.moveTo(chartArea.left, y); ctx.lineTo(chartArea.right, y); ctx.stroke();
+      ctx.setLineDash([]); ctx.fillStyle = c('--grand');
+      ctx.font = '600 11px sans-serif'; ctx.textAlign = 'right';
+      ctx.fillText(`${label}: ${fmt(v)}`, chartArea.right - 4, y - 5);
+      ctx.restore();
+    }
+  };
+}
+
+const likertScaleOpts = () => ({
+  y: { min: 1, max: D.scaleMax, ticks: { stepSize: 1 }, title: { display: true, text: `Mean (1–${D.scaleMax})` } }
+});
+
+// ===================================================================
+// Page router. Shared cards (program/zip/network/raw) move into the active page's slot.
+function render() {
+  const page = selPage.value, co = selCo.value, tp = selT.value;
+  const isDomain = !!domainByKey(page);
+  document.getElementById('page-home').classList.toggle('active', page === 'home');
+  document.getElementById('page-member').classList.toggle('active', page === 'member');
+  document.getElementById('page-domain').classList.toggle('active', isDomain);
+  document.getElementById('page-compare').classList.toggle('active', page === 'compare');
+  document.getElementById('page-newq').classList.toggle('active', page === 'newq');
+
+  if (page === 'home' || page === 'member') {
+    const pre = page === 'home' ? 'slot-home' : 'slot-member';
+    document.getElementById(pre + '-program').appendChild(document.getElementById('shared-program'));
+    document.getElementById(pre + '-extra').appendChild(document.getElementById('shared-extra'));
+    renderProgram(co, tp);
+    renderZip(co, tp);
+    renderNetwork(co, tp);
+    // Youth-served chart is hidden on the home page (kept on Member characteristics).
+    if (page === 'home') document.getElementById('card-youth').style.display = 'none';
+  }
+  if (page === 'home') renderHome(co, tp);
+  else if (page === 'member') renderProfile(co, tp);
+  else if (isDomain) renderDomain(page, co, tp);
+  else if (page === 'compare') renderCompare(co);
+  else if (page === 'newq') renderNewQuestions(co, tp);
+}
+
+// ---------- Coalition home ----------
+function renderHome(co, tp) {
+  document.getElementById('home-scope').textContent = displayName(co);
+  const cc = cell(co, tp) || {};
+
+  // Domain scores — this coalition only.
+  const dvals = D.domains.map(d => (D.domainScores[`${co}||${tp}`] || {})[d.key] ?? null);
+  destroy('domainsum');
+  charts['domainsum'] = new Chart(document.getElementById('chart-domainsum'), {
+    type: 'bar',
+    data: { labels: D.domains.map(d => d.name),
+            datasets: [{ label: co, data: dvals,
+                         backgroundColor: D.domains.map(d => DOMAIN_COLOR[d.key]), borderRadius: 4, maxBarThickness: 70 }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } }, scales: likertScaleOpts() }
+  });
+
+  // Rank the coalition's construct means; top 5 and bottom 5, each vs the CSEq Average.
+  // Each scale bar is colored by its domain (matching the Domain scores chart above).
+  const scored = D.constructs
+    .map(x => ({ name: x.name, domain: DOMAIN_OF[x.key],
+                 v: cc[x.key] ? cc[x.key].mean : null, cseq: (D.grandMeans.T0 || {})[x.key] ?? null }))
+    .filter(x => x.v !== null)
+    .sort((a, b) => b.v - a.v);
+  rankChart('top5', scored.slice(0, 5), co);
+  rankChart('bottom5', scored.slice(-5).reverse(), co);
+}
+
+function rankChart(id, rows, co) {
+  destroy(id);
+  charts[id] = new Chart(document.getElementById('chart-' + id), {
+    type: 'bar',
+    data: { labels: rows.map(r => r.name), datasets: [
+      { label: co, data: rows.map(r => r.v), backgroundColor: rows.map(r => DOMAIN_COLOR[r.domain] || c('--accent')), borderRadius: 3 },
+      { label: 'CSEq Average', data: rows.map(r => r.cseq), backgroundColor: CSEQ_COLOR, borderRadius: 3 },
+    ]},
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: { min: 1, max: D.scaleMax, ticks: { stepSize: 1 } } } }
+  });
+}
+
+// ---------- Domain page: item-level scores, sig-vs-CSEq highlighted ----------
+function wrapText(s, width) {
+  const words = String(s).split(' '); const lines = []; let line = '';
+  for (const w of words) {
+    if ((line + ' ' + w).trim().length > width) { if (line) lines.push(line); line = w; }
+    else line = (line + ' ' + w).trim();
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+function hexFade(hex, a) {
+  const h = hex.replace('#', '');
+  return `rgba(${parseInt(h.slice(0, 2), 16)},${parseInt(h.slice(2, 4), 16)},${parseInt(h.slice(4, 6), 16)},${a})`;
+}
+function renderDomain(dkey, co, tp) {
+  const dom = domainByKey(dkey);
+  const col = DOMAIN_COLOR[dkey] || c('--accent');
+  const pctMode = domainMode === 'pct';
+  document.getElementById('domain-title').textContent = dom.name;
+  document.getElementById('domain-scope').textContent = `${displayName(co)} · `
+    + (pctMode ? 'share of members agreeing vs. disagreeing' : `item scores (1–${D.scaleMax})`);
+  const swatch = (bg, border) => `<span class="dot" style="background:${bg};${border ? 'outline:2px solid #fff;outline-offset:-1px;' : ''}display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:middle;"></span>`;
+  if (pctMode) {
+    document.getElementById('domain-scale').innerHTML = 'Each bar shows the share of members who '
+      + '<strong>agreed</strong> (top 2, e.g. agree / strongly agree), were <strong>neutral</strong>, '
+      + 'or <strong>disagreed</strong> (bottom 2) with the statement as written. Colour marks the '
+      + '<strong>favorable</strong> answer green — for reverse-scored (negatively worded) items that '
+      + 'means <em>disagreeing</em> is favorable, so green sits on the “Disagree” side.';
+    document.getElementById('domain-legend').innerHTML =
+      swatch(PCT_COL.agree) + 'Favorable answer &nbsp;&nbsp;' + swatch(PCT_COL.neutral) + 'Neutral &nbsp;&nbsp;'
+      + swatch(PCT_COL.disagree) + 'Unfavorable answer';
+  } else {
+    // Scale key: list the anchors for each scale type used by this domain's constructs.
+    const scalesHere = [...new Set(dom.constructs.map(ck => CONSTRUCT_SCALE[ck]).filter(Boolean))];
+    document.getElementById('domain-scale').innerHTML = 'How to read the scores — '
+      + scalesHere.map(s => `<strong>${SCALE_LABEL[s] || s}:</strong> ${SCALE_ANCHOR[s] || ''}`).join(' &nbsp;·&nbsp; ');
+    document.getElementById('domain-legend').innerHTML =
+      swatch(col, true) + `significantly different from the CSEq Average (p&lt;0.05) &nbsp;&nbsp;`
+      + swatch(hexFade(col, 0.4), false) + `not significant`;
+  }
+
+  const scores = D.itemScores[`${co}||${tp}`] || {};
+  // One block per sub-scale (construct): heading, published definition + source, then its items.
+  Object.keys(charts).filter(k => k.startsWith('domain-')).forEach(destroy);
+  const groupsEl = document.getElementById('domain-groups');
+  groupsEl.innerHTML = '';
+  const present = dom.constructs.filter(ck => D.items.some(it => it.construct === ck && scores[it.code]));
+  present.forEach((ck, i) => {
+    const items = D.items.filter(it => it.construct === ck && scores[it.code]);
+    const con = D.constructs.find(x => x.key === ck) || {};
+    const block = document.createElement('div');
+    block.className = 'subscale';
+    block.innerHTML = `<h3>${escapeHtml(con.name || ck)}</h3>`
+      + (con.definition
+        ? `<p class="subscale-def">${escapeHtml(con.definition)} <span class="subscale-src">(${escapeHtml(con.source)})</span></p>`
+        : '')
+      + `<div class="chart-box"><canvas id="chart-domain-${ck}"></canvas></div>`;
+    groupsEl.appendChild(block);
+    renderSubscaleChart('domain-' + ck, block, items, scores, col, co, i === present.length - 1);
+  });
+}
+
+const PCT_COL = { agree: '#2f9e57', neutral: '#8a938d', disagree: '#cf5b45' };
+
+function renderSubscaleChart(id, block, items, scores, col, co, isLast) {
+  // Size the chart from the ACTUAL number of wrapped label lines so long item text (e.g. Social
+  // Outcomes) always has room — otherwise tall multi-line labels overlap in a fixed per-bar slot.
+  const wrapped = items.map(it => wrapText(geoText(it.text, co), 48));
+  const totalLines = wrapped.reduce((sum, w) => sum + w.length, 0);
+  const box = block.querySelector('.chart-box');
+  box.style.height = Math.max(120, totalLines * 15 + items.length * 24 + 44) + 'px';
+  const yAxis = { ticks: { font: { size: 11 }, autoSkip: false, crossAlign: 'far' },
+                  afterFit: (a) => { a.width = Math.min(340, a.chart.width * 0.5); } };
+
+  if (domainMode === 'pct') {
+    // Show the agree/disagree split LITERALLY, matching the statement as written. Reverse-scored
+    // items are negatively worded, so their stored % (which is oriented favorable=high) is swapped
+    // back to literal agree/disagree. Colour always marks the FAVORABLE answer green — so for a
+    // reverse item the "Disagree" segment is green and "Agree" is red.
+    const rev = items.map(it => !!it.reverse);
+    const litAgree = items.map((it, i) => rev[i] ? scores[it.code].pctDisagree : scores[it.code].pctAgree);
+    const litDisagree = items.map((it, i) => rev[i] ? scores[it.code].pctAgree : scores[it.code].pctDisagree);
+    const agreeCol = items.map((it, i) => rev[i] ? PCT_COL.disagree : PCT_COL.agree);
+    const disagreeCol = items.map((it, i) => rev[i] ? PCT_COL.agree : PCT_COL.disagree);
+    charts[id] = new Chart(block.querySelector('canvas'), {
+      type: 'bar',
+      data: {
+        labels: wrapped,
+        datasets: [
+          { label: 'Disagree', data: litDisagree, backgroundColor: disagreeCol, stack: 's' },
+          { label: 'Neutral', data: items.map(it => scores[it.code].pctNeutral), backgroundColor: PCT_COL.neutral, stack: 's' },
+          { label: 'Agree', data: litAgree, backgroundColor: agreeCol, stack: 's' },
+        ],
+      },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: {
+            title: () => '',
+            label: ctx => ` ${ctx.dataset.label}: ${Math.round(ctx.parsed.x)}%`,
+            afterBody: ctx => {
+              const it = items[ctx[0].dataIndex], s = scores[it.code];
+              return `n = ${s.n}${it.reverse ? '  ·  reverse-scored (negatively worded)' : ''}`;
+            },
+          } },
+        },
+        scales: {
+          x: { min: 0, max: 100, stacked: true, ticks: { callback: v => v + '%' },
+               title: { display: isLast, text: '% of members' } },
+          y: Object.assign({ stacked: true }, yAxis),
+        },
+      },
+    });
+    return;
+  }
+
+  charts[id] = new Chart(block.querySelector('canvas'), {
+    type: 'bar',
+    data: {
+      labels: wrapped,
+      datasets: [{
+        data: items.map(it => scores[it.code].mean),
+        backgroundColor: items.map(it => scores[it.code].sig ? col : hexFade(col, 0.4)),
+        borderColor: items.map(it => scores[it.code].sig ? '#ffffff' : 'transparent'),
+        borderWidth: items.map(it => scores[it.code].sig ? 2 : 0),
+        borderRadius: 3,
+      }],
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: {
+          label: ctx => {
+            const it = items[ctx.dataIndex], s = scores[it.code];
+            const sig = s.sig ? ` · significantly ${s.dir} than CSEq` : '';
+            return ` ${s.mean} (n=${s.n}) · CSEq ${s.cseqMean ?? '—'}${sig}`;
+          },
+        } },
+      },
+      scales: {
+        x: { min: 1, max: D.scaleMax, ticks: { stepSize: 1 }, title: { display: isLast, text: `Score (1–${D.scaleMax})` } },
+        y: yAxis,
+      },
+    },
+  });
+}
+
+// ===================================================================
+// Respondent / organization profile — every chart is for the selected coalition only.
+function showPCard(id, visible) {
+  const card = document.getElementById('pcard-' + id);
+  if (card) card.style.display = visible ? '' : 'none';
+}
+
+// Percentage bar chart (horizontal for long category labels, vertical for short ordinal scales).
+function pctChart(id, items, horizontal) {
+  destroy(id);
+  const has = items && items.length && items.some(it => it.count > 0);
+  showPCard(id, has);
+  if (!has) return;
+  charts[id] = new Chart(document.getElementById('chart-' + id), {
+    type: 'bar',
+    data: { labels: items.map(it => it.label),
+            datasets: [{ data: items.map(it => it.pct), backgroundColor: c('--accent'), borderRadius: 4, maxBarThickness: 32 }] },
+    options: { indexAxis: horizontal ? 'y' : 'x', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed[horizontal ? 'x' : 'y']}%  (n=${items[ctx.dataIndex].count})` } } },
+      scales: horizontal
+        ? { x: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } } }
+        : { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } } } }
+  });
+}
+
+// Mean-degree bar chart (1-5) for the EngageFeedback matrix.
+function meanChart(id, items) {
+  destroy(id);
+  const has = items && items.some(it => it.mean !== null);
+  showPCard(id, has);
+  if (!has) return;
+  charts[id] = new Chart(document.getElementById('chart-' + id), {
+    type: 'bar',
+    data: { labels: items.map(it => it.label),
+            datasets: [{ data: items.map(it => it.mean), backgroundColor: c('--accent'), borderRadius: 4, maxBarThickness: 32 }] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` mean ${ctx.parsed.x}  (n=${items[ctx.dataIndex].n})` } } },
+      scales: { x: { min: 1, max: 5, ticks: { stepSize: 1 },
+        title: { display: true, text: 'Mean degree (1 = None at all … 5 = A great deal)' } } } }
+  });
+}
+
+// ---------- Change over time (earliest vs latest wave) ----------
+const waveLabel = tp => ({ T0: 'Time 0', T1: 'Time 1', T2: 'Time 2' }[tp] || tp);
+function renderCompare(co) {
+  const cmp = D.comparisons[co];
+  if (!cmp) return;
+  const [a, b] = cmp.waves;
+  document.getElementById('compare-scope').textContent = `${displayName(co)} · ${waveLabel(a)} → ${waveLabel(b)}`;
+  const dot = col => `<span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:${col};margin:0 5px 0 12px;vertical-align:middle;"></span>`;
+  document.getElementById('compare-legend').innerHTML =
+    `${dot('#6a7a6a')}${waveLabel(a)} ${dot('#45d47f')}significant increase ${dot('#e0614f')}significant decrease`;
+
+  // Domain scores grouped
+  const dl = D.domains.map(d => d.name);
+  destroy('cmp-domains');
+  charts['cmp-domains'] = new Chart(document.getElementById('chart-cmp-domains'), {
+    type: 'bar',
+    data: { labels: dl, datasets: [
+      { label: waveLabel(a), data: D.domains.map(d => (cmp.domains[d.key] || {}).t0 ?? null), backgroundColor: '#6a7a6a', borderRadius: 4 },
+      { label: waveLabel(b), data: D.domains.map(d => (cmp.domains[d.key] || {}).t1 ?? null), backgroundColor: c('--accent'), borderRadius: 4 },
+    ]},
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } },
+      scales: { y: { min: 1, max: 5, ticks: { stepSize: 1 } } } }
+  });
+
+  // Constructs grouped (horizontal); T1 bars colored by significance/direction, labels flagged.
+  const cons = D.constructs.filter(x => cmp.constructs[x.key]);
+  const rec = x => cmp.constructs[x.key];
+  const labels = cons.map(x => x.name + (rec(x).sig ? (rec(x).dir === 'up' ? '  ▲' : '  ▼') : ''));
+  const t1col = cons.map(x => rec(x).sig ? (rec(x).dir === 'up' ? '#45d47f' : '#e0614f') : '#4a7a5c');
+  document.getElementById('chart-cmp-constructs').closest('.chart-box').style.height = Math.max(360, cons.length * 26 + 60) + 'px';
+  destroy('cmp-constructs');
+  charts['cmp-constructs'] = new Chart(document.getElementById('chart-cmp-constructs'), {
+    type: 'bar',
+    data: { labels, datasets: [
+      { label: waveLabel(a), data: cons.map(x => rec(x).t0.mean), backgroundColor: '#6a7a6a', borderRadius: 3 },
+      { label: waveLabel(b), data: cons.map(x => rec(x).t1.mean), backgroundColor: t1col, borderRadius: 3 },
+    ]},
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } },
+      scales: { x: { min: 1, max: 5, ticks: { stepSize: 1 } } } }
+  });
+
+  // Significant-changes summary
+  const sigCon = cons.filter(x => rec(x).sig).map(x => ({ name: x.name, ...rec(x) }));
+  const sigItems = Object.values(cmp.items).filter(i => i.sig).sort((x, y) => Math.abs(y.delta) - Math.abs(x.delta));
+  const chg = r => `<span class="${r.dir === 'up' ? 'chg-up' : 'chg-down'}">${r.dir === 'up' ? '▲' : '▼'} ${r.delta > 0 ? '+' : ''}${r.delta}</span>`;
+  let html = '';
+  if (!sigCon.length && !sigItems.length) {
+    html = `<p class="empty">No statistically significant changes between waves (p&lt;0.05).</p>`;
+  } else {
+    html += `<table class="raw"><thead><tr><th>Scale</th><th>${waveLabel(a)}</th><th>${waveLabel(b)}</th><th>Change</th></tr></thead><tbody>`;
+    sigCon.forEach(s => { html += `<tr><td>${s.name}</td><td>${s.t0.mean}</td><td>${s.t1.mean}</td><td>${chg(s)}</td></tr>`; });
+    html += `</tbody></table>`;
+    if (sigItems.length) {
+      html += `<details style="margin-top:12px;"><summary>${sigItems.length} individual survey item(s) also changed significantly</summary>`
+        + `<table class="raw"><tbody>` + sigItems.map(i => `<tr><td>${escapeHtml(geoText(i.text, co))}</td><td style="white-space:nowrap;">${chg(i)}</td></tr>`).join('') + `</tbody></table></details>`;
+    }
+  }
+  document.getElementById('compare-sig').innerHTML = html;
+}
+
+// ---------- Strategic Plan (coalition-specific added questions) ----------
+let nqCharts = [];
+function newqBar(id, labels, data, opt) {
+  charts[id] = new Chart(document.getElementById(id), {
+    type: 'bar',
+    data: { labels, datasets: [{ data, backgroundColor: c('--accent'), borderRadius: 4, maxBarThickness: 30 }] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => opt.pct ? ` ${ctx.parsed.x}%  (n=${opt.counts[ctx.dataIndex]})` : ` ${ctx.parsed.x}` } } },
+      scales: { x: Object.assign({ beginAtZero: opt.min == null }, opt.min != null ? { min: opt.min } : {}, opt.max != null ? { max: opt.max } : {},
+        opt.pct ? { ticks: { callback: v => v + '%' } } : {}) } }
+  });
+}
+function renderNewQuestions(co, tp) {
+  document.getElementById('newq-scope').textContent = `${displayName(co)} · strategic plan`;
+  const body = document.getElementById('newq-body');
+  nqCharts.forEach(id => destroy(id)); nqCharts = [];
+  body.innerHTML = '';
+  const specs = (D.newQuestions || {})[`${co}||${tp}`] || [];
+  if (!specs.length) { body.innerHTML = '<p class="empty">No additional questions for this coalition.</p>'; return; }
+
+  specs.forEach((spec, idx) => {
+    const card = document.createElement('div'); card.className = 'card';
+    const h = document.createElement('h2'); h.textContent = spec.title; card.appendChild(h);
+
+    if (spec.kind === 'verbatim') {
+      const sub = document.createElement('p'); sub.className = 'sub'; sub.textContent = `${spec.n} responses`; card.appendChild(sub);
+      const box = document.createElement('div'); box.className = 'verbatim-box';
+      spec.responses.forEach(r => { const p = document.createElement('p'); p.className = 'verbatim-item'; p.textContent = r; box.appendChild(p); });
+      card.appendChild(box); body.appendChild(card); return;
+    }
+
+    let items = spec.items || [];
+    let opt = { pct: false }, note = '';
+    if (spec.kind === 'multi' || spec.kind === 'ordinal') { opt = { pct: true, max: 100, counts: items.map(i => i.count) }; }
+    else if (spec.kind === 'rank') { items = [...items].sort((x, y) => x.mean - y.mean); note = 'Lower mean rank = higher priority.'; }
+    else { items = [...items].sort((x, y) => y.mean - x.mean); opt = { pct: false, min: 1, max: 5 }; note = 'Mean rating (1–5).'; }
+
+    const meta = document.createElement('p'); meta.className = 'sub';
+    meta.textContent = (spec.n != null ? `n = ${spec.n}. ` : '') + note; card.appendChild(meta);
+    const cbox = document.createElement('div'); cbox.className = 'chart-box';
+    cbox.style.height = Math.max(160, items.length * 30 + 46) + 'px';
+    const cid = 'nq-' + idx; const cv = document.createElement('canvas'); cv.id = cid;
+    cbox.appendChild(cv); card.appendChild(cbox); body.appendChild(card);
+    nqCharts.push(cid);
+    const val = spec.kind === 'multi' || spec.kind === 'ordinal' ? items.map(i => i.pct) : items.map(i => i.mean);
+    newqBar(cid, items.map(i => i.label), val, opt);
+  });
+}
+
+function renderProfile(co, tp) {
+  const p = D.profiles[`${co}||${tp}`];
+  document.getElementById('profile-scope').textContent = p ? `${displayName(co)} · N = ${memberN(co, p.n)} respondents` : '';
+  if (!p) return;
+  pctChart('sector', p.sector.items, false);
+  pctChart('duration', p.duration ? p.duration.items : [], false);
+  pctChart('engagement', p.engagement.items, false);
+  pctChart('age', p.age.items, false);
+  pctChart('field', p.field.items, true);
+  pctChart('pops', p.pops.items, true);
+  meanChart('engageFeedback', p.engageFeedback.items);
+}
+
+// Coalition-specific: youth served by zip code (Cleveland-style question).
+function renderZip(co, tp) {
+  const z = D.zipYouth && D.zipYouth[`${co}||${tp}`];
+  const card = document.getElementById('pcard-zip');
+  destroy('zip');
+  if (!z || !z.items.length) { card.style.display = 'none'; return; }
+  card.style.display = '';
+  charts['zip'] = new Chart(document.getElementById('chart-zip'), {
+    type: 'bar',
+    data: { labels: z.items.map(it => it.label),
+            datasets: [{ data: z.items.map(it => it.value), backgroundColor: c('--accent'), borderRadius: 4, maxBarThickness: 60 }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y} youth (n=${z.items[ctx.dataIndex].n})` } } },
+      scales: { y: { beginAtZero: true, title: { display: true, text: 'Youth served' } } } }
+  });
+}
+
+// Social connections map — D3 force-directed mention + co-mention network.
+let netSim = null;
+function renderNetwork(co, tp) {
+  const net = D.network && D.network[`${co}||${tp}`];
+  const card = document.getElementById('pcard-network');
+  const svgEl = document.getElementById('network-svg');
+  if (netSim) { netSim.stop(); netSim = null; }
+  d3.select(svgEl).selectAll('*').remove();
+  if (!net || !net.nodes.length) { card.style.display = 'none'; return; }
+  card.style.display = '';
+  document.getElementById('network-selected').textContent = 'Click a dot to see the organization’s name.';
+
+  // "Shared connections only" (default): drop organizations named by a single member, which
+  // removes one-member islands. The checkbox reveals the full long tail.
+  const showAll = document.getElementById('net-showall').checked;
+  let vnodes = showAll ? net.nodes : net.nodes.filter(n => n.mentions >= 2);
+  const sharedNone = !vnodes.length;
+  if (sharedNone) vnodes = net.nodes;             // fallback: nobody named a shared org
+  const vids = new Set(vnodes.map(n => n.id));
+
+  const box = document.getElementById('network-box');
+  const W = box.clientWidth || 800, H = box.clientHeight || 560;
+  const svg = d3.select(svgEl).attr('viewBox', `0 0 ${W} ${H}`);
+  const g = svg.append('g');
+  const zoom = d3.zoom().scaleExtent([0.1, 4]).on('zoom', ev => g.attr('transform', ev.transform));
+  svg.call(zoom);
+
+  const nodes = vnodes.map(n => ({ ...n }));
+  const links = net.edges.filter(e => vids.has(e.source) && vids.has(e.target))
+    .map(e => ({ source: e.source, target: e.target, weight: e.weight }));
+  const maxM = d3.max(nodes, n => n.mentions) || 1;
+  const maxW = d3.max(links, l => l.weight) || 1;
+  const r = d3.scaleSqrt().domain([1, maxM]).range([5, 26]);
+  const HUBS = 5;  // nodes are pre-sorted by mentions desc; top few are "hubs"
+
+  const link = g.append('g').selectAll('line').data(links).join('line')
+    .attr('class', 'edge').attr('stroke-width', d => 0.6 + 2.4 * (d.weight / maxW));
+  const node = g.append('g').selectAll('circle').data(nodes).join('circle')
+    .attr('class', (d, i) => 'node' + (i < HUBS ? ' hub' : '')).attr('r', d => r(d.mentions));
+  node.append('title').text(d => `${d.label} — named by ${d.mentions} member(s)`);
+
+  // Labels: hub (purple) names are always shown, centered INSIDE their node. Any other node
+  // is identified by clicking it — one at a time; clicking it again (or another) clears it.
+  const hubIds = new Set(nodes.slice(0, HUBS).map(n => n.id));
+  const labelG = g.append('g');
+  let selectedId = null;
+  const labelData = () => nodes.filter(d => hubIds.has(d.id) || d.id === selectedId);
+  let label = labelG.selectAll('text');
+  function updateLabels() {
+    label = labelG.selectAll('text').data(labelData(), d => d.id);
+    label.exit().remove();
+    label = label.enter().append('text')
+      .attr('class', 'nlabel').attr('text-anchor', 'middle').attr('dy', '0.32em')
+      .merge(label)
+      .classed('inside', d => hubIds.has(d.id))
+      .text(d => d.label);
+    positionLabels();
+  }
+  function positionLabels() { label.attr('x', d => d.x).attr('y', d => d.y); }
+  const selCaption = document.getElementById('network-selected');
+  const RESET = 'Click a dot to see the organization’s name.';
+  node.on('click', (ev, d) => {
+    ev.stopPropagation();
+    selectedId = (selectedId === d.id) ? null : d.id;
+    selCaption.textContent = selectedId ? `${d.label} — named by ${d.mentions} member(s)` : RESET;
+    node.classed('sel', n => n.id === selectedId);
+    updateLabels();
+  });
+  updateLabels();
+
+  const sim = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d => d.id).distance(55).strength(d => 0.05 + 0.2 * (d.weight / maxW)))
+    .force('charge', d3.forceManyBody().strength(-90))
+    .force('x', d3.forceX(W / 2).strength(0.08))   // gentle centering keeps weakly-tied nodes in view
+    .force('y', d3.forceY(H / 2).strength(0.08))
+    .force('collide', d3.forceCollide().radius(d => r(d.mentions) + 4))
+    .on('tick', () => {
+      link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+          .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+      node.attr('cx', d => d.x).attr('cy', d => d.y);
+      positionLabels();
+    });
+  // Once the layout settles, frame the whole graph via the viewBox (fits any container width).
+  sim.on('end', () => {
+    const pad = 30;
+    const xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+    const minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
+    svg.attr('viewBox', `${minX - pad} ${minY - pad} ${(maxX - minX) + 2 * pad} ${(maxY - minY) + 2 * pad}`);
+  });
+  netSim = sim;
+  node.call(d3.drag()
+    .on('start', (ev, d) => { if (!ev.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+    .on('drag', (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+    .on('end', (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
+
+  const scope = sharedNone ? 'no organization was named by 2+ members — showing all'
+    : (showAll ? `showing top ${nodes.length}` : `showing ${nodes.length} named by 2+ members`);
+  document.getElementById('network-note').textContent =
+    `${net.respondents} members · ${net.totalOrgs} organizations named (${scope}) · drag nodes, scroll to zoom`;
+}
+
+// ===================================================================
+// Show/hide a program card. Hidden cards take no space (display:none) — the grid reflows.
+function showCard(cardId, visible) {
+  document.getElementById(cardId).style.display = visible ? '' : 'none';
+}
+
+// Program-impact charts show ONLY the selected coalition (no cross-coalition comparison).
+// A metric the coalition didn't collect (null) OR that totals 0 is omitted entirely,
+// rather than showing an empty/zero bar.
+function renderProgram(co, tp) {
+  const p = D.program[`${co}||${tp}`] || {};
+  // Program metrics aren't collected uniformly across surveys, so they're omitted from the
+  // "All coalitions combined" aggregate (financial aid, coaches, youth) — including the raw table.
+  const isAgg = (co === ALL_KEY);
+  const has = k => !isAgg && p[k] && p[k].value !== null && p[k].value !== 0;
+  const val = k => (p[k] ? p[k].value : null);
+
+  const oneBar = (id, fkey, axisLabel, color) => {
+    destroy(id);
+    showCard('card-' + id, has(fkey));
+    if (!has(fkey)) return;
+    charts[id] = new Chart(document.getElementById('chart-' + id), {
+      type: 'bar',
+      data: { labels: [displayName(co)], datasets: [{ data: [val(fkey)], backgroundColor: color || c('--accent'), borderRadius: 4, maxBarThickness: 90 }] },
+      options: { responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, title: { display: true, text: axisLabel } } } }
+    });
+  };
+  oneBar('youth', 'youth_served', 'Youth');
+  oneBar('aid-pct', 'pct_aid', '%');
+  oneBar('aid-dollars', 'aid_dollars', 'Dollars ($)');
+
+  // coaches: worked vs. trained — only include a bar for a value that was collected (non-zero).
+  destroy('coaches');
+  const parts = [['Worked', 'coaches_worked', c('--t1')], ['Trained', 'coaches_trained', c('--t2')]]
+    .filter(([, k]) => has(k)).map(([lab, k, col]) => ({ lab, v: val(k), col }));
+  showCard('card-coaches', parts.length > 0);
+  if (parts.length) {
+    charts['coaches'] = new Chart(document.getElementById('chart-coaches'), {
+      type: 'bar',
+      data: { labels: parts.map(p => p.lab), datasets: [{
+        data: parts.map(p => p.v), backgroundColor: parts.map(p => p.col), borderRadius: 4, maxBarThickness: 90,
+      }]},
+      options: { responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, title: { display: true, text: 'Coaches' } } } }
+    });
+  }
+
+}
+
+function escapeHtml(s) { return String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch])); }
+
+// ---- Coalition chooser gate (shown on entry) ----
+function enterDashboard(co) {
+  selT.value = CO_TP[co];
+  setCoalitionOptions(co);
+  rebuildViewMenu(co);
+  selPage.value = 'home';
+  document.getElementById('gate').classList.add('hidden');
+  render();
+}
+
+(function buildGate() {
+  if (LOCK) return;   // locked builds use the password gate instead of the coalition chooser
+  if (AGG_PAGE) {     // unlocked aggregate page: skip the chooser and open the combined view
+    document.title = ALL_LABEL + ' — MOVE Fund Dashboard';
+    document.getElementById('gate').classList.add('hidden');
+    setTimeout(() => enterDashboard(ALL_KEY), 0);   // after the rest of the script has run
+    return;
+  }
+  const host = document.getElementById('gate-groups');
+  const group = (title, grid) => {
+    const g = document.createElement('div'); g.className = 'gate-group';
+    const h = document.createElement('h2'); h.textContent = title;
+    g.appendChild(h); g.appendChild(grid); host.appendChild(g);
+  };
+  if (GATED) {        // the combined view is public: link to the unlocked aggregate page
+    const allGrid = document.createElement('div'); allGrid.className = 'gate-grid';
+    const a = document.createElement('a'); a.className = 'gate-btn gate-all'; a.href = 'aggregate.html';
+    a.style.textDecoration = 'none';
+    a.innerHTML = `${ALL_LABEL}<span class="g-n">Open to everyone — no access key needed</span>`;
+    allGrid.appendChild(a);
+    group('Everyone combined', allGrid);
+  }
+  if (DEMO_MODE) {
+    const allGrid = document.createElement('div'); allGrid.className = 'gate-grid';
+    const nAll = (D.profiles[`${ALL_KEY}||ALL`] || {}).n;
+    const a = document.createElement('button'); a.className = 'gate-btn gate-all';
+    a.innerHTML = `${ALL_LABEL}<span class="g-n">Average across all coalitions${nAll ? ' · n = ' + nAll + ' members' : ''}</span>`;
+    a.addEventListener('click', () => enterDashboard(ALL_KEY));
+    allGrid.appendChild(a);
+    group('Open the dashboard', allGrid);
+  }
+  const grid = document.createElement('div'); grid.className = 'gate-grid';
+  VIEWABLE.slice().sort().forEach(co => {
+    const n = memberN(co, (D.profiles[`${co}||${CO_TP[co]}`] || {}).n);
+    const b = document.createElement('button'); b.className = 'gate-btn';
+    if (DEMO_MODE) {
+      b.disabled = true; b.title = 'Individual coalition views are turned off for this demo';
+      b.innerHTML = `${co}<span class="g-n">Unavailable during demo</span>`;
+    } else if (GATED) {
+      b.innerHTML = `${co}<span class="g-n">🔒 Enter access key to open</span>`;
+      b.addEventListener('click', () => openPwGate(co, { allowBack: true }));
+    } else {
+      b.innerHTML = `${co}<span class="g-n">${n ? ('n = ' + n + ' members') : ''}</span>`;
+      b.addEventListener('click', () => enterDashboard(co));
+    }
+    grid.appendChild(b);
+  });
+  if (DEMO_MODE) group('Individual coalitions', grid);
+  else if (GATED) group('Individual coalitions (access key required)', grid);
+  else host.appendChild(grid);
+})();
+
+// ---- Password gate (locked single-coalition builds) ----
+// A small pure-JS SHA-256 fallback so the gate also works when crypto.subtle is unavailable.
+function syncSha256(ascii) {
+  function rr(v, a) { return (v >>> a) | (v << (32 - a)); }
+  const mp = Math.pow, mw = mp(2, 32); let result = '';
+  const words = [], bitLen = ascii.length * 8;
+  let hash = syncSha256.h = syncSha256.h || [];
+  const k = syncSha256.k = syncSha256.k || [];
+  let pc = k.length; const comp = {};
+  for (let cand = 2; pc < 64; cand++) {
+    if (!comp[cand]) {
+      for (let i = 0; i < 313; i += cand) comp[i] = cand;
+      hash[pc] = (mp(cand, 0.5) * mw) | 0; k[pc++] = (mp(cand, 1 / 3) * mw) | 0;
+    }
+  }
+  ascii += '\x80'; while (ascii.length % 64 - 56) ascii += '\x00';
+  for (let i = 0; i < ascii.length; i++) {
+    const j = ascii.charCodeAt(i); if (j >> 8) return null; words[i >> 2] |= j << ((3 - i) % 4) * 8;
+  }
+  words[words.length] = (bitLen / mw) | 0; words[words.length] = bitLen;
+  for (let j = 0; j < words.length;) {
+    const w = words.slice(j, j += 16), oldHash = hash; hash = hash.slice(0, 8);
+    for (let i = 0; i < 64; i++) {
+      const w15 = w[i - 15], w2 = w[i - 2], a = hash[0], e = hash[4];
+      const t1 = hash[7] + (rr(e, 6) ^ rr(e, 11) ^ rr(e, 25)) + ((e & hash[5]) ^ (~e & hash[6])) + k[i]
+        + (w[i] = i < 16 ? w[i] : (w[i - 16] + (rr(w15, 7) ^ rr(w15, 18) ^ (w15 >>> 3)) + w[i - 7]
+          + (rr(w2, 17) ^ rr(w2, 19) ^ (w2 >>> 10))) | 0);
+      const t2 = (rr(a, 2) ^ rr(a, 13) ^ rr(a, 22)) + ((a & hash[1]) ^ (a & hash[2]) ^ (hash[1] & hash[2]));
+      hash = [(t1 + t2) | 0].concat(hash); hash[4] = (hash[4] + t1) | 0;
+    }
+    for (let i = 0; i < 8; i++) hash[i] = (hash[i] + oldHash[i]) | 0;
+  }
+  for (let i = 0; i < 8; i++) for (let j = 3; j + 1; j--) {
+    const b = (hash[i] >> (j * 8)) & 255; result += ((b < 16) ? 0 : '') + b.toString(16);
+  }
+  return result;
+}
+async function sha256hex(s) {
+  try {
+    if (window.crypto && crypto.subtle) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+      return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+  } catch (e) { /* fall through to sync */ }
+  return syncSha256(s);
+}
+// Shared gate controller — used by both locked single-coalition files (LOCK) and the key-gated
+// main dashboard (GATED), where each coalition button opens this prompt for its own key.
+let pwPending = null;
+function openPwGate(co, opts) {
+  opts = opts || {};
+  pwPending = co;
+  document.getElementById('pw-co').textContent = displayName(co);
+  document.getElementById('pw-err').hidden = true;
+  const back = document.getElementById('pw-back'); if (back) back.hidden = !opts.allowBack;
+  const inp = document.getElementById('pw-input'); inp.value = '';
+  document.getElementById('gate').classList.add('hidden');
+  document.getElementById('pwgate').hidden = false;
+  setTimeout(() => inp.focus(), 50);
+}
+(function initPwGate() {
+  const form = document.getElementById('pwform');
+  if (!form) return;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const inp = document.getElementById('pw-input');
+    const target = LOCK ? LOCK.hash : ACCESS[pwPending];
+    const h = await sha256hex((inp.value || '').trim());
+    if (h && target && h === target) {
+      document.getElementById('pwgate').hidden = true;
+      enterDashboard(pwPending);
+    } else {
+      document.getElementById('pw-err').hidden = false; inp.select();
+    }
+  });
+  const back = document.getElementById('pw-back');
+  if (back) back.addEventListener('click', () => {
+    document.getElementById('pwgate').hidden = true;
+    document.getElementById('gate').classList.remove('hidden');
+    pwPending = null;
+  });
+  if (LOCK) { document.title = displayName(LOCK.coalition) + ' — MOVE Fund Dashboard'; openPwGate(LOCK.coalition, { allowBack: false }); }
+})();
+
+// ---- PDF report builder: pick sections, snapshot the chosen charts, open Save-as-PDF. ----
+// Each item -> a page to render and the chart(s) to capture. Hidden cards are skipped.
+const REPORT_ITEMS = [
+  { id: 'domainsum', group: 'Overview', label: 'Domain scores', page: 'home', charts: [['chart-domainsum', 'Domain scores']] },
+  { id: 'top5', group: 'Overview', label: 'Top 5 highest-rated scales', page: 'home', charts: [['chart-top5', 'Top 5 highest-rated scales']] },
+  { id: 'bottom5', group: 'Overview', label: '5 lowest-rated scales', page: 'home', charts: [['chart-bottom5', '5 lowest-rated scales']] },
+  ...D.domains.map(d => ({ id: 'dom-' + d.key, group: 'Coalition functioning (by domain)', label: d.name, page: d.key,
+                           // one snapshot per sub-scale chart (missing ones are skipped by buildBlock)
+                           charts: d.constructs.map(ck => ['chart-domain-' + ck,
+                             `${d.name} — ${(D.constructs.find(x => x.key === ck) || {}).name || ck}`]) })),
+  { id: 'demographics', group: 'Member characteristics', label: 'Demographics (sector, engagement, ages, focus areas, populations…)', page: 'member',
+    charts: [['chart-sector'], ['chart-duration'], ['chart-engagement'], ['chart-age'], ['chart-field'], ['chart-pops'], ['chart-engageFeedback']] },
+  { id: 'program', group: 'Member characteristics', label: 'Program metrics (youth served, financial aid, coaches)', page: 'member',
+    charts: [['chart-aid-pct'], ['chart-aid-dollars'], ['chart-coaches'], ['chart-youth'], ['chart-zip']] },
+];
+
+(function buildPicker() {
+  const list = document.getElementById('rp-list');
+  let lastGroup = null;
+  REPORT_ITEMS.forEach(it => {
+    if (it.group !== lastGroup) {
+      const h = document.createElement('h3'); h.textContent = it.group; list.appendChild(h); lastGroup = it.group;
+    }
+    const row = document.createElement('label'); row.className = 'rp-row';
+    row.innerHTML = `<input type="checkbox" class="rp-cb" value="${it.id}" checked> <span>${it.label}</span>`;
+    list.appendChild(row);
+  });
+})();
+
+const gid = id => document.getElementById(id);
+gid('btn-report').addEventListener('click', () => gid('report-picker').classList.remove('hidden'));
+gid('rp-cancel').addEventListener('click', () => gid('report-picker').classList.add('hidden'));
+gid('rp-all').addEventListener('change', e => document.querySelectorAll('.rp-cb').forEach(cb => { cb.checked = e.target.checked; }));
+const chosenItems = () => {
+  const set = new Set([...document.querySelectorAll('.rp-cb:checked')].map(cb => cb.value));
+  return REPORT_ITEMS.filter(it => set.has(it.id));
+};
+gid('rp-go').addEventListener('click', () => {
+  const items = chosenItems(); gid('report-picker').classList.add('hidden');
+  if (items.length) generateReport(items);
+});
+gid('rp-ppt').addEventListener('click', () => {
+  const items = chosenItems(); gid('report-picker').classList.add('hidden');
+  if (items.length) generatePPTX(items);
+});
+
+async function generateReport(items) {
+  const co = selCo.value, savedPage = selPage.value;
+  const rep = gid('report');
+  const tick = ms => new Promise(r => setTimeout(r, ms));
+  rep.innerHTML = `<div class="rep-title"><h1>${displayName(co)}</h1>`
+    + `<p>Coalition Evaluation Report · MOVE Fund · ${new Date().toLocaleDateString()}</p></div>`;
+
+  const section = t => { const s = document.createElement('div'); s.className = 'rep-sec'; s.textContent = t; rep.appendChild(s); };
+  const buildBlock = (canvasId, heading) => {
+    const cv = gid(canvasId);
+    if (!cv) return null;
+    const card = cv.closest('.card');
+    if (card && getComputedStyle(card).display === 'none') return null;   // skip hidden cards
+    const block = document.createElement('div'); block.className = 'rep-block';
+    const h = heading || (card && card.querySelector('h2') ? card.querySelector('h2').textContent : '');
+    if (h) { const hd = document.createElement('div'); hd.className = 'rep-h'; hd.textContent = h; block.appendChild(hd); }
+    const img = document.createElement('img'); img.className = 'rep-img'; img.src = cv.toDataURL('image/png');
+    block.appendChild(img); return block;
+  };
+
+  let lastPage = null, lastGroup = null;
+  try {
+    for (const it of items) {
+      if (it.page !== lastPage) { selPage.value = it.page; render(); await tick(150); lastPage = it.page; }
+      const blocks = it.charts.map(ch => buildBlock(ch[0], ch[1])).filter(Boolean);
+      if (blocks.length) {
+        if (it.group !== lastGroup) { section(it.group); lastGroup = it.group; }
+        blocks.forEach(b => rep.appendChild(b));
+      }
+    }
+  } finally {
+    selPage.value = savedPage; render();
+  }
+  window.print();
+}
+
+// ---- PowerPoint export: build NATIVE, editable bar charts (movable in PowerPoint). ----
+async function generatePPTX(items) {
+  if (typeof PptxGenJS === 'undefined') { alert('PowerPoint export library did not load (check your connection).'); return; }
+  const co = selCo.value, tp = CO_TP[co], key = `${co}||${tp}`;
+  const strip = h => (h || '#2fc46a').replace('#', '');
+  const pptx = new PptxGenJS();
+  pptx.layout = 'LAYOUT_WIDE';                 // 13.33 x 7.5 in
+  const BAR = pptx.ChartType.bar;
+
+  const title = pptx.addSlide();
+  title.background = { color: '0B0F0C' };
+  title.addText(displayName(co), { x: 0.7, y: 2.7, w: 12, h: 1, fontSize: 40, bold: true, color: 'FFFFFF' });
+  title.addText(`Coalition Evaluation Report · MOVE Fund · ${new Date().toLocaleDateString()}`,
+    { x: 0.7, y: 3.8, w: 12, h: 0.5, fontSize: 16, color: 'A9BDA9' });
+
+  const chartSlide = (heading, data, opts) => {
+    const s = pptx.addSlide();
+    s.addText(heading, { x: 0.5, y: 0.3, w: 12.3, h: 0.6, fontSize: 20, bold: true, color: '14231A' });
+    s.addChart(BAR, data, Object.assign(
+      { x: 0.5, y: 1.1, w: 12.3, h: 5.9, showLegend: false, showValue: false,
+        catAxisLabelFontSize: 9, valAxisLabelFontSize: 9 }, opts));
+  };
+  const scoreOpts = extra => Object.assign({ valAxisMinVal: 1, valAxisMaxVal: 5 }, extra);
+
+  for (const it of items) {
+    if (it.id === 'domainsum') {
+      const labels = D.domains.map(d => d.name);
+      const vals = D.domains.map(d => (D.domainScores[key] || {})[d.key]);
+      chartSlide('Domain scores', [{ name: 'Score', labels, values: vals }],
+        scoreOpts({ barDir: 'col', chartColorsOpacity: 100, chartColors: D.domains.map(d => strip(DOMAIN_COLOR[d.key])) }));
+    } else if (it.id === 'top5' || it.id === 'bottom5') {
+      const cc = D.cells[key] || {};
+      const scored = D.constructs.map(x => ({ name: x.name, v: cc[x.key] ? cc[x.key].mean : null, cseq: (D.grandMeans.T0 || {})[x.key] }))
+        .filter(x => x.v != null).sort((a, b) => b.v - a.v);
+      const rows = it.id === 'top5' ? scored.slice(0, 5) : scored.slice(-5).reverse();
+      if (rows.length) {
+        const labels = rows.map(r => r.name);
+        chartSlide(it.label, [
+          { name: displayName(co), labels, values: rows.map(r => r.v) },
+          { name: 'CSEq Average', labels, values: rows.map(r => r.cseq) },
+        ], scoreOpts({ barDir: 'bar', showLegend: true, legendPos: 'b', chartColors: ['2fc46a', '9aa79a'] }));
+      }
+    } else if (it.id.startsWith('dom-')) {
+      const dkey = it.id.slice(4), scores = D.itemScores[key] || {};
+      const its = D.items.filter(x => x.domain === dkey && scores[x.code]);
+      if (its.length) chartSlide(it.label,
+        [{ name: 'Score', labels: its.map(x => geoText(x.text, co)), values: its.map(x => scores[x.code].mean) }],
+        scoreOpts({ barDir: 'bar', chartColors: [strip(DOMAIN_COLOR[dkey])] }));
+    } else if (it.id === 'demographics') {
+      const p = D.profiles[key];
+      if (p) {
+        const pct = (qk, heading) => {
+          const rows = (p[qk] && p[qk].items || []).filter(i => i.count > 0);
+          if (rows.length) chartSlide(heading, [{ name: '%', labels: rows.map(i => i.label), values: rows.map(i => i.pct) }],
+            { barDir: 'bar', valAxisMinVal: 0, valAxisMaxVal: 100, chartColors: ['2fc46a'] });
+        };
+        pct('sector', 'Organization sector'); pct('duration', 'Time as a coalition member');
+        pct('engagement', 'Overall engagement'); pct('age', 'Ages of youth served');
+        pct('field', 'Focus areas'); pct('pops', 'Populations intentionally served');
+        const ef = (p.engageFeedback && p.engageFeedback.items || []).filter(i => i.mean != null);
+        if (ef.length) chartSlide('What would help you engage more regularly?',
+          [{ name: 'Mean', labels: ef.map(i => i.label), values: ef.map(i => i.mean) }],
+          scoreOpts({ barDir: 'bar', chartColors: ['2fc46a'] }));
+      }
+    } else if (it.id === 'program' && co !== ALL_KEY) {
+      const pg = D.program[key] || {};
+      const val = k => (pg[k] && pg[k].value != null && pg[k].value !== 0) ? pg[k].value : null;
+      if (val('pct_aid') != null) chartSlide('Receiving financial aid (%)', [{ name: '%', labels: [displayName(co)], values: [val('pct_aid')] }], { barDir: 'col' });
+      if (val('aid_dollars') != null) chartSlide('Financial aid disbursed ($)', [{ name: '$', labels: [displayName(co)], values: [val('aid_dollars')] }], { barDir: 'col' });
+      const w = val('coaches_worked'), tr = val('coaches_trained');
+      if (w != null || tr != null) {
+        const labs = [], vs = [];
+        if (w != null) { labs.push('Worked'); vs.push(w); }
+        if (tr != null) { labs.push('Trained'); vs.push(tr); }
+        chartSlide('Coaches', [{ name: 'Coaches', labels: labs, values: vs }], { barDir: 'col' });
+      }
+      const zy = D.zipYouth && D.zipYouth[key];
+      if (zy && zy.items.length) chartSlide('Youth served by zip code',
+        [{ name: 'Youth', labels: zy.items.map(i => i.label), values: zy.items.map(i => i.value) }], { barDir: 'col' });
+    }
+  }
+  await pptx.writeFile({ fileName: `${displayName(co)} - MOVE Fund report.pptx` });
+}
+
+// Optional deep link: index.html?coalition=Salem opens straight to that coalition (viewable only).
+(function initEntry() {
+  const wanted = new URLSearchParams(location.search).get('coalition');
+  if (wanted && VIEWABLE.includes(wanted) && !DEMO_MODE) { enterDashboard(wanted); }
+  // else: leave the gate visible until the visitor chooses.
+})();
+</script>
+</body>
+</html>
